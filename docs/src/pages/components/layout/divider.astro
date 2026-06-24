@@ -73,4 +73,15 @@ import UsageExample from "../../../components/UsageExample.astro";
     `}
     outputWrapperClass="stack vertical no-gap"
   />
+
+  <UsageExample
+    name="Removing Margin"
+    description="To remove the default margin around a Divider, add the class `no-margin`."
+    code={`
+      <p>Some content</p>
+      <hr class="divider vertical no-margin"/>
+      <p>More content</p>
+    `}
+    outputWrapperClass=""
+  />
 </ComponentDocumentation>
