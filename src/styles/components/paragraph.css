@@ -2,7 +2,7 @@
 :where(.markdown p) {
   font-family: var(--font-family-body);
   font-weight: var(--font-weight-normal);
-  line-height: 1.6;
+  line-height: var(--line-height-l);
   margin: 0.75em 0;
   text-wrap: pretty;
   hanging-punctuation: first;

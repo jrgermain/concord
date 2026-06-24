@@ -1,6 +1,6 @@
 .fieldset legend,
 .legend {
-  line-height: 1.15;
+  line-height: var(--line-height-s);
   font-size: var(--font-size-l);
   font-family: var(--font-family-heading);
   font-weight: var(--font-weight-semibold);

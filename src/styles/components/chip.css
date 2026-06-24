@@ -26,7 +26,8 @@
   transition-timing-function: var(--ease-default);
   text-decoration: none;
   appearance: none;
-  line-height: 1.2;
+  line-height: var(--line-height-xs);
+  white-space: nowrap;
 
   @media (prefers-color-scheme: dark) {
     --chip-delete-hover-color: var(--color-brand-6);

@@ -5,7 +5,7 @@
 
   display: inline-flex;
   flex-direction: column;
-  line-height: 1;
+  line-height: var(--line-height-xs);
   gap: var(--field-gap);
   color: var(--color-text-primary);
   font-weight: var(--font-weight-semibold);
@@ -68,7 +68,8 @@
     transition-duration: var(--duration-m);
     transition-timing-function: var(--ease-default);
     font-family: inherit;
-    line-height: 1.25;
+    line-height: var(--line-height-xs);
+    min-block-size: calc(1.5em + 2 * var(--field-padding));
 
     &:is(:focus, .focus) {
       outline: 0;
@@ -114,6 +115,11 @@
           0 0 0 calc(0.2em + var(--border-s)) var(--color-red-transparent);
       }
     }
+  }
+
+  textarea {
+    line-height: var(--line-height-m);
+    resize: block;
   }
 
   input[type="color"] {

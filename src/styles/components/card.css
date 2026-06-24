@@ -36,13 +36,13 @@
   --link-active-color: var(--color-brand-2);
 
   font-family: var(--font-family-heading);
-  line-height: 1.15;
+  line-height: var(--line-height-s);
   text-wrap: balance;
   overflow-wrap: break-word;
   font-size: var(--font-size-l);
   font-weight: var(--font-weight-bold);
   color: var(--color-brand-3);
-  margin-block: 0 var(--space-xs);
+  margin-block: 0 var(--space-2xs);
   display: block;
 }
 

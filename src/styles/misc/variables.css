@@ -233,6 +233,12 @@
   --duration-l: 250ms;
   --duration-xl: 350ms;
 
+  /* Line heights */
+  --line-height-xs: 1;
+  --line-height-s: 1.15;
+  --line-height-m: 1.25;
+  --line-height-l: 1.6;
+
   /* Frosted glass */
   --glass-bg-color: light-dark(#fff9, #30333799);
   --glass-fg-color: light-dark(black, white);
