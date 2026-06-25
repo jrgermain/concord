@@ -128,5 +128,5 @@
 
 .alert-title {
   color: var(--alert-title-color);
-  margin-block-end: 0.2em;
+  margin-block-end: 0.1em;
 }

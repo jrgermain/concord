@@ -39,7 +39,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--font-size-l);
   font-weight: var(--font-weight-bold);
-  line-height: 1;
+  line-height: var(--line-height-s);
   padding: var(--space-m);
   padding-block-end: var(--space-2xs);
   flex-shrink: 0;

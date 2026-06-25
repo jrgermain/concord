@@ -4,7 +4,7 @@
   font-family: var(--font-family-body);
   font-weight: var(--font-weight-normal);
   position: relative;
-  line-height: 1.2;
+  line-height: var(--line-height-m);
 
   > * {
     line-height: inherit;
@@ -15,7 +15,7 @@
 .banner-title {
   font-family: var(--font-family-heading);
   font-weight: var(--font-weight-bold);
-  line-height: 1;
+  line-height: var(--line-height-s);
   font-size: 0.85em;
   margin: 0;
 

@@ -6,7 +6,7 @@
   font-size: 1rem;
   cursor: pointer;
   user-select: none;
-  line-height: 1.2;
+  line-height: var(--line-height-m);
   font-family: var(--font-family-body);
   font-weight: var(--font-weight-normal);
 
