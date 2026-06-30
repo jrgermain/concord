@@ -1,0 +1,10 @@
+/*
+ * Note: Distribute extends Base Flex, meaning this file builds on top of the
+ * styles defined in ./shared/base-flex.css
+ */
+
+.distribute {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}

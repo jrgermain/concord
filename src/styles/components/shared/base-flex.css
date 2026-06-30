@@ -42,21 +42,3 @@
     flex-direction: column;
   }
 }
-
-.wrap {
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: start;
-}
-
-.stack {
-  flex-wrap: nowrap;
-  align-items: stretch;
-  justify-content: start;
-}
-
-.distribute {
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-}

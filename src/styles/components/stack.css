@@ -1,0 +1,10 @@
+/*
+ * Note: Stack extends Base Flex, meaning this file builds on top of the
+ * styles defined in ./shared/base-flex.css
+ */
+
+.stack {
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: start;
+}

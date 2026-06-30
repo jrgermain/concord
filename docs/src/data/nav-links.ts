@@ -58,11 +58,13 @@ export const navCategories: Category[] = [
         pages: [
           { title: "Accordion", slug: "accordion" },
           { title: "Card", slug: "card" },
+          { title: "Distribute", slug: "distribute" },
           { title: "Divider", slug: "divider" },
           { title: "Drawer", slug: "drawer" },
           { title: "Fieldset", slug: "fieldset" },
-          { title: "Flex", slug: "flex" },
           { title: "Modal", slug: "modal" },
+          { title: "Stack", slug: "stack" },
+          { title: "Wrap", slug: "wrap" },
         ],
       },
       {

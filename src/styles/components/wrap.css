@@ -1,0 +1,10 @@
+/*
+ * Note: Wrap extends Base Flex, meaning this file builds on top of the
+ * styles defined in ./shared/base-flex.css
+ */
+
+.wrap {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: start;
+}

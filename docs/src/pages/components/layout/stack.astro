@@ -1,0 +1,143 @@
+---
+import ComponentDocumentation from "../../../layouts/ComponentDocumentation.astro";
+import UsageExample from "../../../components/UsageExample.astro";
+import { trimTextPadding } from "../../../utils/trim-text-padding";
+---
+
+<ComponentDocumentation
+  name="Stack"
+  description="Container that displays components in a line using flexbox."
+>
+  <UsageExample
+    name="Layout"
+    description={trimTextPadding(`
+      The Stack component is a flex container. It spaces its children a fixed
+      distance from each other without wrapping.
+
+      If you want elements to wrap onto new lines as needed, use the Wrap or
+      Distribute components instead.
+    `)}
+    code={`
+      <div class="example stack" style="width: 16rem;">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </div>
+    `}
+  />
+
+  <UsageExample
+    name="Density"
+    description={trimTextPadding(`
+      You can optionally add one of the following modifier classes to change
+      the spacing between children (ordered from most compact to most spread out):
+
+      - \`no-gap\`
+      - \`densest\`
+      - \`denser\`
+      - \`dense\`
+      - \`normal\` (default)
+      - \`sparse\`
+      - \`sparser\`
+      - \`sparsest\`
+    `)}
+    code={`
+      <h3 class="h6">No Gap</h3>
+      <div class="stack no-gap example">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h3 class="h6">Densest</h3>
+      <div class="stack densest example">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h3 class="h6">Denser</h3>
+      <div class="stack denser example">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h3 class="h6">Dense</h3>
+      <div class="stack dense example">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h3 class="h6">Normal</h3>
+      <div class="stack normal example">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h3 class="h6">Sparse</h3>
+      <div class="stack sparse example">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h3 class="h6">Sparser</h3>
+      <div class="stack sparser example">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h3 class="h6">Sparsest</h3>
+      <div class="stack sparsest example">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+    `}
+  />
+
+  <UsageExample
+    name="Orientation"
+    description={trimTextPadding(`
+      You can optionally add one of the following modifier classes to change
+      the axis along which the children are laid out:
+
+      - \`horizontal\` (default): elements are laid out along the x-axis
+      - \`vertical\`: elements are laid out along the y-axis
+    `)}
+    code={`
+      <h3 class="h6">Horizontal</h3>
+      <div class="stack horizontal example">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h3 class="h6">Vertical</h3>
+      <div class="stack vertical example">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+  `}
+  />
+</ComponentDocumentation>
+<style is:global>
+  .example {
+    width: fit-content;
+    border: var(--border-s) solid var(--color-border);
+    border-radius: var(--radius-m);
+    padding: var(--space-3xs);
+    margin-inline-end: auto;
+  }
+
+  .box {
+    background: var(--color-gray-9);
+    border: var(--border-s) solid var(--color-border);
+    color: var(--color-gray-1);
+    width: 4rem;
+    height: 4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-s);
+    flex: none;
+  }
+</style>
