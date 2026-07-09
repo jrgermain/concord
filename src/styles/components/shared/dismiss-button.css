@@ -1,38 +1,43 @@
-.button.dismiss {
-  --button-fg-color: var(--color-text-primary);
-  --button-bg-color: transparent;
-  --button-border-color: transparent;
-  --button-hover-bg-color: var(--color-gray-extra-transparent);
-  --button-focus-ring-color: transparent;
-  --button-shadow: none;
+.dismiss-button {
+  --dismiss-button-bg-color: var(--color-gray-9);
+  --dismiss-button-fg-color: var(--color-gray-3);
+  --dismiss-button-highlight-color: var(--color-gray-8);
+  --dismiss-button-size: 1.8rem;
 
-  font-size: 0.75rem;
-  width: 3em;
-  height: 3em;
-  border-radius: var(--radius-m);
-  min-width: 0;
-  min-height: 0;
-  aspect-ratio: 1;
-  padding: 0.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--dismiss-button-size);
+  width: var(--dismiss-button-size);
+  background-color: var(--dismiss-button-bg-color);
+  color: var(--dismiss-button-fg-color);
+  border-radius: var(--radius-full);
+  padding: 0;
+  border: 0;
+  outline: 0 solid var(--dismiss-button-highlight-color);
+  cursor: pointer;
+  transform: translateY(0);
+  transition-property: outline-width, transform;
+  transition-duration: var(--duration-s);
+  transition-timing-function: var(--ease-default);
 
-  &:is(:focus-visible, .focus) {
-    --button-bg-color: var(--color-gray-transparent);
-    --button-hover-bg-color: transparent;
+  &:is(:hover, .hover, :focus-visible, .focus) {
+    outline-width: var(--border-s);
   }
 
-  /* Don't use pseudo element for hover style */
-  &::before {
-    content: unset;
+  &:is(:hover, .hover):is(:focus-visible, .focus) {
+    outline-width: var(--border-m);
   }
 
-  &:is(:hover, .hover) {
-    background-color: var(--button-hover-bg-color);
+  &:is(:active, .active) {
+    transform: translateY(1px);
+    outline-width: var(--border-s);
   }
 
   &::after {
     content: "";
-    width: 1.25em;
-    height: 1.25em;
+    width: calc(var(--dismiss-button-size) * 0.45);
+    height: calc(var(--dismiss-button-size) * 0.45);
     mask-image: url("@/src/icons/x-thin.svg");
     mask-size: contain;
     mask-repeat: no-repeat;

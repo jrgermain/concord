@@ -14,46 +14,14 @@
   width: 100%;
   background-color: var(--banner-bg-color);
 
-  &.error {
-    --banner-bg-color: var(--color-red-4);
-    --banner-secondary-color: var(--color-red-5);
-    --message-icon: url("@/src/icons/x.svg");
-    --message-icon-color: var(--color-red-5);
-  }
+  .dismiss-button {
+    --dismiss-button-fg-color: currentcolor;
+    --dismiss-button-size: 1.7em;
 
-  &.warning {
-    --banner-bg-color: var(--color-yellow-4);
-    --banner-secondary-color: var(--color-yellow-5);
-    --message-icon: url("@/src/icons/warning.svg");
-    --message-icon-color: var(--color-yellow-5);
-  }
-
-  &.success {
-    --banner-bg-color: var(--color-green-4);
-    --banner-secondary-color: var(--color-green-5);
-    --message-icon: url("@/src/icons/check.svg");
-    --message-icon-color: var(--color-green-5);
-  }
-
-  &.info {
-    --banner-bg-color: var(--color-teal-4);
-    --banner-secondary-color: var(--color-teal-5);
-    --message-icon: url("@/src/icons/info.svg");
-    --message-icon-color: var(--color-teal-5);
-  }
-
-  &.neutral {
-    --banner-bg-color: var(--color-brand-4);
-    --banner-secondary-color: var(--color-brand-5);
-
-    .banner-content {
-      padding-inline-start: var(--space-body-x);
-    }
-
-    .banner-content::before,
-    .banner-content::after {
-      content: unset;
-    }
+    position: absolute;
+    inset-block-start: 0.5em;
+    inset-inline-end: 0.5em;
+    margin: auto;
   }
 
   .link {
@@ -65,28 +33,80 @@
     }
   }
 
-  &:has(.button.dismiss) .banner-content {
-    padding-inline-end: calc(var(--space-body-x) + 2em);
+  &.error {
+    --banner-bg-color: var(--color-red-4);
+    --banner-secondary-color: var(--color-red-5);
+    --message-icon: url("@/src/icons/x.svg");
+    --message-icon-color: var(--color-red-5);
+
+    .dismiss-button {
+      --dismiss-button-bg-color: var(--color-red-3);
+      --dismiss-button-highlight-color: var(--color-red-8);
+    }
   }
 
+  &.warning {
+    --banner-bg-color: var(--color-yellow-4);
+    --banner-secondary-color: var(--color-yellow-5);
+    --message-icon: url("@/src/icons/warning.svg");
+    --message-icon-color: var(--color-yellow-5);
+
+    .dismiss-button {
+      --dismiss-button-bg-color: var(--color-yellow-3);
+      --dismiss-button-highlight-color: var(--color-yellow-6);
+    }
+  }
+
+  &.success {
+    --banner-bg-color: var(--color-green-4);
+    --banner-secondary-color: var(--color-green-5);
+    --message-icon: url("@/src/icons/check.svg");
+    --message-icon-color: var(--color-green-5);
+
+    .dismiss-button {
+      --dismiss-button-bg-color: var(--color-green-3);
+      --dismiss-button-highlight-color: var(--color-green-8);
+    }
+  }
+
+  &.info {
+    --banner-bg-color: var(--color-teal-4);
+    --banner-secondary-color: var(--color-teal-5);
+    --message-icon: url("@/src/icons/info.svg");
+    --message-icon-color: var(--color-teal-5);
+
+    .dismiss-button {
+      --dismiss-button-bg-color: var(--color-teal-3);
+      --dismiss-button-highlight-color: var(--color-teal-8);
+    }
+  }
+
+  &.neutral {
+    --banner-bg-color: var(--color-brand-4);
+    --banner-secondary-color: var(--color-brand-5);
+
+    .dismiss-button {
+      --dismiss-button-bg-color: var(--color-brand-3);
+      --dismiss-button-highlight-color: var(--color-brand-8);
+    }
+
+    .banner-content {
+      padding-inline-start: var(--space-body-x);
+    }
+
+    .banner-content::before,
+    .banner-content::after {
+      content: unset;
+    }
+  }
+
+  &:has(.dismiss-button) .banner-content {
+    padding-inline-end: 2.75em;
+  }
+
+  /* In a stack of banners, collapse borders */
   & + & {
     border-block-start-width: 0;
-  }
-
-  .button.dismiss {
-    --button-fg-color: currentcolor;
-    --button-hover-bg-color: var(--banner-secondary-color);
-
-    position: absolute;
-    inset-block: 0;
-    inset-inline-end: calc(var(--space-body-x) * 0.5);
-    margin: auto;
-    font-size: 0.67em;
-
-    &:is(:focus-visible, .focus) {
-      --button-bg-color: var(--banner-secondary-color);
-      --button-border-color: currentcolor;
-    }
   }
 }
 

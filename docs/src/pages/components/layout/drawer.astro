@@ -24,8 +24,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       Inside your Drawer, you can add a **header**, **body**, and **footer**.
 
       The **header** should have the class \`drawer-header\` and contain a title
-      and, optionally, a close button (a \`button\` with the classes \`button\`
-      and \`dismiss\`).
+      and, optionally, a \`button\` with the class \`dismiss-button\`.
 
       The **body** should have the class \`drawer-body\` and contain the main
       content of the Drawer.
@@ -50,7 +49,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       <dialog id="drawer-1" class="drawer left medium" aria-labelledby="drawer-1-title">
         <header class="drawer-header">
           <h1 id="drawer-1-title">User Settings</h1>
-          <button class="button dismiss" command="request-close" commandfor="drawer-1" aria-label="Close"></button>
+          <button class="dismiss-button" command="request-close" commandfor="drawer-1" aria-label="Close"></button>
         </header>
         <div class="drawer-body">
           <p class="paragraph">
@@ -96,7 +95,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       <dialog id="drawer-2" class="drawer left small" aria-labelledby="drawer-2-title">
         <div class="drawer-header">
           <h1 id="drawer-2-title">User Settings</h1>
-          <button class="button dismiss" command="request-close" commandfor="drawer-2" aria-label="Close"></button>
+          <button class="dismiss-button" command="request-close" commandfor="drawer-2" aria-label="Close"></button>
         </div>
         <div class="drawer-body">
           <p class="paragraph">
@@ -121,7 +120,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     name="Dismiss Button"
     description={trimTextPadding(`
       You can add a close button to the header of the Drawer by creating a
-      \`button\` element with the classes \`button\` and \`dismiss\`. The close
+      \`button\` element with the class \`dismiss-button\`. The close
       button should call the \`close\` method on the \`dialog\` element when
       clicked.
     `)}
@@ -133,7 +132,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       <dialog id="drawer-3" class="drawer left small" aria-labelledby="drawer-3-title">
         <div class="drawer-header">
           <h1 id="drawer-3-title">User Settings</h1>
-          <button class="button dismiss" command="request-close" commandfor="drawer-3" aria-label="Close"></button>
+          <button class="dismiss-button" command="request-close" commandfor="drawer-3" aria-label="Close"></button>
         </div>
         <div class="drawer-body">
           <p class="paragraph">
@@ -206,7 +205,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
             <h1 id="playground-drawer-title">User Settings</h1>
             <button
               x-show="closeButton"
-              class="button dismiss"
+              class="dismiss-button"
               aria-label="Close"
               command="request-close"
               commandfor="playground-drawer"

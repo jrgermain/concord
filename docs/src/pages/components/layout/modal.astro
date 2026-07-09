@@ -17,8 +17,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       Inside your Modal, you can add a **header**, **body**, and **footer**.
 
       The **header** should have the class \`modal-header\` and contain a title and,
-      optionally, a close button (a \`button\` with the classes \`button\` and
-      \`dismiss\`).
+      optionally, a \`button\` with the class \`dismiss-button\`.
 
       The **body** should have the class \`modal-body\` and contain the main
       content of the Modal.
@@ -41,7 +40,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       <dialog id="modal-1" class="modal" aria-labelledby="modal-1-title">
         <header class="modal-header">
           <h1 id="modal-1-title">Leave Without Saving?</h1>
-          <button class="button dismiss" command="request-close" commandfor="modal-1" aria-label="Close"></button>
+          <button class="dismiss-button" command="request-close" commandfor="modal-1" aria-label="Close"></button>
         </header>
         <div class="modal-body">
           <p>You have unsaved edits. What would you like to do?</p>
@@ -75,7 +74,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       <dialog id="modal-2" class="modal small" aria-labelledby="modal-2-title">
         <header class="modal-header">
           <h1 id="modal-2-title">Leave Without Saving?</h1>
-          <button class="button dismiss" command="request-close" commandfor="modal-2" aria-label="Close"></button>
+          <button class="dismiss-button" command="request-close" commandfor="modal-2" aria-label="Close"></button>
         </header>
         <div class="modal-body">
           <p class="paragraph">
@@ -101,7 +100,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       <dialog id="modal-3" class="modal small" aria-labelledby="modal-3-title">
         <header class="modal-header">
           <h1 id="modal-3-title">Leave Without Saving?</h1>
-          <button class="button dismiss" command="request-close" commandfor="modal-3" aria-label="Close"></button>
+          <button class="dismiss-button" command="request-close" commandfor="modal-3" aria-label="Close"></button>
         </header>
         <div class="modal-body">
           <p style="
@@ -176,7 +175,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
           <header x-show="header" class="modal-header">
             <h1 id="modal-4-title">User Settings</h1>
             <button
-              class="button dismiss"
+              class="dismiss-button"
               aria-label="Close"
               x-show="closeButton"
               command="request-close"

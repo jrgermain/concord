@@ -2,8 +2,14 @@
   --chip-fg-color: white;
   --chip-bg-color: var(--color-brand-5);
   --chip-border-color: var(--color-brand-4);
-  --chip-delete-hover-color: var(--color-brand-3);
-  --chip-delete-active-color: var(--color-brand-2);
+  --chip-dismiss-bg-color: light-dark(
+    var(--color-brand-3),
+    var(--color-brand-7)
+  );
+  --chip-dismiss-highlight-color: light-dark(
+    var(--color-brand-8),
+    var(--color-brand-3)
+  );
   --chip-focus-color: var(--color-brand-transparent);
   --chip-padding-x: var(--space-xs);
   --chip-padding-y: var(--space-3xs);
@@ -29,11 +35,6 @@
   line-height: var(--line-height-xs);
   white-space: nowrap;
 
-  @media (prefers-color-scheme: dark) {
-    --chip-delete-hover-color: var(--color-brand-6);
-    --chip-delete-active-color: var(--color-brand-7);
-  }
-
   &.clickable {
     cursor: pointer;
     box-shadow: var(--shadow-s);
@@ -47,18 +48,19 @@
         0 0 0 0.1em var(--chip-border-color),
         0 0 0 calc(0.2em + var(--border-s)) var(--chip-focus-color);
 
-      .chip-delete {
+      .dismiss-button {
         opacity: 0.5;
       }
     }
 
     /* Change the background on hover, but only if the cursor is not over the delete button */
     &.hover,
-    &:hover:not(:has(.chip-delete:hover)) {
+    &:hover:not(:has(.dismiss-button:hover)) {
       background-color: var(--chip-border-color);
     }
 
-    &:is(:active, .active) {
+    &.active,
+    &:active:not(:has(.dismiss-button:active)) {
       transform: scale(0.96);
 
       /*
@@ -75,214 +77,280 @@
     --chip-bg-color: var(--color-red-5);
     --chip-border-color: var(--color-red-4);
     --chip-focus-color: var(--color-red-transparent);
-    --chip-delete-hover-color: var(--color-red-3);
-    --chip-delete-active-color: var(--color-red-2);
-
-    @media (prefers-color-scheme: dark) {
-      --chip-delete-hover-color: var(--color-red-6);
-      --chip-delete-active-color: var(--color-red-7);
-    }
+    --chip-dismiss-bg-color: light-dark(var(--color-red-3), var(--color-red-7));
+    --chip-dismiss-highlight-color: light-dark(
+      var(--color-red-8),
+      var(--color-red-3)
+    );
   }
 
   &.orange {
     --chip-bg-color: var(--color-orange-5);
     --chip-border-color: var(--color-orange-4);
     --chip-focus-color: var(--color-orange-transparent);
-    --chip-delete-hover-color: var(--color-orange-3);
-    --chip-delete-active-color: var(--color-orange-2);
-
-    @media (prefers-color-scheme: dark) {
-      --chip-delete-hover-color: var(--color-orange-6);
-      --chip-delete-active-color: var(--color-orange-7);
-    }
+    --chip-dismiss-bg-color: light-dark(
+      var(--color-orange-3),
+      var(--color-orange-7)
+    );
+    --chip-dismiss-highlight-color: light-dark(
+      var(--color-orange-8),
+      var(--color-orange-3)
+    );
   }
 
   &.yellow {
     --chip-bg-color: var(--color-yellow-5);
     --chip-border-color: var(--color-yellow-4);
     --chip-focus-color: var(--color-yellow-transparent);
-    --chip-delete-hover-color: var(--color-yellow-3);
-    --chip-delete-active-color: var(--color-yellow-2);
-
-    @media (prefers-color-scheme: dark) {
-      --chip-delete-hover-color: var(--color-yellow-6);
-      --chip-delete-active-color: var(--color-yellow-7);
-    }
+    --chip-dismiss-bg-color: light-dark(
+      var(--color-yellow-3),
+      var(--color-yellow-7)
+    );
+    --chip-dismiss-highlight-color: light-dark(
+      var(--color-yellow-8),
+      var(--color-yellow-3)
+    );
   }
 
   &.green {
     --chip-bg-color: var(--color-green-5);
     --chip-border-color: var(--color-green-4);
     --chip-focus-color: var(--color-green-transparent);
-    --chip-delete-hover-color: var(--color-green-3);
-    --chip-delete-active-color: var(--color-green-2);
-
-    @media (prefers-color-scheme: dark) {
-      --chip-delete-hover-color: var(--color-green-6);
-      --chip-delete-active-color: var(--color-green-7);
-    }
+    --chip-dismiss-bg-color: light-dark(
+      var(--color-green-3),
+      var(--color-green-7)
+    );
+    --chip-dismiss-highlight-color: light-dark(
+      var(--color-green-8),
+      var(--color-green-3)
+    );
   }
 
   &.teal {
     --chip-bg-color: var(--color-teal-5);
     --chip-border-color: var(--color-teal-4);
     --chip-focus-color: var(--color-teal-transparent);
-    --chip-delete-hover-color: var(--color-teal-3);
-    --chip-delete-active-color: var(--color-teal-2);
-
-    @media (prefers-color-scheme: dark) {
-      --chip-delete-hover-color: var(--color-teal-6);
-      --chip-delete-active-color: var(--color-teal-7);
-    }
+    --chip-dismiss-bg-color: light-dark(
+      var(--color-teal-3),
+      var(--color-teal-7)
+    );
+    --chip-dismiss-highlight-color: light-dark(
+      var(--color-teal-8),
+      var(--color-teal-3)
+    );
   }
 
   &.blue {
     --chip-bg-color: var(--color-blue-5);
     --chip-border-color: var(--color-blue-4);
     --chip-focus-color: var(--color-blue-transparent);
-    --chip-delete-hover-color: var(--color-blue-3);
-    --chip-delete-active-color: var(--color-blue-2);
-
-    @media (prefers-color-scheme: dark) {
-      --chip-delete-hover-color: var(--color-blue-6);
-      --chip-delete-active-color: var(--color-blue-7);
-    }
+    --chip-dismiss-bg-color: light-dark(
+      var(--color-blue-3),
+      var(--color-blue-7)
+    );
+    --chip-dismiss-highlight-color: light-dark(
+      var(--color-blue-8),
+      var(--color-blue-3)
+    );
   }
 
   &.purple {
     --chip-bg-color: var(--color-purple-5);
     --chip-border-color: var(--color-purple-4);
     --chip-focus-color: var(--color-purple-transparent);
-    --chip-delete-hover-color: var(--color-purple-3);
-    --chip-delete-active-color: var(--color-purple-2);
-
-    @media (prefers-color-scheme: dark) {
-      --chip-delete-hover-color: var(--color-purple-6);
-      --chip-delete-active-color: var(--color-purple-7);
-    }
+    --chip-dismiss-bg-color: light-dark(
+      var(--color-purple-3),
+      var(--color-purple-7)
+    );
+    --chip-dismiss-highlight-color: light-dark(
+      var(--color-purple-8),
+      var(--color-purple-3)
+    );
   }
 
   &.magenta {
     --chip-bg-color: var(--color-magenta-5);
     --chip-border-color: var(--color-magenta-4);
     --chip-focus-color: var(--color-magenta-transparent);
-    --chip-delete-hover-color: var(--color-magenta-3);
-    --chip-delete-active-color: var(--color-magenta-2);
-
-    @media (prefers-color-scheme: dark) {
-      --chip-delete-hover-color: var(--color-magenta-6);
-      --chip-delete-active-color: var(--color-magenta-7);
-    }
+    --chip-dismiss-bg-color: light-dark(
+      var(--color-magenta-3),
+      var(--color-magenta-7)
+    );
+    --chip-dismiss-highlight-color: light-dark(
+      var(--color-magenta-8),
+      var(--color-magenta-3)
+    );
   }
 
   &.gray {
     --chip-bg-color: var(--color-gray-5);
     --chip-border-color: var(--color-gray-4);
     --chip-focus-color: var(--color-gray-transparent);
-    --chip-delete-hover-color: var(--color-gray-3);
-    --chip-delete-active-color: var(--color-gray-2);
-
-    @media (prefers-color-scheme: dark) {
-      --chip-delete-hover-color: var(--color-gray-6);
-      --chip-delete-active-color: var(--color-gray-7);
-    }
+    --chip-dismiss-bg-color: light-dark(
+      var(--color-gray-3),
+      var(--color-gray-7)
+    );
+    --chip-dismiss-highlight-color: light-dark(
+      var(--color-gray-8),
+      var(--color-gray-3)
+    );
   }
 
   &.subtle {
     --chip-fg-color: var(--color-brand-2);
     --chip-bg-color: var(--color-brand-9);
     --chip-border-color: var(--color-brand-8);
-    --chip-delete-hover-color: var(--color-brand-7);
-    --chip-delete-active-color: var(--color-brand-6);
+    --chip-dismiss-bg-color: light-dark(
+      var(--color-brand-8),
+      var(--color-brand-7)
+    );
+    --chip-dismiss-highlight-color: light-dark(
+      var(--color-brand-7),
+      var(--color-brand-3)
+    );
 
     &.red {
       --chip-fg-color: var(--color-red-2);
       --chip-bg-color: var(--color-red-9);
       --chip-border-color: var(--color-red-8);
-      --chip-delete-hover-color: var(--color-red-7);
-      --chip-delete-active-color: var(--color-red-6);
+      --chip-dismiss-bg-color: light-dark(
+        var(--color-red-8),
+        var(--color-red-7)
+      );
+      --chip-dismiss-highlight-color: light-dark(
+        var(--color-red-7),
+        var(--color-red-3)
+      );
     }
 
     &.orange {
       --chip-fg-color: var(--color-orange-2);
       --chip-bg-color: var(--color-orange-9);
       --chip-border-color: var(--color-orange-8);
-      --chip-delete-hover-color: var(--color-orange-7);
-      --chip-delete-active-color: var(--color-orange-6);
+      --chip-dismiss-bg-color: light-dark(
+        var(--color-orange-8),
+        var(--color-orange-7)
+      );
+      --chip-dismiss-highlight-color: light-dark(
+        var(--color-orange-7),
+        var(--color-orange-3)
+      );
     }
 
     &.yellow {
       --chip-fg-color: var(--color-yellow-2);
       --chip-bg-color: var(--color-yellow-9);
       --chip-border-color: var(--color-yellow-8);
-      --chip-delete-hover-color: var(--color-yellow-7);
-      --chip-delete-active-color: var(--color-yellow-6);
+      --chip-dismiss-bg-color: light-dark(
+        var(--color-yellow-8),
+        var(--color-yellow-7)
+      );
+      --chip-dismiss-highlight-color: light-dark(
+        var(--color-yellow-7),
+        var(--color-yellow-3)
+      );
     }
 
     &.green {
       --chip-fg-color: var(--color-green-2);
       --chip-bg-color: var(--color-green-9);
       --chip-border-color: var(--color-green-8);
-      --chip-delete-hover-color: var(--color-green-7);
-      --chip-delete-active-color: var(--color-green-6);
+      --chip-dismiss-bg-color: light-dark(
+        var(--color-green-8),
+        var(--color-green-7)
+      );
+      --chip-dismiss-highlight-color: light-dark(
+        var(--color-green-7),
+        var(--color-green-3)
+      );
     }
 
     &.teal {
       --chip-fg-color: var(--color-teal-2);
       --chip-bg-color: var(--color-teal-9);
       --chip-border-color: var(--color-teal-8);
-      --chip-delete-hover-color: var(--color-teal-7);
-      --chip-delete-active-color: var(--color-teal-6);
+      --chip-dismiss-bg-color: light-dark(
+        var(--color-teal-8),
+        var(--color-teal-7)
+      );
+      --chip-dismiss-highlight-color: light-dark(
+        var(--color-teal-7),
+        var(--color-teal-3)
+      );
     }
 
     &.blue {
       --chip-fg-color: var(--color-blue-2);
       --chip-bg-color: var(--color-blue-9);
       --chip-border-color: var(--color-blue-8);
-      --chip-delete-hover-color: var(--color-blue-7);
-      --chip-delete-active-color: var(--color-blue-6);
+      --chip-dismiss-bg-color: light-dark(
+        var(--color-blue-8),
+        var(--color-blue-7)
+      );
+      --chip-dismiss-highlight-color: light-dark(
+        var(--color-blue-7),
+        var(--color-blue-3)
+      );
     }
 
     &.purple {
       --chip-fg-color: var(--color-purple-2);
       --chip-bg-color: var(--color-purple-9);
       --chip-border-color: var(--color-purple-8);
-      --chip-delete-hover-color: var(--color-purple-7);
-      --chip-delete-active-color: var(--color-purple-6);
+      --chip-dismiss-bg-color: light-dark(
+        var(--color-purple-8),
+        var(--color-purple-7)
+      );
+      --chip-dismiss-highlight-color: light-dark(
+        var(--color-purple-7),
+        var(--color-purple-3)
+      );
     }
 
     &.magenta {
       --chip-fg-color: var(--color-magenta-2);
       --chip-bg-color: var(--color-magenta-9);
       --chip-border-color: var(--color-magenta-8);
-      --chip-delete-hover-color: var(--color-magenta-7);
-      --chip-delete-active-color: var(--color-magenta-6);
+      --chip-dismiss-bg-color: light-dark(
+        var(--color-magenta-8),
+        var(--color-magenta-7)
+      );
+      --chip-dismiss-highlight-color: light-dark(
+        var(--color-magenta-7),
+        var(--color-magenta-3)
+      );
     }
 
     &.gray {
       --chip-fg-color: var(--color-gray-2);
       --chip-bg-color: var(--color-gray-9);
       --chip-border-color: var(--color-gray-8);
-      --chip-delete-hover-color: var(--color-gray-7);
-      --chip-delete-active-color: var(--color-gray-6);
+      --chip-dismiss-bg-color: light-dark(
+        var(--color-gray-8),
+        var(--color-gray-7)
+      );
+      --chip-dismiss-highlight-color: light-dark(
+        var(--color-gray-7),
+        var(--color-gray-3)
+      );
     }
   }
 
   &.black {
     --chip-bg-color: black;
-    --chip-border-color: #46484c;
+    --chip-border-color: #484848;
     --chip-focus-color: var(--color-gray-transparent);
-    --chip-delete-hover-color: #616368;
-    --chip-delete-active-color: #4c4e53;
+    --chip-dismiss-bg-color: #555;
+    --chip-dismiss-highlight-color: #ccc;
   }
 
   &.white {
     --chip-fg-color: black;
     --chip-bg-color: white;
-    --chip-border-color: #d8dbe0;
+    --chip-border-color: #dbdbdb;
     --chip-focus-color: var(--color-gray-transparent);
-    --chip-delete-hover-color: #c3c6cb;
-    --chip-delete-active-color: #afb1b6;
+    --chip-dismiss-bg-color: #d8d8d8;
+    --chip-dismiss-highlight-color: #888;
   }
 }
 
@@ -300,57 +368,21 @@
   border-radius: var(--radius-full);
 }
 
-.chip-label:has(+ .chip-delete) {
+.chip-label:has(+ .dismiss-button) {
   padding-inline-end: calc(1.2em + 2 * var(--space-3xs));
 }
 
-.chip-delete {
-  outline: 1px solid var(--chip-bg-color);
-  margin-inline: var(--space-3xs)
-    calc(-1 * var(--chip-padding-x) + var(--space-3xs));
-  font-size: 0.6em;
-  border: 0;
-  border-radius: var(--radius-full);
-  transition-property: background-color, outline-color, filter;
-  transition-duration: var(--duration-s);
-  transition-timing-function: var(--ease-default);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  height: 2em;
-  width: 2em;
-  user-select: none;
-  background-color: var(--chip-border-color);
-  padding: 0;
-  display: inline-flex;
-  box-shadow: none;
+.dismiss-button {
+  --dismiss-button-size: 1.3em;
+  --dismiss-button-bg-color: var(--chip-dismiss-bg-color);
+  --dismiss-button-fg-color: currentcolor;
+  --dismiss-button-highlight-color: var(--chip-dismiss-highlight-color);
 
-  &::after {
-    content: "";
-    width: 1em;
-    height: 1em;
-    mask-image: url("@/src/icons/x-thin.svg");
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    background-color: var(--chip-fg-color);
-    margin: auto;
-  }
-
-  &:is(:focus-visible, .focus) {
-    outline-color: var(--chip-fg-color);
-  }
-
-  &:is(:hover, .hover) {
-    background-color: var(--chip-delete-hover-color);
-  }
-
-  &:is(:active, .active) {
-    background-color: var(--chip-delete-active-color);
-  }
+  margin-block: -0.3em;
+  margin-inline: var(--space-3xs) calc(-1 * var(--chip-padding-x) + 0.3em);
 }
 
-.chip-label + .chip-delete {
+.chip-label + .dismiss-button {
   position: absolute;
   inset: 0 var(--space-3xs) 0 auto;
   margin: auto 0;
