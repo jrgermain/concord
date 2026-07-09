@@ -74,4 +74,24 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       <div class="spinner large label-right" role="status">Large</div>
     `}
   />
+  <UsageExample
+    name="Delay"
+    description={trimTextPadding(`
+      You can delay the appearance of a Spinner by adding the \`delayed\` class.
+      
+      This is useful when an operation normally completes quickly, and you only
+      want to show the Spinner if it's taking longer than usual.
+
+      You can customize the delay by setting the \`--spinner-delay\` CSS
+      variable on the element.
+    `)}
+    code={`
+      <div class="spinner label-right delayed" role="status">
+        I have the default delay
+      </div>
+      <div class="spinner label-right delayed" role="status" style="--spinner-delay: 500ms">
+        I have a custom 500ms delay
+      </div>
+    `}
+  />
 </ComponentDocumentation>
