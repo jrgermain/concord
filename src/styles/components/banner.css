@@ -25,12 +25,8 @@
   }
 
   .link {
-    color: var(--color-contrast-text);
-    text-decoration-color: rgb(from var(--color-contrast-text) r g b / 40%);
-
-    &:is(:active, .active) {
-      color: rgb(from var(--color-contrast-text) r g b / 80%) !important;
-    }
+    --link-color: var(--color-contrast-text);
+    --link-active-color: rgb(from var(--color-contrast-text) r g b / 85%);
   }
 
   &.error {
