@@ -46,14 +46,15 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       - \`medium\` (default)
       - \`large\`
 
-      For finer-grained control over sizing, you can set the \`font-size\` style
-      to an arbitrary value and the Button will scale accordingly.
+      For fine-grained control over sizing, you can set the \`--button-scale\`
+      CSS variable on the Button element. The value of this variable _must_ be
+      a unitless number. A value of \`1\` corresponds to the default size.
     `)}
     code={`
       <button class="button small">Small</button>
       <button class="button medium">Medium</button>
       <button class="button large">Large</button>
-      <button class="button" style="font-size: 1.5rem">Custom size (1.5rem)</button>
+      <button class="button" style="--button-scale: 1.5">Custom scale (1.5)</button>
     `}
     outputWrapperClass="dense horizontal wrap"
   />

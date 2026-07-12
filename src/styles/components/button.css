@@ -6,6 +6,7 @@
   --button-focus-ring-color: var(--color-gray-extra-transparent);
   --button-shadow: var(--shadow-s);
   --button-hover-bg-color: var(--button-border-color);
+  --button-scale: 1;
 
   box-sizing: border-box;
   display: inline-flex;
@@ -33,7 +34,7 @@
   font-family: var(--font-family-body);
   box-shadow: var(--button-shadow);
   user-select: none;
-  font-size: 1rem;
+  font-size: calc(1rem * var(--button-scale));
   color: var(--button-fg-color);
   background-color: var(--button-bg-color);
   border-color: var(--button-border-color);
@@ -352,11 +353,11 @@
   }
 
   &.small {
-    font-size: 0.8rem;
+    --button-scale: 0.8;
   }
 
   &.large {
-    font-size: 1.2rem;
+    --button-scale: 1.2;
   }
 
   &.icon {

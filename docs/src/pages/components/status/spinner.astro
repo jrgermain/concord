@@ -67,11 +67,18 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
   />
   <UsageExample
     name="Sizes"
-    description="You can make a Spinner smaller by adding the `small` class or larger by adding the `large` class."
+    description={trimTextPadding(`
+      You can make a Spinner smaller by adding the \`small\` class or larger by adding the \`large\` class.
+
+      For fine-grained control over sizing, you can set the \`--spinner-scale\`
+      CSS variable on the Spinner element. The value of this variable _must_ be
+      a unitless number. A value of \`1\` corresponds to the default size.
+    `)}
     code={`
       <div class="spinner small label-right" role="status">Small</div>
       <div class="spinner label-right" role="status">Medium (default)</div>
       <div class="spinner large label-right" role="status">Large</div>
+      <div class="spinner label-right" style="--spinner-scale: 1.25" role="status">Custom scale (1.25)</div>
     `}
   />
   <UsageExample

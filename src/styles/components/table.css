@@ -1,5 +1,6 @@
 table.table,
 :where(.markdown table) {
+  --table-density: 1;
   --table-bg-odd: var(--color-surface-primary);
   --table-bg-even: var(--color-surface-secondary);
   --table-vertical-border: var(--border-s);
@@ -24,12 +25,12 @@ table.table,
     border: 0;
   }
 
-  &.dense :is(th, td) {
-    padding: var(--space-3xs) var(--space-2xs);
+  &.dense {
+    --table-density: 0.5;
   }
 
-  &.sparse :is(th, td) {
-    padding: var(--space-xs) var(--space-s);
+  &.sparse {
+    --table-density: 1.5;
   }
 
   caption {
@@ -58,7 +59,8 @@ table.table,
 
   th,
   td {
-    padding: var(--space-2xs) var(--space-xs);
+    padding: calc(var(--space-2xs) * var(--table-density))
+      calc(var(--space-xs) * var(--table-density));
   }
 
   th,

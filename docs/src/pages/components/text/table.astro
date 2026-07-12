@@ -1,6 +1,7 @@
 ---
 import ComponentDocumentation from "../../../layouts/ComponentDocumentation.astro";
 import UsageExample from "../../../components/UsageExample.astro";
+import { trimTextPadding } from "../../../utils/trim-text-padding";
 ---
 
 <ComponentDocumentation
@@ -149,7 +150,13 @@ import UsageExample from "../../../components/UsageExample.astro";
   />
   <UsageExample
     name="Density"
-    description="You can make a Table more compact by adding the class `dense` or more spread out with the class `sparse`."
+    description={trimTextPadding(`
+      You can make a Table more compact by adding the class \`dense\` or more spread out with the class \`sparse\`.
+
+      To further customize the spacing, you can set the \`--table-density\`
+      CSS variable on the Table element. The value of this variable _must_ be
+      a unitless number. A value of \`1\` corresponds to the default density.
+    `)}
     code={`
       <table class="table dense">
         <caption>Dense</caption>

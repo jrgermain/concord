@@ -1,6 +1,7 @@
 ---
 import ComponentDocumentation from "../../../layouts/ComponentDocumentation.astro";
 import UsageExample from "../../../components/UsageExample.astro";
+import { trimTextPadding } from "../../../utils/trim-text-padding";
 ---
 
 <ComponentDocumentation
@@ -31,21 +32,22 @@ import UsageExample from "../../../components/UsageExample.astro";
 
   <UsageExample
     name="Thickness"
-    description="To make the Divider thicker, add the class `thick` (to make it a little thicker) or `thicker` (to make it significantly thicker)."
+    description={trimTextPadding(`
+      To make the Divider thicker, add the class \`thick\` (to make it a little thicker) or \`thicker\` (to make it significantly thicker).
+
+      For fine-grained control over the line thickness, you can set the \`--divider-thickness\`
+      CSS variable on the Divider element. The value of this variable _must_ be a valid line width
+      (e.g., \`1px\`, \`0.1rem\`, \`var(--border-m)\`).
+    `)}
     code={`
-      <p>Some content</p>
+      <p>Thin (default)</p>
+      <hr class="divider"/>
+      <p>Thick</p>
       <hr class="divider thick"/>
-      <div class="stack horizontal no-gap">
-        <p>More content</p>
-        <hr class="divider thick vertical"/>
-        <p>Even more content</p>
-      </div>
+      <p>Thicker</p>
       <hr class="divider thicker"/>
-      <div class="stack horizontal no-gap">
-        <p>More content</p>
-        <hr class="divider thicker vertical"/>
-        <p>Even more content</p>
-      </div>
+      <p>Custom (0.2rem)</p>
+      <hr class="divider" style="--divider-thickness: 0.2rem;"/>
     `}
     outputWrapperClass="stack vertical no-gap"
   />
@@ -79,7 +81,20 @@ import UsageExample from "../../../components/UsageExample.astro";
     description="To remove the default margin around a Divider, add the class `no-margin`."
     code={`
       <p>Some content</p>
-      <hr class="divider vertical no-margin"/>
+      <hr class="divider no-margin"/>
+      <p>More content</p>
+    `}
+    outputWrapperClass=""
+  />
+
+  <UsageExample
+    name="Customizing Margin"
+    description="For fine-grained control over the margin on either side of the Divider, you can set
+    the \`--divider-spacing\` CSS variable on the Divider element. The value of this variable _must_
+    be a valid size (e.g., \`1rem\`, \`var(--space-l)\`)."
+    code={`
+      <p>Some content</p>
+      <hr class="divider" style="--divider-spacing: 1rem;"/>
       <p>More content</p>
     `}
     outputWrapperClass=""

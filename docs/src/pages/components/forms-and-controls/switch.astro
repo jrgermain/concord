@@ -23,13 +23,31 @@ import UsageExample from "../../../components/UsageExample.astro";
     `}
   />
   <UsageExample
-    name="Sizes"
+    name="Small"
     description="To make a Switch smaller, add the class `small`."
     code={`
       <input type="checkbox" class="switch small" />
 
       <label class="switch small">
         Show Advanced Options
+        <input type="checkbox" />
+      </label>
+    `}
+  />
+  <UsageExample
+    name="Custom Size"
+    description="To customize the size of a Switch, set the `--switch-scale` CSS variable on the element to a unitless number. A value of \`1\` corresponds to the default size."
+    code={`
+      <label class="switch" style="--switch-scale: 1">
+        Scale of 1 (default size)
+        <input type="checkbox" />
+      </label>
+      <label class="switch" style="--switch-scale: 1.25">
+        Scale of 1.25
+        <input type="checkbox" />
+      </label>
+      <label class="switch" style="--switch-scale: 0.75">
+        Scale of 0.75
         <input type="checkbox" />
       </label>
     `}

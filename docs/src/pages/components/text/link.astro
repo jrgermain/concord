@@ -34,4 +34,11 @@ import UsageExample from "../../../components/UsageExample.astro";
       <a href="#" class="link has-download-icon"> I don't download a file, but I have an icon </a>
     `}
   />
+  <UsageExample
+    name="Custom Color"
+    description="To customize the color of a link, set the `--link-color` and `--link-active-color` CSS variables."
+    code={`
+      <span class="link" style="--link-color: var(--color-orange-4); --link-active-color: var(--color-orange-3);"> This link is orange. </span>
+    `}
+  />
 </ComponentDocumentation>

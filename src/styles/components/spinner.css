@@ -12,9 +12,10 @@
   --spinner-primary-color: var(--color-brand-5);
   --spinner-secondary-color: var(--color-brand-3);
   --spinner-delay: 2s;
+  --spinner-scale: 1;
 
   opacity: 1;
-  font-size: var(--font-size-m);
+  font-size: calc(1rem * var(--spinner-scale));
   position: relative;
   text-align: center;
   display: flex;
@@ -33,11 +34,11 @@
   }
 
   &.small {
-    font-size: var(--font-size-xs);
+    --spinner-scale: 0.75;
   }
 
   &.large {
-    font-size: var(--font-size-xl);
+    --spinner-scale: 1.5;
   }
 
   &.label-top {
