@@ -73,6 +73,10 @@
     &.large {
       --drawer-size: 38rem;
     }
+
+    &.full-size {
+      --drawer-size: 100dvh;
+    }
   }
 
   &.left,
@@ -93,6 +97,10 @@
 
     &.large {
       --drawer-size: 42rem;
+    }
+
+    &.full-size {
+      --drawer-size: 100dvw;
     }
   }
 

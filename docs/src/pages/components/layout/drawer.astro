@@ -81,9 +81,12 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       - \`small\`
       - \`medium\`
       - \`large\`
+      - \`full-size\`
 
       If the size is \`auto\`, the Drawer will be as large as necessary to fit
-      its content without extending past the edge of the screen.
+      its content without extending past the edge of the screen. If the size is
+      \`full-size\`, the Drawer will take up the entire height or width of the
+      screen, depending on its orientation.
 
       For fine-grained control over sizing, you can set the \`--drawer-size\`
       CSS variable on the Drawer element. The value of this variable _must_ be
@@ -182,6 +185,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
             <option value="small">Small</option>
             <option value="medium">Medium</option>
             <option value="large">Large</option>
+            <option value="full-size">Full Size</option>
           </select>
         </label>
         <label class="switch">
