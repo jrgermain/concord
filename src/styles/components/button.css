@@ -156,18 +156,6 @@
     --button-focus-ring-color: var(--color-magenta-extra-transparent);
   }
 
-  &.black {
-    --button-fg-color: white;
-    --button-bg-color: black;
-    --button-border-color: #3d3d3d;
-  }
-
-  &.white {
-    --button-fg-color: black;
-    --button-bg-color: white;
-    --button-border-color: #d0d0d0;
-  }
-
   &.primary {
     --button-fg-color: white;
     --button-bg-color: var(--color-brand-5);
@@ -228,19 +216,25 @@
       --button-border-color: var(--color-gray-4);
       --button-focus-ring-color: var(--color-gray-transparent);
     }
+  }
 
-    &.black {
-      --button-bg-color: black;
-      --button-border-color: #3d3d3d;
-      --button-focus-ring-color: var(--color-gray-transparent);
-    }
+  /*
+   * Black and white use the same colors on primary and secondary Buttons.
+   * We define these rules after primary and secondary so we only need to
+   * declare them once (these rules take precedence over both).
+   */
+  &.black {
+    --button-fg-color: white;
+    --button-bg-color: black;
+    --button-border-color: #333;
+    --button-focus-ring-color: light-dark(#3335, #4447);
+  }
 
-    &.white {
-      --button-fg-color: black;
-      --button-bg-color: white;
-      --button-border-color: #d0d0d0;
-      --button-focus-ring-color: var(--color-gray-transparent);
-    }
+  &.white {
+    --button-fg-color: black;
+    --button-bg-color: white;
+    --button-border-color: #ddd;
+    --button-focus-ring-color: light-dark(#bbb3, #eee8);
   }
 
   &.tertiary {
