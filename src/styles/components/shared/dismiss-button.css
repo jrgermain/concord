@@ -14,24 +14,25 @@
   border-radius: var(--radius-full);
   padding: 0;
   border: 0;
-  outline: 0 solid var(--dismiss-button-highlight-color);
+  outline: 0;
+  box-shadow: 0 0 0 var(--border-s) transparent;
   cursor: pointer;
   transform: translateY(0);
-  transition-property: outline-width, transform;
+  transition-property: box-shadow, transform;
   transition-duration: var(--duration-s);
   transition-timing-function: var(--ease-default);
 
   &:is(:hover, .hover, :focus-visible, .focus) {
-    outline-width: var(--border-s);
+    box-shadow: 0 0 0 var(--border-s) var(--dismiss-button-highlight-color);
   }
 
   &:is(:hover, .hover):is(:focus-visible, .focus) {
-    outline-width: var(--border-m);
+    box-shadow: 0 0 0 var(--border-m) var(--dismiss-button-highlight-color);
   }
 
   &:is(:active, .active) {
     transform: translateY(1px);
-    outline-width: var(--border-s);
+    box-shadow: 0 0 0 var(--border-s) var(--dismiss-button-highlight-color) !important;
   }
 
   &::after {
