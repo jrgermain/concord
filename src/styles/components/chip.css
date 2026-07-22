@@ -348,19 +348,31 @@
 
   &.black {
     --chip-bg-color: black;
-    --chip-border-color: #484848;
+    --chip-border-color: light-dark(var(--color-gray-3), var(--color-gray-8));
     --chip-focus-color: var(--color-gray-transparent);
-    --chip-dismiss-bg-color: #555;
-    --chip-dismiss-highlight-color: #ccc;
+    --chip-dismiss-bg-color: light-dark(
+      var(--color-gray-3),
+      var(--color-gray-7)
+    );
+    --chip-dismiss-highlight-color: light-dark(
+      var(--color-gray-8),
+      var(--color-gray-3)
+    );
   }
 
   &.white {
     --chip-fg-color: black;
     --chip-bg-color: white;
-    --chip-border-color: #dbdbdb;
+    --chip-border-color: light-dark(var(--color-border), var(--color-gray-3));
     --chip-focus-color: var(--color-gray-transparent);
-    --chip-dismiss-bg-color: #d8d8d8;
-    --chip-dismiss-highlight-color: #888;
+    --chip-dismiss-bg-color: light-dark(
+      var(--color-gray-8),
+      var(--color-gray-2)
+    );
+    --chip-dismiss-highlight-color: light-dark(
+      var(--color-gray-5),
+      var(--color-gray-6)
+    );
   }
 }
 

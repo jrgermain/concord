@@ -216,6 +216,12 @@
       --button-border-color: var(--color-gray-4);
       --button-focus-ring-color: var(--color-gray-transparent);
     }
+
+    &.black,
+    &.white {
+      /* The foreground, background, and border colors are the same as secondary, so we don't need to specify them here  */
+      --button-focus-ring-color: var(--color-gray-transparent);
+    }
   }
 
   /*
@@ -226,15 +232,15 @@
   &.black {
     --button-fg-color: white;
     --button-bg-color: black;
-    --button-border-color: #333;
-    --button-focus-ring-color: light-dark(#3335, #4447);
+    --button-border-color: light-dark(var(--color-gray-3), var(--color-gray-8));
+    --button-focus-ring-color: var(--color-gray-extra-transparent);
   }
 
   &.white {
     --button-fg-color: black;
     --button-bg-color: white;
-    --button-border-color: #ddd;
-    --button-focus-ring-color: light-dark(#bbb3, #eee8);
+    --button-border-color: light-dark(var(--color-border), var(--color-gray-2));
+    --button-focus-ring-color: var(--color-gray-extra-transparent);
   }
 
   &.tertiary {
