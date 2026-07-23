@@ -14,6 +14,7 @@ table.table,
   color: var(--color-text-primary);
   font-family: var(--font-family-body);
   font-weight: var(--font-weight-normal);
+  overflow: hidden;
 
   &.subtle {
     --table-bg-odd: transparent;
