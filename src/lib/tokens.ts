@@ -7,7 +7,7 @@ export type ColorVariant =
   | "teal"
   | "blue"
   | "purple"
-  | "magenta"
+  | "pink"
   | "gray"
   | "black"
   | "white";
@@ -102,17 +102,17 @@ export enum Color {
   Purple9 = "var(--color-purple-9)",
   PurpleTransparent = "var(--color-purple-transparent)",
   PurpleExtraTransparent = "var(--color-purple-extra-transparent)",
-  Magenta1 = "var(--color-magenta-1)",
-  Magenta2 = "var(--color-magenta-2)",
-  Magenta3 = "var(--color-magenta-3)",
-  Magenta4 = "var(--color-magenta-4)",
-  Magenta5 = "var(--color-magenta-5)",
-  Magenta6 = "var(--color-magenta-6)",
-  Magenta7 = "var(--color-magenta-7)",
-  Magenta8 = "var(--color-magenta-8)",
-  Magenta9 = "var(--color-magenta-9)",
-  MagentaTransparent = "var(--color-magenta-transparent)",
-  MagentaExtraTransparent = "var(--color-magenta-extra-transparent)",
+  Pink1 = "var(--color-pink-1)",
+  Pink2 = "var(--color-pink-2)",
+  Pink3 = "var(--color-pink-3)",
+  Pink4 = "var(--color-pink-4)",
+  Pink5 = "var(--color-pink-5)",
+  Pink6 = "var(--color-pink-6)",
+  Pink7 = "var(--color-pink-7)",
+  Pink8 = "var(--color-pink-8)",
+  Pink9 = "var(--color-pink-9)",
+  PinkTransparent = "var(--color-pink-transparent)",
+  PinkExtraTransparent = "var(--color-pink-extra-transparent)",
   Gray1 = "var(--color-gray-1)",
   Gray2 = "var(--color-gray-2)",
   Gray3 = "var(--color-gray-3)",

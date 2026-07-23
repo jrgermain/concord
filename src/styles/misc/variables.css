@@ -111,18 +111,18 @@
   --color-purple-transparent: light-dark(#b562ea66, #7819a880);
   --color-purple-extra-transparent: light-dark(#b562ea33, #7819a859);
 
-  /* Magenta */
-  --color-magenta-1: light-dark(#21000c, #ffe1f0);
-  --color-magenta-2: light-dark(#410120, #ffadd0);
-  --color-magenta-3: light-dark(#73003d, #fe7cb1);
-  --color-magenta-4: light-dark(#9b0058, #e45193);
-  --color-magenta-5: #c32775;
-  --color-magenta-6: light-dark(#e45193, #9b0058);
-  --color-magenta-7: light-dark(#fe7cb1, #73003d);
-  --color-magenta-8: light-dark(#ffadd0, #410120);
-  --color-magenta-9: light-dark(#ffe1f0, #21000c);
-  --color-magenta-transparent: light-dark(#e4519366, #9b005880);
-  --color-magenta-extra-transparent: light-dark(#e4519333, #9b005859);
+  /* Pink */
+  --color-pink-1: light-dark(#21000c, #ffe1f0);
+  --color-pink-2: light-dark(#410120, #ffadd0);
+  --color-pink-3: light-dark(#73003d, #fe7cb1);
+  --color-pink-4: light-dark(#9b0058, #e45193);
+  --color-pink-5: #c32775;
+  --color-pink-6: light-dark(#e45193, #9b0058);
+  --color-pink-7: light-dark(#fe7cb1, #73003d);
+  --color-pink-8: light-dark(#ffadd0, #410120);
+  --color-pink-9: light-dark(#ffe1f0, #21000c);
+  --color-pink-transparent: light-dark(#e4519366, #9b005880);
+  --color-pink-extra-transparent: light-dark(#e4519333, #9b005859);
 
   /* Gray */
   --color-gray-1: light-dark(#090b0f, #eceff4);

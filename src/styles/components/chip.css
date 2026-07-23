@@ -168,17 +168,17 @@
     );
   }
 
-  &.magenta {
-    --chip-bg-color: var(--color-magenta-5);
-    --chip-border-color: var(--color-magenta-4);
-    --chip-focus-color: var(--color-magenta-transparent);
+  &.pink {
+    --chip-bg-color: var(--color-pink-5);
+    --chip-border-color: var(--color-pink-4);
+    --chip-focus-color: var(--color-pink-transparent);
     --chip-dismiss-bg-color: light-dark(
-      var(--color-magenta-3),
-      var(--color-magenta-7)
+      var(--color-pink-3),
+      var(--color-pink-7)
     );
     --chip-dismiss-highlight-color: light-dark(
-      var(--color-magenta-8),
-      var(--color-magenta-3)
+      var(--color-pink-8),
+      var(--color-pink-3)
     );
   }
 
@@ -315,18 +315,18 @@
       );
     }
 
-    &.magenta {
-      --chip-fg-color: var(--color-magenta-2);
-      --chip-bg-color: var(--color-magenta-9);
-      --chip-border-color: var(--color-magenta-8);
-      --chip-focus-color: var(--color-magenta-extra-transparent);
+    &.pink {
+      --chip-fg-color: var(--color-pink-2);
+      --chip-bg-color: var(--color-pink-9);
+      --chip-border-color: var(--color-pink-8);
+      --chip-focus-color: var(--color-pink-extra-transparent);
       --chip-dismiss-bg-color: light-dark(
-        var(--color-magenta-8),
-        var(--color-magenta-7)
+        var(--color-pink-8),
+        var(--color-pink-7)
       );
       --chip-dismiss-highlight-color: light-dark(
-        var(--color-magenta-7),
-        var(--color-magenta-3)
+        var(--color-pink-7),
+        var(--color-pink-3)
       );
     }
 

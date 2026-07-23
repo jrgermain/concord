@@ -149,11 +149,11 @@
     --button-focus-ring-color: var(--color-purple-extra-transparent);
   }
 
-  &.magenta {
-    --button-fg-color: var(--color-magenta-1);
-    --button-bg-color: var(--color-magenta-9);
-    --button-border-color: var(--color-magenta-8);
-    --button-focus-ring-color: var(--color-magenta-extra-transparent);
+  &.pink {
+    --button-fg-color: var(--color-pink-1);
+    --button-bg-color: var(--color-pink-9);
+    --button-border-color: var(--color-pink-8);
+    --button-focus-ring-color: var(--color-pink-extra-transparent);
   }
 
   &.primary {
@@ -205,10 +205,10 @@
       --button-focus-ring-color: var(--color-purple-transparent);
     }
 
-    &.magenta {
-      --button-bg-color: var(--color-magenta-5);
-      --button-border-color: var(--color-magenta-4);
-      --button-focus-ring-color: var(--color-magenta-transparent);
+    &.pink {
+      --button-bg-color: var(--color-pink-5);
+      --button-border-color: var(--color-pink-4);
+      --button-focus-ring-color: var(--color-pink-transparent);
     }
 
     &.gray {
@@ -320,12 +320,12 @@
       }
     }
 
-    &.magenta {
-      --button-fg-color: var(--color-magenta-4);
-      --button-hover-bg-color: var(--color-magenta-extra-transparent);
+    &.pink {
+      --button-fg-color: var(--color-pink-4);
+      --button-hover-bg-color: var(--color-pink-extra-transparent);
 
       &:is(:focus-visible, .focus) {
-        --button-bg-color: var(--color-magenta-transparent);
+        --button-bg-color: var(--color-pink-transparent);
       }
     }
 
