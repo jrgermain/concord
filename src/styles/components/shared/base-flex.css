@@ -32,13 +32,11 @@
     gap: var(--space-xl);
   }
 
-  &.horizontal,
-  &.horizontally {
+  &.horizontal {
     flex-direction: row;
   }
 
-  &.vertical,
-  &.vertically {
+  &.vertical {
     flex-direction: column;
   }
 }
