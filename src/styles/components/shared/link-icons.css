@@ -11,32 +11,32 @@
  * - Button
  * - App Sidebar Item
  */
-:is(.link, .button, .app-sidebar-item, .markdown a) {
+:is(.cd-link, .cd-button, .cd-app-sidebar-item, .cd-markdown a) {
   &::after {
     print-color-adjust: exact;
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
-    background-color: var(--color-gray-5);
+    background-color: var(--cd-color-gray-5);
     display: inline-block;
     vertical-align: baseline;
     margin-inline: 0.25em;
     position: relative;
-    transition: background-color var(--duration-s) var(--ease-default);
+    transition: background-color var(--cd-duration-s) var(--cd-ease-default);
   }
 
-  &:is(:hover, .hover)::after {
-    background-color: var(--color-gray-4);
+  &:is(:hover, .cd-is-hovered)::after {
+    background-color: var(--cd-color-gray-4);
   }
 
-  &.button::after {
+  &.cd-button::after {
     background-color: currentcolor !important;
     margin-inline: initial;
   }
 
   /* External icon */
-  &[target="_blank"]:not(.no-external-icon),
-  &.has-external-icon {
+  &[target="_blank"]:not(.cd-icon-after-none),
+  &.cd-icon-after-external {
     &::after {
       content: "";
       mask-image: url("@/src/icons/external.svg");
@@ -45,14 +45,14 @@
       inset-block-start: 0.06em;
     }
 
-    &.button::after {
+    &.cd-button::after {
       inset-block-start: -0.03em;
     }
   }
 
   /* Download icon */
-  &[download]:not(.no-download-icon),
-  &.has-download-icon {
+  &[download]:not(.cd-icon-after-none),
+  &.cd-icon-after-download {
     &::after {
       content: "";
       mask-image: url("@/src/icons/download.svg");
@@ -61,7 +61,7 @@
       inset-block-start: 0.07em;
     }
 
-    &.button::after {
+    &.cd-button::after {
       inset-block-start: -0.05em;
     }
   }

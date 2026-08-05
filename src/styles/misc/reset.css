@@ -6,7 +6,7 @@
 }
 
 :where(:focus-visible) {
-  outline: var(--border-m) solid var(--color-brand-5);
+  outline: var(--cd-border-m) solid var(--cd-color-brand-5);
 }
 
 html {
@@ -16,8 +16,8 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--color-surface-secondary);
-  color: var(--color-text-primary);
+  background-color: var(--cd-color-surface-secondary);
+  color: var(--cd-color-text-primary);
 }
 
 img,

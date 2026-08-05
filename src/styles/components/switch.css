@@ -1,40 +1,40 @@
-.switch {
-  --switch-scale: 1;
+.cd-switch {
+  --cd-switch-scale: 1;
 
-  &.small {
-    --switch-scale: 0.8;
+  &.cd-size-small {
+    --cd-switch-scale: 0.8;
   }
 }
 
 /* Style the label of a labeled switch, which is also the container that holds the switch itself */
-label.switch {
+label.cd-switch {
   inline-size: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  font-weight: var(--font-weight-semibold);
-  gap: var(--space-3xs);
-  font-size: calc(var(--font-size-m) * var(--switch-scale));
-  font-family: var(--font-family-body);
+  font-weight: var(--cd-font-weight-semibold);
+  gap: var(--cd-space-3xs);
+  font-size: calc(var(--cd-font-size-m) * var(--cd-switch-scale));
+  font-family: var(--cd-font-family-body);
 }
 
 /* Style the switch itself */
-input[type="checkbox"].switch,
-label.switch input[type="checkbox"] {
-  font-size: calc(1rem * var(--switch-scale));
+input[type="checkbox"].cd-switch,
+label.cd-switch input[type="checkbox"] {
+  font-size: calc(1rem * var(--cd-switch-scale));
   print-color-adjust: exact;
   appearance: none;
   block-size: 1.8em;
   inline-size: 3em;
-  border-radius: var(--radius-full);
-  background-color: var(--color-gray-7);
+  border-radius: var(--cd-radius-full);
+  background-color: var(--cd-color-gray-7);
   position: relative;
   flex: none;
   transition-property: background-color, box-shadow, border-color;
-  transition-duration: var(--duration-m);
-  transition-timing-function: var(--ease-default);
-  border: 0.1em solid var(--color-gray-6);
+  transition-duration: var(--cd-duration-m);
+  transition-timing-function: var(--cd-ease-default);
+  border: 0.1em solid var(--cd-color-gray-6);
   cursor: pointer;
 
   &::after {
@@ -45,39 +45,40 @@ label.switch input[type="checkbox"] {
     background-color: white;
     inset-inline-start: 0.1em;
     inset-block-start: 0.1em;
-    border-radius: var(--radius-full);
-    box-shadow: var(--shadow-s);
+    border-radius: var(--cd-radius-full);
+    box-shadow: var(--cd-shadow-s);
     transition-property: border-color, transform;
-    transition-duration: var(--duration-m);
-    transition-timing-function: var(--ease-both);
+    transition-duration: var(--cd-duration-m);
+    transition-timing-function: var(--cd-ease-both);
     transform: translateX(0);
   }
 
   &:disabled {
-    opacity: var(--opacity-disabled);
+    opacity: var(--cd-opacity-disabled);
     cursor: not-allowed;
   }
 
-  &:is(:focus-visible, .focus) {
-    border-color: var(--color-gray-6);
+  &:is(:focus-visible, .cd-is-focused) {
+    border-color: var(--cd-color-gray-6);
     box-shadow:
-      0 0 0 0.08em var(--color-gray-6),
-      0 0 0 calc(0.16em + var(--border-s)) var(--color-gray-transparent);
+      0 0 0 0.08em var(--cd-color-gray-6),
+      0 0 0 calc(0.16em + var(--cd-border-s)) var(--cd-color-gray-transparent);
     outline: 0;
   }
 
   &:checked {
-    background-color: var(--color-brand-6);
-    border-color: var(--color-brand-5);
+    background-color: var(--cd-color-brand-6);
+    border-color: var(--cd-color-brand-5);
 
     &::after {
       transform: translateX(1.2em);
     }
 
-    &:is(:focus-visible, .focus) {
+    &:is(:focus-visible, .cd-is-focused) {
       box-shadow:
-        0 0 0 0.08em var(--color-brand-5),
-        0 0 0 calc(0.16em + var(--border-s)) var(--color-brand-transparent);
+        0 0 0 0.08em var(--cd-color-brand-5),
+        0 0 0 calc(0.16em + var(--cd-border-s))
+          var(--cd-color-brand-transparent);
     }
   }
 

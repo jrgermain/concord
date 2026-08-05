@@ -1,27 +1,27 @@
-.modal::backdrop,
-.drawer::backdrop {
-  --dialog-backdrop-starting-opacity: 0;
-  --dialog-backdrop-open-opacity: 0.75;
-  --dialog-backdrop-ending-opacity: 0;
+.cd-modal::backdrop,
+.cd-drawer::backdrop {
+  --cd-dialog-backdrop-starting-opacity: 0;
+  --cd-dialog-backdrop-open-opacity: 0.75;
+  --cd-dialog-backdrop-ending-opacity: 0;
 
   @media (prefers-color-scheme: dark) {
-    --dialog-backdrop-open-opacity: 0.85;
+    --cd-dialog-backdrop-open-opacity: 0.85;
   }
 
-  background-color: light-dark(var(--color-gray-2), var(--color-gray-8));
+  background-color: light-dark(var(--cd-color-gray-2), var(--cd-color-gray-8));
 }
 
-.modal,
-.drawer {
-  --dialog-starting-opacity: 0;
-  --dialog-open-opacity: 1;
-  --dialog-ending-opacity: 0;
+.cd-modal,
+.cd-drawer {
+  --cd-dialog-starting-opacity: 0;
+  --cd-dialog-open-opacity: 1;
+  --cd-dialog-ending-opacity: 0;
 
-  box-shadow: var(--shadow-xl);
-  border: var(--border-s) solid var(--color-border);
-  border-radius: var(--radius-l);
-  background-color: var(--color-surface-primary);
-  color: var(--color-text-primary);
+  box-shadow: var(--cd-shadow-xl);
+  border: var(--cd-border-s) solid var(--cd-color-border);
+  border-radius: var(--cd-radius-l);
+  background-color: var(--cd-color-surface-primary);
+  color: var(--cd-color-text-primary);
   padding: 0;
   flex-direction: column;
   gap: 0;
@@ -31,21 +31,21 @@
   }
 }
 
-.modal-header,
-.drawer-header {
-  --dialog-dismiss-btn-size: 1.8rem;
+.cd-modal-header,
+.cd-drawer-header {
+  --cd-dialog-dismiss-btn-size: 1.8rem;
 
-  font-family: var(--font-family-heading);
-  font-size: var(--font-size-l);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-s);
-  padding: var(--space-m);
-  padding-block-end: var(--space-2xs);
+  font-family: var(--cd-font-family-heading);
+  font-size: var(--cd-font-size-l);
+  font-weight: var(--cd-font-weight-bold);
+  line-height: var(--cd-line-height-s);
+  padding: var(--cd-space-m);
+  padding-block-end: var(--cd-space-2xs);
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--color-brand-3);
+  color: var(--cd-color-brand-3);
   margin: 0;
   position: relative;
 
@@ -61,36 +61,38 @@
     margin: 0;
   }
 
-  &:has(.dismiss-button) {
-    padding-inline-end: calc(var(--dialog-dismiss-btn-size) + var(--space-m));
+  &:has(.cd-dismiss-button) {
+    padding-inline-end: calc(
+      var(--cd-dialog-dismiss-btn-size) + var(--cd-space-m)
+    );
 
     /* When no title is present, ensure the header can fit the absolutely positioned dismiss button */
     min-height: calc(
-      var(--dialog-dismiss-btn-offset) + var(--dialog-dismiss-btn-size)
+      var(--cd-dialog-dismiss-btn-offset) + var(--cd-dialog-dismiss-btn-size)
     );
   }
 
-  .dismiss-button {
-    --dismiss-button-size: var(--dialog-dismiss-btn-size);
-    --dismiss-button-fg-color: var(--color-text-primary);
-    --dismiss-button-bg-color: light-dark(
-      var(--color-gray-9),
-      var(--color-gray-8)
+  .cd-dismiss-button {
+    --cd-dismiss-button-size: var(--cd-dialog-dismiss-btn-size);
+    --cd-dismiss-button-fg-color: var(--cd-color-text-primary);
+    --cd-dismiss-button-bg-color: light-dark(
+      var(--cd-color-gray-9),
+      var(--cd-color-gray-8)
     );
-    --dismiss-button-highlight-color: light-dark(
-      var(--color-gray-8),
-      var(--color-gray-7)
+    --cd-dismiss-button-highlight-color: light-dark(
+      var(--cd-color-gray-8),
+      var(--cd-color-gray-7)
     );
 
     position: absolute;
-    inset-block-start: var(--dialog-dismiss-btn-offset);
-    inset-inline-end: var(--dialog-dismiss-btn-offset);
+    inset-block-start: var(--cd-dialog-dismiss-btn-offset);
+    inset-inline-end: var(--cd-dialog-dismiss-btn-offset);
   }
 }
 
-.modal-body,
-.drawer-body {
-  padding: var(--space-m);
+.cd-modal-body,
+.cd-drawer-body {
+  padding: var(--cd-space-m);
   flex-shrink: 1;
   display: block;
   overflow: auto;
@@ -98,54 +100,54 @@
 }
 
 /* If there's a header and a body, collapse some of the spacing between them */
-.modal-header + .modal-body,
-.drawer-header + .drawer-body {
-  padding-block-start: var(--space-xs);
+.cd-modal-header + .cd-modal-body,
+.cd-drawer-header + .cd-drawer-body {
+  padding-block-start: var(--cd-space-xs);
 }
 
 /* If there's a header and a footer, but no body, increase the spacing between them */
-.modal-header:has(+ .modal-footer),
-.drawer-header:has(+ .drawer-footer) {
-  padding-block-end: var(--space-m);
+.cd-modal-header:has(+ .cd-modal-footer),
+.cd-drawer-header:has(+ .cd-drawer-footer) {
+  padding-block-end: var(--cd-space-m);
 }
 
 /* Fade in/out (mixed browser support as of March 2025) */
-:is(.modal, .drawer)[open] {
+:is(.cd-modal, .cd-drawer)[open] {
   display: flex;
-  transform: var(--dialog-open-transform);
-  opacity: var(--dialog-open-opacity);
+  transform: var(--cd-dialog-open-transform);
+  opacity: var(--cd-dialog-open-opacity);
 }
 
-:is(.modal, .drawer)[open]::backdrop {
-  opacity: var(--dialog-backdrop-open-opacity);
+:is(.cd-modal, .cd-drawer)[open]::backdrop {
+  opacity: var(--cd-dialog-backdrop-open-opacity);
 }
 
-:is(.modal, .drawer),
-:is(.modal, .drawer)::backdrop {
+:is(.cd-modal, .cd-drawer),
+:is(.cd-modal, .cd-drawer)::backdrop {
   transition-property: transform, opacity, display, overlay;
-  transition-duration: var(--duration-l);
+  transition-duration: var(--cd-duration-l);
   transition-behavior: allow-discrete;
 }
 
-:is(.modal, .drawer) {
-  transform: var(--dialog-ending-transform);
-  opacity: var(--dialog-ending-opacity);
-  transition-timing-function: var(--ease-out);
+:is(.cd-modal, .cd-drawer) {
+  transform: var(--cd-dialog-ending-transform);
+  opacity: var(--cd-dialog-ending-opacity);
+  transition-timing-function: var(--cd-ease-out);
 }
 
-:is(.modal, .drawer)::backdrop {
-  opacity: var(--dialog-backdrop-ending-opacity);
-  transition-timing-function: var(--ease-default);
+:is(.cd-modal, .cd-drawer)::backdrop {
+  opacity: var(--cd-dialog-backdrop-ending-opacity);
+  transition-timing-function: var(--cd-ease-default);
 }
 
 @starting-style {
-  :is(.modal, .drawer)[open] {
-    transform: var(--dialog-starting-transform);
-    opacity: var(--dialog-starting-opacity);
+  :is(.cd-modal, .cd-drawer)[open] {
+    transform: var(--cd-dialog-starting-transform);
+    opacity: var(--cd-dialog-starting-opacity);
   }
 
-  :is(.modal, .drawer)[open]::backdrop {
-    opacity: var(--dialog-backdrop-starting-opacity);
+  :is(.cd-modal, .cd-drawer)[open]::backdrop {
+    opacity: var(--cd-dialog-backdrop-starting-opacity);
   }
 }
 

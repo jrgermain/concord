@@ -1,18 +1,18 @@
-.checkbox,
-.radio {
+.cd-checkbox,
+.cd-radio {
   display: flex;
   align-items: start;
-  gap: var(--space-2xs);
+  gap: var(--cd-space-2xs);
   font-size: 1rem;
   cursor: pointer;
   user-select: none;
-  line-height: var(--line-height-m);
-  font-family: var(--font-family-body);
-  font-weight: var(--font-weight-normal);
+  line-height: var(--cd-line-height-m);
+  font-family: var(--cd-font-family-body);
+  font-weight: var(--cd-font-weight-normal);
 
   &:has(input:disabled) {
     cursor: not-allowed;
-    opacity: var(--opacity-disabled);
+    opacity: var(--cd-opacity-disabled);
   }
 
   input {
@@ -22,12 +22,12 @@
     height: 1em;
     font-size: inherit;
     position: relative;
-    border: var(--border-s) solid var(--color-gray-6);
+    border: var(--cd-border-s) solid var(--cd-color-gray-6);
     background-color: light-dark(white, black);
-    box-shadow: var(--shadow-s);
+    box-shadow: var(--cd-shadow-s);
     transition-property: background-color, border-color, box-shadow;
-    transition-duration: var(--duration-s);
-    transition-timing-function: var(--ease-default);
+    transition-duration: var(--cd-duration-s);
+    transition-timing-function: var(--cd-ease-default);
     flex-shrink: 0;
 
     /* Vertically center the box with the first line of its label (due to line height of 1.2) */
@@ -35,9 +35,9 @@
   }
 }
 
-.checkbox-group,
-.radio-group {
+.cd-checkbox-group,
+.cd-radio-group {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2xs);
+  gap: var(--cd-space-2xs);
 }

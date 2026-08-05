@@ -3,30 +3,30 @@
  * styles defined in ./shared/base-dialog.css
  */
 
-.modal {
-  --dialog-dismiss-btn-offset: 9px;
-  --modal-size: fit-content;
+.cd-modal {
+  --cd-dialog-dismiss-btn-offset: 9px;
+  --cd-modal-size: fit-content;
 
   @media (prefers-reduced-motion: no-preference) {
-    --dialog-starting-transform: translateY(16px) scale(0.95);
-    --dialog-ending-transform: translateY(0) scale(0.9);
+    --cd-dialog-starting-transform: translateY(16px) scale(0.95);
+    --cd-dialog-ending-transform: translateY(0) scale(0.9);
   }
 
-  max-height: calc(100svh - 4 * var(--space-body-y));
-  max-width: calc(100svw - 4 * var(--space-body-x));
+  max-height: calc(100svh - 4 * var(--cd-space-body-y));
+  max-width: calc(100svw - 4 * var(--cd-space-body-x));
   margin: auto;
-  width: var(--modal-size);
+  width: var(--cd-modal-size);
 
-  &.small {
-    --modal-size: 25rem;
+  &.cd-size-small {
+    --cd-modal-size: 25rem;
   }
 
-  &.medium {
-    --modal-size: 40rem;
+  &.cd-size-medium {
+    --cd-modal-size: 40rem;
   }
 
-  &.large {
-    --modal-size: 55rem;
+  &.cd-size-large {
+    --cd-modal-size: 55rem;
   }
 
   /*
@@ -36,19 +36,19 @@
    * them to inherit their parent's color scheme. We still allow explicit
    * overrides using the standard light-mode and dark-mode classes.
    */
-  &:not(.light-mode, .dark-mode) {
+  &:not(.cd-light-mode, .cd-dark-mode) {
     color-scheme: light dark;
   }
 }
 
-.modal-footer {
-  padding: var(--space-xs);
+.cd-modal-footer {
+  padding: var(--cd-space-xs);
   flex-shrink: 0;
   display: flex;
-  gap: var(--space-2xs);
+  gap: var(--cd-space-2xs);
   justify-content: flex-start;
-  background-color: var(--color-surface-secondary);
-  border-block-start: var(--border-s) solid var(--color-border);
+  background-color: var(--cd-color-surface-secondary);
+  border-block-start: var(--cd-border-s) solid var(--cd-color-border);
   margin: 0;
 
   @media screen and (width < 30rem) {
@@ -57,7 +57,7 @@
     justify-content: stretch;
   }
 
-  .button:not(.small, .medium, .large) {
+  .cd-button:not(.cd-size-small, .cd-size-medium, .cd-size-large) {
     font-size: 0.9rem;
   }
 }

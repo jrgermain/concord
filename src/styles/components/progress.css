@@ -1,4 +1,4 @@
-@keyframes indeterminate-progress {
+@keyframes cd-indeterminate-progress {
   from {
     opacity: 0.25;
   }
@@ -8,72 +8,72 @@
   }
 }
 
-progress.progress {
+progress.cd-progress {
   appearance: none;
   inline-size: 100%;
   block-size: 1em;
 }
 
 @supports selector(::-moz-progress-bar) {
-  progress.progress {
-    border-radius: var(--radius-s);
+  progress.cd-progress {
+    border-radius: var(--cd-radius-s);
     border: 0;
     display: block;
     inline-size: 100%;
     block-size: 1em;
-    box-shadow: inset 0 0 0 var(--border-s) var(--color-border);
-    background: var(--color-gray-9);
+    box-shadow: inset 0 0 0 var(--cd-border-s) var(--cd-color-border);
+    background: var(--cd-color-gray-9);
     box-sizing: border-box;
     overflow: clip;
   }
 }
 
-.progress::-webkit-progress-bar {
-  border-radius: var(--radius-s);
+.cd-progress::-webkit-progress-bar {
+  border-radius: var(--cd-radius-s);
   border: 0;
   display: block;
   inline-size: 100%;
   block-size: 1em;
-  box-shadow: inset 0 0 0 var(--border-s) var(--color-border);
-  background: var(--color-gray-9);
+  box-shadow: inset 0 0 0 var(--cd-border-s) var(--cd-color-border);
+  background: var(--cd-color-gray-9);
   box-sizing: border-box;
   overflow: clip;
 }
 
-.progress::-webkit-progress-value {
-  border-radius: var(--radius-s);
-  border: var(--border-s) solid var(--color-blue-5);
+.cd-progress::-webkit-progress-value {
+  border-radius: var(--cd-radius-s);
+  border: var(--cd-border-s) solid var(--cd-color-blue-5);
   box-sizing: border-box;
   background-size: 100vw;
   background-image: linear-gradient(
     to right,
-    var(--color-blue-6),
-    var(--color-blue-4)
+    var(--cd-color-blue-6),
+    var(--cd-color-blue-4)
   );
 }
 
-.progress::-moz-progress-bar {
-  border-radius: var(--radius-s);
-  border: var(--border-s) solid var(--color-blue-5);
+.cd-progress::-moz-progress-bar {
+  border-radius: var(--cd-radius-s);
+  border: var(--cd-border-s) solid var(--cd-color-blue-5);
   box-sizing: border-box;
   background-size: 100vw;
   background-image: linear-gradient(
     to right,
-    var(--color-blue-6),
-    var(--color-blue-4)
+    var(--cd-color-blue-6),
+    var(--cd-color-blue-4)
   );
 }
 
-.progress:indeterminate::-webkit-progress-value {
+.cd-progress:indeterminate::-webkit-progress-value {
   opacity: 0.5;
   inline-size: 100% !important;
-  animation: indeterminate-progress 1s var(--ease-both-subtle) infinite
+  animation: cd-indeterminate-progress 1s var(--cd-ease-both-subtle) infinite
     alternate;
 }
 
-.progress:indeterminate::-moz-progress-bar {
+.cd-progress:indeterminate::-moz-progress-bar {
   opacity: 0.5;
   inline-size: 100% !important;
-  animation: indeterminate-progress 1s var(--ease-both-subtle) infinite
+  animation: cd-indeterminate-progress 1s var(--cd-ease-both-subtle) infinite
     alternate;
 }

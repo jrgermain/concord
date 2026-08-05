@@ -1,66 +1,66 @@
-.chip {
-  --chip-fg-color: white;
-  --chip-bg-color: var(--color-brand-5);
-  --chip-border-color: var(--color-brand-4);
-  --chip-dismiss-bg-color: light-dark(
-    var(--color-brand-3),
-    var(--color-brand-7)
+.cd-chip {
+  --cd-chip-fg-color: white;
+  --cd-chip-bg-color: var(--cd-color-brand-5);
+  --cd-chip-border-color: var(--cd-color-brand-4);
+  --cd-chip-dismiss-bg-color: light-dark(
+    var(--cd-color-brand-3),
+    var(--cd-color-brand-7)
   );
-  --chip-dismiss-highlight-color: light-dark(
-    var(--color-brand-8),
-    var(--color-brand-3)
+  --cd-chip-dismiss-highlight-color: light-dark(
+    var(--cd-color-brand-8),
+    var(--cd-color-brand-3)
   );
-  --chip-focus-color: var(--color-brand-transparent);
-  --chip-padding-x: var(--space-xs);
-  --chip-padding-y: var(--space-3xs);
+  --cd-chip-focus-color: var(--cd-color-brand-transparent);
+  --cd-chip-padding-x: var(--cd-space-xs);
+  --cd-chip-padding-y: var(--cd-space-3xs);
 
   display: inline-flex;
   position: relative;
   align-items: center;
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-s);
-  font-family: var(--font-family-body);
-  font-weight: var(--font-weight-normal);
-  padding: var(--chip-padding-y) var(--chip-padding-x);
-  background-color: var(--chip-bg-color);
-  border: var(--border-s) solid var(--chip-border-color);
-  color: var(--chip-fg-color);
+  border-radius: var(--cd-radius-full);
+  font-size: var(--cd-font-size-s);
+  font-family: var(--cd-font-family-body);
+  font-weight: var(--cd-font-weight-normal);
+  padding: var(--cd-chip-padding-y) var(--cd-chip-padding-x);
+  background-color: var(--cd-chip-bg-color);
+  border: var(--cd-border-s) solid var(--cd-chip-border-color);
+  color: var(--cd-chip-fg-color);
   flex-shrink: 0;
   cursor: default;
   transition-property: box-shadow, background-color, border-color, transform;
-  transition-duration: var(--duration-m);
-  transition-timing-function: var(--ease-default);
+  transition-duration: var(--cd-duration-m);
+  transition-timing-function: var(--cd-ease-default);
   text-decoration: none;
   appearance: none;
-  line-height: var(--line-height-xs);
+  line-height: var(--cd-line-height-xs);
   white-space: nowrap;
 
-  &.clickable {
+  &.cd-is-clickable {
     cursor: pointer;
-    box-shadow: var(--shadow-s);
+    box-shadow: var(--cd-shadow-s);
     transform: scale(1);
 
-    &:is(:focus-visible, .focus),
-    &:has(.chip-label:focus-visible) {
+    &:is(:focus-visible, .cd-is-focused),
+    &:has(.cd-chip-label:focus-visible) {
       outline: 0;
       box-shadow:
-        var(--shadow-s),
-        0 0 0 0.1em var(--chip-border-color),
-        0 0 0 calc(0.2em + var(--border-s)) var(--chip-focus-color);
+        var(--cd-shadow-s),
+        0 0 0 0.1em var(--cd-chip-border-color),
+        0 0 0 calc(0.2em + var(--cd-border-s)) var(--cd-chip-focus-color);
 
-      .dismiss-button {
+      .cd-dismiss-button {
         opacity: 0.5;
       }
     }
 
     /* Change the background on hover, but only if the cursor is not over the delete button */
-    &.hover,
-    &:hover:not(:has(.dismiss-button:hover)) {
-      background-color: var(--chip-border-color);
+    &.cd-is-hovered,
+    &:hover:not(:has(.cd-dismiss-button:hover)) {
+      background-color: var(--cd-chip-border-color);
     }
 
-    &.active,
-    &:active:not(:has(.dismiss-button:active)) {
+    &.cd-is-active,
+    &:active:not(:has(.cd-dismiss-button:active)) {
       transform: scale(0.96);
 
       /*
@@ -73,339 +73,348 @@
     }
   }
 
-  &.red {
-    --chip-bg-color: var(--color-red-5);
-    --chip-border-color: var(--color-red-4);
-    --chip-focus-color: var(--color-red-transparent);
-    --chip-dismiss-bg-color: light-dark(var(--color-red-3), var(--color-red-7));
-    --chip-dismiss-highlight-color: light-dark(
-      var(--color-red-8),
-      var(--color-red-3)
+  &.cd-color-red {
+    --cd-chip-bg-color: var(--cd-color-red-5);
+    --cd-chip-border-color: var(--cd-color-red-4);
+    --cd-chip-focus-color: var(--cd-color-red-transparent);
+    --cd-chip-dismiss-bg-color: light-dark(
+      var(--cd-color-red-3),
+      var(--cd-color-red-7)
+    );
+    --cd-chip-dismiss-highlight-color: light-dark(
+      var(--cd-color-red-8),
+      var(--cd-color-red-3)
     );
   }
 
-  &.orange {
-    --chip-bg-color: var(--color-orange-5);
-    --chip-border-color: var(--color-orange-4);
-    --chip-focus-color: var(--color-orange-transparent);
-    --chip-dismiss-bg-color: light-dark(
-      var(--color-orange-3),
-      var(--color-orange-7)
+  &.cd-color-orange {
+    --cd-chip-bg-color: var(--cd-color-orange-5);
+    --cd-chip-border-color: var(--cd-color-orange-4);
+    --cd-chip-focus-color: var(--cd-color-orange-transparent);
+    --cd-chip-dismiss-bg-color: light-dark(
+      var(--cd-color-orange-3),
+      var(--cd-color-orange-7)
     );
-    --chip-dismiss-highlight-color: light-dark(
-      var(--color-orange-8),
-      var(--color-orange-3)
-    );
-  }
-
-  &.yellow {
-    --chip-bg-color: var(--color-yellow-5);
-    --chip-border-color: var(--color-yellow-4);
-    --chip-focus-color: var(--color-yellow-transparent);
-    --chip-dismiss-bg-color: light-dark(
-      var(--color-yellow-3),
-      var(--color-yellow-7)
-    );
-    --chip-dismiss-highlight-color: light-dark(
-      var(--color-yellow-8),
-      var(--color-yellow-3)
+    --cd-chip-dismiss-highlight-color: light-dark(
+      var(--cd-color-orange-8),
+      var(--cd-color-orange-3)
     );
   }
 
-  &.green {
-    --chip-bg-color: var(--color-green-5);
-    --chip-border-color: var(--color-green-4);
-    --chip-focus-color: var(--color-green-transparent);
-    --chip-dismiss-bg-color: light-dark(
-      var(--color-green-3),
-      var(--color-green-7)
+  &.cd-color-yellow {
+    --cd-chip-bg-color: var(--cd-color-yellow-5);
+    --cd-chip-border-color: var(--cd-color-yellow-4);
+    --cd-chip-focus-color: var(--cd-color-yellow-transparent);
+    --cd-chip-dismiss-bg-color: light-dark(
+      var(--cd-color-yellow-3),
+      var(--cd-color-yellow-7)
     );
-    --chip-dismiss-highlight-color: light-dark(
-      var(--color-green-8),
-      var(--color-green-3)
-    );
-  }
-
-  &.teal {
-    --chip-bg-color: var(--color-teal-5);
-    --chip-border-color: var(--color-teal-4);
-    --chip-focus-color: var(--color-teal-transparent);
-    --chip-dismiss-bg-color: light-dark(
-      var(--color-teal-3),
-      var(--color-teal-7)
-    );
-    --chip-dismiss-highlight-color: light-dark(
-      var(--color-teal-8),
-      var(--color-teal-3)
+    --cd-chip-dismiss-highlight-color: light-dark(
+      var(--cd-color-yellow-8),
+      var(--cd-color-yellow-3)
     );
   }
 
-  &.blue {
-    --chip-bg-color: var(--color-blue-5);
-    --chip-border-color: var(--color-blue-4);
-    --chip-focus-color: var(--color-blue-transparent);
-    --chip-dismiss-bg-color: light-dark(
-      var(--color-blue-3),
-      var(--color-blue-7)
+  &.cd-color-green {
+    --cd-chip-bg-color: var(--cd-color-green-5);
+    --cd-chip-border-color: var(--cd-color-green-4);
+    --cd-chip-focus-color: var(--cd-color-green-transparent);
+    --cd-chip-dismiss-bg-color: light-dark(
+      var(--cd-color-green-3),
+      var(--cd-color-green-7)
     );
-    --chip-dismiss-highlight-color: light-dark(
-      var(--color-blue-8),
-      var(--color-blue-3)
-    );
-  }
-
-  &.purple {
-    --chip-bg-color: var(--color-purple-5);
-    --chip-border-color: var(--color-purple-4);
-    --chip-focus-color: var(--color-purple-transparent);
-    --chip-dismiss-bg-color: light-dark(
-      var(--color-purple-3),
-      var(--color-purple-7)
-    );
-    --chip-dismiss-highlight-color: light-dark(
-      var(--color-purple-8),
-      var(--color-purple-3)
+    --cd-chip-dismiss-highlight-color: light-dark(
+      var(--cd-color-green-8),
+      var(--cd-color-green-3)
     );
   }
 
-  &.pink {
-    --chip-bg-color: var(--color-pink-5);
-    --chip-border-color: var(--color-pink-4);
-    --chip-focus-color: var(--color-pink-transparent);
-    --chip-dismiss-bg-color: light-dark(
-      var(--color-pink-3),
-      var(--color-pink-7)
+  &.cd-color-teal {
+    --cd-chip-bg-color: var(--cd-color-teal-5);
+    --cd-chip-border-color: var(--cd-color-teal-4);
+    --cd-chip-focus-color: var(--cd-color-teal-transparent);
+    --cd-chip-dismiss-bg-color: light-dark(
+      var(--cd-color-teal-3),
+      var(--cd-color-teal-7)
     );
-    --chip-dismiss-highlight-color: light-dark(
-      var(--color-pink-8),
-      var(--color-pink-3)
-    );
-  }
-
-  &.gray {
-    --chip-bg-color: var(--color-gray-5);
-    --chip-border-color: var(--color-gray-4);
-    --chip-focus-color: var(--color-gray-transparent);
-    --chip-dismiss-bg-color: light-dark(
-      var(--color-gray-3),
-      var(--color-gray-7)
-    );
-    --chip-dismiss-highlight-color: light-dark(
-      var(--color-gray-8),
-      var(--color-gray-3)
+    --cd-chip-dismiss-highlight-color: light-dark(
+      var(--cd-color-teal-8),
+      var(--cd-color-teal-3)
     );
   }
 
-  &.subtle {
-    --chip-fg-color: var(--color-brand-2);
-    --chip-bg-color: var(--color-brand-9);
-    --chip-border-color: var(--color-brand-8);
-    --chip-focus-color: var(--color-brand-extra-transparent);
-    --chip-dismiss-bg-color: light-dark(
-      var(--color-brand-8),
-      var(--color-brand-7)
+  &.cd-color-blue {
+    --cd-chip-bg-color: var(--cd-color-blue-5);
+    --cd-chip-border-color: var(--cd-color-blue-4);
+    --cd-chip-focus-color: var(--cd-color-blue-transparent);
+    --cd-chip-dismiss-bg-color: light-dark(
+      var(--cd-color-blue-3),
+      var(--cd-color-blue-7)
     );
-    --chip-dismiss-highlight-color: light-dark(
-      var(--color-brand-7),
-      var(--color-brand-3)
+    --cd-chip-dismiss-highlight-color: light-dark(
+      var(--cd-color-blue-8),
+      var(--cd-color-blue-3)
+    );
+  }
+
+  &.cd-color-purple {
+    --cd-chip-bg-color: var(--cd-color-purple-5);
+    --cd-chip-border-color: var(--cd-color-purple-4);
+    --cd-chip-focus-color: var(--cd-color-purple-transparent);
+    --cd-chip-dismiss-bg-color: light-dark(
+      var(--cd-color-purple-3),
+      var(--cd-color-purple-7)
+    );
+    --cd-chip-dismiss-highlight-color: light-dark(
+      var(--cd-color-purple-8),
+      var(--cd-color-purple-3)
+    );
+  }
+
+  &.cd-color-pink {
+    --cd-chip-bg-color: var(--cd-color-pink-5);
+    --cd-chip-border-color: var(--cd-color-pink-4);
+    --cd-chip-focus-color: var(--cd-color-pink-transparent);
+    --cd-chip-dismiss-bg-color: light-dark(
+      var(--cd-color-pink-3),
+      var(--cd-color-pink-7)
+    );
+    --cd-chip-dismiss-highlight-color: light-dark(
+      var(--cd-color-pink-8),
+      var(--cd-color-pink-3)
+    );
+  }
+
+  &.cd-color-gray {
+    --cd-chip-bg-color: var(--cd-color-gray-5);
+    --cd-chip-border-color: var(--cd-color-gray-4);
+    --cd-chip-focus-color: var(--cd-color-gray-transparent);
+    --cd-chip-dismiss-bg-color: light-dark(
+      var(--cd-color-gray-3),
+      var(--cd-color-gray-7)
+    );
+    --cd-chip-dismiss-highlight-color: light-dark(
+      var(--cd-color-gray-8),
+      var(--cd-color-gray-3)
+    );
+  }
+
+  &.cd-variant-subtle {
+    --cd-chip-fg-color: var(--cd-color-brand-2);
+    --cd-chip-bg-color: var(--cd-color-brand-9);
+    --cd-chip-border-color: var(--cd-color-brand-8);
+    --cd-chip-focus-color: var(--cd-color-brand-extra-transparent);
+    --cd-chip-dismiss-bg-color: light-dark(
+      var(--cd-color-brand-8),
+      var(--cd-color-brand-7)
+    );
+    --cd-chip-dismiss-highlight-color: light-dark(
+      var(--cd-color-brand-7),
+      var(--cd-color-brand-3)
     );
 
-    &.red {
-      --chip-fg-color: var(--color-red-2);
-      --chip-bg-color: var(--color-red-9);
-      --chip-border-color: var(--color-red-8);
-      --chip-focus-color: var(--color-red-extra-transparent);
-      --chip-dismiss-bg-color: light-dark(
-        var(--color-red-8),
-        var(--color-red-7)
+    &.cd-color-red {
+      --cd-chip-fg-color: var(--cd-color-red-2);
+      --cd-chip-bg-color: var(--cd-color-red-9);
+      --cd-chip-border-color: var(--cd-color-red-8);
+      --cd-chip-focus-color: var(--cd-color-red-extra-transparent);
+      --cd-chip-dismiss-bg-color: light-dark(
+        var(--cd-color-red-8),
+        var(--cd-color-red-7)
       );
-      --chip-dismiss-highlight-color: light-dark(
-        var(--color-red-7),
-        var(--color-red-3)
+      --cd-chip-dismiss-highlight-color: light-dark(
+        var(--cd-color-red-7),
+        var(--cd-color-red-3)
       );
     }
 
-    &.orange {
-      --chip-fg-color: var(--color-orange-2);
-      --chip-bg-color: var(--color-orange-9);
-      --chip-border-color: var(--color-orange-8);
-      --chip-focus-color: var(--color-orange-extra-transparent);
-      --chip-dismiss-bg-color: light-dark(
-        var(--color-orange-8),
-        var(--color-orange-7)
+    &.cd-color-orange {
+      --cd-chip-fg-color: var(--cd-color-orange-2);
+      --cd-chip-bg-color: var(--cd-color-orange-9);
+      --cd-chip-border-color: var(--cd-color-orange-8);
+      --cd-chip-focus-color: var(--cd-color-orange-extra-transparent);
+      --cd-chip-dismiss-bg-color: light-dark(
+        var(--cd-color-orange-8),
+        var(--cd-color-orange-7)
       );
-      --chip-dismiss-highlight-color: light-dark(
-        var(--color-orange-7),
-        var(--color-orange-3)
-      );
-    }
-
-    &.yellow {
-      --chip-fg-color: var(--color-yellow-2);
-      --chip-bg-color: var(--color-yellow-9);
-      --chip-border-color: var(--color-yellow-8);
-      --chip-focus-color: var(--color-yellow-extra-transparent);
-      --chip-dismiss-bg-color: light-dark(
-        var(--color-yellow-8),
-        var(--color-yellow-7)
-      );
-      --chip-dismiss-highlight-color: light-dark(
-        var(--color-yellow-7),
-        var(--color-yellow-3)
+      --cd-chip-dismiss-highlight-color: light-dark(
+        var(--cd-color-orange-7),
+        var(--cd-color-orange-3)
       );
     }
 
-    &.green {
-      --chip-fg-color: var(--color-green-2);
-      --chip-bg-color: var(--color-green-9);
-      --chip-border-color: var(--color-green-8);
-      --chip-focus-color: var(--color-green-extra-transparent);
-      --chip-dismiss-bg-color: light-dark(
-        var(--color-green-8),
-        var(--color-green-7)
+    &.cd-color-yellow {
+      --cd-chip-fg-color: var(--cd-color-yellow-2);
+      --cd-chip-bg-color: var(--cd-color-yellow-9);
+      --cd-chip-border-color: var(--cd-color-yellow-8);
+      --cd-chip-focus-color: var(--cd-color-yellow-extra-transparent);
+      --cd-chip-dismiss-bg-color: light-dark(
+        var(--cd-color-yellow-8),
+        var(--cd-color-yellow-7)
       );
-      --chip-dismiss-highlight-color: light-dark(
-        var(--color-green-7),
-        var(--color-green-3)
-      );
-    }
-
-    &.teal {
-      --chip-fg-color: var(--color-teal-2);
-      --chip-bg-color: var(--color-teal-9);
-      --chip-border-color: var(--color-teal-8);
-      --chip-focus-color: var(--color-teal-extra-transparent);
-      --chip-dismiss-bg-color: light-dark(
-        var(--color-teal-8),
-        var(--color-teal-7)
-      );
-      --chip-dismiss-highlight-color: light-dark(
-        var(--color-teal-7),
-        var(--color-teal-3)
+      --cd-chip-dismiss-highlight-color: light-dark(
+        var(--cd-color-yellow-7),
+        var(--cd-color-yellow-3)
       );
     }
 
-    &.blue {
-      --chip-fg-color: var(--color-blue-2);
-      --chip-bg-color: var(--color-blue-9);
-      --chip-border-color: var(--color-blue-8);
-      --chip-focus-color: var(--color-blue-extra-transparent);
-      --chip-dismiss-bg-color: light-dark(
-        var(--color-blue-8),
-        var(--color-blue-7)
+    &.cd-color-green {
+      --cd-chip-fg-color: var(--cd-color-green-2);
+      --cd-chip-bg-color: var(--cd-color-green-9);
+      --cd-chip-border-color: var(--cd-color-green-8);
+      --cd-chip-focus-color: var(--cd-color-green-extra-transparent);
+      --cd-chip-dismiss-bg-color: light-dark(
+        var(--cd-color-green-8),
+        var(--cd-color-green-7)
       );
-      --chip-dismiss-highlight-color: light-dark(
-        var(--color-blue-7),
-        var(--color-blue-3)
-      );
-    }
-
-    &.purple {
-      --chip-fg-color: var(--color-purple-2);
-      --chip-bg-color: var(--color-purple-9);
-      --chip-border-color: var(--color-purple-8);
-      --chip-focus-color: var(--color-purple-extra-transparent);
-      --chip-dismiss-bg-color: light-dark(
-        var(--color-purple-8),
-        var(--color-purple-7)
-      );
-      --chip-dismiss-highlight-color: light-dark(
-        var(--color-purple-7),
-        var(--color-purple-3)
+      --cd-chip-dismiss-highlight-color: light-dark(
+        var(--cd-color-green-7),
+        var(--cd-color-green-3)
       );
     }
 
-    &.pink {
-      --chip-fg-color: var(--color-pink-2);
-      --chip-bg-color: var(--color-pink-9);
-      --chip-border-color: var(--color-pink-8);
-      --chip-focus-color: var(--color-pink-extra-transparent);
-      --chip-dismiss-bg-color: light-dark(
-        var(--color-pink-8),
-        var(--color-pink-7)
+    &.cd-color-teal {
+      --cd-chip-fg-color: var(--cd-color-teal-2);
+      --cd-chip-bg-color: var(--cd-color-teal-9);
+      --cd-chip-border-color: var(--cd-color-teal-8);
+      --cd-chip-focus-color: var(--cd-color-teal-extra-transparent);
+      --cd-chip-dismiss-bg-color: light-dark(
+        var(--cd-color-teal-8),
+        var(--cd-color-teal-7)
       );
-      --chip-dismiss-highlight-color: light-dark(
-        var(--color-pink-7),
-        var(--color-pink-3)
+      --cd-chip-dismiss-highlight-color: light-dark(
+        var(--cd-color-teal-7),
+        var(--cd-color-teal-3)
       );
     }
 
-    &.gray {
-      --chip-fg-color: var(--color-gray-2);
-      --chip-bg-color: var(--color-gray-9);
-      --chip-border-color: var(--color-gray-8);
-      --chip-focus-color: var(--color-gray-extra-transparent);
-      --chip-dismiss-bg-color: light-dark(
-        var(--color-gray-8),
-        var(--color-gray-7)
+    &.cd-color-blue {
+      --cd-chip-fg-color: var(--cd-color-blue-2);
+      --cd-chip-bg-color: var(--cd-color-blue-9);
+      --cd-chip-border-color: var(--cd-color-blue-8);
+      --cd-chip-focus-color: var(--cd-color-blue-extra-transparent);
+      --cd-chip-dismiss-bg-color: light-dark(
+        var(--cd-color-blue-8),
+        var(--cd-color-blue-7)
       );
-      --chip-dismiss-highlight-color: light-dark(
-        var(--color-gray-7),
-        var(--color-gray-3)
+      --cd-chip-dismiss-highlight-color: light-dark(
+        var(--cd-color-blue-7),
+        var(--cd-color-blue-3)
+      );
+    }
+
+    &.cd-color-purple {
+      --cd-chip-fg-color: var(--cd-color-purple-2);
+      --cd-chip-bg-color: var(--cd-color-purple-9);
+      --cd-chip-border-color: var(--cd-color-purple-8);
+      --cd-chip-focus-color: var(--cd-color-purple-extra-transparent);
+      --cd-chip-dismiss-bg-color: light-dark(
+        var(--cd-color-purple-8),
+        var(--cd-color-purple-7)
+      );
+      --cd-chip-dismiss-highlight-color: light-dark(
+        var(--cd-color-purple-7),
+        var(--cd-color-purple-3)
+      );
+    }
+
+    &.cd-color-pink {
+      --cd-chip-fg-color: var(--cd-color-pink-2);
+      --cd-chip-bg-color: var(--cd-color-pink-9);
+      --cd-chip-border-color: var(--cd-color-pink-8);
+      --cd-chip-focus-color: var(--cd-color-pink-extra-transparent);
+      --cd-chip-dismiss-bg-color: light-dark(
+        var(--cd-color-pink-8),
+        var(--cd-color-pink-7)
+      );
+      --cd-chip-dismiss-highlight-color: light-dark(
+        var(--cd-color-pink-7),
+        var(--cd-color-pink-3)
+      );
+    }
+
+    &.cd-color-gray {
+      --cd-chip-fg-color: var(--cd-color-gray-2);
+      --cd-chip-bg-color: var(--cd-color-gray-9);
+      --cd-chip-border-color: var(--cd-color-gray-8);
+      --cd-chip-focus-color: var(--cd-color-gray-extra-transparent);
+      --cd-chip-dismiss-bg-color: light-dark(
+        var(--cd-color-gray-8),
+        var(--cd-color-gray-7)
+      );
+      --cd-chip-dismiss-highlight-color: light-dark(
+        var(--cd-color-gray-7),
+        var(--cd-color-gray-3)
       );
     }
   }
 
-  &.black {
-    --chip-bg-color: black;
-    --chip-border-color: light-dark(var(--color-gray-3), var(--color-gray-8));
-    --chip-focus-color: var(--color-gray-transparent);
-    --chip-dismiss-bg-color: light-dark(
-      var(--color-gray-3),
-      var(--color-gray-7)
+  &.cd-color-black {
+    --cd-chip-bg-color: black;
+    --cd-chip-border-color: light-dark(
+      var(--cd-color-gray-3),
+      var(--cd-color-gray-8)
     );
-    --chip-dismiss-highlight-color: light-dark(
-      var(--color-gray-8),
-      var(--color-gray-3)
+    --cd-chip-focus-color: var(--cd-color-gray-transparent);
+    --cd-chip-dismiss-bg-color: light-dark(
+      var(--cd-color-gray-3),
+      var(--cd-color-gray-7)
+    );
+    --cd-chip-dismiss-highlight-color: light-dark(
+      var(--cd-color-gray-8),
+      var(--cd-color-gray-3)
     );
   }
 
-  &.white {
-    --chip-fg-color: black;
-    --chip-bg-color: white;
-    --chip-border-color: light-dark(var(--color-border), var(--color-gray-3));
-    --chip-focus-color: var(--color-gray-transparent);
-    --chip-dismiss-bg-color: light-dark(
-      var(--color-gray-8),
-      var(--color-gray-2)
+  &.cd-color-white {
+    --cd-chip-fg-color: black;
+    --cd-chip-bg-color: white;
+    --cd-chip-border-color: light-dark(
+      var(--cd-color-border),
+      var(--cd-color-gray-3)
     );
-    --chip-dismiss-highlight-color: light-dark(
-      var(--color-gray-5),
-      var(--color-gray-6)
+    --cd-chip-focus-color: var(--cd-color-gray-transparent);
+    --cd-chip-dismiss-bg-color: light-dark(
+      var(--cd-color-gray-8),
+      var(--cd-color-gray-2)
+    );
+    --cd-chip-dismiss-highlight-color: light-dark(
+      var(--cd-color-gray-5),
+      var(--cd-color-gray-6)
     );
   }
 }
 
-.chip:has(.chip-label) {
+.cd-chip:has(.cd-chip-label) {
   padding: 0;
 }
 
-.chip-label {
+.cd-chip-label {
   all: unset;
   display: inherit;
   line-height: inherit;
   user-select: inherit;
   cursor: inherit;
-  padding: var(--chip-padding-y) var(--chip-padding-x);
-  border-radius: var(--radius-full);
+  padding: var(--cd-chip-padding-y) var(--cd-chip-padding-x);
+  border-radius: var(--cd-radius-full);
 }
 
-.chip-label:has(+ .dismiss-button) {
-  padding-inline-end: calc(1.2em + 2 * var(--space-3xs));
+.cd-chip-label:has(+ .cd-dismiss-button) {
+  padding-inline-end: calc(1.2em + 2 * var(--cd-space-3xs));
 }
 
-.dismiss-button {
-  --dismiss-button-size: 1.3em;
-  --dismiss-button-bg-color: var(--chip-dismiss-bg-color);
-  --dismiss-button-fg-color: currentcolor;
-  --dismiss-button-highlight-color: var(--chip-dismiss-highlight-color);
+.cd-dismiss-button {
+  --cd-dismiss-button-size: 1.3em;
+  --cd-dismiss-button-bg-color: var(--cd-chip-dismiss-bg-color);
+  --cd-dismiss-button-fg-color: currentcolor;
+  --cd-dismiss-button-highlight-color: var(--cd-chip-dismiss-highlight-color);
 
   margin-block: -0.3em;
-  margin-inline: var(--space-3xs) calc(-1 * var(--chip-padding-x) + 0.3em);
+  margin-inline: var(--cd-space-3xs) calc(-1 * var(--cd-chip-padding-x) + 0.3em);
 }
 
-.chip-label + .dismiss-button {
+.cd-chip-label + .cd-dismiss-button {
   position: absolute;
-  inset: 0 var(--space-3xs) 0 auto;
+  inset: 0 var(--cd-space-3xs) 0 auto;
   margin: auto 0;
 }

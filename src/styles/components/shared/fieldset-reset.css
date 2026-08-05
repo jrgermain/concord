@@ -1,5 +1,5 @@
-fieldset.fieldset,
-fieldset.field {
+fieldset.cd-fieldset,
+fieldset.cd-field {
   border: 0;
   margin: 0;
   min-width: 0;
@@ -14,8 +14,8 @@ fieldset.field {
 }
 
 body:not(:-moz-handler-blocked) {
-  fieldset.fieldset,
-  fieldset.field {
+  fieldset.cd-fieldset,
+  fieldset.cd-field {
     display: table-cell;
   }
 }

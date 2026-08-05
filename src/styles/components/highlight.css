@@ -1,39 +1,39 @@
-.highlight,
-:where(.markdown mark) {
-  background-color: var(--color-yellow-8);
-  color: var(--color-yellow-1);
+.cd-highlight,
+:where(.cd-markdown mark) {
+  background-color: var(--cd-color-yellow-8);
+  color: var(--cd-color-yellow-1);
   print-color-adjust: exact;
 }
 
-.highlight.removed,
-:where(.markdown del) {
-  background-color: var(--color-red-8);
-  color: var(--color-red-1);
-  transition: text-decoration-color var(--duration-s) var(--ease-default);
+.cd-highlight.cd-variant-removed,
+:where(.cd-markdown del) {
+  background-color: var(--cd-color-red-8);
+  color: var(--cd-color-red-1);
+  transition: text-decoration-color var(--cd-duration-s) var(--cd-ease-default);
   text-decoration-line: line-through;
   text-decoration-skip-ink: none;
-  text-decoration-thickness: var(--border-m);
-  text-decoration-color: var(--color-red-4);
+  text-decoration-thickness: var(--cd-border-m);
+  text-decoration-color: var(--cd-color-red-4);
   print-color-adjust: exact;
 
-  &:is(:hover, .hover) {
+  &:is(:hover, .cd-is-hovered) {
     text-decoration-color: transparent;
   }
 }
 
-.highlight.added,
-:where(.markdown ins) {
-  background-color: var(--color-green-8);
-  color: var(--color-green-1);
-  text-decoration-thickness: var(--border-m);
-  text-decoration-color: var(--color-green-4);
+.cd-highlight.cd-variant-added,
+:where(.cd-markdown ins) {
+  background-color: var(--cd-color-green-8);
+  color: var(--cd-color-green-1);
+  text-decoration-thickness: var(--cd-border-m);
+  text-decoration-color: var(--cd-color-green-4);
   text-underline-offset: 0.1em;
   print-color-adjust: exact;
 }
 
-.highlight.target,
-::target-text {
-  background-color: var(--color-brand-8);
-  color: var(--color-brand-1);
+.cd-highlight.cd-variant-target,
+:where(.cd-markdown ::target-text) {
+  background-color: var(--cd-color-brand-8);
+  color: var(--cd-color-brand-1);
   print-color-adjust: exact;
 }

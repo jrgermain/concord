@@ -1,4 +1,4 @@
-@keyframes skeleton-pulse-light {
+@keyframes cd-skeleton-pulse-light {
   from {
     opacity: 0.14;
   }
@@ -8,7 +8,7 @@
   }
 }
 
-@keyframes skeleton-pulse-dark {
+@keyframes cd-skeleton-pulse-dark {
   from {
     opacity: 0.28;
   }
@@ -18,12 +18,12 @@
   }
 }
 
-.skeleton,
-.skeleton-controller.loading .skeleton-item {
-  animation: skeleton-pulse-light 1s var(--ease-both-subtle) alternate 0s
+.cd-skeleton,
+.cd-skeleton-controller.cd-is-loading .cd-skeleton-item {
+  animation: cd-skeleton-pulse-light 1s var(--cd-ease-both-subtle) alternate 0s
     infinite !important;
-  border-radius: var(--radius-s) !important;
-  background-color: var(--color-gray-5) !important;
+  border-radius: var(--cd-radius-s) !important;
+  background-color: var(--cd-color-gray-5) !important;
   border: 0 !important;
   outline: 0 !important;
   box-shadow: none !important;
@@ -39,23 +39,23 @@
    *************************************************************/
 
   /* Make block text take up the full width */
-  &.paragraph,
-  &.heading {
+  &.cd-paragraph,
+  &.cd-heading {
     inline-size: 100%;
   }
 
   /* For empty text elements, add filler content so it isn't 0 height. */
-  &:is(.paragraph, .heading, .chip, .card-title)::before {
+  &:is(.cd-paragraph, .cd-heading, .cd-chip, .cd-card-title)::before {
     content: ".";
   }
 
   /* Add a reasonable minimum width to buttons and chips */
-  &:is(.button, .chip):empty {
+  &:is(.cd-button, .cd-chip):empty {
     min-inline-size: 5em;
   }
 
   /* Add a reasonable width to card titles */
-  &.card-title {
+  &.cd-card-title {
     inline-size: 40%;
     overflow: hidden;
   }
@@ -68,10 +68,10 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    animation-name: skeleton-pulse-dark !important;
+    animation-name: cd-skeleton-pulse-dark !important;
   }
 }
 
-.skeleton-controller {
+.cd-skeleton-controller {
   display: contents;
 }

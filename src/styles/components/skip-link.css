@@ -1,33 +1,33 @@
-.skip-link {
+.cd-skip-link {
   position: fixed;
   display: inline-block;
   z-index: 100;
-  top: var(--space-body-y);
-  left: var(--space-body-x);
-  background-color: var(--color-brand-5);
-  padding: var(--space-xs);
-  border-radius: var(--radius-m);
-  border: 0.25em solid var(--color-brand-4);
+  top: var(--cd-space-body-y);
+  left: var(--cd-space-body-x);
+  background-color: var(--cd-color-brand-5);
+  padding: var(--cd-space-xs);
+  border-radius: var(--cd-radius-m);
+  border: 0.25em solid var(--cd-color-brand-4);
   color: white;
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-body);
-  font-size: var(--font-size-m);
+  font-weight: var(--cd-font-weight-bold);
+  font-family: var(--cd-font-family-body);
+  font-size: var(--cd-font-size-m);
   outline: 0;
   box-shadow:
-    var(--shadow-l),
-    0 0 0 0.2em var(--color-brand-transparent);
+    var(--cd-shadow-l),
+    0 0 0 0.2em var(--cd-color-brand-transparent);
   text-decoration: none;
   vertical-align: middle;
   opacity: 0.25;
-  transition: opacity var(--duration-m) var(--ease-default);
+  transition: opacity var(--cd-duration-m) var(--cd-ease-default);
   pointer-events: none;
-  line-height: var(--line-height-xs);
+  line-height: var(--cd-line-height-xs);
 
-  &:is(:focus, .focus, .static) {
+  &:is(:focus, .cd-is-focused, .cd-is-static) {
     opacity: 1;
   }
 
-  &.static {
+  &.cd-is-static {
     position: static;
     pointer-events: unset;
   }

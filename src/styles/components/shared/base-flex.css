@@ -1,42 +1,42 @@
-.wrap,
-.stack,
-.distribute {
+.cd-wrap,
+.cd-stack,
+.cd-distribute {
   display: flex !important;
-  gap: var(--space-s);
+  gap: var(--cd-space-s);
 
-  &.no-gap {
-    gap: var(--space-none);
+  &.cd-spacing-none {
+    gap: var(--cd-space-none);
   }
 
-  &.densest {
-    gap: var(--space-3xs);
+  &.cd-spacing-densest {
+    gap: var(--cd-space-3xs);
   }
 
-  &.denser {
-    gap: var(--space-2xs);
+  &.cd-spacing-denser {
+    gap: var(--cd-space-2xs);
   }
 
-  &.dense {
-    gap: var(--space-xs);
+  &.cd-spacing-dense {
+    gap: var(--cd-space-xs);
   }
 
-  &.sparse {
-    gap: var(--space-m);
+  &.cd-spacing-sparse {
+    gap: var(--cd-space-m);
   }
 
-  &.sparser {
-    gap: var(--space-l);
+  &.cd-spacing-sparser {
+    gap: var(--cd-space-l);
   }
 
-  &.sparsest {
-    gap: var(--space-xl);
+  &.cd-spacing-sparsest {
+    gap: var(--cd-space-xl);
   }
 
-  &.horizontal {
+  &.cd-orientation-horizontal {
     flex-direction: row;
   }
 
-  &.vertical {
+  &.cd-orientation-vertical {
     flex-direction: column;
   }
 }

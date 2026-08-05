@@ -6,7 +6,7 @@ const toArray = <T>(item: T | T[] | null | undefined): T[] => {
 const toElement = (item: string | Element): Element => {
   if (typeof item === "string") {
     const p = document.createElement("p");
-    p.className = "paragraph";
+    p.className = "cd-paragraph";
     p.textContent = item;
     return p;
   }
@@ -101,15 +101,15 @@ export const showPopup = ({
     // Modal Root
     const dialog = document.createElement("dialog");
     dialog.id = modalId;
-    dialog.className = "modal";
+    dialog.className = "cd-modal";
     dialog.setAttribute("aria-labelledby", titleId);
     if (size !== "auto") {
-      dialog.classList.add(size);
+      dialog.classList.add(`cd-size-${size}`);
     }
 
     // Modal Header
     const header = document.createElement("header");
-    header.className = "modal-header";
+    header.className = "cd-modal-header";
     const h1 = document.createElement("h1");
     h1.id = titleId;
     h1.textContent = title || "Alert"; // Fallback if title is empty
@@ -118,7 +118,7 @@ export const showPopup = ({
 
     // Modal Body
     const body = document.createElement("div");
-    body.className = "modal-body";
+    body.className = "cd-modal-body";
     const content = toArray(message);
     for (const item of content) {
       if (!item) continue;
@@ -129,13 +129,13 @@ export const showPopup = ({
 
     // Modal Footer
     const footer = document.createElement("div");
-    footer.className = "modal-footer";
+    footer.className = "cd-modal-footer";
 
     // OK Button
     const primaryButton = document.createElement("button");
-    primaryButton.className = "button primary";
+    primaryButton.className = "cd-button cd-variant-primary";
     if (isDestructive) {
-      primaryButton.classList.add("red");
+      primaryButton.classList.add("cd-color-red");
     }
     primaryButton.textContent = primaryLabel || "OK"; // Fallback if primaryLabel is empty
     primaryButton.addEventListener("click", () => {
@@ -146,7 +146,7 @@ export const showPopup = ({
     // Cancel Button
     if (secondaryLabel) {
       const secondaryButton = document.createElement("button");
-      secondaryButton.className = "button";
+      secondaryButton.className = "cd-button";
       secondaryButton.textContent = secondaryLabel;
       secondaryButton.addEventListener("click", () => {
         dialog.requestClose("secondary");

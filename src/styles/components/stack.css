@@ -3,7 +3,7 @@
  * styles defined in ./shared/base-flex.css
  */
 
-.stack {
+.cd-stack {
   flex-wrap: nowrap;
   align-items: stretch;
   justify-content: start;

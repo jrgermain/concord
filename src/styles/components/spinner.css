@@ -1,4 +1,4 @@
-@keyframes spinner-spin {
+@keyframes cd-spinner-spin {
   from {
     transform: rotate(0deg);
   }
@@ -8,40 +8,40 @@
   }
 }
 
-.spinner {
-  --spinner-primary-color: var(--color-brand-5);
-  --spinner-secondary-color: var(--color-brand-3);
-  --spinner-delay: 2s;
-  --spinner-scale: 1;
+.cd-spinner {
+  --cd-spinner-primary-color: var(--cd-color-brand-5);
+  --cd-spinner-secondary-color: var(--cd-color-brand-3);
+  --cd-spinner-delay: 2s;
+  --cd-spinner-scale: 1;
 
   opacity: 1;
-  font-size: calc(1rem * var(--spinner-scale));
+  font-size: calc(1rem * var(--cd-spinner-scale));
   position: relative;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: var(--space-2xs);
+  gap: var(--cd-space-2xs);
 
-  &.delayed {
+  &.cd-is-delayed {
     @starting-style {
       opacity: 0;
     }
 
-    transition: opacity var(--duration-l) var(--ease-in);
-    transition-delay: var(--spinner-delay);
+    transition: opacity var(--cd-duration-l) var(--cd-ease-in);
+    transition-delay: var(--cd-spinner-delay);
   }
 
-  &.small {
-    --spinner-scale: 0.75;
+  &.cd-size-small {
+    --cd-spinner-scale: 0.75;
   }
 
-  &.large {
-    --spinner-scale: 1.5;
+  &.cd-size-large {
+    --cd-spinner-scale: 1.5;
   }
 
-  &.label-top {
+  &.cd-label-top {
     flex-direction: column-reverse;
 
     &::after {
@@ -49,18 +49,18 @@
     }
   }
 
-  &.label-right {
+  &.cd-label-right {
     flex-direction: row;
-    gap: var(--space-xs);
+    gap: var(--cd-space-xs);
 
     &::after {
       inset: 0 auto 0 0;
     }
   }
 
-  &.label-left {
+  &.cd-label-left {
     flex-direction: row-reverse;
-    gap: var(--space-xs);
+    gap: var(--cd-space-xs);
 
     &::after {
       inset: 0 0 0 auto;
@@ -77,15 +77,15 @@
     mask-size: cover;
     mask-repeat: no-repeat;
     mask-position: center;
-    background-color: var(--spinner-primary-color);
-    animation: spinner-spin 0.85s linear infinite;
+    background-color: var(--cd-spinner-primary-color);
+    animation: cd-spinner-spin 0.85s linear infinite;
   }
 
   &::after {
     position: absolute;
     inset: 0 0 auto;
     margin: auto;
-    background-color: var(--spinner-secondary-color);
+    background-color: var(--cd-spinner-secondary-color);
     animation-duration: 1.05s;
   }
 }

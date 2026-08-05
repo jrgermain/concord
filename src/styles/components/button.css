@@ -1,12 +1,16 @@
-.button {
-  --button-fg-color: var(--color-text-primary);
-  --button-bg-color: light-dark(var(--color-gray-9), #191b1e);
-  --button-border-color: light-dark(var(--color-gray-8), var(--color-border));
-  --button-font-weight: var(--font-weight-normal);
-  --button-focus-ring-color: var(--color-gray-extra-transparent);
-  --button-shadow: var(--shadow-s);
-  --button-hover-bg-color: var(--button-border-color);
-  --button-scale: 1;
+.cd-button,
+.cd-icon-button {
+  --cd-button-fg-color: var(--cd-color-text-primary);
+  --cd-button-bg-color: light-dark(var(--cd-color-gray-9), #191b1e);
+  --cd-button-border-color: light-dark(
+    var(--cd-color-gray-8),
+    var(--cd-color-border)
+  );
+  --cd-button-font-weight: var(--cd-font-weight-normal);
+  --cd-button-focus-ring-color: var(--cd-color-gray-extra-transparent);
+  --cd-button-shadow: var(--cd-shadow-s);
+  --cd-button-hover-bg-color: var(--cd-button-border-color);
+  --cd-button-scale: 1;
 
   box-sizing: border-box;
   display: inline-flex;
@@ -18,39 +22,39 @@
   transform: scale(1);
   transition-property:
     box-shadow, background-color, border-color, transform, opacity;
-  transition-duration: var(--duration-m);
-  transition-timing-function: var(--ease-default);
+  transition-duration: var(--cd-duration-m);
+  transition-timing-function: var(--cd-ease-default);
   text-decoration: none;
   position: relative;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   cursor: pointer;
-  border-width: var(--border-s);
-  border-radius: var(--radius-m);
+  border-width: var(--cd-border-s);
+  border-radius: var(--cd-radius-m);
   min-height: 2.6em;
   min-width: 3em;
-  line-height: var(--line-height-s);
-  font-family: var(--font-family-body);
-  box-shadow: var(--button-shadow);
+  line-height: var(--cd-line-height-s);
+  font-family: var(--cd-font-family-body);
+  box-shadow: var(--cd-button-shadow);
   user-select: none;
-  font-size: calc(1rem * var(--button-scale));
-  color: var(--button-fg-color);
-  background-color: var(--button-bg-color);
-  border-color: var(--button-border-color);
-  font-weight: var(--button-font-weight);
+  font-size: calc(1rem * var(--cd-button-scale));
+  color: var(--cd-button-fg-color);
+  background-color: var(--cd-button-bg-color);
+  border-color: var(--cd-button-border-color);
+  font-weight: var(--cd-button-font-weight);
   text-align: center;
   text-wrap: balance;
 
   &::before {
     content: "";
-    background-color: var(--button-hover-bg-color);
+    background-color: var(--cd-button-hover-bg-color);
     position: absolute;
     inset: 0;
     margin: auto;
     transition-property: opacity, width, height, border-radius;
-    transition-duration: var(--duration-m);
-    transition-timing-function: var(--ease-default);
+    transition-duration: var(--cd-duration-m);
+    transition-timing-function: var(--cd-ease-default);
     z-index: -1;
     border-radius: 2em;
     width: 4em;
@@ -58,14 +62,14 @@
     opacity: 0;
   }
 
-  &:is(:focus-visible, .focus) {
+  &:is(:focus-visible, .cd-is-focused) {
     box-shadow:
-      var(--button-shadow),
-      0 0 0 0.1em var(--button-border-color),
-      0 0 0 calc(0.2em + var(--border-s)) var(--button-focus-ring-color);
+      var(--cd-button-shadow),
+      0 0 0 0.1em var(--cd-button-border-color),
+      0 0 0 calc(0.2em + var(--cd-border-s)) var(--cd-button-focus-ring-color);
   }
 
-  &:is(:active, .active) {
+  &:is(:active, .cd-is-active) {
     transform: scale(0.98);
 
     /*
@@ -77,7 +81,7 @@
     }
   }
 
-  &:is(:hover, .hover) {
+  &:is(:hover, .cd-is-hovered) {
     text-decoration: none;
 
     &::before {
@@ -89,138 +93,138 @@
 
     /* inputs don't support children, so the ::before pseudo element won't work */
     &:is(input) {
-      background-color: var(--button-hover-bg-color);
+      background-color: var(--cd-button-hover-bg-color);
     }
   }
 
-  &.brand {
-    --button-fg-color: var(--color-brand-1);
-    --button-bg-color: var(--color-brand-9);
-    --button-border-color: var(--color-brand-8);
-    --button-focus-ring-color: var(--color-brand-extra-transparent);
+  &.cd-color-brand {
+    --cd-button-fg-color: var(--cd-color-brand-1);
+    --cd-button-bg-color: var(--cd-color-brand-9);
+    --cd-button-border-color: var(--cd-color-brand-8);
+    --cd-button-focus-ring-color: var(--cd-color-brand-extra-transparent);
   }
 
-  &.red {
-    --button-fg-color: var(--color-red-1);
-    --button-bg-color: var(--color-red-9);
-    --button-border-color: var(--color-red-8);
-    --button-focus-ring-color: var(--color-red-extra-transparent);
+  &.cd-color-red {
+    --cd-button-fg-color: var(--cd-color-red-1);
+    --cd-button-bg-color: var(--cd-color-red-9);
+    --cd-button-border-color: var(--cd-color-red-8);
+    --cd-button-focus-ring-color: var(--cd-color-red-extra-transparent);
   }
 
-  &.orange {
-    --button-fg-color: var(--color-orange-1);
-    --button-bg-color: var(--color-orange-9);
-    --button-border-color: var(--color-orange-8);
-    --button-focus-ring-color: var(--color-orange-extra-transparent);
+  &.cd-color-orange {
+    --cd-button-fg-color: var(--cd-color-orange-1);
+    --cd-button-bg-color: var(--cd-color-orange-9);
+    --cd-button-border-color: var(--cd-color-orange-8);
+    --cd-button-focus-ring-color: var(--cd-color-orange-extra-transparent);
   }
 
-  &.yellow {
-    --button-fg-color: var(--color-yellow-1);
-    --button-bg-color: var(--color-yellow-9);
-    --button-border-color: var(--color-yellow-8);
-    --button-focus-ring-color: var(--color-yellow-extra-transparent);
+  &.cd-color-yellow {
+    --cd-button-fg-color: var(--cd-color-yellow-1);
+    --cd-button-bg-color: var(--cd-color-yellow-9);
+    --cd-button-border-color: var(--cd-color-yellow-8);
+    --cd-button-focus-ring-color: var(--cd-color-yellow-extra-transparent);
   }
 
-  &.green {
-    --button-fg-color: var(--color-green-1);
-    --button-bg-color: var(--color-green-9);
-    --button-border-color: var(--color-green-8);
-    --button-focus-ring-color: var(--color-green-extra-transparent);
+  &.cd-color-green {
+    --cd-button-fg-color: var(--cd-color-green-1);
+    --cd-button-bg-color: var(--cd-color-green-9);
+    --cd-button-border-color: var(--cd-color-green-8);
+    --cd-button-focus-ring-color: var(--cd-color-green-extra-transparent);
   }
 
-  &.teal {
-    --button-fg-color: var(--color-teal-1);
-    --button-bg-color: var(--color-teal-9);
-    --button-border-color: var(--color-teal-8);
-    --button-focus-ring-color: var(--color-teal-extra-transparent);
+  &.cd-color-teal {
+    --cd-button-fg-color: var(--cd-color-teal-1);
+    --cd-button-bg-color: var(--cd-color-teal-9);
+    --cd-button-border-color: var(--cd-color-teal-8);
+    --cd-button-focus-ring-color: var(--cd-color-teal-extra-transparent);
   }
 
-  &.blue {
-    --button-fg-color: var(--color-blue-1);
-    --button-bg-color: var(--color-blue-9);
-    --button-border-color: var(--color-blue-8);
-    --button-focus-ring-color: var(--color-blue-extra-transparent);
+  &.cd-color-blue {
+    --cd-button-fg-color: var(--cd-color-blue-1);
+    --cd-button-bg-color: var(--cd-color-blue-9);
+    --cd-button-border-color: var(--cd-color-blue-8);
+    --cd-button-focus-ring-color: var(--cd-color-blue-extra-transparent);
   }
 
-  &.purple {
-    --button-fg-color: var(--color-purple-1);
-    --button-bg-color: var(--color-purple-9);
-    --button-border-color: var(--color-purple-8);
-    --button-focus-ring-color: var(--color-purple-extra-transparent);
+  &.cd-color-purple {
+    --cd-button-fg-color: var(--cd-color-purple-1);
+    --cd-button-bg-color: var(--cd-color-purple-9);
+    --cd-button-border-color: var(--cd-color-purple-8);
+    --cd-button-focus-ring-color: var(--cd-color-purple-extra-transparent);
   }
 
-  &.pink {
-    --button-fg-color: var(--color-pink-1);
-    --button-bg-color: var(--color-pink-9);
-    --button-border-color: var(--color-pink-8);
-    --button-focus-ring-color: var(--color-pink-extra-transparent);
+  &.cd-color-pink {
+    --cd-button-fg-color: var(--cd-color-pink-1);
+    --cd-button-bg-color: var(--cd-color-pink-9);
+    --cd-button-border-color: var(--cd-color-pink-8);
+    --cd-button-focus-ring-color: var(--cd-color-pink-extra-transparent);
   }
 
-  &.primary {
-    --button-fg-color: white;
-    --button-bg-color: var(--color-brand-5);
-    --button-border-color: var(--color-brand-4);
-    --button-font-weight: var(--font-weight-semibold);
-    --button-focus-ring-color: var(--color-brand-transparent);
+  &.cd-variant-primary {
+    --cd-button-fg-color: white;
+    --cd-button-bg-color: var(--cd-color-brand-5);
+    --cd-button-border-color: var(--cd-color-brand-4);
+    --cd-button-font-weight: var(--cd-font-weight-semibold);
+    --cd-button-focus-ring-color: var(--cd-color-brand-transparent);
 
-    &.red {
-      --button-bg-color: var(--color-red-5);
-      --button-border-color: var(--color-red-4);
-      --button-focus-ring-color: var(--color-red-transparent);
+    &.cd-color-red {
+      --cd-button-bg-color: var(--cd-color-red-5);
+      --cd-button-border-color: var(--cd-color-red-4);
+      --cd-button-focus-ring-color: var(--cd-color-red-transparent);
     }
 
-    &.orange {
-      --button-bg-color: var(--color-orange-5);
-      --button-border-color: var(--color-orange-4);
-      --button-focus-ring-color: var(--color-orange-transparent);
+    &.cd-color-orange {
+      --cd-button-bg-color: var(--cd-color-orange-5);
+      --cd-button-border-color: var(--cd-color-orange-4);
+      --cd-button-focus-ring-color: var(--cd-color-orange-transparent);
     }
 
-    &.yellow {
-      --button-bg-color: var(--color-yellow-5);
-      --button-border-color: var(--color-yellow-4);
-      --button-focus-ring-color: var(--color-yellow-transparent);
+    &.cd-color-yellow {
+      --cd-button-bg-color: var(--cd-color-yellow-5);
+      --cd-button-border-color: var(--cd-color-yellow-4);
+      --cd-button-focus-ring-color: var(--cd-color-yellow-transparent);
     }
 
-    &.green {
-      --button-bg-color: var(--color-green-5);
-      --button-border-color: var(--color-green-4);
-      --button-focus-ring-color: var(--color-green-transparent);
+    &.cd-color-green {
+      --cd-button-bg-color: var(--cd-color-green-5);
+      --cd-button-border-color: var(--cd-color-green-4);
+      --cd-button-focus-ring-color: var(--cd-color-green-transparent);
     }
 
-    &.teal {
-      --button-bg-color: var(--color-teal-5);
-      --button-border-color: var(--color-teal-4);
-      --button-focus-ring-color: var(--color-teal-transparent);
+    &.cd-color-teal {
+      --cd-button-bg-color: var(--cd-color-teal-5);
+      --cd-button-border-color: var(--cd-color-teal-4);
+      --cd-button-focus-ring-color: var(--cd-color-teal-transparent);
     }
 
-    &.blue {
-      --button-bg-color: var(--color-blue-5);
-      --button-border-color: var(--color-blue-4);
-      --button-focus-ring-color: var(--color-blue-transparent);
+    &.cd-color-blue {
+      --cd-button-bg-color: var(--cd-color-blue-5);
+      --cd-button-border-color: var(--cd-color-blue-4);
+      --cd-button-focus-ring-color: var(--cd-color-blue-transparent);
     }
 
-    &.purple {
-      --button-bg-color: var(--color-purple-5);
-      --button-border-color: var(--color-purple-4);
-      --button-focus-ring-color: var(--color-purple-transparent);
+    &.cd-color-purple {
+      --cd-button-bg-color: var(--cd-color-purple-5);
+      --cd-button-border-color: var(--cd-color-purple-4);
+      --cd-button-focus-ring-color: var(--cd-color-purple-transparent);
     }
 
-    &.pink {
-      --button-bg-color: var(--color-pink-5);
-      --button-border-color: var(--color-pink-4);
-      --button-focus-ring-color: var(--color-pink-transparent);
+    &.cd-color-pink {
+      --cd-button-bg-color: var(--cd-color-pink-5);
+      --cd-button-border-color: var(--cd-color-pink-4);
+      --cd-button-focus-ring-color: var(--cd-color-pink-transparent);
     }
 
-    &.gray {
-      --button-bg-color: var(--color-gray-5);
-      --button-border-color: var(--color-gray-4);
-      --button-focus-ring-color: var(--color-gray-transparent);
+    &.cd-color-gray {
+      --cd-button-bg-color: var(--cd-color-gray-5);
+      --cd-button-border-color: var(--cd-color-gray-4);
+      --cd-button-focus-ring-color: var(--cd-color-gray-transparent);
     }
 
-    &.black,
-    &.white {
+    &.cd-color-black,
+    &.cd-color-white {
       /* The foreground, background, and border colors are the same as secondary, so we don't need to specify them here  */
-      --button-focus-ring-color: var(--color-gray-transparent);
+      --cd-button-focus-ring-color: var(--cd-color-gray-transparent);
     }
   }
 
@@ -229,198 +233,204 @@
    * We define these rules after primary and secondary so we only need to
    * declare them once (these rules take precedence over both).
    */
-  &.black {
-    --button-fg-color: white;
-    --button-bg-color: black;
-    --button-border-color: light-dark(var(--color-gray-3), var(--color-gray-8));
-    --button-focus-ring-color: var(--color-gray-extra-transparent);
+  &.cd-color-black {
+    --cd-button-fg-color: white;
+    --cd-button-bg-color: black;
+    --cd-button-border-color: light-dark(
+      var(--cd-color-gray-3),
+      var(--cd-color-gray-8)
+    );
+    --cd-button-focus-ring-color: var(--cd-color-gray-extra-transparent);
   }
 
-  &.white {
-    --button-fg-color: black;
-    --button-bg-color: white;
-    --button-border-color: light-dark(var(--color-border), var(--color-gray-2));
-    --button-focus-ring-color: var(--color-gray-extra-transparent);
+  &.cd-color-white {
+    --cd-button-fg-color: black;
+    --cd-button-bg-color: white;
+    --cd-button-border-color: light-dark(
+      var(--cd-color-border),
+      var(--cd-color-gray-2)
+    );
+    --cd-button-focus-ring-color: var(--cd-color-gray-extra-transparent);
   }
 
-  &.tertiary {
-    --button-fg-color: var(--color-brand-4);
-    --button-bg-color: transparent;
-    --button-border-color: transparent;
-    --button-hover-bg-color: var(--color-brand-extra-transparent);
-    --button-font-weight: var(--font-weight-bold);
-    --button-focus-ring-color: transparent;
-    --button-shadow: none;
+  &.cd-variant-tertiary {
+    --cd-button-fg-color: var(--cd-color-brand-4);
+    --cd-button-bg-color: transparent;
+    --cd-button-border-color: transparent;
+    --cd-button-hover-bg-color: var(--cd-color-brand-extra-transparent);
+    --cd-button-font-weight: var(--cd-font-weight-bold);
+    --cd-button-focus-ring-color: transparent;
+    --cd-button-shadow: none;
 
-    &:is(:focus-visible, .focus) {
-      --button-bg-color: var(--color-brand-transparent);
-      --button-hover-bg-color: transparent;
+    &:is(:focus-visible, .cd-is-focused) {
+      --cd-button-bg-color: var(--cd-color-brand-transparent);
+      --cd-button-hover-bg-color: transparent;
     }
 
-    &.red {
-      --button-fg-color: var(--color-red-4);
-      --button-hover-bg-color: var(--color-red-extra-transparent);
+    &.cd-color-red {
+      --cd-button-fg-color: var(--cd-color-red-4);
+      --cd-button-hover-bg-color: var(--cd-color-red-extra-transparent);
 
-      &:is(:focus-visible, .focus) {
-        --button-bg-color: var(--color-red-transparent);
+      &:is(:focus-visible, .cd-is-focused) {
+        --cd-button-bg-color: var(--cd-color-red-transparent);
       }
     }
 
-    &.orange {
-      --button-fg-color: var(--color-orange-4);
-      --button-hover-bg-color: var(--color-orange-extra-transparent);
+    &.cd-color-orange {
+      --cd-button-fg-color: var(--cd-color-orange-4);
+      --cd-button-hover-bg-color: var(--cd-color-orange-extra-transparent);
 
-      &:is(:focus-visible, .focus) {
-        --button-bg-color: var(--color-orange-transparent);
+      &:is(:focus-visible, .cd-is-focused) {
+        --cd-button-bg-color: var(--cd-color-orange-transparent);
       }
     }
 
-    &.yellow {
-      --button-fg-color: var(--color-yellow-4);
-      --button-hover-bg-color: var(--color-yellow-extra-transparent);
+    &.cd-color-yellow {
+      --cd-button-fg-color: var(--cd-color-yellow-4);
+      --cd-button-hover-bg-color: var(--cd-color-yellow-extra-transparent);
 
-      &:is(:focus-visible, .focus) {
-        --button-bg-color: var(--color-yellow-transparent);
+      &:is(:focus-visible, .cd-is-focused) {
+        --cd-button-bg-color: var(--cd-color-yellow-transparent);
       }
     }
 
-    &.green {
-      --button-fg-color: var(--color-green-4);
-      --button-hover-bg-color: var(--color-green-extra-transparent);
+    &.cd-color-green {
+      --cd-button-fg-color: var(--cd-color-green-4);
+      --cd-button-hover-bg-color: var(--cd-color-green-extra-transparent);
 
-      &:is(:focus-visible, .focus) {
-        --button-bg-color: var(--color-green-transparent);
+      &:is(:focus-visible, .cd-is-focused) {
+        --cd-button-bg-color: var(--cd-color-green-transparent);
       }
     }
 
-    &.teal {
-      --button-fg-color: var(--color-teal-4);
-      --button-hover-bg-color: var(--color-teal-extra-transparent);
+    &.cd-color-teal {
+      --cd-button-fg-color: var(--cd-color-teal-4);
+      --cd-button-hover-bg-color: var(--cd-color-teal-extra-transparent);
 
-      &:is(:focus-visible, .focus) {
-        --button-bg-color: var(--color-teal-transparent);
+      &:is(:focus-visible, .cd-is-focused) {
+        --cd-button-bg-color: var(--cd-color-teal-transparent);
       }
     }
 
-    &.blue {
-      --button-fg-color: var(--color-blue-4);
-      --button-hover-bg-color: var(--color-blue-extra-transparent);
+    &.cd-color-blue {
+      --cd-button-fg-color: var(--cd-color-blue-4);
+      --cd-button-hover-bg-color: var(--cd-color-blue-extra-transparent);
 
-      &:is(:focus-visible, .focus) {
-        --button-bg-color: var(--color-blue-transparent);
+      &:is(:focus-visible, .cd-is-focused) {
+        --cd-button-bg-color: var(--cd-color-blue-transparent);
       }
     }
 
-    &.purple {
-      --button-fg-color: var(--color-purple-4);
-      --button-hover-bg-color: var(--color-purple-extra-transparent);
+    &.cd-color-purple {
+      --cd-button-fg-color: var(--cd-color-purple-4);
+      --cd-button-hover-bg-color: var(--cd-color-purple-extra-transparent);
 
-      &:is(:focus-visible, .focus) {
-        --button-bg-color: var(--color-purple-transparent);
+      &:is(:focus-visible, .cd-is-focused) {
+        --cd-button-bg-color: var(--cd-color-purple-transparent);
       }
     }
 
-    &.pink {
-      --button-fg-color: var(--color-pink-4);
-      --button-hover-bg-color: var(--color-pink-extra-transparent);
+    &.cd-color-pink {
+      --cd-button-fg-color: var(--cd-color-pink-4);
+      --cd-button-hover-bg-color: var(--cd-color-pink-extra-transparent);
 
-      &:is(:focus-visible, .focus) {
-        --button-bg-color: var(--color-pink-transparent);
+      &:is(:focus-visible, .cd-is-focused) {
+        --cd-button-bg-color: var(--cd-color-pink-transparent);
       }
     }
 
-    &.gray,
-    &.black,
-    &.white {
-      --button-hover-bg-color: var(--color-gray-extra-transparent);
+    &.cd-color-gray,
+    &.cd-color-black,
+    &.cd-color-white {
+      --cd-button-hover-bg-color: var(--cd-color-gray-extra-transparent);
 
-      &:is(:focus-visible, .focus) {
-        --button-bg-color: var(--color-gray-transparent);
+      &:is(:focus-visible, .cd-is-focused) {
+        --cd-button-bg-color: var(--cd-color-gray-transparent);
       }
     }
 
-    &.gray {
-      --button-fg-color: var(--color-gray-4);
+    &.cd-color-gray {
+      --cd-button-fg-color: var(--cd-color-gray-4);
     }
 
-    &.black {
-      --button-fg-color: black;
+    &.cd-color-black {
+      --cd-button-fg-color: black;
     }
 
-    &.white {
-      --button-fg-color: white;
-    }
-  }
-
-  &.small {
-    --button-scale: 0.8;
-  }
-
-  &.large {
-    --button-scale: 1.2;
-  }
-
-  &.icon {
-    border-radius: var(--radius-full);
-    min-width: 0;
-    min-height: 0;
-    aspect-ratio: 1;
-    padding: 0.5em;
-
-    /* Tertiary icon buttons use normal pseudo element hover effect */
-    &.tertiary {
-      &::before {
-        width: 75%;
-        height: 75%;
-      }
-
-      &:is(:hover, .hover)::before {
-        width: 100%;
-        height: 100%;
-        border-radius: 100%;
-      }
-    }
-
-    /* Normal icon buttons just change background color */
-    &:not(.tertiary) {
-      &::before {
-        content: unset;
-      }
-
-      &:is(:hover, .hover) {
-        background-color: var(--button-hover-bg-color);
-      }
+    &.cd-color-white {
+      --cd-button-fg-color: white;
     }
   }
 
-  &:is(:disabled, .disabled, [aria-disabled="true"]) {
-    opacity: var(--opacity-disabled);
+  &.cd-size-small {
+    --cd-button-scale: 0.8;
+  }
+
+  &.cd-size-large {
+    --cd-button-scale: 1.2;
+  }
+
+  &:is(:disabled, .cd-is-disabled, [aria-disabled="true"]) {
+    opacity: var(--cd-opacity-disabled);
     cursor: not-allowed;
     transform: scale(1);
 
-    &:is(:hover, .hover)::before {
+    &:is(:hover, .cd-is-hovered)::before {
       opacity: 0;
     }
   }
 
-  &.loading {
+  &.cd-is-loading {
     cursor: progress;
 
     &::before {
       opacity: 1 !important;
       height: 100% !important;
       border-radius: inherit !important;
-      animation: button-loading-bg 1200ms var(--ease-both-subtle) infinite
+      animation: cd-button-loading-bg 1200ms var(--cd-ease-both-subtle) infinite
         forwards;
     }
 
-    &:is(:disabled, .disabled, [aria-disabled="true"]) {
+    &:is(:disabled, .cd-is-disabled, [aria-disabled="true"]) {
       cursor: wait;
     }
   }
 }
 
-@keyframes button-loading-bg {
+.cd-icon-button {
+  border-radius: var(--cd-radius-full);
+  min-width: 0;
+  min-height: 0;
+  aspect-ratio: 1;
+  padding: 0.5em;
+
+  /* Tertiary icon buttons use normal pseudo element hover effect */
+  &.cd-variant-tertiary {
+    &::before {
+      width: 75%;
+      height: 75%;
+    }
+
+    &:is(:hover, .cd-is-hovered)::before {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+    }
+  }
+
+  /* Normal icon buttons just change background color */
+  &:not(.cd-variant-tertiary) {
+    &::before {
+      content: unset;
+    }
+
+    &:is(:hover, .cd-is-hovered) {
+      background-color: var(--cd-button-hover-bg-color);
+    }
+  }
+}
+
+@keyframes cd-button-loading-bg {
   0% {
     width: 0;
     margin: 0 auto 0 0;

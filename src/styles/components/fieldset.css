@@ -1,32 +1,32 @@
-.fieldset legend,
-.legend {
-  line-height: var(--line-height-s);
-  font-size: var(--font-size-l);
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-2xs);
+.cd-fieldset legend,
+.cd-legend {
+  line-height: var(--cd-line-height-s);
+  font-size: var(--cd-font-size-l);
+  font-family: var(--cd-font-family-heading);
+  font-weight: var(--cd-font-weight-semibold);
+  color: var(--cd-color-text-primary);
+  margin-bottom: var(--cd-space-2xs);
 }
 
-.fieldset-content {
+.cd-fieldset-content {
   position: relative;
-  border: var(--border-s) solid var(--color-border);
-  border-radius: var(--radius-m);
-  background-color: var(--color-surface-secondary);
-  color: var(--color-text-primary);
-  padding: var(--space-xs);
+  border: var(--cd-border-s) solid var(--cd-color-border);
+  border-radius: var(--cd-radius-m);
+  background-color: var(--cd-color-surface-secondary);
+  color: var(--cd-color-text-primary);
+  padding: var(--cd-space-xs);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: var(--cd-space-xs);
 }
 
-.fieldset.horizontal .fieldset-content {
+.cd-fieldset.cd-orientation-horizontal .cd-fieldset-content {
   flex-direction: row;
-  gap: var(--space-2xs);
+  gap: var(--cd-space-2xs);
 }
 
-.fieldset.subtle .fieldset-content {
+.cd-fieldset.cd-variant-subtle .cd-fieldset-content {
   border: none;
   padding: 0;
   background-color: transparent;

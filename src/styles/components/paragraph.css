@@ -1,8 +1,8 @@
-.paragraph,
-:where(.markdown p) {
-  font-family: var(--font-family-body);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-l);
+.cd-paragraph,
+:where(.cd-markdown p) {
+  font-family: var(--cd-font-family-body);
+  font-weight: var(--cd-font-weight-normal);
+  line-height: var(--cd-line-height-l);
   margin: 0.75em 0;
   text-wrap: pretty;
   hanging-punctuation: first;
@@ -24,7 +24,7 @@
  * This ensures that headings are visibly closer to their content than the
  * content above them, using spacing intentionally to denote hierarchy.
  */
-.heading + .paragraph,
-:where(.markdown :is(h1, h2, h3, h4, h5, h6) + p) {
+.cd-heading + .cd-paragraph,
+:where(.cd-markdown :is(h1, h2, h3, h4, h5, h6) + p) {
   margin-block-start: 0;
 }

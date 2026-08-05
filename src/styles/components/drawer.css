@@ -3,9 +3,9 @@
  * styles defined in ./shared/base-dialog.css
  */
 
-.drawer {
-  --dialog-dismiss-btn-offset: 12px;
-  --drawer-size: min-content;
+.cd-drawer {
+  --cd-dialog-dismiss-btn-offset: 12px;
+  --cd-drawer-size: min-content;
 
   position: fixed;
   inset: 0;
@@ -15,92 +15,92 @@
   overflow: auto;
 
   @media (prefers-reduced-motion: no-preference) {
-    transition-duration: var(--duration-xl) !important;
+    transition-duration: var(--cd-duration-xl) !important;
   }
 
-  &.left {
+  &.cd-side-left {
     right: auto;
 
     @media (prefers-reduced-motion: no-preference) {
-      --dialog-starting-transform: translateX(-100%);
-      --dialog-ending-transform: translateX(-100%);
+      --cd-dialog-starting-transform: translateX(-100%);
+      --cd-dialog-ending-transform: translateX(-100%);
     }
   }
 
-  &.top {
+  &.cd-side-top {
     bottom: auto;
 
     @media (prefers-reduced-motion: no-preference) {
-      --dialog-starting-transform: translateY(-100%);
-      --dialog-ending-transform: translateY(-100%);
+      --cd-dialog-starting-transform: translateY(-100%);
+      --cd-dialog-ending-transform: translateY(-100%);
     }
   }
 
-  &.right {
+  &.cd-side-right {
     left: auto;
 
     @media (prefers-reduced-motion: no-preference) {
-      --dialog-starting-transform: translateX(100%);
-      --dialog-ending-transform: translateX(100%);
+      --cd-dialog-starting-transform: translateX(100%);
+      --cd-dialog-ending-transform: translateX(100%);
     }
   }
 
-  &.bottom {
+  &.cd-side-bottom {
     top: auto;
 
     @media (prefers-reduced-motion: no-preference) {
-      --dialog-starting-transform: translateY(100%);
-      --dialog-ending-transform: translateY(100%);
+      --cd-dialog-starting-transform: translateY(100%);
+      --cd-dialog-ending-transform: translateY(100%);
     }
   }
 
-  &.top,
-  &.bottom {
+  &.cd-side-top,
+  &.cd-side-bottom {
     width: 100dvw;
     max-width: unset;
-    height: var(--drawer-size);
+    height: var(--cd-drawer-size);
     max-height: 100dvh;
     min-height: min(100dvh, 16rem);
 
-    &.small {
-      --drawer-size: 18rem;
+    &.cd-size-small {
+      --cd-drawer-size: 18rem;
     }
 
-    &.medium {
-      --drawer-size: 28rem;
+    &.cd-size-medium {
+      --cd-drawer-size: 28rem;
     }
 
-    &.large {
-      --drawer-size: 38rem;
+    &.cd-size-large {
+      --cd-drawer-size: 38rem;
     }
 
-    &.full-size {
-      --drawer-size: 100dvh;
+    &.cd-size-full {
+      --cd-drawer-size: 100dvh;
     }
   }
 
-  &.left,
-  &.right {
+  &.cd-side-left,
+  &.cd-side-right {
     height: 100dvh;
     max-height: unset;
-    width: var(--drawer-size);
+    width: var(--cd-drawer-size);
     min-width: min(100dvw, 18rem);
     max-width: 100dvw;
 
-    &.small {
-      --drawer-size: 22rem;
+    &.cd-size-small {
+      --cd-drawer-size: 22rem;
     }
 
-    &.medium {
-      --drawer-size: 32rem;
+    &.cd-size-medium {
+      --cd-drawer-size: 32rem;
     }
 
-    &.large {
-      --drawer-size: 42rem;
+    &.cd-size-large {
+      --cd-drawer-size: 42rem;
     }
 
-    &.full-size {
-      --drawer-size: 100dvw;
+    &.cd-size-full {
+      --cd-drawer-size: 100dvw;
     }
   }
 
@@ -111,20 +111,20 @@
    * them to inherit their parent's color scheme. We still allow explicit
    * overrides using the standard light-mode and dark-mode classes.
    */
-  &:not(.light-mode, .dark-mode) {
+  &:not(.cd-light-mode, .cd-dark-mode) {
     color-scheme: light dark;
   }
 }
 
-.drawer-body {
+.cd-drawer-body {
   height: 100%;
 }
 
-.drawer-footer {
-  padding: var(--space-xs);
+.cd-drawer-footer {
+  padding: var(--cd-space-xs);
   flex-shrink: 0;
   display: flex;
-  gap: var(--space-xs);
+  gap: var(--cd-space-xs);
   justify-content: flex-start;
   margin: 0;
   margin-block-start: auto;

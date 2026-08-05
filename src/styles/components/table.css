@@ -1,82 +1,82 @@
-table.table,
-:where(.markdown table) {
-  --table-density: 1;
-  --table-bg-odd: var(--color-surface-primary);
-  --table-bg-even: var(--color-surface-secondary);
-  --table-vertical-border: var(--border-s);
+table.cd-table,
+:where(.cd-markdown table) {
+  --cd-table-density: 1;
+  --cd-table-bg-odd: var(--cd-color-surface-primary);
+  --cd-table-bg-even: var(--cd-color-surface-secondary);
+  --cd-table-vertical-border: var(--cd-border-s);
 
-  background-color: var(--color-surface-primary);
+  background-color: var(--cd-color-surface-primary);
   border-collapse: separate;
   border-spacing: 0;
-  font-size: var(--font-size-m);
-  border: var(--border-s) solid var(--color-border);
-  border-radius: var(--radius-s);
-  color: var(--color-text-primary);
-  font-family: var(--font-family-body);
-  font-weight: var(--font-weight-normal);
+  font-size: var(--cd-font-size-m);
+  border: var(--cd-border-s) solid var(--cd-color-border);
+  border-radius: var(--cd-radius-s);
+  color: var(--cd-color-text-primary);
+  font-family: var(--cd-font-family-body);
+  font-weight: var(--cd-font-weight-normal);
   overflow: hidden;
 
-  &.subtle {
-    --table-bg-odd: transparent;
-    --table-bg-even: transparent;
-    --table-vertical-border: 0;
+  &.cd-variant-subtle {
+    --cd-table-bg-odd: transparent;
+    --cd-table-bg-even: transparent;
+    --cd-table-vertical-border: 0;
 
     background-color: transparent;
     color: inherit;
     border: 0;
   }
 
-  &.dense {
-    --table-density: 0.5;
+  &.cd-spacing-dense {
+    --cd-table-density: 0.5;
   }
 
-  &.sparse {
-    --table-density: 1.5;
+  &.cd-spacing-sparse {
+    --cd-table-density: 1.5;
   }
 
   caption {
-    font-family: var(--font-family-heading);
-    line-height: var(--line-height-s);
-    font-size: var(--font-size-l);
-    font-weight: var(--font-weight-semibold);
+    font-family: var(--cd-font-family-heading);
+    line-height: var(--cd-line-height-s);
+    font-size: var(--cd-font-size-l);
+    font-weight: var(--cd-font-weight-semibold);
     text-align: start;
-    margin: 0 0 var(--space-2xs);
+    margin: 0 0 var(--cd-space-2xs);
   }
 
-  &.caption-below {
+  &.cd-caption-below {
     caption-side: bottom;
 
     caption {
-      font-family: var(--font-family-body);
-      line-height: var(--line-height-m);
-      font-size: var(--font-size-m);
-      font-weight: var(--font-weight-normal);
+      font-family: var(--cd-font-family-body);
+      line-height: var(--cd-line-height-m);
+      font-size: var(--cd-font-size-m);
+      font-weight: var(--cd-font-weight-normal);
       text-align: center;
-      margin-block: var(--space-2xs);
+      margin-block: var(--cd-space-2xs);
       font-style: italic;
-      color: var(--color-text-secondary);
+      color: var(--cd-color-text-secondary);
     }
   }
 
   th,
   td {
-    padding: calc(var(--space-2xs) * var(--table-density))
-      calc(var(--space-xs) * var(--table-density));
+    padding: calc(var(--cd-space-2xs) * var(--cd-table-density))
+      calc(var(--cd-space-xs) * var(--cd-table-density));
   }
 
   th,
   tfoot td {
-    font-weight: var(--font-weight-bold);
-    font-family: var(--font-family-heading);
+    font-weight: var(--cd-font-weight-bold);
+    font-family: var(--cd-font-family-heading);
     text-align: center;
   }
 
   th {
-    border-block-end: var(--border-m) solid var(--color-border);
+    border-block-end: var(--cd-border-m) solid var(--cd-color-border);
   }
 
   tfoot td {
-    border-block-start: var(--border-m) solid var(--color-border);
+    border-block-start: var(--cd-border-m) solid var(--cd-color-border);
   }
 
   td {
@@ -84,19 +84,20 @@ table.table,
   }
 
   :is(th, td):not(:last-of-type) {
-    border-inline-end: var(--table-vertical-border) dashed var(--color-border);
+    border-inline-end: var(--cd-table-vertical-border) dashed
+      var(--cd-color-border);
   }
 
   tr:not(:last-of-type) td {
-    border-block-end: var(--border-s) solid var(--color-border);
+    border-block-end: var(--cd-border-s) solid var(--cd-color-border);
   }
 
   tbody tr:nth-child(odd),
   tbody:has(tr:last-of-type:nth-child(even)) + tfoot tr {
-    background-color: var(--table-bg-even);
+    background-color: var(--cd-table-bg-even);
   }
 
   tbody tr:nth-child(even) {
-    background-color: var(--table-bg-odd);
+    background-color: var(--cd-table-bg-odd);
   }
 }

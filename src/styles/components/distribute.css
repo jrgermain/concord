@@ -3,7 +3,7 @@
  * styles defined in ./shared/base-flex.css
  */
 
-.distribute {
+.cd-distribute {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;

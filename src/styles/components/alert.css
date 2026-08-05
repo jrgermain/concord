@@ -3,130 +3,130 @@
  * styles defined in ./shared/base-message.css
  */
 
-.alert {
-  --message-icon-size: 1.7em;
-  --message-icon-offset: 0.25em;
-  --message-icon-bg-color: var(--color-surface-primary);
+.cd-alert {
+  --cd-message-icon-size: 1.7em;
+  --cd-message-icon-offset: 0.25em;
+  --cd-message-icon-bg-color: var(--cd-color-surface-primary);
 
-  font-size: var(--font-size-m);
-  color: var(--color-text-primary);
-  padding: var(--border-m);
-  padding-inline-start: calc(var(--border-m) + 2px);
-  border-radius: var(--radius-s);
+  font-size: var(--cd-font-size-m);
+  color: var(--cd-color-text-primary);
+  padding: var(--cd-border-m);
+  padding-inline-start: calc(var(--cd-border-m) + 2px);
+  border-radius: var(--cd-radius-s);
   background: linear-gradient(
     to right,
-    var(--alert-border-start-color),
-    var(--alert-border-end-color)
+    var(--cd-alert-border-start-color),
+    var(--cd-alert-border-end-color)
   );
 
   @media print {
-    border: var(--border-m) solid var(--alert-border-start-color);
+    border: var(--cd-border-m) solid var(--cd-alert-border-start-color);
   }
 
-  &.error {
-    --alert-bg-color: var(--color-red-9);
-    --alert-title-color: var(--color-red-3);
-    --alert-border-start-color: var(--color-red-5);
-    --alert-border-end-color: var(--color-red-6);
-    --message-icon: url("@/src/icons/x.svg");
-    --message-icon-color: var(--color-red-5);
+  &.cd-status-error {
+    --cd-alert-bg-color: var(--cd-color-red-9);
+    --cd-alert-title-color: var(--cd-color-red-3);
+    --cd-alert-border-start-color: var(--cd-color-red-5);
+    --cd-alert-border-end-color: var(--cd-color-red-6);
+    --cd-message-icon: url("@/src/icons/x.svg");
+    --cd-message-icon-color: var(--cd-color-red-5);
   }
 
-  &.warning {
-    --alert-bg-color: var(--color-yellow-9);
-    --alert-title-color: var(--color-yellow-3);
-    --alert-border-start-color: var(--color-yellow-5);
-    --alert-border-end-color: var(--color-yellow-6);
-    --message-icon: url("@/src/icons/warning.svg");
-    --message-icon-color: var(--color-yellow-5);
+  &.cd-status-warning {
+    --cd-alert-bg-color: var(--cd-color-yellow-9);
+    --cd-alert-title-color: var(--cd-color-yellow-3);
+    --cd-alert-border-start-color: var(--cd-color-yellow-5);
+    --cd-alert-border-end-color: var(--cd-color-yellow-6);
+    --cd-message-icon: url("@/src/icons/warning.svg");
+    --cd-message-icon-color: var(--cd-color-yellow-5);
   }
 
-  &.success {
-    --alert-bg-color: var(--color-green-9);
-    --alert-title-color: var(--color-green-3);
-    --alert-border-start-color: var(--color-green-5);
-    --alert-border-end-color: var(--color-green-6);
-    --message-icon: url("@/src/icons/check.svg");
-    --message-icon-color: var(--color-green-5);
+  &.cd-status-success {
+    --cd-alert-bg-color: var(--cd-color-green-9);
+    --cd-alert-title-color: var(--cd-color-green-3);
+    --cd-alert-border-start-color: var(--cd-color-green-5);
+    --cd-alert-border-end-color: var(--cd-color-green-6);
+    --cd-message-icon: url("@/src/icons/check.svg");
+    --cd-message-icon-color: var(--cd-color-green-5);
   }
 
-  &.info {
-    --alert-bg-color: var(--color-teal-9);
-    --alert-title-color: var(--color-teal-3);
-    --alert-border-start-color: var(--color-teal-5);
-    --alert-border-end-color: var(--color-teal-6);
-    --message-icon: url("@/src/icons/info.svg");
-    --message-icon-color: var(--color-teal-5);
+  &.cd-status-info {
+    --cd-alert-bg-color: var(--cd-color-teal-9);
+    --cd-alert-title-color: var(--cd-color-teal-3);
+    --cd-alert-border-start-color: var(--cd-color-teal-5);
+    --cd-alert-border-end-color: var(--cd-color-teal-6);
+    --cd-message-icon: url("@/src/icons/info.svg");
+    --cd-message-icon-color: var(--cd-color-teal-5);
   }
 
-  &.subtle {
-    --message-icon-size: 1.3em;
-    --message-icon-offset: 0.5em;
+  &.cd-variant-subtle {
+    --cd-message-icon-size: 1.3em;
+    --cd-message-icon-offset: 0.5em;
 
-    border-radius: var(--radius-m);
-    padding: var(--border-s);
-    font-size: var(--font-size-s);
+    border-radius: var(--cd-radius-m);
+    padding: var(--cd-border-s);
+    font-size: var(--cd-font-size-s);
 
-    &.error {
-      --alert-border-start-color: var(--color-red-8);
-      --alert-border-end-color: var(--color-red-8);
-      --message-icon-bg-color: var(--color-red-5);
-      --message-icon-color: var(--color-red-9);
+    &.cd-status-error {
+      --cd-alert-border-start-color: var(--cd-color-red-8);
+      --cd-alert-border-end-color: var(--cd-color-red-8);
+      --cd-message-icon-bg-color: var(--cd-color-red-5);
+      --cd-message-icon-color: var(--cd-color-red-9);
 
-      color: var(--color-red-1);
+      color: var(--cd-color-red-1);
     }
 
-    &.warning {
-      --alert-border-start-color: var(--color-yellow-8);
-      --alert-border-end-color: var(--color-yellow-8);
-      --message-icon-bg-color: var(--color-yellow-5);
-      --message-icon-color: var(--color-yellow-9);
+    &.cd-status-warning {
+      --cd-alert-border-start-color: var(--cd-color-yellow-8);
+      --cd-alert-border-end-color: var(--cd-color-yellow-8);
+      --cd-message-icon-bg-color: var(--cd-color-yellow-5);
+      --cd-message-icon-color: var(--cd-color-yellow-9);
 
-      color: var(--color-yellow-1);
+      color: var(--cd-color-yellow-1);
     }
 
-    &.success {
-      --alert-border-start-color: var(--color-green-8);
-      --alert-border-end-color: var(--color-green-8);
-      --message-icon-bg-color: var(--color-green-5);
-      --message-icon-color: var(--color-green-9);
+    &.cd-status-success {
+      --cd-alert-border-start-color: var(--cd-color-green-8);
+      --cd-alert-border-end-color: var(--cd-color-green-8);
+      --cd-message-icon-bg-color: var(--cd-color-green-5);
+      --cd-message-icon-color: var(--cd-color-green-9);
 
-      color: var(--color-green-1);
+      color: var(--cd-color-green-1);
     }
 
-    &.info {
-      --alert-border-start-color: var(--color-teal-8);
-      --alert-border-end-color: var(--color-teal-8);
-      --message-icon-bg-color: var(--color-teal-5);
-      --message-icon-color: var(--color-teal-9);
+    &.cd-status-info {
+      --cd-alert-border-start-color: var(--cd-color-teal-8);
+      --cd-alert-border-end-color: var(--cd-color-teal-8);
+      --cd-message-icon-bg-color: var(--cd-color-teal-5);
+      --cd-message-icon-color: var(--cd-color-teal-9);
 
-      color: var(--color-teal-1);
+      color: var(--cd-color-teal-1);
     }
 
-    .alert-content {
-      border-radius: calc(var(--radius-m) - var(--border-s));
+    .cd-alert-content {
+      border-radius: calc(var(--cd-radius-m) - var(--cd-border-s));
       padding-inline-start: 2.25em;
 
       &::before {
-        border-width: var(--border-s);
+        border-width: var(--cd-border-s);
       }
     }
   }
 }
 
-.alert-content {
+.cd-alert-content {
   position: relative;
-  padding: var(--space-2xs);
+  padding: var(--cd-space-2xs);
   padding-inline-start: 2.5em;
-  background-color: var(--alert-bg-color);
+  background-color: var(--cd-alert-bg-color);
   border-start-start-radius: 2.5em;
   border-end-start-radius: 2.5em;
-  border-start-end-radius: calc(var(--radius-s) - var(--border-m));
-  border-end-end-radius: calc(var(--radius-s) - var(--border-m));
-  box-shadow: var(--shadow-s);
+  border-start-end-radius: calc(var(--cd-radius-s) - var(--cd-border-m));
+  border-end-end-radius: calc(var(--cd-radius-s) - var(--cd-border-m));
+  box-shadow: var(--cd-shadow-s);
 }
 
-.alert-title {
-  color: var(--alert-title-color);
+.cd-alert-title {
+  color: var(--cd-alert-title-color);
   margin-block-end: 0.1em;
 }

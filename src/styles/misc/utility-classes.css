@@ -2,36 +2,42 @@
  * Conditionally show/hide content *
  ***********************************/
 
-.app:not([data-jrg-js-enabled="true"]) .if-js-enabled {
+.cd-app:not([data-cd-js-enabled="true"]) .cd-if-js-enabled {
   display: none !important;
 }
 
-.app[data-jrg-js-enabled="true"] .if-js-disabled {
+.cd-app[data-cd-js-enabled="true"] .cd-if-js-disabled {
   display: none !important;
 }
 
 @media screen and (width < 30rem) {
   /* Narrow viewport */
-  :is(.if-medium-viewport, .if-wide-viewport):not(.if-narrow-viewport) {
+  :is(.cd-if-medium-viewport, .cd-if-wide-viewport):not(
+    .cd-if-narrow-viewport
+  ) {
     display: none !important;
   }
 }
 
 @media screen and (30rem <= width < 55rem) {
   /* Medium viewport */
-  :is(.if-narrow-viewport, .if-wide-viewport):not(.if-medium-viewport) {
+  :is(.cd-if-narrow-viewport, .cd-if-wide-viewport):not(
+    .cd-if-medium-viewport
+  ) {
     display: none !important;
   }
 }
 
 @media screen and (width >= 55rem) {
   /* Wide viewport */
-  :is(.if-narrow-viewport, .if-medium-viewport):not(.if-wide-viewport) {
+  :is(.cd-if-narrow-viewport, .cd-if-medium-viewport):not(
+    .cd-if-wide-viewport
+  ) {
     display: none !important;
   }
 }
 
-.app:not(:has(.app-sidebar)) .if-app-has-sidebar {
+.cd-app:not(:has(.cd-app-sidebar)) .cd-if-app-has-sidebar {
   display: none !important;
 }
 
@@ -39,23 +45,23 @@
  * Override color mode for a section of the page *
  *************************************************/
 
-.light-mode {
+.cd-light-mode {
   color-scheme: only light;
-  color: var(--color-text-primary);
+  color: var(--cd-color-text-primary);
 }
 
-.dark-mode {
+.cd-dark-mode {
   color-scheme: only dark;
-  color: var(--color-text-primary);
+  color: var(--cd-color-text-primary);
 }
 
 /****************************************************
  * Make elements invisible, except to screenreaders *
  ****************************************************/
 
-.visually-hidden,
-.app-sidebar-toggle input,
-.skip-link:not(:focus, .static) {
+.cd-visually-hidden,
+.cd-app-sidebar-toggle input,
+.cd-skip-link:not(:focus, .cd-is-static) {
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
   height: 1px;

@@ -1,20 +1,20 @@
-.accordion {
+.cd-accordion {
   width: 100%;
 
   details {
     width: 100%;
-    background-color: var(--color-surface-primary);
+    background-color: var(--cd-color-surface-primary);
     padding-block: 0;
-    padding-inline: var(--space-xs);
-    border-radius: var(--radius-m);
-    border: var(--border-s) solid var(--color-border);
-    box-shadow: var(--shadow-s);
-    font-family: var(--font-family-body);
-    font-size: var(--font-size-m);
-    font-weight: var(--font-weight-normal);
+    padding-inline: var(--cd-space-xs);
+    border-radius: var(--cd-radius-m);
+    border: var(--cd-border-s) solid var(--cd-color-border);
+    box-shadow: var(--cd-shadow-s);
+    font-family: var(--cd-font-family-body);
+    font-size: var(--cd-font-size-m);
+    font-weight: var(--cd-font-weight-normal);
 
     @media (prefers-reduced-motion: no-preference) {
-      transition: padding var(--duration-l) var(--ease-out);
+      transition: padding var(--cd-duration-l) var(--cd-ease-out);
       interpolate-size: allow-keywords;
     }
 
@@ -37,13 +37,13 @@
       block-size: 0;
       overflow-y: clip;
       transition-property: content-visibility, opacity, block-size;
-      transition-duration: var(--duration-l);
-      transition-timing-function: var(--ease-out);
+      transition-duration: var(--cd-duration-l);
+      transition-timing-function: var(--cd-ease-out);
       transition-behavior: allow-discrete;
     }
 
     &[open] {
-      padding-block-end: var(--space-xs);
+      padding-block-end: var(--cd-space-xs);
 
       &::details-content {
         opacity: 1;
@@ -51,37 +51,37 @@
       }
 
       summary {
-        border-block-end-color: var(--color-border);
-        margin-block-end: var(--space-xs);
+        border-block-end-color: var(--cd-color-border);
+        margin-block-end: var(--cd-space-xs);
 
         &::before {
           rotate: 0deg;
         }
 
-        &:not(:active, .active, :hover, .hover) {
-          color: var(--color-brand-3);
+        &:not(:active, .cd-is-active, :hover, .cd-is-hovered) {
+          color: var(--cd-color-brand-3);
         }
       }
     }
   }
 
   summary {
-    font-family: var(--font-family-heading);
-    font-size: var(--font-size-m);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-xs);
+    font-family: var(--cd-font-family-heading);
+    font-size: var(--cd-font-size-m);
+    font-weight: var(--cd-font-weight-bold);
+    line-height: var(--cd-line-height-xs);
     cursor: pointer;
-    border-block-end: var(--border-s) dashed transparent;
-    padding: var(--space-xs);
-    padding-inline-start: calc(var(--space-xs) + 1em);
+    border-block-end: var(--cd-border-s) dashed transparent;
+    padding: var(--cd-space-xs);
+    padding-inline-start: calc(var(--cd-space-xs) + 1em);
     margin-block: 0;
-    margin-inline: calc(-1 * var(--space-xs));
-    transition-duration: var(--duration-s);
+    margin-inline: calc(-1 * var(--cd-space-xs));
+    transition-duration: var(--cd-duration-s);
     transition-property: color, border-color;
-    transition-timing-function: var(--ease-default);
+    transition-timing-function: var(--cd-ease-default);
     position: relative;
     list-style: none; /* Hides ::marker pseudo element in favor of ::before (better cross browser consistency) */
-    color: var(--color-text-primary);
+    color: var(--cd-color-text-primary);
     user-select: none;
 
     /* Truncate to one line */
@@ -93,12 +93,12 @@
       transition-property: color, border-color, padding, margin;
     }
 
-    &:is(:hover, .hover) {
-      color: light-dark(var(--color-brand-4), var(--color-brand-2));
+    &:is(:hover, .cd-is-hovered) {
+      color: light-dark(var(--cd-color-brand-4), var(--cd-color-brand-2));
     }
 
-    &:is(:active, .active) {
-      color: light-dark(var(--color-brand-2), var(--color-brand-4));
+    &:is(:active, .cd-is-active) {
+      color: light-dark(var(--cd-color-brand-2), var(--cd-color-brand-4));
     }
 
     /* Hides ::-webkit-details-marker pseudo element in favor of ::before (better cross browser consistency) */
@@ -109,7 +109,7 @@
     /* Replacement marker element */
     &::before {
       content: "";
-      background-color: var(--color-text-secondary);
+      background-color: var(--cd-color-text-secondary);
       mask-image: url("@/src/icons/dropdown.svg");
       mask-position: center;
       mask-size: contain;
@@ -122,7 +122,7 @@
       width: 0.75em;
       height: 0.75em;
       rotate: -90deg;
-      transition: rotate var(--duration-l) var(--ease-spring);
+      transition: rotate var(--cd-duration-l) var(--cd-ease-spring);
     }
 
     &:dir(rtl)::before {
@@ -138,22 +138,22 @@
     }
   }
 
-  &.subtle {
+  &.cd-variant-subtle {
     details {
       box-shadow: none;
       border: 0;
       background-color: transparent;
-      padding-inline-start: calc(var(--space-xs) + 1em);
+      padding-inline-start: calc(var(--cd-space-xs) + 1em);
 
       &[open] summary {
-        margin-block-end: var(--space-3xs);
+        margin-block-end: var(--cd-space-3xs);
       }
     }
 
     summary {
       border-block-end: 0;
-      padding-block: var(--space-2xs);
-      margin-inline-start: calc(-1 * (var(--space-xs) + 1em));
+      padding-block: var(--cd-space-2xs);
+      margin-inline-start: calc(-1 * (var(--cd-space-xs) + 1em));
     }
   }
 }

@@ -3,8 +3,8 @@
  * styles defined in ./shared/base-check.css
  */
 
-.radio input {
-  border-radius: var(--radius-full);
+.cd-radio input {
+  border-radius: var(--cd-radius-full);
 
   &::before,
   &::after {
@@ -13,38 +13,39 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: var(--radius-full);
+    border-radius: var(--cd-radius-full);
     inset: 0;
     transform: scale(0);
   }
 
   /* Checked background */
   &::before {
-    background-color: var(--color-brand-5);
-    transition: transform var(--duration-m) var(--ease-default);
+    background-color: var(--cd-color-brand-5);
+    transition: transform var(--cd-duration-m) var(--cd-ease-default);
   }
 
   /* Checked center dot */
   &::after {
     background-color: white;
-    transition: transform var(--duration-l) var(--ease-spring) 25ms;
+    transition: transform var(--cd-duration-l) var(--cd-ease-spring) 25ms;
   }
 
-  &:is(:focus-visible, .focus) {
-    border-color: var(--color-gray-6);
+  &:is(:focus-visible, .cd-is-focused) {
+    border-color: var(--cd-color-gray-6);
     box-shadow:
-      0 0 0 0.08em var(--color-gray-6),
-      0 0 0 calc(0.16em + var(--border-s)) var(--color-gray-transparent);
+      0 0 0 0.08em var(--cd-color-gray-6),
+      0 0 0 calc(0.16em + var(--cd-border-s)) var(--cd-color-gray-transparent);
     outline: 0;
   }
 
   &:checked {
-    border-color: var(--color-brand-4);
+    border-color: var(--cd-color-brand-4);
 
-    &:is(:focus-visible, .focus) {
+    &:is(:focus-visible, .cd-is-focused) {
       box-shadow:
-        0 0 0 0.08em var(--color-brand-4),
-        0 0 0 calc(0.16em + var(--border-s)) var(--color-brand-transparent);
+        0 0 0 0.08em var(--cd-color-brand-4),
+        0 0 0 calc(0.16em + var(--cd-border-s))
+          var(--cd-color-brand-transparent);
     }
 
     &::before {
@@ -58,6 +59,6 @@
 
   /* When disabled and not selected, make background gray */
   &:disabled:not(:checked) {
-    background-color: var(--color-gray-9);
+    background-color: var(--cd-color-gray-9);
   }
 }

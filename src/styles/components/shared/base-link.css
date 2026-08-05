@@ -1,28 +1,28 @@
-.link,
-.card-title a,
-.app-sidebar-heading a,
-:where(.markdown a) {
-  color: var(--link-color);
+.cd-link,
+.cd-card-title a,
+.cd-app-sidebar-heading a,
+:where(.cd-markdown a) {
+  color: var(--cd-link-color);
   text-decoration-line: underline;
-  text-decoration-color: rgb(from var(--link-color) r g b / 40%);
+  text-decoration-color: rgb(from var(--cd-link-color) r g b / 40%);
   text-decoration-skip-ink: all;
   text-decoration-thickness: 0.1em;
   text-underline-offset: 0.1em;
   cursor: pointer;
   transition-property: color, text-decoration-color;
-  transition-duration: var(--duration-s);
-  transition-timing-function: var(--ease-default);
+  transition-duration: var(--cd-duration-s);
+  transition-timing-function: var(--cd-ease-default);
 
-  &:is(:hover, .hover) {
-    text-decoration-color: var(--link-color);
+  &:is(:hover, .cd-is-hovered) {
+    text-decoration-color: var(--cd-link-color);
   }
 
-  &:is(:focus-visible, .focus) {
+  &:is(:focus-visible, .cd-is-focused) {
     outline-offset: 1px;
   }
 
-  &:is(:active, .active) {
-    color: var(--link-active-color);
-    text-decoration-color: var(--link-active-color);
+  &:is(:active, .cd-is-active) {
+    color: var(--cd-link-active-color);
+    text-decoration-color: var(--cd-link-active-color);
   }
 }

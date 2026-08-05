@@ -3,20 +3,20 @@
  * styles defined in ./shared/base-message.css
  */
 
-.banner {
-  --message-icon-size: 1.6em;
-  --message-icon-offset: 0.8em;
-  --message-icon-bg-color: var(--color-surface-primary);
+.cd-banner {
+  --cd-message-icon-size: 1.6em;
+  --cd-message-icon-offset: 0.8em;
+  --cd-message-icon-bg-color: var(--cd-color-surface-primary);
 
   font-size: 1rem;
-  color: var(--color-contrast-text);
-  border-block: var(--border-m) solid var(--banner-secondary-color);
+  color: var(--cd-color-contrast-text);
+  border-block: var(--cd-border-m) solid var(--cd-banner-secondary-color);
   width: 100%;
-  background-color: var(--banner-bg-color);
+  background-color: var(--cd-banner-bg-color);
 
-  .dismiss-button {
-    --dismiss-button-fg-color: currentcolor;
-    --dismiss-button-size: 1.7em;
+  .cd-dismiss-button {
+    --cd-dismiss-button-fg-color: currentcolor;
+    --cd-dismiss-button-size: 1.7em;
 
     position: absolute;
     inset-block-start: 0.5em;
@@ -24,79 +24,79 @@
     margin: auto;
   }
 
-  .link {
-    --link-color: var(--color-contrast-text);
-    --link-active-color: rgb(from var(--color-contrast-text) r g b / 85%);
+  .cd-link {
+    --cd-link-color: var(--cd-color-contrast-text);
+    --cd-link-active-color: rgb(from var(--cd-color-contrast-text) r g b / 85%);
   }
 
-  &.error {
-    --banner-bg-color: var(--color-red-4);
-    --banner-secondary-color: var(--color-red-5);
-    --message-icon: url("@/src/icons/x.svg");
-    --message-icon-color: var(--color-red-5);
+  &.cd-status-error {
+    --cd-banner-bg-color: var(--cd-color-red-4);
+    --cd-banner-secondary-color: var(--cd-color-red-5);
+    --cd-message-icon: url("@/src/icons/x.svg");
+    --cd-message-icon-color: var(--cd-color-red-5);
 
-    .dismiss-button {
-      --dismiss-button-bg-color: var(--color-red-3);
-      --dismiss-button-highlight-color: var(--color-red-8);
-    }
-  }
-
-  &.warning {
-    --banner-bg-color: var(--color-yellow-4);
-    --banner-secondary-color: var(--color-yellow-5);
-    --message-icon: url("@/src/icons/warning.svg");
-    --message-icon-color: var(--color-yellow-5);
-
-    .dismiss-button {
-      --dismiss-button-bg-color: var(--color-yellow-3);
-      --dismiss-button-highlight-color: var(--color-yellow-6);
+    .cd-dismiss-button {
+      --cd-dismiss-button-bg-color: var(--cd-color-red-3);
+      --cd-dismiss-button-highlight-color: var(--cd-color-red-8);
     }
   }
 
-  &.success {
-    --banner-bg-color: var(--color-green-4);
-    --banner-secondary-color: var(--color-green-5);
-    --message-icon: url("@/src/icons/check.svg");
-    --message-icon-color: var(--color-green-5);
+  &.cd-status-warning {
+    --cd-banner-bg-color: var(--cd-color-yellow-4);
+    --cd-banner-secondary-color: var(--cd-color-yellow-5);
+    --cd-message-icon: url("@/src/icons/warning.svg");
+    --cd-message-icon-color: var(--cd-color-yellow-5);
 
-    .dismiss-button {
-      --dismiss-button-bg-color: var(--color-green-3);
-      --dismiss-button-highlight-color: var(--color-green-8);
+    .cd-dismiss-button {
+      --cd-dismiss-button-bg-color: var(--cd-color-yellow-3);
+      --cd-dismiss-button-highlight-color: var(--cd-color-yellow-6);
     }
   }
 
-  &.info {
-    --banner-bg-color: var(--color-teal-4);
-    --banner-secondary-color: var(--color-teal-5);
-    --message-icon: url("@/src/icons/info.svg");
-    --message-icon-color: var(--color-teal-5);
+  &.cd-status-success {
+    --cd-banner-bg-color: var(--cd-color-green-4);
+    --cd-banner-secondary-color: var(--cd-color-green-5);
+    --cd-message-icon: url("@/src/icons/check.svg");
+    --cd-message-icon-color: var(--cd-color-green-5);
 
-    .dismiss-button {
-      --dismiss-button-bg-color: var(--color-teal-3);
-      --dismiss-button-highlight-color: var(--color-teal-8);
+    .cd-dismiss-button {
+      --cd-dismiss-button-bg-color: var(--cd-color-green-3);
+      --cd-dismiss-button-highlight-color: var(--cd-color-green-8);
     }
   }
 
-  &.neutral {
-    --banner-bg-color: var(--color-brand-4);
-    --banner-secondary-color: var(--color-brand-5);
+  &.cd-status-info {
+    --cd-banner-bg-color: var(--cd-color-teal-4);
+    --cd-banner-secondary-color: var(--cd-color-teal-5);
+    --cd-message-icon: url("@/src/icons/info.svg");
+    --cd-message-icon-color: var(--cd-color-teal-5);
 
-    .dismiss-button {
-      --dismiss-button-bg-color: var(--color-brand-3);
-      --dismiss-button-highlight-color: var(--color-brand-8);
+    .cd-dismiss-button {
+      --cd-dismiss-button-bg-color: var(--cd-color-teal-3);
+      --cd-dismiss-button-highlight-color: var(--cd-color-teal-8);
+    }
+  }
+
+  &.cd-status-neutral {
+    --cd-banner-bg-color: var(--cd-color-brand-4);
+    --cd-banner-secondary-color: var(--cd-color-brand-5);
+
+    .cd-dismiss-button {
+      --cd-dismiss-button-bg-color: var(--cd-color-brand-3);
+      --cd-dismiss-button-highlight-color: var(--cd-color-brand-8);
     }
 
-    .banner-content {
-      padding-inline-start: var(--space-body-x);
+    .cd-banner-content {
+      padding-inline-start: var(--cd-space-body-x);
     }
 
-    .banner-content::before,
-    .banner-content::after {
+    .cd-banner-content::before,
+    .cd-banner-content::after {
       content: unset;
     }
   }
 
-  &:has(.dismiss-button) .banner-content {
+  &:has(.cd-dismiss-button) .cd-banner-content {
     padding-inline-end: 2.75em;
   }
 
@@ -106,14 +106,14 @@
   }
 }
 
-.banner-content {
+.cd-banner-content {
   position: relative;
-  max-width: var(--app-max-content-width);
+  max-width: var(--cd-app-max-content-width);
   margin-inline: auto;
-  padding: var(--space-2xs) var(--space-body-x);
+  padding: var(--cd-space-2xs) var(--cd-space-body-x);
   padding-inline-start: 3.2em;
 }
 
-.banner-title {
-  margin-block-end: var(--space-3xs);
+.cd-banner-title {
+  margin-block-end: var(--cd-space-3xs);
 }

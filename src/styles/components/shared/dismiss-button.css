@@ -1,44 +1,47 @@
-.dismiss-button {
-  --dismiss-button-bg-color: var(--color-gray-9);
-  --dismiss-button-fg-color: var(--color-gray-3);
-  --dismiss-button-highlight-color: var(--color-gray-8);
-  --dismiss-button-size: 1.8rem;
+.cd-dismiss-button {
+  --cd-dismiss-button-bg-color: var(--cd-color-gray-9);
+  --cd-dismiss-button-fg-color: var(--cd-color-gray-3);
+  --cd-dismiss-button-highlight-color: var(--cd-color-gray-8);
+  --cd-dismiss-button-size: 1.8rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  height: var(--dismiss-button-size);
-  width: var(--dismiss-button-size);
-  background-color: var(--dismiss-button-bg-color);
-  color: var(--dismiss-button-fg-color);
-  border-radius: var(--radius-full);
+  height: var(--cd-dismiss-button-size);
+  width: var(--cd-dismiss-button-size);
+  background-color: var(--cd-dismiss-button-bg-color);
+  color: var(--cd-dismiss-button-fg-color);
+  border-radius: var(--cd-radius-full);
   padding: 0;
   border: 0;
   outline: 0;
-  box-shadow: 0 0 0 var(--border-s) transparent;
+  box-shadow: 0 0 0 var(--cd-border-s) transparent;
   cursor: pointer;
   transform: translateY(0);
   transition-property: box-shadow, transform;
-  transition-duration: var(--duration-s);
-  transition-timing-function: var(--ease-default);
+  transition-duration: var(--cd-duration-s);
+  transition-timing-function: var(--cd-ease-default);
 
-  &:is(:hover, .hover, :focus-visible, .focus) {
-    box-shadow: 0 0 0 var(--border-s) var(--dismiss-button-highlight-color);
+  &:is(:hover, .cd-is-hovered, :focus-visible, .cd-is-focused) {
+    box-shadow: 0 0 0 var(--cd-border-s)
+      var(--cd-dismiss-button-highlight-color);
   }
 
-  &:is(:hover, .hover):is(:focus-visible, .focus) {
-    box-shadow: 0 0 0 var(--border-m) var(--dismiss-button-highlight-color);
+  &:is(:hover, .cd-is-hovered):is(:focus-visible, .cd-is-focused) {
+    box-shadow: 0 0 0 var(--cd-border-m)
+      var(--cd-dismiss-button-highlight-color);
   }
 
-  &:is(:active, .active) {
+  &:is(:active, .cd-is-active) {
     transform: translateY(1px);
-    box-shadow: 0 0 0 var(--border-s) var(--dismiss-button-highlight-color) !important;
+    box-shadow: 0 0 0 var(--cd-border-s)
+      var(--cd-dismiss-button-highlight-color) !important;
   }
 
   &::after {
     content: "";
-    width: calc(var(--dismiss-button-size) * 0.45);
-    height: calc(var(--dismiss-button-size) * 0.45);
+    width: calc(var(--cd-dismiss-button-size) * 0.45);
+    height: calc(var(--cd-dismiss-button-size) * 0.45);
     mask-image: url("@/src/icons/x-thin.svg");
     mask-size: contain;
     mask-repeat: no-repeat;

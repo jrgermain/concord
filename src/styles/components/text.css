@@ -1,119 +1,119 @@
-.bold,
-:where(.markdown strong, .markdown b) {
-  font-weight: var(--font-weight-bold);
+.cd-bold,
+:where(.cd-markdown strong, .cd-markdown b) {
+  font-weight: var(--cd-font-weight-bold);
 }
 
-.semibold {
-  font-weight: var(--font-weight-semibold);
+.cd-semibold {
+  font-weight: var(--cd-font-weight-semibold);
 }
 
-.italic,
-:where(.markdown em) {
+.cd-italic,
+:where(.cd-markdown em) {
   font-style: italic;
 }
 
-.underline {
+.cd-underline {
   text-decoration-line: underline;
 }
 
-.strikethrough,
-:where(.markdown s) {
+.cd-strikethrough,
+:where(.cd-markdown s) {
   text-decoration-line: line-through;
 }
 
-.underline.strikethrough {
+.cd-underline.cd-strikethrough {
   text-decoration-line: underline line-through;
 }
 
-.subscript,
-.superscript,
-:where(.markdown sub, .markdown sup) {
+.cd-subscript,
+.cd-superscript,
+:where(.cd-markdown sub, .cd-markdown sup) {
   font-size: 0.75em;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
 
-.subscript,
-:where(.markdown sub) {
+.cd-subscript,
+:where(.cd-markdown sub) {
   inset-block-end: -0.25em;
 }
 
-.superscript,
-:where(.markdown sup) {
+.cd-superscript,
+:where(.cd-markdown sup) {
   inset-block-start: -0.5em;
 }
 
-.code,
-:where(.markdown code) {
-  font-family: var(--font-family-mono);
-  background-color: var(--color-gray-extra-transparent);
-  color: var(--color-gray-1);
-  border-radius: var(--radius-s);
+.cd-code,
+:where(.cd-markdown code) {
+  font-family: var(--cd-font-family-mono);
+  background-color: var(--cd-color-gray-extra-transparent);
+  color: var(--cd-color-gray-1);
+  border-radius: var(--cd-radius-s);
   display: inline;
   padding: 0.25ch 0.5ch;
   font-size: 0.9em;
 
-  &.invert {
-    color: var(--color-gray-9);
+  &.cd-is-inverted {
+    color: var(--cd-color-gray-9);
   }
 }
 
-.link .code,
-:where(.markdown a code) {
+.cd-link .cd-code,
+:where(.cd-markdown a code) {
   text-decoration: inherit;
   text-decoration-color: inherit;
   text-decoration-thickness: inherit;
   color: inherit;
 }
 
-.clamp-1,
-.clamp-2,
-.clamp-3,
-.clamp-4,
-.clamp-5,
-.clamp-6 {
+.cd-clamp-1,
+.cd-clamp-2,
+.cd-clamp-3,
+.cd-clamp-4,
+.cd-clamp-5,
+.cd-clamp-6 {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.clamp-1 {
+.cd-clamp-1 {
   line-clamp: 1;
   -webkit-line-clamp: 1;
 }
 
-.clamp-2 {
+.cd-clamp-2 {
   line-clamp: 2;
   -webkit-line-clamp: 2;
 }
 
-.clamp-3 {
+.cd-clamp-3 {
   line-clamp: 3;
   -webkit-line-clamp: 3;
 }
 
-.clamp-4 {
+.cd-clamp-4 {
   line-clamp: 4;
   -webkit-line-clamp: 4;
 }
 
-.clamp-5 {
+.cd-clamp-5 {
   line-clamp: 5;
   -webkit-line-clamp: 5;
 }
 
-.clamp-6 {
+.cd-clamp-6 {
   line-clamp: 6;
   -webkit-line-clamp: 6;
 }
 
-.gradient-text {
+.cd-gradient-text {
   background: linear-gradient(
     30deg,
-    var(--gradient-text-start, var(--color-blue-5)),
-    var(--gradient-text-middle, var(--color-brand-5)),
-    var(--gradient-text-end, var(--color-purple-5))
+    var(--cd-gradient-text-start, var(--cd-color-blue-5)),
+    var(--cd-gradient-text-middle, var(--cd-color-brand-5)),
+    var(--cd-gradient-text-end, var(--cd-color-purple-5))
   );
   background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -37,17 +37,17 @@
   /////////////////////////////
 
   const $root = document.querySelector("html");
-  const $app = document.querySelector<HTMLElement>(".app");
-  const $appBody = document.querySelector<HTMLElement>(".app-body");
-  const $appContent = document.querySelector<HTMLElement>(".app-content");
+  const $app = document.querySelector<HTMLElement>(".cd-app");
+  const $appBody = document.querySelector<HTMLElement>(".cd-app-body");
+  const $appContent = document.querySelector<HTMLElement>(".cd-app-content");
   const $headerContent = document.querySelector<HTMLElement>(
-    ".app-header-content",
+    ".cd-app-header-content",
   );
   const $sidebarContent = document.querySelector<HTMLElement>(
-    ".app-sidebar-content",
+    ".cd-app-sidebar-content",
   );
   const $sidebarToggle = document.querySelector<HTMLInputElement>(
-    ".app-sidebar-toggle input[type='checkbox']",
+    ".cd-app-sidebar-toggle input[type='checkbox']",
   );
 
   const smallWidthMediaQuery = window.matchMedia("(width < 55rem)");
@@ -68,16 +68,16 @@
     const shouldReserveGutter = hasVerticalOverflow() && isOverflowHidden();
 
     if ($headerContent) {
-      $headerContent.dataset.jrgScrollGutter = String(shouldReserveGutter);
+      $headerContent.dataset.cdScrollGutter = String(shouldReserveGutter);
     }
     if ($appContent) {
-      $appContent.dataset.jrgScrollGutter = String(shouldReserveGutter);
+      $appContent.dataset.cdScrollGutter = String(shouldReserveGutter);
     }
   };
 
   const setJsEnabled = () => {
     if ($app) {
-      $app.dataset.jrgJsEnabled = "true";
+      $app.dataset.cdJsEnabled = "true";
     }
   };
 
@@ -120,7 +120,7 @@
 
   // Add Modal/Drawer toggle listener
   document
-    .querySelectorAll<HTMLDialogElement>("dialog.modal, dialog.drawer")
+    .querySelectorAll<HTMLDialogElement>("dialog.cd-modal, dialog.cd-drawer")
     .forEach((dialog) => {
       dialog.addEventListener("toggle", setScrollGutter);
     });
@@ -131,8 +131,8 @@
       for (const node of mutation.addedNodes) {
         if (
           node instanceof HTMLDialogElement &&
-          (node.classList.contains("modal") ||
-            node.classList.contains("drawer"))
+          (node.classList.contains("cd-modal") ||
+            node.classList.contains("cd-drawer"))
         ) {
           node.addEventListener("toggle", setScrollGutter);
         }

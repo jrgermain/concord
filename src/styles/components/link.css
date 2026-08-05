@@ -3,10 +3,10 @@
  * styles defined in ./shared/base-link.css
  */
 
-.link,
-:where(.markdown a) {
-  --link-color: var(--color-teal-4);
-  --link-active-color: var(--color-teal-3);
+.cd-link,
+:where(.cd-markdown a) {
+  --cd-link-color: var(--cd-color-teal-4);
+  --cd-link-active-color: var(--cd-color-teal-3);
 
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--cd-font-weight-semibold);
 }
