@@ -290,7 +290,7 @@
     }
   }
 
-  .cd-input-group {
+  .cd-field-input-group {
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -318,7 +318,7 @@
       z-index: 3;
     }
 
-    > :is(.cd-prefix, .cd-suffix, .cd-action) {
+    > :is(.cd-field-prefix, .cd-field-suffix, .cd-field-action) {
       user-select: none;
       -webkit-user-drag: none;
       display: flex;
@@ -337,15 +337,15 @@
       }
     }
 
-    > .cd-prefix {
+    > .cd-field-prefix {
       border-inline-end: 0;
     }
 
-    > .cd-suffix {
+    > .cd-field-suffix {
       border-inline-start: 0;
     }
 
-    > .cd-action {
+    > .cd-field-action {
       cursor: pointer;
       color: var(--cd-color-brand-3);
       border-inline-start: 0;
@@ -376,7 +376,7 @@
     > :is(input, select, textarea) {
       width: 100%;
 
-      &:has(~ .cd-action:is(:focus-visible, .cd-is-focused)) {
+      &:has(~ .cd-field-action:is(:focus-visible, .cd-is-focused)) {
         border-inline-end-width: 0;
       }
     }

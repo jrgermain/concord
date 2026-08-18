@@ -1,6 +1,6 @@
 table.cd-table,
 :where(.cd-markdown table) {
-  --cd-table-density: 1;
+  --cd-table-spacing: 1;
   --cd-table-bg-odd: var(--cd-color-surface-primary);
   --cd-table-bg-even: var(--cd-color-surface-secondary);
   --cd-table-vertical-border: var(--cd-border-s);
@@ -27,11 +27,11 @@ table.cd-table,
   }
 
   &.cd-spacing-dense {
-    --cd-table-density: 0.5;
+    --cd-table-spacing: 0.5;
   }
 
   &.cd-spacing-sparse {
-    --cd-table-density: 1.5;
+    --cd-table-spacing: 1.5;
   }
 
   caption {
@@ -43,7 +43,7 @@ table.cd-table,
     margin: 0 0 var(--cd-space-2xs);
   }
 
-  &.cd-caption-below {
+  &.cd-caption-position-bottom {
     caption-side: bottom;
 
     caption {
@@ -60,8 +60,8 @@ table.cd-table,
 
   th,
   td {
-    padding: calc(var(--cd-space-2xs) * var(--cd-table-density))
-      calc(var(--cd-space-xs) * var(--cd-table-density));
+    padding: calc(var(--cd-space-2xs) * var(--cd-table-spacing))
+      calc(var(--cd-space-xs) * var(--cd-table-spacing));
   }
 
   th,

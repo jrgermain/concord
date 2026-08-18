@@ -48,18 +48,18 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
   />
   <UsageExample
     name="Label Position"
-    description="You can change the position of the label by using the `cd-label-top`, `cd-label-right`, `cd-label-bottom` (default), or `cd-label-left` classes."
+    description="You can change the position of the label by using the `cd-label-position-top`, `cd-label-position-right`, `cd-label-position-bottom` (default), or `cd-label-position-left` classes."
     code={`
-      <div class="cd-spinner cd-label-top" role="status">
+      <div class="cd-spinner cd-label-position-top" role="status">
         Top
       </div>
-      <div class="cd-spinner cd-label-right" role="status">
+      <div class="cd-spinner cd-label-position-right" role="status">
         Right
       </div>
-      <div class="cd-spinner cd-label-bottom" role="status">
+      <div class="cd-spinner cd-label-position-bottom" role="status">
         Bottom (default)
       </div>
-      <div class="cd-spinner cd-label-left" role="status">
+      <div class="cd-spinner cd-label-position-left" role="status">
         Left
       </div>
     `}
@@ -75,10 +75,10 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       a unitless number. A value of \`1\` corresponds to the default size.
     `)}
     code={`
-      <div class="cd-spinner cd-size-small cd-label-right" role="status">Small</div>
-      <div class="cd-spinner cd-label-right" role="status">Medium (default)</div>
-      <div class="cd-spinner cd-size-large cd-label-right" role="status">Large</div>
-      <div class="cd-spinner cd-label-right" style="--cd-spinner-scale: 1.25" role="status">Custom scale (1.25)</div>
+      <div class="cd-spinner cd-size-small cd-label-position-right" role="status">Small</div>
+      <div class="cd-spinner cd-label-position-right" role="status">Medium (default)</div>
+      <div class="cd-spinner cd-size-large cd-label-position-right" role="status">Large</div>
+      <div class="cd-spinner cd-label-position-right" style="--cd-spinner-scale: 1.25" role="status">Custom scale (1.25)</div>
     `}
   />
   <UsageExample
@@ -93,10 +93,10 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       variable on the element.
     `)}
     code={`
-      <div class="cd-spinner cd-label-right cd-is-delayed" role="status">
+      <div class="cd-spinner cd-label-position-right cd-is-delayed" role="status">
         I have the default delay
       </div>
-      <div class="cd-spinner cd-label-right cd-is-delayed" role="status" style="--cd-spinner-delay: 500ms">
+      <div class="cd-spinner cd-label-position-right cd-is-delayed" role="status" style="--cd-spinner-delay: 500ms">
         I have a custom 500ms delay
       </div>
     `}

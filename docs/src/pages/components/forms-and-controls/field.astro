@@ -255,15 +255,15 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     description={trimTextPadding(`
       Fields may have a **prefix** (label that comes before) and/or **suffix** 
       (label that comes after). This may be useful for providing context on how
-      the data in the Field will be used. Use the class \`cd-prefix\` if the item
-      is before the control in the markup or \`cd-suffix\` if it comes after. Wrap
-      any prefixes, suffixes, and controls in a \`div\` with the class \`cd-input-group\`.
+      the data in the Field will be used. Use the class \`cd-field-prefix\` if the item
+      is before the control in the markup or \`cd-field-suffix\` if it comes after. Wrap
+      any prefixes, suffixes, and controls in a \`div\` with the class \`cd-field-input-group\`.
     `)}
     code={`
       <label class="cd-field">
         Subdomain
-        <div class="cd-input-group">
-          <div class="cd-prefix">https://</div>
+        <div class="cd-field-input-group">
+          <div class="cd-field-prefix">https://</div>
           <input
             autocomplete="off"
             spellcheck="false"
@@ -272,7 +272,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
             size="10"
             style="min-width: 10ch;"
           />
-          <div class="cd-suffix">.jrgermain.dev</div>
+          <div class="cd-field-suffix">.jrgermain.dev</div>
         </div>
       </label>
     `}
@@ -284,8 +284,8 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     description={trimTextPadding(`
       Fields may have a **action** button attached to the beginning or end. Like
       prefixes and suffixes, you'll need to wrap the input (or select) and
-      action button in a div that has the class \`cd-input-group\`. The action
-      button must also have the class \`cd-action\`.
+      action button in a div that has the class \`cd-field-input-group\`. The action
+      button must also have the class \`cd-field-action\`.
 
       Below is an example of a password field with a button that toggles the
       visibility of the password.
@@ -293,10 +293,10 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     code={`
       <label class="cd-field" x-data="{ isVisible: false }">
         Password
-        <div class="cd-input-group">
+        <div class="cd-field-input-group">
           <input x-bind:type="isVisible ? 'text' : 'password'" autocomplete="off" />
           <button
-            class="cd-action"
+            class="cd-field-action"
             x-bind:title="isVisible ? 'Hide Password' : 'Show Password'"
             x-on:click="isVisible = !isVisible"
           >

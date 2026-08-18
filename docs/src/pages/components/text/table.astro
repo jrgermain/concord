@@ -84,10 +84,10 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     `}
   />
   <UsageExample
-    name="Caption Below"
-    description="You can place the caption below the table by adding the class `cd-caption-below` to the `table` element."
+    name="Caption Position"
+    description="You can place the caption below the table by adding the class `cd-caption-position-bottom` to the `table` element."
     code={`
-      <table class="cd-table cd-caption-below">
+      <table class="cd-table cd-caption-position-bottom">
         <caption>Sales Figures</caption>
         <thead>
           <tr>
@@ -153,7 +153,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     description={trimTextPadding(`
       You can make a Table more compact by adding the class \`cd-spacing-dense\` or more spread out with the class \`cd-spacing-sparse\`.
 
-      To further customize the spacing, you can set the \`--cd-table-density\`
+      To further customize the spacing, you can set the \`--cd-table-spacing\`
       CSS variable on the Table element. The value of this variable _must_ be
       a unitless number. A value of \`1\` corresponds to the default density.
     `)}

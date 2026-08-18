@@ -41,7 +41,7 @@
     --cd-spinner-scale: 1.5;
   }
 
-  &.cd-label-top {
+  &.cd-label-position-top {
     flex-direction: column-reverse;
 
     &::after {
@@ -49,7 +49,7 @@
     }
   }
 
-  &.cd-label-right {
+  &.cd-label-position-right {
     flex-direction: row;
     gap: var(--cd-space-xs);
 
@@ -58,7 +58,7 @@
     }
   }
 
-  &.cd-label-left {
+  &.cd-label-position-left {
     flex-direction: row-reverse;
     gap: var(--cd-space-xs);
 
