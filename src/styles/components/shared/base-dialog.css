@@ -16,10 +16,10 @@
   --cd-dialog-starting-opacity: 0;
   --cd-dialog-open-opacity: 1;
   --cd-dialog-ending-opacity: 0;
+  --cd-dialog-dismiss-btn-offset: 12px;
 
   box-shadow: var(--cd-shadow-xl);
   border: var(--cd-border-s) solid var(--cd-color-border);
-  border-radius: var(--cd-radius-l);
   background-color: var(--cd-color-surface-primary);
   color: var(--cd-color-text-primary);
   padding: 0;

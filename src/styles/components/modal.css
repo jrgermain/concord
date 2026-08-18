@@ -4,7 +4,6 @@
  */
 
 .cd-modal {
-  --cd-dialog-dismiss-btn-offset: 9px;
   --cd-modal-size: fit-content;
 
   @media (prefers-reduced-motion: no-preference) {
@@ -16,6 +15,7 @@
   max-width: calc(100svw - 4 * var(--cd-space-body-x));
   margin: auto;
   width: var(--cd-modal-size);
+  border-radius: var(--cd-radius-l);
 
   &.cd-size-small {
     --cd-modal-size: 25rem;

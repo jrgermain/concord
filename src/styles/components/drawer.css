@@ -4,7 +4,6 @@
  */
 
 .cd-drawer {
-  --cd-dialog-dismiss-btn-offset: 12px;
   --cd-drawer-size: min-content;
 
   position: fixed;
