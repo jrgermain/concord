@@ -6,12 +6,12 @@ interface Props {
 const { name } = Astro.props;
 ---
 
-<div class="card duration-example" x-data="{ clicked: false }">
-  <p class="card-title">duration-{name}</p>
+<div class="cd-card duration-example" x-data="{ clicked: false }">
+  <p class="cd-card-title">duration-{name}</p>
   <slot />
   <label
     class="wrapper"
-    style={{ transitionDuration: `var(--duration-${name})` }}
+    style={{ transitionDuration: `var(--cd-duration-${name})` }}
   >
     <input type="checkbox" x-model="clicked" />
     Click or tap
@@ -25,18 +25,18 @@ const { name } = Astro.props;
     justify-content: center;
     inline-size: 10rem;
     block-size: 10rem;
-    border-radius: var(--radius-m);
-    border: var(--border-s) solid var(--color-blue-7);
-    box-shadow: var(--shadow-s);
-    background-color: var(--color-blue-8);
-    color: var(--color-blue-2);
+    border-radius: var(--cd-radius-m);
+    border: var(--cd-border-s) solid var(--cd-color-blue-7);
+    box-shadow: var(--cd-shadow-s);
+    background-color: var(--cd-color-blue-8);
+    color: var(--cd-color-blue-2);
     font-size: 1rem;
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--cd-font-weight-bold);
     box-sizing: border-box;
     overflow: clip;
     position: relative;
     transition-property: background-color, border-color, color, outline;
-    transition-timing-function: var(--ease-default);
+    transition-timing-function: var(--cd-ease-default);
     user-select: none;
     outline: 0 solid transparent;
     cursor: pointer;
@@ -55,17 +55,17 @@ const { name } = Astro.props;
   }
 
   .wrapper:has(input:checked) {
-    background-color: var(--color-red-8);
-    border-color: var(--color-red-7);
-    color: var(--color-red-2);
+    background-color: var(--cd-color-red-8);
+    border-color: var(--cd-color-red-7);
+    color: var(--cd-color-red-2);
   }
 
   .wrapper:has(input:focus-visible) {
-    outline: var(--border-m) solid var(--color-blue-7);
+    outline: var(--cd-border-m) solid var(--cd-color-blue-7);
   }
 
   .wrapper:has(input:checked:focus-visible) {
-    outline: var(--border-m) solid var(--color-red-7);
+    outline: var(--cd-border-m) solid var(--cd-color-red-7);
   }
 </style>
 

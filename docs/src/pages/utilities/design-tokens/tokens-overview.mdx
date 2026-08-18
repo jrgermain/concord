@@ -27,13 +27,13 @@ Each category is documented in the subsequent pages.
 
 All design tokens are defined as CSS Custom Properties (also known as "CSS Variables"). You should reference these properties when styling elements.
 
-The names of these properties follow the format, `--type-name`, where `type` is the type of value (e.g., "color") and `name` is the name of the token (e.g., "red-1"). You can reference a token in CSS with the `var` function.
+The names of these properties follow the format, `--cd-<type>-<name>`, where `<type>` is the type of value (e.g., "color") and `<name>` is the name of the token (e.g., "red-1"). You can reference a token in CSS with the `var` function.
 
 <CodeBlock
   language="css"
   code={trimTextPadding(`
-    .red-bg {
-      background-color: var(--color-red-1);
+    .cd-color-red-bg {
+      background-color: var(--cd-color-red-1);
     }
   `)}
 />
@@ -46,7 +46,7 @@ The NPM package also exports TypeScript enums that can be used to reference thes
     import { Color } from "@jrgermain/concord";
 
     export default function MyComponent() {
-      // Note: Color.Red1 evaluates to "var(--color-red-1)"
+      // Note: Color.Red1 evaluates to "var(--cd-color-red-1)"
       return <div style={{ backgroundColor: Color.Red1 }}>...</div>;
     }
   `)}
@@ -54,6 +54,6 @@ The NPM package also exports TypeScript enums that can be used to reference thes
 
 <br/>
 
-<div class="alert warning">
-  <div class="alert-content">Avoid using CSS variables defined by Concord but not documented on this site; these aren't part of the public API and may change in between major releases.</div>
+<div class="cd-alert cd-status-warning">
+  <div class="cd-alert-content">Avoid using CSS variables defined by Concord but not documented on this site; these aren't part of the public API and may change in between major releases.</div>
 </div>

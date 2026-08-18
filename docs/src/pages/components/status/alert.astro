@@ -11,36 +11,36 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
   <UsageExample
     name="Statuses"
     description={trimTextPadding(`
-      To create an Alert, create a \`div\` with the class \`alert\`.
-      Inside it, create another \`div\` with the class \`alert-content\`.
-      Place the desired message inside the \`alert-content\` element.
+      To create an Alert, create a \`div\` with the class \`cd-alert\`.
+      Inside it, create another \`div\` with the class \`cd-alert-content\`.
+      Place the desired message inside the \`cd-alert-content\` element.
       
       Every Alert must have exactly one **status**, which you can set by adding
       one of the following additional classes to the root element:
 
-      - \`info\`
-      - \`success\`
-      - \`warning\`
-      - \`error\`
+      - \`cd-status-info\`
+      - \`cd-status-success\`
+      - \`cd-status-warning\`
+      - \`cd-status-error\`
     `)}
     code={`
-      <div class="alert info">
-        <div class="alert-content">
+      <div class="cd-alert cd-status-info">
+        <div class="cd-alert-content">
           No payment is due at this time.
         </div>
       </div>
-      <div class="alert success">
-        <div class="alert-content">
+      <div class="cd-alert cd-status-success">
+        <div class="cd-alert-content">
           Your profile was updated successfully.
         </div>
       </div>
-      <div class="alert warning">
-        <div class="alert-content">
+      <div class="cd-alert cd-status-warning">
+        <div class="cd-alert-content">
           Your connection is unstable.
         </div>
       </div>
-      <div class="alert error">
-        <div class="alert-content">
+      <div class="cd-alert cd-status-error">
+        <div class="cd-alert-content">
           Your request couldn't be processed at this time.
           Please try again later.
         </div>
@@ -50,25 +50,25 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 
   <UsageExample
     name="Subtle"
-    description="To make an Alert less visually prominent, add the `subtle` class to its root element."
+    description="To make an Alert less visually prominent, add the `cd-variant-subtle` class to its root element."
     code={`
-      <div class="alert info subtle">
-        <div class="alert-content">
+      <div class="cd-alert cd-status-info cd-variant-subtle">
+        <div class="cd-alert-content">
           No payment is due at this time.
         </div>
       </div>
-      <div class="alert success subtle">
-        <div class="alert-content">
+      <div class="cd-alert cd-status-success cd-variant-subtle">
+        <div class="cd-alert-content">
           Your profile was updated successfully.
         </div>
       </div>
-      <div class="alert warning subtle">
-        <div class="alert-content">
+      <div class="cd-alert cd-status-warning cd-variant-subtle">
+        <div class="cd-alert-content">
           Your connection is unstable.
         </div>
       </div>
-      <div class="alert error subtle">
-        <div class="alert-content">
+      <div class="cd-alert cd-status-error cd-variant-subtle">
+        <div class="cd-alert-content">
           Your request couldn't be processed at this time.
           Please try again later.
         </div>
@@ -78,11 +78,11 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 
   <UsageExample
     name="Title"
-    description="To add a **title** to an Alert, add the class `alert-title` to the first child of the alert-content element."
+    description="To add a **title** to an Alert, add the class `cd-alert-title` to the first child of the `cd-alert-content` element."
     code={`
-      <div class="alert info">
-        <div class="alert-content">
-          <p class="alert-title">Fun Fact</p>
+      <div class="cd-alert cd-status-info">
+        <div class="cd-alert-content">
+          <p class="cd-alert-title">Fun Fact</p>
           <p>The tip of a shoelace is called an aglet.</p>
         </div>
       </div>

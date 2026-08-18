@@ -9,18 +9,18 @@ import UsageExample from "../../../components/UsageExample.astro";
 >
   <UsageExample
     name="Variants"
-    description="Create a Card by giving a container element the class `card`. Cards can either be **primary** (default) or **secondary**. To make a **secondary** Card, add the `secondary` class."
+    description="Create a Card by giving a container element the class `cd-card`. Cards can either be **primary** (default) or **secondary**. To make a **secondary** Card, add the `cd-variant-secondary` class."
     code={`
-      <div class="card">
+      <div class="cd-card">
         <p>This is an example of a Primary card.</p>
       </div>
-      <div class="secondary card">
+      <div class="cd-card cd-variant-secondary">
         <p>This is an example of a Secondary card.</p>
       </div>
-      <div class="card">
+      <div class="cd-card">
         <p>One use case for Secondary cards is creating nested cards.</p>
-        <hr class="divider invisible" />
-        <div class="secondary card">
+        <hr class="cd-divider cd-is-invisible" />
+        <div class="cd-card cd-variant-secondary">
           <p>This Secondary card is nested within a Primary one.</p>
         </div>
       </div>
@@ -29,14 +29,14 @@ import UsageExample from "../../../components/UsageExample.astro";
 
   <UsageExample
     name="Title"
-    description="You can add a **title** to a Card by adding a child element with the class `card-title`."
+    description="You can add a **title** to a Card by adding a child element with the class `cd-card-title`."
     code={`
-      <div class="card">
-        <h1 class="card-title">Hey</h1>
+      <div class="cd-card">
+        <h1 class="cd-card-title">Hey</h1>
         <p>I have a title.</p>
       </div>
-      <div class="secondary card">
-        <h1 class="card-title">Hey</h1>
+      <div class="cd-card cd-variant-secondary">
+        <h1 class="cd-card-title">Hey</h1>
         <p>Me too!</p>
       </div>
     `}
@@ -46,14 +46,14 @@ import UsageExample from "../../../components/UsageExample.astro";
     name="Title + Link"
     description="If you place an anchor tag inside the Card title, it will inherit styles from both the Card title and the Link component."
     code={`
-      <div class="card">
-        <h1 class="card-title">
+      <div class="cd-card">
+        <h1 class="cd-card-title">
           <a href="#">This is a link.</a>
         </h1>
         <p>This is some text.</p>
       </div>
-      <div class="card secondary">
-        <h1 class="card-title">
+      <div class="cd-card cd-variant-secondary">
+        <h1 class="cd-card-title">
           <a href="#">This is a link.</a>
         </h1>
         <p>This is some text.</p>
@@ -63,14 +63,14 @@ import UsageExample from "../../../components/UsageExample.astro";
 
   <UsageExample
     name="Transparent Cards"
-    description="Cards on top of a colorful background can also have a transparent blurred background instead of the solid default style. To opt into this, add the class `transparent`."
+    description="Cards on top of a colorful background can also have a transparent blurred background instead of the solid default style. To opt into this, add the class `cd-is-transparent`."
     code={`
       <div style="
-        background-image:linear-gradient(135deg, var(--color-blue-5), var(--color-purple-5), var(--color-pink-5));
-        padding: var(--space-m);
+        background-image:linear-gradient(135deg, var(--cd-color-blue-5), var(--cd-color-purple-5), var(--cd-color-pink-5));
+        padding: var(--cd-space-m);
       ">
-        <div class="card transparent">
-          <h1 class="card-title">Transparent Card</h1>
+        <div class="cd-card cd-is-transparent">
+          <h1 class="cd-card-title">Transparent Card</h1>
           <p>This is an example of a transparent card.</p>
         </div>
       </div>
@@ -79,32 +79,32 @@ import UsageExample from "../../../components/UsageExample.astro";
 
   <UsageExample
     name="Transparency + Images"
-    description="If you want to use a transparent card on top of an image that is mostly light or mostly dark, you may force the card to use light or dark mode to match (for aesthetic reasons) using the `light-mode` or `dark-mode` classes in addition to the `transparent` class. This has the added benefit of making sure any other components inside are in the correct mode as well."
+    description="If you want to use a transparent card on top of an image that is mostly light or mostly dark, you may force the card to use light or dark mode to match (for aesthetic reasons) using the `cd-light-mode` or `cd-dark-mode` classes in addition to the `cd-is-transparent` class. This has the added benefit of making sure any other components inside are in the correct mode as well."
     code={`
       <div style="
         background-image: url('/sumner-mahaffey-7Y0NshQLohk-unsplash.jpg');
         background-size: cover;
         background-position: center;
-        padding: var(--space-m);
+        padding: var(--cd-space-m);
       ">
-        <div class="card transparent light-mode">
-          <h1 class="card-title">Transparent Card</h1>
+        <div class="cd-card cd-is-transparent cd-light-mode">
+          <h1 class="cd-card-title">Transparent Card</h1>
           <p>This is an example of a transparent card that always displays in light mode.</p>
-          <hr class="divider invisible" />
-          <button class="button primary" type="button">This button is automatically in light mode.</button>
+          <hr class="cd-divider cd-is-invisible" />
+          <button class="cd-button cd-variant-primary" type="button">This button is automatically in light mode.</button>
         </div>
       </div>
       <div style="
         background-image: url('/takashi-watanabe-f2DL8oI-7N8-unsplash.jpg');
         background-size: cover;
         background-position: center;
-        padding: var(--space-m);
+        padding: var(--cd-space-m);
       ">
-        <div class="card transparent dark-mode">
-          <h1 class="card-title">Transparent Card</h1>
+        <div class="cd-card cd-is-transparent cd-dark-mode">
+          <h1 class="cd-card-title">Transparent Card</h1>
           <p>This is an example of a transparent card that always displays in dark mode.</p>
-          <hr class="divider invisible" />
-          <button class="button primary" type="button">This button is automatically in dark mode.</button>
+          <hr class="cd-divider cd-is-invisible" />
+          <button class="cd-button cd-variant-primary" type="button">This button is automatically in dark mode.</button>
         </div>
       </div>
     `}

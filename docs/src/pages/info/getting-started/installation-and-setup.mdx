@@ -76,32 +76,32 @@ Your application's HTML structure should follow this template:
           content="#010203"
         />
       </head>
-      <body class="app">
-        <!-- href must match '.app-content' element id -->
-        <a class="skip-link" href="#main-content"> Skip to Main Content </a>
-        <header class="app-header">
-          <div class="app-header-content">
+      <body class="cd-app">
+        <!-- href must match '.cd-app-content' element id -->
+        <a class="cd-skip-link" href="#main-content"> Skip to Main Content </a>
+        <header class="cd-app-header">
+          <div class="cd-app-header-content">
             <!-- Logo/home link -->
-            <div class="app-header-left">
-              <a class="app-header-item" href="/">
-                <img class="app-icon" aria-hidden="true" src="...">
-                <span class="app-title-divider"></span>
-                <span class="app-title">App Name</span>
+            <div class="cd-app-header-left">
+              <a class="cd-app-header-item" href="/">
+                <img class="cd-app-icon" aria-hidden="true" src="...">
+                <span class="cd-app-title-divider"></span>
+                <span class="cd-app-title">App Name</span>
               </a>
             </div>
 
             <!-- Main navigation (optional) -->
-            <div class="app-header-center">
-                <a class="app-header-item" href="/link1" aria-current="page"> Current Link </a>
-                <a class="app-header-item" href="/link2"> Other Link </a>
+            <div class="cd-app-header-center">
+                <a class="cd-app-header-item" href="/link1" aria-current="page"> Current Link </a>
+                <a class="cd-app-header-item" href="/link2"> Other Link </a>
                 <!-- Optional: add a divider between groups of links -->
-                <hr class="app-header-divider">
-                <a class="app-header-item" href="/link3"> Other Link </a>
+                <hr class="cd-app-header-divider">
+                <a class="cd-app-header-item" href="/link3"> Other Link </a>
             </div>
 
             <!-- Sidebar toggle (automatically hidden if there is no sidebar) -->
-            <div class="app-header-right">
-              <label class="app-header-item app-sidebar-toggle if-app-has-sidebar">
+            <div class="cd-app-header-right">
+              <label class="cd-app-header-item cd-app-sidebar-toggle cd-if-app-has-sidebar">
                 <input type="checkbox" title="Toggle navigation">
                 <div></div>
                 <div></div>
@@ -110,20 +110,20 @@ Your application's HTML structure should follow this template:
             </div>
           </div>
         </header>
-        <div class="app-body"> 
+        <div class="cd-app-body"> 
           <!-- Optional -->
-          <aside class="app-sidebar">
-            <div class="app-sidebar-content">
+          <aside class="cd-app-sidebar">
+            <div class="cd-app-sidebar-content">
               <!-- 1 or more of the following: -->
-              <section class="app-sidebar-section">
-                <h1 class="app-sidebar-heading"> Heading </h1>
-                <a class="app-sidebar-item" aria-current="page"> Current Page </a>
-                <a class="app-sidebar-item">Other Page</a>
+              <section class="cd-app-sidebar-section">
+                <h1 class="cd-app-sidebar-heading"> Heading </h1>
+                <a class="cd-app-sidebar-item" aria-current="page"> Current Page </a>
+                <a class="cd-app-sidebar-item">Other Page</a>
               </section>
             </div>
           </aside>
 
-          <main id="main-content" class="app-content">
+          <main id="main-content" class="cd-app-content">
             <!-- Your page content goes here -->
           </main>
         </div>

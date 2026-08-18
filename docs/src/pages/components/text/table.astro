@@ -10,9 +10,9 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 >
   <UsageExample
     name="Basic Usage"
-    description="You can style a Table by adding the `table` class to any `table` element."
+    description="You can style a Table by adding the `cd-table` class to any `table` element."
     code={`
-      <table class="table">
+      <table class="cd-table">
         <thead>
           <tr>
             <th>First Name</th>
@@ -48,7 +48,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     name="Caption/Footer"
     description="The `caption` and `tfoot` elements are styled automatically."
     code={`
-      <table class="table">
+      <table class="cd-table">
         <caption>Sales Figures</caption>
         <thead>
           <tr>
@@ -85,9 +85,9 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
   />
   <UsageExample
     name="Caption Below"
-    description="You can place the caption below the table by adding the class `caption-below` to the `table` element."
+    description="You can place the caption below the table by adding the class `cd-caption-below` to the `table` element."
     code={`
-      <table class="table caption-below">
+      <table class="cd-table cd-caption-below">
         <caption>Sales Figures</caption>
         <thead>
           <tr>
@@ -118,9 +118,9 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
   />
   <UsageExample
     name="Subtle"
-    description="You can make the styling softer by adding the class `subtle` to the `table` element."
+    description="You can make the styling softer by adding the class `cd-variant-subtle` to the `table` element."
     code={`
-      <table class="table subtle">
+      <table class="cd-table cd-variant-subtle">
         <thead>
           <tr>
             <th>Quarter</th>
@@ -149,16 +149,16 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     `}
   />
   <UsageExample
-    name="Density"
+    name="Spacing"
     description={trimTextPadding(`
-      You can make a Table more compact by adding the class \`dense\` or more spread out with the class \`sparse\`.
+      You can make a Table more compact by adding the class \`cd-spacing-dense\` or more spread out with the class \`cd-spacing-sparse\`.
 
-      To further customize the spacing, you can set the \`--table-density\`
+      To further customize the spacing, you can set the \`--cd-table-density\`
       CSS variable on the Table element. The value of this variable _must_ be
       a unitless number. A value of \`1\` corresponds to the default density.
     `)}
     code={`
-      <table class="table dense">
+      <table class="cd-table cd-spacing-dense">
         <caption>Dense</caption>
         <thead>
           <tr>
@@ -185,7 +185,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
           </tr>
         </tbody>
       </table>
-      <table class="table sparse">
+      <table class="cd-table cd-spacing-sparse">
         <caption>Sparse</caption>
         <thead>
           <tr>

@@ -50,12 +50,12 @@ const languageText = displayNameForLanguage[language];
 <div class:list={["container", variant]}>
   <div class="toolbar">
     <span class="language">{languageText}</span>
-    <span class="copy-button-container if-js-enabled">
+    <span class="copy-button-container cd-if-js-enabled">
       <span class="copied-message">Copied!</span>
       <button
         aria-label="Copy code to clipboard"
         title="Copy"
-        class="button icon tertiary copy-button"
+        class="cd-icon-button cd-variant-tertiary copy-button"
         data-code-id={codeId}
         onclick="
           navigator.clipboard.writeText(document.getElementById(this.dataset.codeId).textContent)
@@ -94,44 +94,44 @@ const languageText = displayNameForLanguage[language];
   .container {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-surface-primary);
+    background-color: var(--cd-color-surface-primary);
     overflow: hidden;
   }
 
   .toolbar {
-    background-color: var(--color-surface-secondary);
+    background-color: var(--cd-color-surface-secondary);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--space-3xs) var(--space-2xs);
+    padding: var(--cd-space-3xs) var(--cd-space-2xs);
   }
 
   .language {
-    font-size: var(--font-size-s);
-    color: var(--color-brand-4);
-    font-weight: var(--font-weight-semibold);
-    margin-inline-start: var(--space-3xs);
+    font-size: var(--cd-font-size-s);
+    color: var(--cd-color-brand-4);
+    font-weight: var(--cd-font-weight-semibold);
+    margin-inline-start: var(--cd-space-3xs);
   }
 
   .copy-button-container {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-2xs);
+    gap: var(--cd-space-2xs);
   }
 
   .copied-message {
-    background-color: var(--color-green-5);
-    border: var(--border-s) solid var(--color-green-6);
+    background-color: var(--cd-color-green-5);
+    border: var(--cd-border-s) solid var(--cd-color-green-6);
     color: white;
     padding: 0.2em 0.6em;
     margin-block: -1px;
-    border-radius: var(--radius-full);
-    font-size: var(--font-size-s);
-    font-weight: var(--font-weight-semibold);
+    border-radius: var(--cd-radius-full);
+    font-size: var(--cd-font-size-s);
+    font-weight: var(--cd-font-weight-semibold);
   }
 
   .copy-button {
-    margin: calc(-1 * var(--space-3xs)) !important;
+    margin: calc(-1 * var(--cd-space-3xs)) !important;
   }
 
   .copy-button-container:not(.copied) .copied-message,
@@ -140,44 +140,44 @@ const languageText = displayNameForLanguage[language];
   }
 
   .rendered-code {
-    padding: var(--space-xs);
+    padding: var(--cd-space-xs);
     margin: 0;
     border-radius: 0;
-    font-size: var(--font-size-s);
+    font-size: var(--cd-font-size-s);
     max-height: 75vh;
   }
 
   .container.inline .toolbar {
-    border-block: var(--border-s) solid var(--color-border);
+    border-block: var(--cd-border-s) solid var(--cd-color-border);
   }
 
   .container.standalone {
-    border: var(--border-s) solid #52575d;
-    box-shadow: var(--shadow-s);
-    border-radius: var(--radius-m);
+    border: var(--cd-border-s) solid #52575d;
+    box-shadow: var(--cd-shadow-s);
+    border-radius: var(--cd-radius-m);
   }
 
   .container.standalone .toolbar {
     background-color: #383d43;
-    border-bottom: var(--border-s) solid #52575d;
+    border-bottom: var(--cd-border-s) solid #52575d;
     height: 2.25rem;
   }
 
   .container.standalone .copy-button {
-    --button-fg-color: #fff;
-    --button-hover-bg-color: #d8dbde33;
+    --cd-button-fg-color: #fff;
+    --cd-button-hover-bg-color: #d8dbde33;
   }
 
   .container.standalone .copy-button:focus-visible {
-    --button-bg-color: #d8dbde66;
+    --cd-button-bg-color: #d8dbde66;
   }
 
   .container.standalone .language {
     color: white;
-    font-size: calc(var(--font-size-m) * 0.9);
+    font-size: calc(var(--cd-font-size-m) * 0.9);
   }
 
   .container.standalone .rendered-code {
-    font-size: var(--font-size-m);
+    font-size: var(--cd-font-size-m);
   }
 </style>

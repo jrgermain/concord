@@ -11,17 +11,17 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
   <UsageExample
     name="Basic Usage"
     description={trimTextPadding(`
-      You can use \`skeleton\` as a modifier class on Headings, Paragraphs,
+      You can use \`cd-skeleton\` as a modifier class on Headings, Paragraphs,
       Buttons, Chips, or other elements to turn them into Skeletons.
 
       Note: if you're turning an interactive element into a Skeleton, make sure
       to disable it!
     `)}
     code={`
-      <div class="card" style="width:400px">
-        <p class="card-title skeleton"></p>
-        <p class="paragraph skeleton"></p>
-        <p class="paragraph skeleton"></p>
+      <div class="cd-card" style="width:400px">
+        <p class="cd-card-title cd-skeleton"></p>
+        <p class="cd-paragraph cd-skeleton"></p>
+        <p class="cd-paragraph cd-skeleton"></p>
       </div>
     `}
   />
@@ -31,35 +31,35 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       If you want to turn multiple elements into Skeletons at the same time, you can use a
       **Skeleton Controller**. These can be useful when a large or complex component is loading.
 
-      To create a Skeleton Controller, create an element with the class \`skeleton-controller\`.
+      To create a Skeleton Controller, create an element with the class \`cd-skeleton-controller\`.
       Skeleton Controllers default to a style of \`display: contents\`, so they will not affect
       the layout of the page.
 
       To each of the elements inside the Skeleton Controller that should be turned into a Skeleton
-      while the Controller is loading, add the class \`skeleton-item\`.
-
+      To each of the elements inside the Skeleton Controller that should be turned into a Skeleton
+      while the Controller is loading, add the class \`cd-skeleton-item\`.
       You can control the loading state of the Skeleton Controller by adding or removing the class
-      \`loading\` to/from the Controller.
+      \`cd-is-loading\` to/from the Controller.
 
       The same caveats apply as with the previous example: if you're turning an interactive element
       into a Skeleton, make sure to disable it.
     `)}
     code={`
-      <div class="card" style="width:400px">
-        <span class="skeleton-controller">
-          <p class="card-title skeleton-item">Title</p>
-          <p class="paragraph skeleton-item">Line 1</p>
-          <p class="paragraph skeleton-item">Line 2</p>
+      <div class="cd-card" style="width:400px">
+        <span class="cd-skeleton-controller">
+          <p class="cd-card-title cd-skeleton-item">Title</p>
+          <p class="cd-paragraph cd-skeleton-item">Line 1</p>
+          <p class="cd-paragraph cd-skeleton-item">Line 2</p>
         </span>
 
-        <div class="if-js-enabled">
-          <hr class="divider" />
-          <label class="switch">
+        <div class="cd-if-js-enabled">
+          <hr class="cd-divider" />
+          <label class="cd-switch">
             Loading
             <input
               type="checkbox"
-              class="switch"
-              onchange="document.querySelector('.skeleton-controller').classList.toggle('loading', this.checked)"
+              class="cd-switch"
+              onchange="document.querySelector('.cd-skeleton-controller').classList.toggle('cd-is-loading', this.checked)"
             />
           </label>
         </div>

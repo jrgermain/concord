@@ -11,14 +11,14 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
   <UsageExample
     name="Usage Patterns"
     description={trimTextPadding(`
-      You can use the \`field\` class to style form fields and their labels, as
+      You can use the \`cd-field\` class to style form fields and their labels, as
       well as any associated help and error text.
 
       There are 2 supported patterns:
 
-      1. Create a \`label\` element with the class \`field\` and place both the
+      1. Create a \`label\` element with the class \`cd-field\` and place both the
          label text and the control (e.g., an \`input\` element) inside it.
-      2. Create a \`div\` element with the class \`field\`. Inside it, place the
+      2. Create a \`div\` element with the class \`cd-field\`. Inside it, place the
          label text in a \`label\` element and the control next to it. Make sure
          the control has an \`id\` attribute that matches the \`for\` attribute
          of the label.
@@ -30,13 +30,13 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     `)}
     code={`
       <!-- Option 1 -->
-      <label class="field">
+      <label class="cd-field">
         Email Address
         <input type="email" />
       </label>
 
       <!-- Option 2 -->
-      <div class="field">
+      <div class="cd-field">
         <label for="field1">Email Address</label>
         <input id="field1" type="email" />
       </div>
@@ -47,7 +47,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     name="Supported Controls"
     description="Below are some examples of different control types inside a Field."
     code={`
-      <label class="field">
+      <label class="cd-field">
         Select
         <select>
           <option>Item 1</option>
@@ -55,59 +55,59 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
           <option>Item 3</option>
         </select>
       </label>
-      <label class="field">
+      <label class="cd-field">
         Color Input
         <input type="color" />
       </label>
-      <label class="field">
+      <label class="cd-field">
         Date Input
         <input type="date" />
       </label>
-      <label class="field">
+      <label class="cd-field">
         Datetime-local Input
         <input type="datetime-local" />
       </label>
-      <label class="field">
+      <label class="cd-field">
         Email Input
         <input type="email" />
       </label>
-      <label class="field">
+      <label class="cd-field">
         Month Input
         <input type="month" />
       </label>
-      <label class="field">
+      <label class="cd-field">
         Number Input
         <input type="number" />
       </label>
-      <label class="field">
+      <label class="cd-field">
         Password Input
         <input type="password" />
       </label>
-      <label class="field">
+      <label class="cd-field">
         Search Input
         <input type="search" />
       </label>
-      <label class="field">
+      <label class="cd-field">
         Tel Input
         <input type="tel" />
       </label>
-      <label class="field">
+      <label class="cd-field">
         Text Input
         <input type="text" />
       </label>
-      <label class="field">
+      <label class="cd-field">
         Time Input
         <input type="time" />
       </label>
-      <label class="field">
+      <label class="cd-field">
         URL Input
         <input type="url" />
       </label>
-      <label class="field">
+      <label class="cd-field">
         Week Input
         <input type="week" />
       </label>
-      <label class="field">
+      <label class="cd-field">
         Input With Datalist (Combo Box)
         <input type="text" list="us-states" />
         <datalist id="us-states">
@@ -163,7 +163,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
           <option value="Wyoming"></option>
         </datalist>
       </label>
-      <label class="field">
+      <label class="cd-field">
         Textarea
         <textarea rows="2"></textarea>
       </label>
@@ -175,11 +175,11 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     name="Read-only/Disabled"
     description="Fields whose controls have the `disabled` or `readonly` attributes will have slightly different styling applied, as read-only inputs are focusable and disabled ones are not."
     code={`
-      <label class="field">
+      <label class="cd-field">
         Disabled
         <input type="text" value="Testing" disabled />
       </label>
-      <label class="field">
+      <label class="cd-field">
         Read-only
         <input type="text" value="Testing" readonly />
       </label>
@@ -190,9 +190,9 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     name="Help & Error Text"
     description="Fields may have **help text**, **error text**, or both. To see the error text in the example below, try typing a single letter in the Field and clicking or tabbing out of it."
     code={`
-      <div class="field">
+      <div class="cd-field">
         <label for="employee-id">Employee ID Number</label>
-        <div class="help-text" id="employee-id-help-text">
+        <div class="cd-help-text" id="employee-id-help-text">
           This is printed on the back of your badge.
         </div>
         <input
@@ -203,7 +203,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
           minlength="8"
           maxlength="8"
         />
-        <div id="employee-id-error-message" class="error-message">
+        <div id="employee-id-error-message" class="cd-error-message">
           Your ID Number must be 8 digits long.
         </div>
       </div>
@@ -212,18 +212,18 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 
   <UsageExample
     name="Required Fields"
-    description="To show that a field is required, add an asterisk to its label. Wrap the asterisk in a `span` with the class `required-indicator`.\n\nIf you're using the pattern where the root of your Field is a `label` element (with the control inside it), you'll need to group the label text and the asterisk in an additional span so they appear on the same line."
+    description="To show that a field is required, add an asterisk to its label. Wrap the asterisk in a `span` with the class `cd-required-indicator`.\n\nIf you're using the pattern where the root of your Field is a `label` element (with the control inside it), you'll need to group the label text and the asterisk in an additional span so they appear on the same line."
     code={`
-      <label class="field">
+      <label class="cd-field">
         <span>
           Email Address
-          <span class="required-indicator">*</span>
+          <span class="cd-required-indicator">*</span>
         </span>
         <input type="email" />
       </label>
 
-      <div class="field">
-        <label for="required-email"> Email Address <span class="required-indicator">*</span> </label>
+      <div class="cd-field">
+        <label for="required-email"> Email Address <span class="cd-required-indicator">*</span> </label>
         <input id="required-email" type="email" />
       </div>
     `}
@@ -231,17 +231,17 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 
   <UsageExample
     name="Compact"
-    description="Fields can be made more condensed by adding the `compact` class to either the Field itself or to the containing `fieldset`."
+    description="Fields can be made more condensed by adding the `cd-is-compact` class to either the Field itself or to the containing `fieldset`."
     code={`
-      <label class="field compact">
+      <label class="cd-field cd-is-compact">
         Compact Text Input
         <input type="text" />
       </label>
 
-      <fieldset class="fieldset compact">
+      <fieldset class="cd-fieldset cd-is-compact">
         <legend>Compact Fieldset</legend>
-        <div class="fieldset-content">
-          <label class="field">
+        <div class="cd-fieldset-content">
+          <label class="cd-field">
             (Implicitly) Compact Text Input
             <input type="text" />
           </label>
@@ -255,23 +255,24 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     description={trimTextPadding(`
       Fields may have a **prefix** (label that comes before) and/or **suffix** 
       (label that comes after). This may be useful for providing context on how
-      the data in the Field will be used. Use the class \`prefix\` if the item
-      is before the control in the markup or \`suffix\` if it comes after. Wrap
-      any prefixes, suffixes, and controls in a \`div\` with the class \`input-group\`.
+      the data in the Field will be used. Use the class \`cd-prefix\` if the item
+      is before the control in the markup or \`cd-suffix\` if it comes after. Wrap
+      any prefixes, suffixes, and controls in a \`div\` with the class \`cd-input-group\`.
     `)}
     code={`
-      <label class="field">
+      <label class="cd-field">
         Subdomain
-        <div class="input-group">
-          <div class="prefix">https://</div>
+        <div class="cd-input-group">
+          <div class="cd-prefix">https://</div>
           <input
             autocomplete="off"
             spellcheck="false"
             type="text"
             minlength="1"
             size="10"
+            style="min-width: 10ch;"
           />
-          <div class="suffix">.jrgermain.dev</div>
+          <div class="cd-suffix">.jrgermain.dev</div>
         </div>
       </label>
     `}
@@ -283,19 +284,19 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     description={trimTextPadding(`
       Fields may have a **action** button attached to the beginning or end. Like
       prefixes and suffixes, you'll need to wrap the input (or select) and
-      action button in a div that has the class \`input-group\`. The action
-      button must also have the class \`action\`.
+      action button in a div that has the class \`cd-input-group\`. The action
+      button must also have the class \`cd-action\`.
 
       Below is an example of a password field with a button that toggles the
       visibility of the password.
     `)}
     code={`
-      <label class="field" x-data="{ isVisible: false }">
+      <label class="cd-field" x-data="{ isVisible: false }">
         Password
-        <div class="input-group">
+        <div class="cd-input-group">
           <input x-bind:type="isVisible ? 'text' : 'password'" autocomplete="off" />
           <button
-            class="action"
+            class="cd-action"
             x-bind:title="isVisible ? 'Hide Password' : 'Show Password'"
             x-on:click="isVisible = !isVisible"
           >
@@ -339,21 +340,21 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       \`legend\` element.
     `)}
     code={`
-      <fieldset class="field">
+      <fieldset class="cd-field">
         <legend>Topping Location</legend>
-        <div class="help-text">
+        <div class="cd-help-text">
           Select where you'd like your beef.
         </div>
-        <div class="radio-group">
-          <label class="radio">
+        <div class="cd-radio-group">
+          <label class="cd-radio">
             <input type="radio" name="location" />
             Left Side Only
           </label>
-          <label class="radio">
+          <label class="cd-radio">
             <input type="radio" name="location" />
             Whole Pizza
           </label>
-          <label class="radio">
+          <label class="cd-radio">
             <input type="radio" name="location" />
             Right Side Only
           </label>
@@ -364,9 +365,9 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 </ComponentDocumentation>
 
 <style is:global>
-  .field-example-columns {
+  .cd-field-example-columns {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: var(--space-s);
+    gap: var(--cd-space-s);
   }
 </style>

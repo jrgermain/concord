@@ -9,37 +9,37 @@ import UsageExample from "../../../components/UsageExample.astro";
 >
   <UsageExample
     name="Basic Usage"
-    description="You can add the class `list` to any `ol` or `ul` element to style it."
+    description="You can add the class `cd-list` to any `ol` or `ul` element to style it."
     code={`
-      <ol class="list">
+      <ol class="cd-list">
         <li>Item 1</li>
         <li>Item 2</li>
         <li>Item 3</li>
       </ol>
-      <ul class="list">
+      <ul class="cd-list">
         <li>Item 1</li>
         <li>Item 2</li>
         <li>Item 3</li>
       </ul>
     `}
-    outputWrapperClass="wrap"
+    outputWrapperClass="cd-wrap"
   />
   <UsageExample
     name="Nested Lists"
-    description="You can nest Lists inside each other, even mixing ordered and unordered Lists. Make sure to add the `list` class to each nested List."
+    description="You can nest Lists inside each other, even mixing ordered and unordered Lists. Make sure to add the `cd-list` class to each nested List."
     code={`
-      <ol class="list">
+      <ol class="cd-list">
         <li>
           Item 1
-          <ol class="list">
+          <ol class="cd-list">
             <li>Sub-item 1</li>
             <li>
               Sub-item 2
-              <ol class="list">
+              <ol class="cd-list">
                 <li>Sub-sub-item 1</li>
                 <li>
                   Sub-sub-item 2
-                  <ol class="list">
+                  <ol class="cd-list">
                     <li>Sub-sub-sub-item 1</li>
                     <li>Sub-sub-sub-item 2</li>
                   </ol>
@@ -49,18 +49,18 @@ import UsageExample from "../../../components/UsageExample.astro";
           </ol>
         </li>
       </ol>
-      <ul class="list">
+      <ul class="cd-list">
         <li>
           Item 1
-          <ul class="list">
+          <ul class="cd-list">
             <li>Sub-item 1</li>
             <li>
               Sub-item 2
-              <ul class="list">
+              <ul class="cd-list">
                 <li>Sub-sub-item 1</li>
                 <li>
                   Sub-sub-item 2
-                  <ul class="list">
+                  <ul class="cd-list">
                     <li>Sub-sub-sub-item 1</li>
                     <li>Sub-sub-sub-item 2</li>
                   </ul>
@@ -71,6 +71,6 @@ import UsageExample from "../../../components/UsageExample.astro";
         </li>
       </ul>
     `}
-    outputWrapperClass="wrap"
+    outputWrapperClass="cd-wrap"
   />
 </ComponentDocumentation>

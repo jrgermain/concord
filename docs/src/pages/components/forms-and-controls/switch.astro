@@ -9,14 +9,14 @@ import UsageExample from "../../../components/UsageExample.astro";
 >
   <UsageExample
     name="Basic Usage"
-    description="You can create a Switch by creating an [`input` with a type of `checkbox`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox) and giving it the `switch` class."
-    code={'<input type="checkbox" class="switch" />'}
+    description="You can create a Switch by creating an [`input` with a type of `checkbox`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox) and giving it the `cd-switch` class."
+    code={'<input type="checkbox" class="cd-switch" />'}
   />
   <UsageExample
     name="Label"
-    description="To create a **labeled** Switch, put the `switch` class on a `label` element. Inside the label, put the label text followed by an `input[type=checkbox]`. The input does not need to have the `switch` class."
+    description="To create a **labeled** Switch, put the `cd-switch` class on a `label` element. Inside the label, put the label text followed by an `input[type=checkbox]`. The input does not need to have the `cd-switch` class."
     code={`
-      <label class="switch">
+      <label class="cd-switch">
         Show Advanced Options
         <input type="checkbox" />
       </label>
@@ -24,11 +24,11 @@ import UsageExample from "../../../components/UsageExample.astro";
   />
   <UsageExample
     name="Small"
-    description="To make a Switch smaller, add the class `small`."
+    description="To make a Switch smaller, add the class `cd-size-small`."
     code={`
-      <input type="checkbox" class="switch small" />
+      <input type="checkbox" class="cd-switch cd-size-small" />
 
-      <label class="switch small">
+      <label class="cd-switch cd-size-small">
         Show Advanced Options
         <input type="checkbox" />
       </label>
@@ -36,17 +36,17 @@ import UsageExample from "../../../components/UsageExample.astro";
   />
   <UsageExample
     name="Custom Size"
-    description="To customize the size of a Switch, set the `--switch-scale` CSS variable on the element to a unitless number. A value of \`1\` corresponds to the default size."
+    description="To customize the size of a Switch, set the `--cd-switch-scale` CSS variable on the element to a unitless number. A value of `1` corresponds to the default size."
     code={`
-      <label class="switch" style="--switch-scale: 1">
+      <label class="cd-switch" style="--cd-switch-scale: 1">
         Scale of 1 (default size)
         <input type="checkbox" />
       </label>
-      <label class="switch" style="--switch-scale: 1.25">
+      <label class="cd-switch" style="--cd-switch-scale: 1.25">
         Scale of 1.25
         <input type="checkbox" />
       </label>
-      <label class="switch" style="--switch-scale: 0.75">
+      <label class="cd-switch" style="--cd-switch-scale: 0.75">
         Scale of 0.75
         <input type="checkbox" />
       </label>

@@ -13,34 +13,34 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     description={trimTextPadding(`
       To set the **color** of a Chip, add one of the following classes:
 
-      - \`brand\` (default)
-      - \`red\`
-      - \`orange\`
-      - \`yellow\`
-      - \`green\`
-      - \`teal\`
-      - \`blue\`
-      - \`purple\`
-      - \`pink\`
-      - \`gray\`
-      - \`black\`
-      - \`white\`
+      - \`cd-color-brand\` (default)
+      - \`cd-color-red\`
+      - \`cd-color-orange\`
+      - \`cd-color-yellow\`
+      - \`cd-color-green\`
+      - \`cd-color-teal\`
+      - \`cd-color-blue\`
+      - \`cd-color-purple\`
+      - \`cd-color-pink\`
+      - \`cd-color-gray\`
+      - \`cd-color-black\`
+      - \`cd-color-white\`
     `)}
     code={`
-      <div class="chip">Brand</div>
-      <div class="red chip">Red</div>
-      <div class="orange chip">Orange</div>
-      <div class="yellow chip">Yellow</div>
-      <div class="green chip">Green</div>
-      <div class="teal chip">Teal</div>
-      <div class="blue chip">Blue</div>
-      <div class="purple chip">Purple</div>
-      <div class="pink chip">Pink</div>
-      <div class="gray chip">Gray</div>
-      <div class="black chip">Black</div>
-      <div class="white chip">White</div>
+      <div class="cd-chip">Brand</div>
+      <div class="cd-color-red cd-chip">Red</div>
+      <div class="cd-color-orange cd-chip">Orange</div>
+      <div class="cd-color-yellow cd-chip">Yellow</div>
+      <div class="cd-color-green cd-chip">Green</div>
+      <div class="cd-color-teal cd-chip">Teal</div>
+      <div class="cd-color-blue cd-chip">Blue</div>
+      <div class="cd-color-purple cd-chip">Purple</div>
+      <div class="cd-color-pink cd-chip">Pink</div>
+      <div class="cd-color-gray cd-chip">Gray</div>
+      <div class="cd-color-black cd-chip">Black</div>
+      <div class="cd-color-white cd-chip">White</div>
     `}
-    outputWrapperClass="wrap horizontal dense"
+    outputWrapperClass="cd-wrap cd-orientation-horizontal cd-spacing-dense"
   />
 
   <UsageExample
@@ -48,161 +48,160 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     description={trimTextPadding(`
       Chips also support a **subtle color scheme** that uses a lighter background and darker text.
 
-      To use the subtle color scheme, add the \`subtle\` class in addition to the color class.
+      To use the subtle color scheme, add the \`cd-variant-subtle\` class in addition to the color class.
 
-      Note that the \`black\` and \`white\` color classes do not have subtle versions, so this class
-      has no effect when used with those colors.
+      Note that black and white Chips do not have subtle versions, so this class has no effect when used with those colors.
     `)}
     code={`
-      <div class="chip subtle">Brand</div>
-      <div class="red chip subtle">Red</div>
-      <div class="orange chip subtle">Orange</div>
-      <div class="yellow chip subtle">Yellow</div>
-      <div class="green chip subtle">Green</div>
-      <div class="teal chip subtle">Teal</div>
-      <div class="blue chip subtle">Blue</div>
-      <div class="purple chip subtle">Purple</div>
-      <div class="pink chip subtle">Pink</div>
-      <div class="gray chip subtle">Gray</div>
+      <div class="cd-chip cd-variant-subtle">Brand</div>
+      <div class="cd-color-red cd-chip cd-variant-subtle">Red</div>
+      <div class="cd-color-orange cd-chip cd-variant-subtle">Orange</div>
+      <div class="cd-color-yellow cd-chip cd-variant-subtle">Yellow</div>
+      <div class="cd-color-green cd-chip cd-variant-subtle">Green</div>
+      <div class="cd-color-teal cd-chip cd-variant-subtle">Teal</div>
+      <div class="cd-color-blue cd-chip cd-variant-subtle">Blue</div>
+      <div class="cd-color-purple cd-chip cd-variant-subtle">Purple</div>
+      <div class="cd-color-pink cd-chip cd-variant-subtle">Pink</div>
+      <div class="cd-color-gray cd-chip cd-variant-subtle">Gray</div>
     `}
-    outputWrapperClass="wrap horizontal dense"
+    outputWrapperClass="cd-wrap cd-orientation-horizontal cd-spacing-dense"
   />
 
   <UsageExample
     name="Clickable"
-    description="To make a Chip **clickable**, add the `clickable` class. In this case, it's also a good idea to use a `button` element for the Chip itself."
+    description="To make a Chip **clickable**, add the `cd-is-clickable` class. In this case, it's also a good idea to use a `button` element for the Chip itself."
     code={`
-      <button class="clickable chip">Brand</button>
-      <button class="clickable red chip">Red</button>
-      <button class="clickable orange chip">Orange</button>
-      <button class="clickable yellow chip">Yellow</button>
-      <button class="clickable green chip">Green</button>
-      <button class="clickable teal chip">Teal</button>
-      <button class="clickable blue chip">Blue</button>
-      <button class="clickable purple chip">Purple</button>
-      <button class="clickable pink chip">Pink</button>
-      <button class="clickable gray chip">Gray</button>
-      <button class="clickable black chip">Black</button>
-      <button class="clickable white chip">White</button>
+      <button class="cd-chip cd-is-clickable">Brand</button>
+      <button class="cd-chip cd-is-clickable cd-color-red">Red</button>
+      <button class="cd-chip cd-is-clickable cd-color-orange">Orange</button>
+      <button class="cd-chip cd-is-clickable cd-color-yellow">Yellow</button>
+      <button class="cd-chip cd-is-clickable cd-color-green">Green</button>
+      <button class="cd-chip cd-is-clickable cd-color-teal">Teal</button>
+      <button class="cd-chip cd-is-clickable cd-color-blue">Blue</button>
+      <button class="cd-chip cd-is-clickable cd-color-purple">Purple</button>
+      <button class="cd-chip cd-is-clickable cd-color-pink">Pink</button>
+      <button class="cd-chip cd-is-clickable cd-color-gray">Gray</button>
+      <button class="cd-chip cd-is-clickable cd-color-black">Black</button>
+      <button class="cd-chip cd-is-clickable cd-color-white">White</button>
 
-      <button class="clickable chip subtle">Brand</button>
-      <button class="clickable red chip subtle">Red</button>
-      <button class="clickable orange chip subtle">Orange</button>
-      <button class="clickable yellow chip subtle">Yellow</button>
-      <button class="clickable green chip subtle">Green</button>
-      <button class="clickable teal chip subtle">Teal</button>
-      <button class="clickable blue chip subtle">Blue</button>
-      <button class="clickable purple chip subtle">Purple</button>
-      <button class="clickable pink chip subtle">Pink</button>
-      <button class="clickable gray chip subtle">Gray</button>
+      <button class="cd-chip cd-is-clickable cd-variant-subtle">Brand</button>
+      <button class="cd-chip cd-is-clickable cd-color-red cd-variant-subtle">Red</button>
+      <button class="cd-chip cd-is-clickable cd-color-orange cd-variant-subtle">Orange</button>
+      <button class="cd-chip cd-is-clickable cd-color-yellow cd-variant-subtle">Yellow</button>
+      <button class="cd-chip cd-is-clickable cd-color-green cd-variant-subtle">Green</button>
+      <button class="cd-chip cd-is-clickable cd-color-teal cd-variant-subtle">Teal</button>
+      <button class="cd-chip cd-is-clickable cd-color-blue cd-variant-subtle">Blue</button>
+      <button class="cd-chip cd-is-clickable cd-color-purple cd-variant-subtle">Purple</button>
+      <button class="cd-chip cd-is-clickable cd-color-pink cd-variant-subtle">Pink</button>
+      <button class="cd-chip cd-is-clickable cd-color-gray cd-variant-subtle">Gray</button>
 
     `}
-    outputWrapperClass="wrap horizontal dense"
+    outputWrapperClass="cd-wrap cd-orientation-horizontal cd-spacing-dense"
   />
 
   <UsageExample
     name="Links as Clickable Chips"
     description="Clickable Chips can be links instead of buttons."
     code={`
-      <a href="#" class="clickable chip">Clickable link</a>
+      <a href="#" class="cd-chip cd-is-clickable">Clickable link</a>
     `}
-    outputWrapperClass="wrap horizontal dense"
+    outputWrapperClass="cd-wrap cd-orientation-horizontal cd-spacing-dense"
   />
 
   <UsageExample
     name="Deletable"
-    description="To make a Chip **deletable**, add a button element inside the Chip with the class `dismiss-button`."
+    description="To make a Chip **deletable**, add a button element inside the Chip with the class `cd-dismiss-button`."
     code={`
-      <div class="chip">
+      <div class="cd-chip">
         Brand
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="red chip">
+      <div class="cd-color-red cd-chip">
         Red
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="orange chip">
+      <div class="cd-color-orange cd-chip">
         Orange
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="yellow chip">
+      <div class="cd-color-yellow cd-chip">
         Yellow
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="green chip">
+      <div class="cd-color-green cd-chip">
         Green
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="teal chip">
+      <div class="cd-color-teal cd-chip">
         Teal
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="blue chip">
+      <div class="cd-color-blue cd-chip">
         Blue
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="purple chip">
+      <div class="cd-color-purple cd-chip">
         Purple
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="pink chip">
+      <div class="cd-color-pink cd-chip">
         Pink
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="gray chip">
+      <div class="cd-color-gray cd-chip">
         Gray
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="black chip">
+      <div class="cd-color-black cd-chip">
         Black
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="white chip">
+      <div class="cd-color-white cd-chip">
         White
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="chip subtle">
+      <div class="cd-chip cd-variant-subtle">
         Brand
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="red chip subtle">
+      <div class="cd-color-red cd-chip cd-variant-subtle">
         Red
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="orange chip subtle">
+      <div class="cd-color-orange cd-chip cd-variant-subtle">
         Orange
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="yellow chip subtle">
+      <div class="cd-color-yellow cd-chip cd-variant-subtle">
         Yellow
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="green chip subtle">
+      <div class="cd-color-green cd-chip cd-variant-subtle">
         Green
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="teal chip subtle">
+      <div class="cd-color-teal cd-chip cd-variant-subtle">
         Teal
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="blue chip subtle">
+      <div class="cd-color-blue cd-chip cd-variant-subtle">
         Blue
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="purple chip subtle">
+      <div class="cd-color-purple cd-chip cd-variant-subtle">
         Purple
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="pink chip subtle">
+      <div class="cd-color-pink cd-chip cd-variant-subtle">
         Pink
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="gray chip subtle">
+      <div class="cd-color-gray cd-chip cd-variant-subtle">
         Gray
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
     `}
-    outputWrapperClass="wrap horizontal dense"
+    outputWrapperClass="cd-wrap cd-orientation-horizontal cd-spacing-dense"
   />
 
   <UsageExample
@@ -211,20 +210,20 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       To make a Chip both clickable and deletable, you'll need to make some adjustments to the
       markup to avoid nesting buttons inside other buttons, which is an accessibility problem.
 
-      To make a Chip both clickable and deletable, use a \`div\` with the \`clickable\` class
+      To make a Chip both clickable and deletable, use a \`div\` with the \`cd-is-clickable\` class
       for the Chip itself. Inside, place the label text inside a \`button\` element with the
-      \`chip-label\` class, followed by the same delete button markup as in the example above.
+      \`cd-chip-label\` class, followed by the same dismiss button markup as in the example above.
       These two buttons must be next to each other in the markup, not nested.
 
       Attach your \`onclick\` handlers to the two inner buttons, not the outer \`div\`.
     `)}
     code={`
-      <div class="chip clickable">
-        <button onclick="alert('Chip clicked')" class="chip-label">Chip text goes here</button>
-        <button onclick="alert('Delete clicked')" class="dismiss-button" title="Delete"></button>
+      <div class="cd-chip cd-is-clickable">
+        <button onclick="alert('Chip clicked')" class="cd-chip-label">Chip text goes here</button>
+        <button onclick="alert('Delete clicked')" class="cd-dismiss-button" title="Delete"></button>
       </div>
     `}
-    outputWrapperClass="wrap horizontal dense"
+    outputWrapperClass="cd-wrap cd-orientation-horizontal cd-spacing-dense"
   />
 
   <UsageExample
@@ -234,48 +233,48 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       instead of a button.
 
       The same rules apply as in the previous example: since links count as interactive elements, they
-      shouldn't contain buttons, so we use the \`chip-label\` element as our link.
+      shouldn't contain buttons, so we use the \`cd-chip-label\` element as our link.
     `)}
     code={`
-      <div class="chip clickable">
-        <a href="#" class="chip-label">Chip text goes here</a>
-        <button onclick="alert('Delete clicked')" class="dismiss-button" title="Delete"></button>
+      <div class="cd-chip cd-is-clickable">
+        <a href="#" class="cd-chip-label">Chip text goes here</a>
+        <button onclick="alert('Delete clicked')" class="cd-dismiss-button" title="Delete"></button>
       </div>
     `}
-    outputWrapperClass="wrap horizontal dense"
+    outputWrapperClass="cd-wrap cd-orientation-horizontal cd-spacing-dense"
   />
 
   <UsageExample
     name="A Note on the Chip Label"
     description={trimTextPadding(`
-      Wrapping the content of a Chip in an element with the \`chip-label\` class is **required**
+      Wrapping the content of a Chip in an element with the \`cd-chip-label\` class is **required**
       for Chips that are both clickable and deletable, and **optional** in all other cases.
 
-      Below are some examples of Chips with and without the \`chip-label\` class. They should
+      Below are some examples of Chips with and without the \`cd-chip-label\` class. They should
       look and function identically.
     `)}
     code={`
-      <div class="chip blue">
-        <span class="chip-label"> Standard chip with chip-label </span>
+      <div class="cd-chip cd-color-blue">
+        <span class="cd-chip-label"> Standard chip with chip-label </span>
       </div>
-      <div class="chip blue">
+      <div class="cd-chip cd-color-blue">
         Standard chip without chip-label
       </div>
-      <div class="chip clickable green">
-        <button class="chip-label">Clickable chip with chip-label</button>
+      <div class="cd-chip cd-is-clickable cd-color-green">
+        <button class="cd-chip-label">Clickable chip with chip-label</button>
       </div>
-      <button class="chip clickable green">
+      <button class="cd-chip cd-is-clickable cd-color-green">
         Clickable chip without chip-label
       </button>
-      <div class="chip orange">
-        <span class="chip-label"> Deletable chip with chip-label </span>
-        <button class="dismiss-button" title="Delete"></button>
+      <div class="cd-chip cd-color-orange">
+        <span class="cd-chip-label"> Deletable chip with chip-label </span>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
-      <div class="chip orange">
+      <div class="cd-chip cd-color-orange">
         Deletable chip without chip-label
-        <button class="dismiss-button" title="Delete"></button>
+        <button class="cd-dismiss-button" title="Delete"></button>
       </div>
     `}
-    outputWrapperClass="wrap horizontal dense"
+    outputWrapperClass="cd-wrap cd-orientation-horizontal cd-spacing-dense"
   />
 </ComponentDocumentation>

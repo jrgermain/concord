@@ -8,30 +8,32 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
 <Layout title="Theme Builder">
   <div class="toolbar">
     <label for="color-mode" class="side-label">Color Mode</label>
-    <div class="field compact">
-      <select id="color-mode" class="input">
+    <div class="cd-field cd-is-compact">
+      <select id="color-mode">
         <option value="auto">Auto</option>
         <option value="light">Light</option>
         <option value="dark">Dark</option>
       </select>
     </div>
-    <hr class="divider vertical" />
-    <button id="reset" class="button small red">Reset</button>
+    <hr class="cd-divider cd-orientation-vertical" />
+    <button id="reset" class="cd-button cd-size-small cd-color-red"
+      >Reset</button
+    >
   </div>
 
-  <form id="builder" class="form stack vertical">
+  <form id="builder" class="cd-stack cd-orientation-vertical">
     <div class="theme-builder-heading">
-      <h1 class="heading level-1">Theme Builder</h1>
-      <span class="chip">Beta</span>
+      <h1 class="cd-heading cd-level-1">Theme Builder</h1>
+      <span class="cd-chip">Beta</span>
     </div>
     <Section title="General">
-      <div class="field">
+      <div class="cd-field">
         <label for="roundness-input">Roundness</label>
         <input
           id="roundness-input"
           name="roundness"
           type="range"
-          class="slider"
+          class="cd-slider"
           min="0"
           max="3"
           step="1"
@@ -41,13 +43,13 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
           <span class="slider-label">More</span>
         </div>
       </div>
-      <div class="field">
+      <div class="cd-field">
         <label for="density-input">Density</label>
         <input
           id="density-input"
           name="density"
           type="range"
-          class="slider"
+          class="cd-slider"
           min="0"
           max="3"
           step="1"
@@ -57,13 +59,13 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
           <span class="slider-label">Spacious</span>
         </div>
       </div>
-      <div class="field">
+      <div class="cd-field">
         <label for="depth-input">Depth</label>
         <input
           id="depth-input"
           name="depth"
           type="range"
-          class="slider"
+          class="cd-slider"
           min="0"
           max="3"
           step="1"
@@ -73,13 +75,13 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
           <span class="slider-label">Deep</span>
         </div>
       </div>
-      <div class="field">
+      <div class="cd-field">
         <label for="animation-speed-input">Animation Speed</label>
         <input
           id="animation-speed-input"
           name="animationSpeed"
           type="range"
-          class="slider"
+          class="cd-slider"
           min="0"
           max="2"
           step="1"
@@ -92,20 +94,20 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
     </Section>
 
     <Section title="Colors">
-      <div class="field">
+      <div class="cd-field">
         <label for="brand-color-hue-input">Brand Color</label>
         <div class="spectrum hue">
           <input
             id="brand-color-hue-input"
             name="brandColorHue"
             type="range"
-            class="slider"
+            class="cd-slider"
             min="0"
             max="360"
           />
         </div>
       </div>
-      <div class="field">
+      <div class="cd-field">
         <label for="brand-color-saturation-input"
           >Brand Color (Saturation)</label
         >
@@ -114,7 +116,7 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
             id="brand-color-saturation-input"
             name="brandColorSaturation"
             type="range"
-            class="slider"
+            class="cd-slider"
             min="0"
             max="2"
             step="0.1"
@@ -122,7 +124,7 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
         </div>
       </div>
       <output class="brand-color-preview">Sample</output>
-      <fieldset class="field">
+      <fieldset class="cd-field">
         <legend>Gray Tint</legend>
         <RadioCard name="grays" value="cool">
           Cool
@@ -138,16 +140,16 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
         </RadioCard>
         <RadioCard name="grays" value="brand">
           Match Brand Color
-          <GraySwatch color="var(--color-brand-5)" />
+          <GraySwatch color="var(--cd-color-brand-5)" />
         </RadioCard>
       </fieldset>
-      <div class="field" id="gray-tint-saturation-field">
+      <div class="cd-field" id="gray-tint-saturation-field">
         <label for="gray-tint-saturation">Gray Tint Strength</label>
         <input
           id="gray-tint-saturation"
           name="grayTintSaturation"
           type="range"
-          class="slider"
+          class="cd-slider"
           min="0"
           max="0.03"
           step="0.0005"
@@ -157,51 +159,43 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
     </Section>
 
     <Section title="Fonts">
-      <label class="field">
+      <label class="cd-field">
         Body Font
         <input
           name="bodyFont"
           type="text"
-          class="input"
           placeholder='"Avenir Next", Avenir, "Segoe UI Variable Display", "Segoe UI", "URW Gothic", source-sans-pro, "Noto Sans", ui-sans-serif, sans-serif'
         />
       </label>
-      <label class="field">
+      <label class="cd-field">
         Heading Font
         <input
           name="headingFont"
           type="text"
-          class="input"
           placeholder='Seravek, Tahoma, Cantarell, "DejaVu Sans", source-sans-pro, ui-sans-serif, sans-serif'
         />
       </label>
-      <label class="field">
+      <label class="cd-field">
         Monospace Font
         <input
           name="monoFont"
           type="text"
-          class="input"
           placeholder='ui-monospace, "Cascadia Code", menlo, hack, monospace'
         />
       </label>
     </Section>
 
     <Section title="Download Options">
-      <label class="field">
+      <label class="cd-field">
         Name
-        <input
-          name="name"
-          type="text"
-          class="input"
-          placeholder="Enter theme name"
-        />
+        <input name="name" type="text" placeholder="Enter theme name" />
       </label>
-      <label class="checkbox">
+      <label class="cd-checkbox">
         <input name="addHash" type="checkbox" />
         Add hash to filename
       </label>
 
-      <button class="button primary">Download</button>
+      <button class="cd-button cd-variant-primary">Download</button>
     </Section>
   </form>
 
@@ -209,25 +203,25 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
     .theme-builder-heading {
       display: flex;
       align-items: start;
-      gap: var(--space-xs);
+      gap: var(--cd-space-xs);
     }
     .toolbar {
       display: flex;
       align-items: center;
       justify-content: end;
-      margin-block-end: var(--space-s);
-      gap: var(--space-2xs);
+      margin-block-end: var(--cd-space-s);
+      gap: var(--cd-space-2xs);
       z-index: 4;
-      background-color: var(--glass-bg-color);
-      color: var(--glass-fg-color);
-      border-bottom: var(--border-s) solid var(--glass-border-color);
-      backdrop-filter: var(--glass-filter);
-      padding: var(--space-2xs) var(--space-body-x);
+      background-color: var(--cd-glass-bg-color);
+      color: var(--cd-glass-fg-color);
+      border-bottom: var(--cd-border-s) solid var(--cd-glass-border-color);
+      backdrop-filter: var(--cd-glass-filter);
+      padding: var(--cd-space-2xs) var(--cd-space-body-x);
       position: sticky;
       top: 0;
-      margin-block-start: calc(var(--space-body-y) * -1);
-      margin-inline: calc(var(--space-body-x) * -1);
-      box-shadow: var(--shadow-s);
+      margin-block-start: calc(var(--cd-space-body-y) * -1);
+      margin-inline: calc(var(--cd-space-body-x) * -1);
+      box-shadow: var(--cd-shadow-s);
     }
 
     .toolbar > * {
@@ -236,8 +230,8 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
 
     .side-label {
       margin-inline-end: 0.25em;
-      font-size: var(--font-size-s);
-      font-weight: var(--font-weight-semibold);
+      font-size: var(--cd-font-size-s);
+      font-weight: var(--cd-font-weight-semibold);
     }
 
     .brand-color-preview,
@@ -249,13 +243,13 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
     }
 
     .brand-color-preview {
-      background-color: var(--color-brand-3);
-      color: var(--color-brand-9);
+      background-color: var(--cd-color-brand-3);
+      color: var(--cd-color-brand-9);
     }
 
     .gray-tint-preview {
-      background-color: var(--color-gray-8);
-      color: var(--color-gray-3);
+      background-color: var(--cd-color-gray-8);
+      color: var(--cd-color-gray-3);
     }
 
     .spectrum {
@@ -272,8 +266,8 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
 
     .spectrum.saturation {
       --gradient-params: to right in oklch;
-      --spectrum-start: oklch(from var(--color-brand-5) 0.65 0 h);
-      --spectrum-end: oklch(from var(--color-brand-5) 0.65 0.2 h);
+      --spectrum-start: oklch(from var(--cd-color-brand-5) 0.65 0 h);
+      --spectrum-end: oklch(from var(--cd-color-brand-5) 0.65 0.2 h);
     }
 
     .spectrum input {
@@ -307,9 +301,9 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
     .slider-label {
       position: relative;
       display: inline-block;
-      font-size: var(--font-size-s);
-      color: var(--color-text-secondary);
-      font-weight: var(--font-weight-normal);
+      font-size: var(--cd-font-size-s);
+      color: var(--cd-color-text-secondary);
+      font-weight: var(--cd-font-weight-normal);
     }
   </style>
   <script>
@@ -383,12 +377,12 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
       "text-primary": { light: "#030305", dark: "#fff" },
       "text-secondary": { light: "#404247", dark: "#ccced0" },
       "text-tertiary": {
-        light: "var(--color-brand-3)",
-        dark: "var(--color-brand-3)",
+        light: "var(--cd-color-brand-3)",
+        dark: "var(--cd-color-brand-3)",
       },
       "contrast-background": {
-        light: "var(--color-brand-1)",
-        dark: "var(--color-brand-1)",
+        light: "var(--cd-color-brand-1)",
+        dark: "var(--cd-color-brand-1)",
       },
       "contrast-text": { light: "#fff", dark: "#030305" },
       shadow: { light: "#45484c26", dark: "#00000166" },
@@ -396,7 +390,7 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
     };
 
     const BUTTON_HOVER_TEMPLATE =
-      ".button:is(:hover, .hover)::before {\n  border-radius: $RADIUS;\n}\n";
+      ".cd-button:is(:hover, .cd-is-hovered)::before {\n  border-radius: $RADIUS;\n}\n";
 
     const defaultConfig = {
       roundness: "1",
@@ -425,7 +419,8 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
     };
 
     const updateLivePreview = () => {
-      let css = ":root, ::backdrop, .light-mode, .dark-mode, .modal, .drawer {";
+      let css =
+        ":root, ::backdrop, .cd-light-mode, .cd-dark-mode, .cd-modal, .cd-drawer {";
       let additionalCss = "";
 
       // Roundness CSS
@@ -433,41 +428,41 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
       switch (roundness) {
         case "0":
           css += `
-            --radius-s: 2px;
-            --radius-m: 3px;
-            --radius-l: 8px;
-            --radius-xl: 16px;
-            --radius-2xl: 44px;
+            --cd-radius-s: 2px;
+            --cd-radius-m: 3px;
+            --cd-radius-l: 8px;
+            --cd-radius-xl: 16px;
+            --cd-radius-2xl: 44px;
           `;
           additionalCss += BUTTON_HOVER_TEMPLATE.replace("$RADIUS", "2px");
           break;
         case "1":
           css += `
-            --radius-s: 3px;
-            --radius-m: 6px;
-            --radius-l: 12px;
-            --radius-xl: 24px;
-            --radius-2xl: 64px;
+            --cd-radius-s: 3px;
+            --cd-radius-m: 6px;
+            --cd-radius-l: 12px;
+            --cd-radius-xl: 24px;
+            --cd-radius-2xl: 64px;
           `;
           additionalCss += BUTTON_HOVER_TEMPLATE.replace("$RADIUS", "5px");
           break;
         case "2":
           css += `
-            --radius-s: 4px;
-            --radius-m: 8px;
-            --radius-l: 16px;
-            --radius-xl: 32px;
-            --radius-2xl: 128px;
+            --cd-radius-s: 4px;
+            --cd-radius-m: 8px;
+            --cd-radius-l: 16px;
+            --cd-radius-xl: 32px;
+            --cd-radius-2xl: 128px;
           `;
           additionalCss += BUTTON_HOVER_TEMPLATE.replace("$RADIUS", "7px");
           break;
         case "3":
           css += `
-            --radius-s: 6px;
-            --radius-m: 12px;
-            --radius-l: 24px;
-            --radius-xl: 48px;
-            --radius-2xl: 256px;
+            --cd-radius-s: 6px;
+            --cd-radius-m: 12px;
+            --cd-radius-l: 24px;
+            --cd-radius-xl: 48px;
+            --cd-radius-2xl: 256px;
           `;
           additionalCss += BUTTON_HOVER_TEMPLATE.replace("$RADIUS", "11px");
           break;
@@ -481,34 +476,34 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
       switch (depth) {
         case "0":
           css += `
-            --shadow-s: 0 1px 3px -1px var(--color-shadow);
-            --shadow-m: 0 1px 7px -1px var(--color-shadow);
-            --shadow-l: 0 2px 11px -1px var(--color-shadow);
-            --shadow-xl: 0 3px 15px -1px var(--color-shadow);
+            --cd-shadow-s: 0 1px 3px -1px var(--cd-color-shadow);
+            --cd-shadow-m: 0 1px 7px -1px var(--cd-color-shadow);
+            --cd-shadow-l: 0 2px 11px -1px var(--cd-color-shadow);
+            --cd-shadow-xl: 0 3px 15px -1px var(--cd-color-shadow);
           `;
           break;
         case "1":
           css += `
-            --shadow-s: 0 1px 3px -1px var(--color-shadow);
-            --shadow-m: 0 1px 7px -1px var(--color-shadow);
-            --shadow-l: 0 2px 11px -1px var(--color-shadow);
-            --shadow-xl: 0 3px 15px -1px var(--color-shadow);
+            --cd-shadow-s: 0 1px 3px -1px var(--cd-color-shadow);
+            --cd-shadow-m: 0 1px 7px -1px var(--cd-color-shadow);
+            --cd-shadow-l: 0 2px 11px -1px var(--cd-color-shadow);
+            --cd-shadow-xl: 0 3px 15px -1px var(--cd-color-shadow);
           `;
           break;
         case "2":
           css += `
-            --shadow-s: 0 1px 3px -1px var(--color-shadow);
-            --shadow-m: 0 1px 7px -1px var(--color-shadow);
-            --shadow-l: 0 2px 11px -1px var(--color-shadow);
-            --shadow-xl: 0 3px 15px -1px var(--color-shadow);
+            --cd-shadow-s: 0 1px 3px -1px var(--cd-color-shadow);
+            --cd-shadow-m: 0 1px 7px -1px var(--cd-color-shadow);
+            --cd-shadow-l: 0 2px 11px -1px var(--cd-color-shadow);
+            --cd-shadow-xl: 0 3px 15px -1px var(--cd-color-shadow);
           `;
           break;
         case "3":
           css += `
-            --shadow-s: 0 1px 3px -1px var(--color-shadow);
-            --shadow-m: 0 1px 7px -1px var(--color-shadow);
-            --shadow-l: 0 2px 11px -1px var(--color-shadow);
-            --shadow-xl: 0 3px 15px -1px var(--color-shadow);
+            --cd-shadow-s: 0 1px 3px -1px var(--cd-color-shadow);
+            --cd-shadow-m: 0 1px 7px -1px var(--cd-color-shadow);
+            --cd-shadow-l: 0 2px 11px -1px var(--cd-color-shadow);
+            --cd-shadow-xl: 0 3px 15px -1px var(--cd-color-shadow);
           `;
           break;
       }
@@ -517,26 +512,26 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
       switch (animationSpeed) {
         case "0":
           css += `
-            --duration-s: 75ms;
-            --duration-m: 125ms;
-            --duration-l: 150ms;
-            --duration-xl: 250ms;
+            --cd-duration-s: 75ms;
+            --cd-duration-m: 125ms;
+            --cd-duration-l: 150ms;
+            --cd-duration-xl: 250ms;
           `;
           break;
         case "1":
           css += `
-            --duration-s: 100ms;
-            --duration-m: 150ms;
-            --duration-l: 250ms;
-            --duration-xl: 350ms;
+            --cd-duration-s: 100ms;
+            --cd-duration-m: 150ms;
+            --cd-duration-l: 250ms;
+            --cd-duration-xl: 350ms;
           `;
           break;
         case "2":
           css += `
-            --duration-s: 150ms;
-            --duration-m: 200ms;
-            --duration-l: 300ms;
-            --duration-xl: 450ms;
+            --cd-duration-s: 150ms;
+            --cd-duration-m: 200ms;
+            --cd-duration-l: 300ms;
+            --cd-duration-xl: 450ms;
           `;
           break;
       }
@@ -582,12 +577,12 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
 
         let colorCss = "";
         for (let i = 0; i < 9; i++) {
-          const variableName = `--color-${name}-${i + 1}`;
+          const variableName = `--cd-color-${name}-${i + 1}`;
           colorCss += `${variableName}: light-dark(${lightColors.at(i)}, ${brandDarkColors.at(i)});\n`;
         }
         colorCss += `
-          --color-${name}-transparent: light-dark(${lightColors.at(5)}66, ${brandDarkColors.at(4)}80);
-          --color-${name}-extra-transparent: light-dark(${lightColors.at(5)}33, ${brandDarkColors.at(4)}59);
+          --cd-color-${name}-transparent: light-dark(${lightColors.at(5)}66, ${brandDarkColors.at(4)}80);
+          --cd-color-${name}-extra-transparent: light-dark(${lightColors.at(5)}33, ${brandDarkColors.at(4)}59);
         `;
         return colorCss;
       };
@@ -632,9 +627,9 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
           tintedDark = dark.toHex();
         }
         if (colorPair.light === colorPair.dark) {
-          css += `--color-${name}: ${tintedLight};\n`;
+          css += `--cd-color-${name}: ${tintedLight};\n`;
         } else {
-          css += `--color-${name}: light-dark(${tintedLight}, ${tintedDark});\n`;
+          css += `--cd-color-${name}: light-dark(${tintedLight}, ${tintedDark});\n`;
         }
       });
 
@@ -644,9 +639,9 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
       const monoFont = getStoredValue("monoFont");
 
       css += `
-        --font-body: ${bodyFont};
-        --font-heading: ${headingFont};
-        --font-mono: ${monoFont};
+        --cd-font-family-body: ${bodyFont};
+        --cd-font-family-heading: ${headingFont};
+        --cd-font-family-mono: ${monoFont};
       `;
 
       css += "}\n";
@@ -829,9 +824,9 @@ import GraySwatch from "../components/theme-builder/GraySwatch.astro";
     document.getElementById("reset")!.addEventListener("click", reset);
     document.getElementById("color-mode")!.addEventListener("change", (e) => {
       const value = (e.target as HTMLSelectElement).value;
-      const app = document.querySelector(".app")!;
-      app.classList.toggle("light-mode", value === "light");
-      app.classList.toggle("dark-mode", value === "dark");
+      const app = document.querySelector(".cd-app")!;
+      app.classList.toggle("cd-light-mode", value === "light");
+      app.classList.toggle("cd-dark-mode", value === "dark");
     });
   </script>
 </Layout>

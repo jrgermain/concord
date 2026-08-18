@@ -10,9 +10,9 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 >
   <UsageExample
     name="Basic Usage"
-    description="To create a Checkbox, create a `label` element with the class `checkbox` and include an `input` of type `checkbox` inside it, along with the label text."
+    description="To create a Checkbox, create a `label` element with the class `cd-checkbox` and include an `input` of type `checkbox` inside it, along with the label text."
     code={`
-      <label class="checkbox">
+      <label class="cd-checkbox">
         <input type="checkbox" />
         Checkbox
       </label>
@@ -33,7 +33,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       when the input is initialized.
     `)}
     code={`
-      <label class="checkbox">
+      <label class="cd-checkbox">
         <input type="checkbox" x-init="$el.indeterminate = true" />
         Indeterminate
       </label>
@@ -44,15 +44,15 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     name="Disabled"
     description="Checkboxes can be disabled to prevent user interaction. To do so, add the `disabled` attribute to the input element."
     code={`
-      <label class="checkbox">
+      <label class="cd-checkbox">
         <input type="checkbox" disabled />
         Can't touch this
       </label>
-      <label class="checkbox">
+      <label class="cd-checkbox">
         <input type="checkbox" disabled x-init="$el.indeterminate = true" />
         Can't touch this
       </label>
-      <label class="checkbox">
+      <label class="cd-checkbox">
         <input type="checkbox" disabled checked />
         Can't touch this
       </label>
@@ -63,7 +63,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     name="Multiple Lines"
     description="Below is an example of a Checkbox whose label spans multiple lines."
     code={`
-      <label class="checkbox">
+      <label class="cd-checkbox">
         <input type="checkbox" />
         <div>
           <strong>Main Label</strong>
@@ -74,18 +74,18 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
   />
   <UsageExample
     name="Checkbox Group"
-    description="When placing multiple Checkboxes next to each other, you should arrange them vertically to avoid confusion. The recommended way to do this is to wrap them in a container element with the class `checkbox-group`, as this also adds appropriate spacing."
+    description="When placing multiple Checkboxes next to each other, you should arrange them vertically to avoid confusion. The recommended way to do this is to wrap them in a container element with the class `cd-checkbox-group`, as this also adds appropriate spacing."
     code={`
-      <div class="checkbox-group">
-        <label class="checkbox">
+      <div class="cd-checkbox-group">
+        <label class="cd-checkbox">
           <input type="checkbox" />
           Red
         </label>
-        <label class="checkbox">
+        <label class="cd-checkbox">
           <input type="checkbox" />
           Green
         </label>
-        <label class="checkbox">
+        <label class="cd-checkbox">
           <input type="checkbox" />
           Blue
         </label>
@@ -97,37 +97,37 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     description="Below is an example of how a single Checkbox and a Checkbox Group can be placed inside a Field to allow labeling."
     code={`
       <!-- Single Checkbox inside a Field -->
-      <div class="field">
+      <div class="cd-field">
         Terms and Conditions
-        <div class="help-text">
-          Before you check out, please read our <a class="link" href="#">terms and conditions</a>.
+        <div class="cd-help-text">
+          Before you check out, please read our <a class="cd-link" href="#">terms and conditions</a>.
         </div>
-        <label class="checkbox">
+        <label class="cd-checkbox">
           <input type="checkbox" />
           I accept the terms and conditions
         </label>
       </div>
 
       <!-- Checkbox Group inside a Field -->
-      <fieldset class="field">
+      <fieldset class="cd-field">
         <legend>Which languages do you know?</legend>
-        <div class="help-text">
+        <div class="cd-help-text">
           Select all that apply.
         </div>
-        <div class="checkbox-group">
-          <label class="checkbox">
+        <div class="cd-checkbox-group">
+          <label class="cd-checkbox">
             <input type="checkbox" />
             JavaScript
           </label>
-          <label class="checkbox">
+          <label class="cd-checkbox">
             <input type="checkbox" />
             TypeScript
           </label>
-          <label class="checkbox">
+          <label class="cd-checkbox">
             <input type="checkbox" />
             Python
           </label>
-          <label class="checkbox">
+          <label class="cd-checkbox">
             <input type="checkbox" />
             Go
           </label>

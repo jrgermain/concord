@@ -10,9 +10,9 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 >
   <UsageExample
     name="Basic Usage"
-    description="To create a Radio, create a `label` element with the class `radio` and include an `input` of type `radio` inside it, along with the label text."
+    description="To create a Radio, create a `label` element with the class `cd-radio` and include an `input` of type `radio` inside it, along with the label text."
     code={`
-      <label class="radio">
+      <label class="cd-radio">
         <input type="radio" />
         Radio
       </label>
@@ -29,18 +29,18 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 
       To place Radios in a group, give each Radio's \`input\` element the same
       \`name\` attribute. You should also wrap the group in a container element
-      with the class \`radio-group\` to add appropriate spacing between them.
+      with the class \`cd-radio-group\` to add appropriate spacing between them.
 
       Avoid placing Radios next to each other horizontally, as this can
       create confusion about which label belongs to which Radio.
     `)}
     code={`
-      <div class="radio-group">
-        <label class="radio">
+      <div class="cd-radio-group">
+        <label class="cd-radio">
           <input type="radio" name="color" />
           Red
         </label>
-        <label class="radio">
+        <label class="cd-radio">
           <input type="radio" name="color" />
           Blue
         </label>
@@ -51,22 +51,22 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     name="Disabled"
     description="Radios can be disabled to prevent user interaction. To do so, add the `disabled` attribute to the input element."
     code={`
-      <label class="radio">
+      <label class="cd-radio">
         <input type="radio" disabled />
         Can't touch this
       </label>
-      <label class="radio">
+      <label class="cd-radio">
         <input type="radio" disabled checked />
         Can't touch this
       </label>
     `}
-    outputWrapperClass="radio-group"
+    outputWrapperClass="cd-radio-group"
   />
   <UsageExample
     name="Multiple Lines"
     description="Below is an example of a Radio whose label spans multiple lines."
     code={`
-      <label class="radio">
+      <label class="cd-radio">
         <input type="radio" />
         <div>
           <strong>Main Label</strong>
@@ -79,25 +79,25 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     name="Composition with Field"
     description="To label a group of Radios, you can place the Radio Group example above inside a Field."
     code={`
-      <fieldset class="field">
+      <fieldset class="cd-field">
         <legend>What is your favorite language?</legend>
-        <div class="help-text">
+        <div class="cd-help-text">
           Select one.
         </div>
-        <div class="radio-group">
-          <label class="radio">
+        <div class="cd-radio-group">
+          <label class="cd-radio">
             <input type="radio" name="language" />
             JavaScript
           </label>
-          <label class="radio">
+          <label class="cd-radio">
             <input type="radio" name="language" />
             TypeScript
           </label>
-          <label class="radio">
+          <label class="cd-radio">
             <input type="radio" name="language" />
             Python
           </label>
-          <label class="radio">
+          <label class="cd-radio">
             <input type="radio" name="language" />
             Go
           </label>

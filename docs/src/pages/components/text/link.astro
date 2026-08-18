@@ -9,36 +9,36 @@ import UsageExample from "../../../components/UsageExample.astro";
 >
   <UsageExample
     name="Basic Usage"
-    description="Any element can be styled as a Link by applying the class `link`. Most of the time, this class should only be used on `a` elements."
+    description="Any element can be styled as a Link by applying the class `cd-link`. Most of the time, this class should only be used on `a` elements."
     code={`
-      <a href="#" class="link">This is a link.</a>
-      <span class="link"> This is a span with the link class. </span>
+      <a href="#" class="cd-link">This is a Link.</a>
+      <span class="cd-link"> This is a span styled as a Link. </span>
     `}
-    outputWrapperClass="wrap"
+    outputWrapperClass="cd-wrap"
   />
   <UsageExample
     name="New Tab"
-    description="Links that open in a new tab (i.e., have `target='blank'`) will automatically have an icon appended to the text. This can be disabled by adding the class `no-external-icon`, or added manually by adding the class `has-external-icon`."
+    description="Links that open in a new tab (i.e., have `target='blank'`) will automatically have an icon appended to the text. This can be disabled by adding the class `cd-icon-after-none`, or added manually by adding the class `cd-icon-after-external`."
     code={`
-      <a href="#" class="link" target="_blank"> I open in a new tab </a>
-      <a href="#" class="link no-external-icon" target="_blank"> I open in a new tab, but have my icon disabled </a>
-      <a href="#" class="link has-external-icon"> I don't open in a new tab, but I have an icon </a>
+      <a href="#" class="cd-link" target="_blank"> I open in a new tab </a>
+      <a href="#" class="cd-link cd-icon-after-none" target="_blank"> I open in a new tab, but have my icon disabled </a>
+      <a href="#" class="cd-link cd-icon-after-external"> I don't open in a new tab, but I have an icon </a>
     `}
   />
   <UsageExample
     name="Download"
-    description="Links that download a file (i.e., have the `download` attribute) will automatically have an icon appended to the text. This can be disabled by adding the class `no-download-icon`, or added manually by adding the class `has-download-icon`."
+    description="Links that download a file (i.e., have the `download` attribute) will automatically have an icon appended to the text. This can be disabled by adding the class `cd-icon-after-none`, or added manually by adding the class `cd-icon-after-download`."
     code={`
-      <a href="/download.txt" download="Download.txt" class="link"> I download a file </a>
-      <a href="/download.txt" download="Download.txt" class="link no-download-icon"> I download a file, but have my icon disabled </a>
-      <a href="#" class="link has-download-icon"> I don't download a file, but I have an icon </a>
+      <a href="/download.txt" download="Download.txt" class="cd-link"> I download a file </a>
+      <a href="/download.txt" download="Download.txt" class="cd-link cd-icon-after-none"> I download a file, but have my icon disabled </a>
+      <a href="#" class="cd-link cd-icon-after-download"> I don't download a file, but I have an icon </a>
     `}
   />
   <UsageExample
     name="Custom Color"
-    description="To customize the color of a link, set the `--link-color` and `--link-active-color` CSS variables."
+    description="To customize the color of a link, set the `--cd-link-color` and `--cd-link-active-color` CSS variables."
     code={`
-      <span class="link" style="--link-color: var(--color-orange-4); --link-active-color: var(--color-orange-3);"> This link is orange. </span>
+      <span class="cd-link" style="--cd-link-color: var(--cd-color-orange-4); --cd-link-active-color: var(--cd-color-orange-3);"> This link is orange. </span>
     `}
   />
 </ComponentDocumentation>

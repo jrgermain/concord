@@ -12,9 +12,9 @@ const { name } = Astro.props;
       <span
         class="color-cell"
         style={{
-          background: `var(--color-${name}-${shade})`,
+          background: `var(--cd-color-${name}-${shade})`,
           color:
-            shade < 6 ? `var(--color-${name}-9)` : `var(--color-${name}-1)`,
+            shade < 6 ? `var(--cd-color-${name}-9)` : `var(--cd-color-${name}-1)`,
         }}
       >
         {shade}
@@ -22,7 +22,7 @@ const { name } = Astro.props;
     ))
   }
 
-  <div class="color-name" style={{ color: `var(--color-${name}-9)` }}>
+  <div class="color-name" style={{ color: `var(--cd-color-${name}-9)` }}>
     {name}
   </div>
 </div>
@@ -41,9 +41,9 @@ const { name } = Astro.props;
     position: absolute;
     left: 4px;
     bottom: 4px;
-    font-family: var(--font-family-heading);
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
+    font-family: var(--cd-font-family-heading);
+    font-size: var(--cd-font-size-xl);
+    font-weight: var(--cd-font-weight-bold);
     text-transform: uppercase;
   }
 
@@ -56,7 +56,7 @@ const { name } = Astro.props;
     aspect-ratio: 1;
     width: 100%;
     padding: 4px;
-    font-size: var(--font-size-s);
+    font-size: var(--cd-font-size-s);
     margin: 0;
   }
 </style>

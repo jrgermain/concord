@@ -37,28 +37,28 @@ const shouldShowFooter =
       import "@jrgermain/concord/concord.js";
     </script>
   </head>
-  <body class="app">
-    <a class="skip-link" href="#main-content">Skip to Main Content</a>
-    <header class="app-header">
-      <div class="app-header-content">
-        <div class="app-header-left">
-          <a class="app-header-item" href="/">
-            <img class="app-icon" aria-hidden="true" src={joey.src} />
-            <span class="app-title-divider"></span>
-            <span class="app-title">Concord</span>
+  <body class="cd-app">
+    <a class="cd-skip-link" href="#main-content">Skip to Main Content</a>
+    <header class="cd-app-header">
+      <div class="cd-app-header-content">
+        <div class="cd-app-header-left">
+          <a class="cd-app-header-item" href="/">
+            <img class="cd-app-icon" aria-hidden="true" src={joey.src} />
+            <span class="cd-app-title-divider"></span>
+            <span class="cd-app-title">Concord</span>
           </a>
         </div>
-        <div class="app-header-center">
+        <div class="cd-app-header-center">
           {
             navCategories.map((category) => (
-              <NavLink href={`/${category.slug}`} class="app-header-item">
+              <NavLink href={`/${category.slug}`} class="cd-app-header-item">
                 {category.title}
               </NavLink>
             ))
           }
-          <hr class="app-header-divider" />
+          <hr class="cd-app-header-divider" />
           <a
-            class="app-header-item"
+            class="cd-app-header-item"
             href="https://github.com/jrgermain/concord"
             title="GitHub"
           >
@@ -70,10 +70,10 @@ const shouldShowFooter =
                 d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
               ></path>
             </svg>
-            <span class="visually-hidden">GitHub</span>
+            <span class="cd-visually-hidden">GitHub</span>
           </a>
           <a
-            class="app-header-item"
+            class="cd-app-header-item"
             href="https://www.npmjs.com/package/@jrgermain/concord"
             title="NPM"
           >
@@ -83,11 +83,13 @@ const shouldShowFooter =
                 d="M240,250h100v-50h100V0H240V250z M340,50h50v100h-50V50z M480,0v200h100V50h50v150h50V50h50v150h50V0H480z M0,200h100V50h50v150h50V0H0V200z"
               ></path>
             </svg>
-            <span class="visually-hidden">NPM</span>
+            <span class="cd-visually-hidden">NPM</span>
           </a>
         </div>
-        <div class="app-header-right">
-          <label class="app-header-item app-sidebar-toggle if-app-has-sidebar">
+        <div class="cd-app-header-right">
+          <label
+            class="cd-app-header-item cd-app-sidebar-toggle cd-if-app-has-sidebar"
+          >
             <input type="checkbox" title="Toggle navigation" />
             <div></div>
             <div></div>
@@ -96,18 +98,18 @@ const shouldShowFooter =
         </div>
       </div>
     </header>
-    <div class="app-body">
+    <div class="cd-app-body">
       {
         nav.currentCategory != null &&
           nav.currentCategory.sections.length > 0 && (
-            <nav class="app-sidebar">
-              <div class="app-sidebar-content">
+            <nav class="cd-app-sidebar">
+              <div class="cd-app-sidebar-content">
                 {nav.currentCategory.sections.map((section) => (
-                  <section class="app-sidebar-section">
-                    <h1 class="app-sidebar-heading">{section.title}</h1>
+                  <section class="cd-app-sidebar-section">
+                    <h1 class="cd-app-sidebar-heading">{section.title}</h1>
                     {section.pages.map((page) => (
                       <NavLink
-                        class="app-sidebar-item"
+                        class="cd-app-sidebar-item"
                         href={`/${nav.currentCategory!.slug}/${section.slug}/${page.slug}`}
                       >
                         {page.title}
@@ -119,7 +121,7 @@ const shouldShowFooter =
             </nav>
           )
       }
-      <main id="main-content" class="app-content">
+      <main id="main-content" class="cd-app-content">
         <slot />
         {
           shouldShowFooter && (
@@ -212,9 +214,9 @@ const shouldShowFooter =
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    margin-top: var(--space-m);
+    margin-top: var(--cd-space-m);
     width: 100%;
-    gap: var(--space-xs) var(--space-s);
+    gap: var(--cd-space-xs) var(--cd-space-s);
   }
 
   /* On very narrow screens, stack the links vertically */
@@ -233,12 +235,12 @@ const shouldShowFooter =
   .next-link {
     display: grid;
     grid-template-rows: auto 1fr;
-    padding: var(--space-xs);
-    border-radius: var(--radius-l);
+    padding: var(--cd-space-xs);
+    border-radius: var(--cd-radius-l);
     text-decoration: none;
     width: 100%;
-    column-gap: var(--space-xs);
-    border: var(--border-s) dashed var(--color-border);
+    column-gap: var(--cd-space-xs);
+    border: var(--cd-border-s) dashed var(--cd-color-border);
   }
 
   :is(.previous-link, .next-link):focus-visible {
@@ -258,24 +260,24 @@ const shouldShowFooter =
   }
 
   .link-name {
-    font-size: var(--font-size-s);
-    font-weight: var(--font-weight-bold);
-    font-family: var(--font-family-heading);
+    font-size: var(--cd-font-size-s);
+    font-weight: var(--cd-font-weight-bold);
+    font-family: var(--cd-font-family-heading);
     margin-block-end: 0.05em;
-    color: var(--color-text-secondary);
+    color: var(--cd-color-text-secondary);
     grid-row: 1;
-    transition: color var(--duration-m) var(--ease-default);
+    transition: color var(--cd-duration-m) var(--cd-ease-default);
   }
 
   .link-title {
-    font-size: var(--font-size-m);
+    font-size: var(--cd-font-size-m);
     grid-row: 2;
-    transition: color var(--duration-m) var(--ease-default);
+    transition: color var(--cd-duration-m) var(--cd-ease-default);
     transition-property: color, text-decoration-color;
-    color: var(--color-teal-4);
-    font-weight: var(--font-weight-semibold);
+    color: var(--cd-color-teal-4);
+    font-weight: var(--cd-font-weight-semibold);
     text-decoration-line: underline;
-    text-decoration-color: var(--color-teal-transparent);
+    text-decoration-color: var(--cd-color-teal-transparent);
     text-decoration-skip-ink: all;
     text-decoration-thickness: 0.1em;
     text-underline-offset: 0.1em;
@@ -286,7 +288,7 @@ const shouldShowFooter =
   }
 
   :is(.previous-link, .next-link):active > .link-title {
-    color: var(--color-teal-3);
+    color: var(--cd-color-teal-3);
   }
 
   .previous-link .link-name,
@@ -305,9 +307,9 @@ const shouldShowFooter =
     margin: auto;
     grid-row: 1 / span 2;
     transition:
-      transform var(--duration-m) var(--ease-both),
-      color var(--duration-m) var(--ease-default);
-    color: var(--color-gray-6);
+      transform var(--cd-duration-m) var(--cd-ease-both),
+      color var(--cd-duration-m) var(--cd-ease-default);
+    color: var(--cd-color-gray-6);
   }
 
   .previous-link .link-icon {

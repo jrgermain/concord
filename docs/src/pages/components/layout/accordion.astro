@@ -10,9 +10,9 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 >
   <UsageExample
     name="Standard Accordion"
-    description="To create an Accordion, wrap one or more [`details`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) elements in a `div` with the class `accordion`."
+    description="To create an Accordion, wrap one or more [`details`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) elements in a `div` with the class `cd-accordion`."
     code={`
-      <div class="accordion">
+      <div class="cd-accordion">
         <details>
           <summary>Section 1</summary>
           Content for section 1
@@ -33,7 +33,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     name="Single Panel"
     description="To create a single collapsible panel, follow the same pattern, only using one `details` element."
     code={`
-      <div class="accordion">
+      <div class="cd-accordion">
         <details>
           <summary>Hello World</summary>
 
@@ -59,7 +59,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       _Hint: this behavior is similar to how you group radio buttons._
     `)}
     code={`
-      <div class="accordion">
+      <div class="cd-accordion">
         <details name="accordion-1">
           <summary>Section 1</summary>
           Content for section 1
@@ -78,9 +78,9 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 
   <UsageExample
     name="Subtle"
-    description="You can use the borderless **subtle** variant by adding the `subtle` class in addition to the `accordion` class."
+    description="You can use the borderless **subtle** variant by adding the `cd-variant-subtle` class in addition to the `cd-accordion` class."
     code={`
-      <div class="accordion subtle">
+      <div class="cd-accordion cd-variant-subtle">
         <details>
           <summary>Section 1</summary>
           Content for section 1

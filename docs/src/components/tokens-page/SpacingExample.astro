@@ -12,7 +12,7 @@ const { space } = Astro.props;
     <div class="space-example-block"></div>
     <div
       class="space-example-spacer"
-      style={{ width: `var(--space-${space})` }}
+      style={{ width: `var(--cd-space-${space})` }}
     >
     </div>
     <div class="space-example-block"></div>
@@ -20,13 +20,13 @@ const { space } = Astro.props;
 </div>
 <style>
   .space-example-container + .space-example-container {
-    margin-block-start: var(--space-m);
+    margin-block-start: var(--cd-space-m);
   }
 
   .space-name {
-    font-weight: var(--font-weight-bold);
-    font-family: var(--font-family-heading);
-    margin-block-end: var(--space-3xs);
+    font-weight: var(--cd-font-weight-bold);
+    font-family: var(--cd-font-family-heading);
+    margin-block-end: var(--cd-space-3xs);
   }
 
   .space-example {
@@ -34,27 +34,27 @@ const { space } = Astro.props;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    margin-block-end: var(--space-s);
+    margin-block-end: var(--cd-space-s);
   }
 
   .space-example-block {
     display: inline-block;
     height: 1.5rem;
     width: 1.5rem;
-    background-color: var(--color-text-primary);
+    background-color: var(--cd-color-text-primary);
     flex: none;
-    background-color: var(--color-blue-5);
+    background-color: var(--cd-color-blue-5);
   }
 
   .space-example-block:not(:first-child) {
-    background-color: var(--color-red-5);
+    background-color: var(--cd-color-red-5);
   }
 
   .space-example-spacer {
     display: inline-block;
     position: relative;
-    height: var(--border-s);
-    background-color: var(--color-text-primary);
+    height: var(--cd-border-s);
+    background-color: var(--cd-color-text-primary);
     flex: none;
     margin: auto 0;
   }

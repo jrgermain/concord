@@ -7,7 +7,7 @@ interface Props {
 const { propName, propValue } = Astro.props;
 
 const fullPropName = propName === "radius" ? "border-radius" : "border-width";
-const fullPropValue = `var(--${propName}-${propValue})`;
+const fullPropValue = `var(--cd-${propName}-${propValue})`;
 ---
 
 <div class="box" style={{ [fullPropName]: fullPropValue }}>
@@ -15,15 +15,15 @@ const fullPropValue = `var(--${propName}-${propValue})`;
 </div>
 <style>
   .box {
-    border: var(--border-m) solid var(--color-brand-5);
+    border: var(--cd-border-m) solid var(--cd-color-brand-5);
     height: 10rem;
     width: 12rem;
-    font-family: var(--font-family-mono);
-    border-radius: var(--radius-m);
+    font-family: var(--cd-font-family-mono);
+    border-radius: var(--cd-radius-m);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-surface-primary);
+    background-color: var(--cd-color-surface-primary);
     height: "10rem";
   }
 </style>

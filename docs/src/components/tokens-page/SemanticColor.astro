@@ -6,7 +6,7 @@ interface Props {
 
 const { name, description } = Astro.props;
 
-const backgroundColor = `var(--color-${name})`;
+const backgroundColor = `var(--cd-color-${name})`;
 ---
 
 <div class="semantic-color">
@@ -17,22 +17,22 @@ const backgroundColor = `var(--color-${name})`;
 
 <style>
   .semantic-color {
-    background-color: var(--color-surface-primary);
-    padding: var(--space-s);
-    border-radius: var(--radius-m);
-    border: var(--border-s) solid var(--color-border);
+    background-color: var(--cd-color-surface-primary);
+    padding: var(--cd-space-s);
+    border-radius: var(--cd-radius-m);
+    border: var(--cd-border-s) solid var(--cd-color-border);
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
-    gap: 0 var(--space-xs);
+    gap: 0 var(--cd-space-xs);
     place-items: center start;
   }
 
   .swatch {
     height: 2rem;
     width: 2rem;
-    border-radius: var(--radius-s);
-    border: var(--border-s) solid var(--color-border);
+    border-radius: var(--cd-radius-s);
+    border: var(--cd-border-s) solid var(--cd-color-border);
     grid-row: 1;
     grid-column: 1;
   }
@@ -47,6 +47,6 @@ const backgroundColor = `var(--color-${name})`;
   .description {
     grid-row: 2;
     grid-column: 1 / span 2;
-    margin-block-start: var(--space-2xs);
+    margin-block-start: var(--cd-space-2xs);
   }
 </style>

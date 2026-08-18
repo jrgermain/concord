@@ -14,52 +14,52 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       You can use a \`fieldset\` element with a corresponding \`legend\` to
       define a group of related input fields.
       
-      To style a Fieldset, give the \`fieldset\` element the class \`fieldset\`.
+      To style a Fieldset, give the \`fieldset\` element the class \`cd-fieldset\`.
       Inside this element should be a \`legend\` element that describes it.
-      After the legend, create a div with the class \`fieldset-content\` and
+      After the legend, create a \`div\` with the class \`cd-fieldset-content\` and
       place all of the fields inside it.
     `)}
     code={`
-      <fieldset class="fieldset">
+      <fieldset class="cd-fieldset">
         <legend>Home Address</legend>
-        <div class="fieldset-content">
-          <label class="field">
+        <div class="cd-fieldset-content">
+          <label class="cd-field">
             Street Address
             <input type="text" />
           </label>
-          <label class="field">
+          <label class="cd-field">
             City
             <input type="text" />
           </label>
-          <label class="field">
+          <label class="cd-field">
             State
             <input type="text" />
           </label>
-          <label class="field">
+          <label class="cd-field">
             ZIP Code
             <input type="text" />
           </label>
         </div>
       </fieldset>
     `}
-    outputWrapperClass="wrap"
+    outputWrapperClass="cd-wrap"
   />
 
   <UsageExample
     name="Horizontal Layout"
     description={trimTextPadding(`
       The fields will be stacked vertically by default. To display them in a
-      single row, add the class \`horizontal\` to the \`fieldset\` element.
+      single row, add the class \`cd-orientation-horizontal\` to the \`fieldset\` element.
     `)}
     code={`
-      <fieldset class="fieldset horizontal">
+      <fieldset class="cd-fieldset cd-orientation-horizontal">
         <legend>Deposit Amount</legend>
-        <div class="fieldset-content">
-          <label class="field">
+        <div class="cd-fieldset-content">
+          <label class="cd-field">
             Amount
             <input type="number" step="0.01" />
           </label>
-          <label class="field">
+          <label class="cd-field">
             Currency
             <select>
               <option>USD</option>
@@ -70,21 +70,21 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
         </div>
       </fieldset>
     `}
-    outputWrapperClass="wrap"
+    outputWrapperClass="cd-wrap"
   />
 
   <UsageExample
     name="Subtle"
-    description="You can remove the border and background from a Fieldset by adding the class `subtle` to the `fieldset` element."
+    description="You can remove the border and background from a Fieldset by adding the class `cd-variant-subtle` to the `fieldset` element."
     code={`
-      <fieldset class="fieldset subtle">
+      <fieldset class="cd-fieldset cd-variant-subtle">
         <legend>Deposit Amount</legend>
-        <div class="fieldset-content horizontal">
-          <label class="field">
+        <div class="cd-fieldset-content cd-orientation-horizontal">
+          <label class="cd-field">
             Amount
             <input type="number" step="0.01" />
           </label>
-          <label class="field">
+          <label class="cd-field">
             Currency
             <select>
               <option>USD</option>
@@ -95,6 +95,6 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
         </div>
       </fieldset>
     `}
-    outputWrapperClass="wrap"
+    outputWrapperClass="cd-wrap"
   />
 </ComponentDocumentation>

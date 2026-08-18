@@ -12,21 +12,21 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     name="Defaults"
     description={trimTextPadding(`
       You can create a Modal by creating a [\`dialog\`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)
-      element with the class \`modal\`.
+      element with the class \`cd-modal\`.
 
       Inside your Modal, you can add a **header**, **body**, and **footer**.
 
-      The **header** should have the class \`modal-header\` and contain a title and,
-      optionally, a \`button\` with the class \`dismiss-button\`.
+      The **header** should have the class \`cd-modal-header\` and contain a title and,
+      optionally, a \`button\` with the class \`cd-dismiss-button\`.
 
-      The **body** should have the class \`modal-body\` and contain the main
+      The **body** should have the class \`cd-modal-body\` and contain the main
       content of the Modal.
 
       The **footer** should have the class \`modal-footer\` and contain any action
       buttons or other controls that should appear at the bottom.
 
-      <div class="alert info">
-        <div class="alert-content">
+      <div class="cd-alert cd-status-info">
+        <div class="cd-alert-content">
           Modals can be opened/closed without JavaScript by using the
           <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#command"><code>command</code></a>
           and <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#commandfor"><code>commandfor</code></a>
@@ -35,19 +35,19 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       </div>
     `)}
     code={`
-      <button class="button" command="show-modal" commandfor="modal-1">Open Modal</button>
+      <button class="cd-button" command="show-modal" commandfor="modal-1">Open Modal</button>
 
-      <dialog id="modal-1" class="modal" aria-labelledby="modal-1-title">
-        <header class="modal-header">
+      <dialog id="modal-1" class="cd-modal" aria-labelledby="modal-1-title">
+        <header class="cd-modal-header">
           <h1 id="modal-1-title">Leave Without Saving?</h1>
-          <button class="dismiss-button" command="request-close" commandfor="modal-1" aria-label="Close"></button>
+          <button class="cd-dismiss-button" command="request-close" commandfor="modal-1" aria-label="Close"></button>
         </header>
-        <div class="modal-body">
+        <div class="cd-modal-body">
           <p>You have unsaved edits. What would you like to do?</p>
         </div>
-        <div class="modal-footer">
-          <button class="button primary red" command="request-close" commandfor="modal-1">Discard Changes</button>
-          <button class="button" command="request-close" commandfor="modal-1">Keep Editing</button>
+        <div class="cd-modal-footer">
+          <button class="cd-button cd-variant-primary cd-color-red" command="request-close" commandfor="modal-1">Discard Changes</button>
+          <button class="cd-button" command="request-close" commandfor="modal-1">Keep Editing</button>
         </div>
       </dialog>
     `}
@@ -58,39 +58,39 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       You can control the width of a Modal by adding one of the following
       additional classes to the \`dialog\` element:
 
-      - \`auto\` (default)
-      - \`small\`
-      - \`medium\`
-      - \`large\`
+      - \`cd-size-auto\` (default)
+      - \`cd-size-small\`
+      - \`cd-size-medium\`
+      - \`cd-size-large\`
 
       If the size is \`auto\`, the Modal will be as large as necessary to fit
       its content without extending past the edge of the screen.
 
-      For fine-grained control over sizing, you can set the \`--modal-size\`
+      For fine-grained control over sizing, you can set the \`--cd-modal-size\`
       CSS variable on the Modal element. The value of this variable _must_ be
       a valid size (e.g., \`50vw\`, \`20rem\`).
 
-      Below is an example of a Modal with the class \`small\`.
+      Below is an example of a Modal with the class \`cd-size-small\`.
     `)}
     code={`
-      <button class="button" command="show-modal" commandfor="modal-2">Open Modal</button>
+      <button class="cd-button" command="show-modal" commandfor="modal-2">Open Modal</button>
 
-      <dialog id="modal-2" class="modal small" aria-labelledby="modal-2-title">
-        <header class="modal-header">
+      <dialog id="modal-2" class="cd-modal cd-size-small" aria-labelledby="modal-2-title">
+        <header class="cd-modal-header">
           <h1 id="modal-2-title">Leave Without Saving?</h1>
-          <button class="dismiss-button" command="request-close" commandfor="modal-2" aria-label="Close"></button>
+          <button class="cd-dismiss-button" command="request-close" commandfor="modal-2" aria-label="Close"></button>
         </header>
-        <div class="modal-body">
-          <p class="paragraph">
+        <div class="cd-modal-body">
+          <p class="cd-paragraph">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis ultricies lacus sed turpis tincidunt id. Rhoncus mattis rhoncus urna neque viverra justo nec.
           </p>
-          <p class="paragraph">
+          <p class="cd-paragraph">
             Pretium nibh ipsum consequat nisl vel pretium lectus quam. Ac placerat vestibulum lectus mauris ultrices. Elementum sagittis vitae et leo duis ut diam. Odio facilisis mauris sit amet massa. Cras semper auctor neque vitae tempus quam. Cursus metus aliquam eleifend mi in. Fermentum iaculis eu non diam. Diam quam nulla porttitor massa id neque aliquam
           </p>
         </div>
-        <div class="modal-footer">
-          <button class="button primary" command="request-close" commandfor="modal-2">Save</button>
-          <button class="button" command="request-close" commandfor="modal-2">Cancel</button>
+        <div class="cd-modal-footer">
+          <button class="cd-button cd-variant-primary" command="request-close" commandfor="modal-2">Save</button>
+          <button class="cd-button" command="request-close" commandfor="modal-2">Cancel</button>
         </div>
       </dialog>
     `}
@@ -99,27 +99,27 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     name="Overflow"
     description="If the content in the Modal's body is too tall, the Modal will allow you to scroll the additional content into view."
     code={`
-      <button class="button" command="show-modal" commandfor="modal-3">Open Modal</button>
+      <button class="cd-button" command="show-modal" commandfor="modal-3">Open Modal</button>
 
-      <dialog id="modal-3" class="modal small" aria-labelledby="modal-3-title">
-        <header class="modal-header">
+      <dialog id="modal-3" class="cd-modal cd-size-small" aria-labelledby="modal-3-title">
+        <header class="cd-modal-header">
           <h1 id="modal-3-title">Leave Without Saving?</h1>
-          <button class="dismiss-button" command="request-close" commandfor="modal-3" aria-label="Close"></button>
+          <button class="cd-dismiss-button" command="request-close" commandfor="modal-3" aria-label="Close"></button>
         </header>
-        <div class="modal-body">
+        <div class="cd-modal-body">
           <p style="
             height: 100lvh;
-            background-color: var(--color-brand-8);
-            padding: var(--space-m);
-            border-radius: var(--radius-m);
-            box-shadow: var(--shadow-m);
+            background-color: var(--cd-color-brand-8);
+            padding: var(--cd-space-m);
+            border-radius: var(--cd-radius-m);
+            box-shadow: var(--cd-shadow-m);
           ">
             This is a huge box. Scroll to see the rest of it.
           </p>
         </div>
-        <div class="modal-footer">
-          <button class="button primary" command="request-close" commandfor="modal-3">Save</button>
-          <button class="button" command="request-close" commandfor="modal-3">Cancel</button>
+        <div class="cd-modal-footer">
+          <button class="cd-button cd-variant-primary" command="request-close" commandfor="modal-3">Save</button>
+          <button class="cd-button" command="request-close" commandfor="modal-3">Cancel</button>
         </div>
       </dialog>
     `}
@@ -130,19 +130,19 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     isJavaScriptRequired={true}
     code={`
       <div
-        class="stack vertical dense"
+        class="cd-stack cd-orientation-vertical cd-spacing-dense"
         x-data="{ size: 'medium', paragraphCount: 1, closeButton: true, header: true, body: true, footer: true }"
       >
-        <label class="field">
+        <label class="cd-field">
           Size
           <select x-model="size">
-            <option value="">Unset (auto)</option>
+            <option value="auto">Auto</option>
             <option value="small">Small</option>
             <option value="medium">Medium</option>
             <option value="large">Large</option>
           </select>
         </label>
-        <label class="field">
+        <label class="cd-field">
           Number of Paragraphs
           <input
             type="number"
@@ -151,80 +151,80 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
             max="8"
             x-model="paragraphCount"
           />
-          <div class="error-message">
+          <div class="cd-error-message">
             Number of paragraphs must be an integer between 0 and 8.
           </div>
         </label>
-        <label class="switch">
+        <label class="cd-switch">
           Include Close Button
           <input type="checkbox" x-model="closeButton" />
         </label>
-        <label class="switch">
+        <label class="cd-switch">
           Include Header
           <input type="checkbox" x-model="header" />
         </label>
-        <label class="switch">
+        <label class="cd-switch">
           Include Body
           <input type="checkbox" x-model="body" />
         </label>
-        <label class="switch">
+        <label class="cd-switch">
           Include Footer
           <input type="checkbox" x-model="footer" />
         </label>
-        <hr class="divider" />
-        <button class="button primary" command="show-modal" commandfor="modal-4">
+        <hr class="cd-divider" />
+        <button class="cd-button cd-variant-primary" command="show-modal" commandfor="modal-4">
           Open Modal
         </button>
-        <dialog id="modal-4" x-bind:class="'modal ' + size" aria-labelledby="modal-4-title">
-          <header x-show="header" class="modal-header">
+        <dialog id="modal-4" x-bind:class="'cd-modal cd-size-' + size" aria-labelledby="modal-4-title">
+          <header x-show="header" class="cd-modal-header">
             <h1 id="modal-4-title">User Settings</h1>
             <button
-              class="dismiss-button"
+              class="cd-dismiss-button"
               aria-label="Close"
               x-show="closeButton"
               command="request-close"
               commandfor="modal-4"></button>
           </header>
-          <div x-show="body" class="modal-body">
-            <p class="paragraph" x-show="paragraphCount >= 1">
+          <div x-show="body" class="cd-modal-body">
+            <p class="cd-paragraph" x-show="paragraphCount >= 1">
               Qui dolore ut nihil unde. Eum sint veniam ut assumenda delectus.
               Autem autem quas dignissimos.
             </p>
-            <p class="paragraph" x-show="paragraphCount >= 2">
+            <p class="cd-paragraph" x-show="paragraphCount >= 2">
               Deleniti consequatur quas commodi ea veritatis. Sunt ut aut sunt ut
               repellat fuga nulla. Mollitia rerum quas nobis. Rem explicabo sint
               qui dolor et ab quibusdam cum.
             </p>
-            <p class="paragraph" x-show="paragraphCount >= 3">
+            <p class="cd-paragraph" x-show="paragraphCount >= 3">
               Quia commodi dolor qui non tempora. Est temporibus dolorem similique
               quisquam. Enim deleniti suscipit quibusdam nihil iste. Facilis qui
               ut non.
             </p>
-            <p class="paragraph" x-show="paragraphCount >= 4">
+            <p class="cd-paragraph" x-show="paragraphCount >= 4">
               Enim est asperiores facilis quia. Dignissimos repellendus est et
               saepe aut iusto velit aut. Dignissimos cum ullam enim iste soluta
               aliquid accusamus. Ducimus placeat perferendis qui officiis
               praesentium. Qui aliquam laborum nam. Laborum et perspiciatis ut
               rerum non voluptatum.
             </p>
-            <p class="paragraph" x-show="paragraphCount >= 5">
+            <p class="cd-paragraph" x-show="paragraphCount >= 5">
               Ratione officia nobis aliquam saepe error est laudantium. Voluptas
               incidunt reiciendis veniam exercitationem facere. Officiis ex sit
               sed illo beatae veniam.
             </p>
-            <p class="paragraph" x-show="paragraphCount >= 6">
+            <p class="cd-paragraph" x-show="paragraphCount >= 6">
               Consequatur eum quo ullam perspiciatis voluptatem. Non ut ad vel qui
               vero. Numquam quisquam neque earum non maxime ea quidem ut. Nihil
               voluptatibus quas alias est quas vel. Possimus modi sit vero nemo
               ipsam. Excepturi nihil asperiores aut voluptatem sint adipisci
               possimus numquam.
             </p>
-            <p class="paragraph" x-show="paragraphCount >= 7">
+            <p class="cd-paragraph" x-show="paragraphCount >= 7">
               Aliquam quia ullam porro numquam similique quia. Est impedit facilis
               magnam minima natus eos. Provident nam dolores inventore deleniti
               eos maiores voluptas. Id similique rerum exercitationem id.
             </p>
-            <p class="paragraph" x-show="paragraphCount >= 8">
+            <p class="cd-paragraph" x-show="paragraphCount >= 8">
               Autem consectetur distinctio odit dolorum veniam officia voluptas
               ut. Sed doloribus neque et nihil optio ad vel quod. Molestiae quia
               veniam a. Voluptate velit quisquam a enim sit. Ratione aut occaecati
@@ -232,11 +232,11 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
               dolorum doloribus minima ut et omnis.
             </p>
           </div>
-          <div x-show="footer" class="modal-footer">
-            <button class="button primary" command="request-close" commandfor="modal-4">
+          <div x-show="footer" class="cd-modal-footer">
+            <button class="cd-button cd-variant-primary" command="request-close" commandfor="modal-4">
               Save
             </button>
-            <button class="button" command="request-close" commandfor="modal-4">
+            <button class="cd-button" command="request-close" commandfor="modal-4">
               Cancel
             </button>
           </div>

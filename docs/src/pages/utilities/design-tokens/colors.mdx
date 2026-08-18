@@ -11,7 +11,7 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 
 # Colors
 
-All colors are prefixed with `--color-`. Concord defines 2 sets
+All colors are prefixed with `--cd-color-`. Concord defines 2 sets
 of colors: the **standard palette** and **semantic colors**.
 
 ## Standard Palette
@@ -28,23 +28,23 @@ this one is that light mode is the canonical color mode, and the number of a
 given color refers to its lightness.
 
 There are also 2 transparent variants for each color: `transparent` and
-`extra-transparent`. These are based on shade 5, but with varying opacities.
+`extra-transparent`.
 
-The variables for these colors all use the standard `--color-` prefix,
+The variables for these colors all use the standard `--cd-color-` prefix,
 followed by the color name and shade. For example, the color `red` with
-lightness 1 is defined as `--color-red-1`, while `red` with high
-transparency is defined as `--color-red-extra-transparent`. Below is an
+lightness 1 is defined as `--cd-color-red-1`, while `red` with high
+transparency is defined as `--cd-color-red-extra-transparent`. Below is an
 example of how to reference these colors in a stylesheet:
 
 <CodeBlock
   language="css"
   code={trimTextPadding(`
     .red {
-      background-color: var(--color-red-1);
+      background-color: var(--cd-color-red-1);
     }
 
     .transparent-red {
-      background-color: var(--color-red-extra-transparent);
+      background-color: var(--cd-color-red-extra-transparent);
     }
   `)}
 />
@@ -70,7 +70,7 @@ In addition to the standard palette, Concord defines a set of
 "semantic" colors. These colors are named after their intended use cases
 and do not have multiple shades.
 
-<div class="stack vertical">
+<div class="cd-stack cd-orientation-vertical">
   <SemanticColor
     name="surface-primary"
     description="The primary background color for surfaces like cards."

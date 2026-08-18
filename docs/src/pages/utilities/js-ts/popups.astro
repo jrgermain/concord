@@ -5,34 +5,35 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 ---
 
 <Layout title="Popups">
-  <h1 class="heading level-1">Popups</h1>
-  <p class="paragraph">
+  <h1 class="cd-heading cd-level-1">Popups</h1>
+  <p class="cd-paragraph">
     The Concord Popups API is used to display simple modal dialogs. It's a
     shortcut for creating instances of the Modal component.
   </p>
-  <p class="paragraph">
-    The API currently only exports a single function: <code class="code"
+  <p class="cd-paragraph">
+    The API currently only exports a single function: <code class="cd-code"
       >showPopup</code
-    >. This function was inspired by the native <code class="code"
+    >. This function was inspired by the native <code class="cd-code"
       >window.alert()</code
-    > and <code class="code">window.confirm()</code> functions, but provides more
-    configuration options and is asynchronous. <code class="code"
+    > and <code class="cd-code">window.confirm()</code> functions, but provides more
+    configuration options and is asynchronous. <code class="cd-code"
       >showPopup</code
     >
-    returns a <code class="code">{"Promise<boolean | null>"}</code> that resolves
+    returns a <code class="cd-code">{"Promise<boolean | null>"}</code> that resolves
     to
-    <code class="code">true</code> if the user clicks the primary button,
-    <code class="code">false</code> if the user clicks the secondary button (if present),
-    or <code class="code">null</code> if the popup is dismissed without any action.
+    <code class="cd-code">true</code> if the user clicks the primary button,
+    <code class="cd-code">false</code> if the user clicks the secondary button (if
+    present), or <code class="cd-code">null</code> if the popup is dismissed without
+    any action.
   </p>
 
-  <h2 class="heading level-2">Example Usage</h2>
+  <h2 class="cd-heading cd-level-2">Example Usage</h2>
   <CodeBlock
     language="tsx"
     code={trimTextPadding(`
     import { showPopup } from "@jrgermain/concord";
 
-    // This example is an alternative to window.alert()
+    // This example is an alternative to window.cd-alert()
     const AlertExample = () => {
       const handleClick = async () => {
         // Since we omit secondaryLabel, there will only be an OK button.

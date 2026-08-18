@@ -6,9 +6,9 @@ interface Props {
 
 const { propName, propValue } = Astro.props;
 const fullPropName = `font-${propName}`;
-const fullPropValue = `var(--font-${propName}-${propValue})`;
+const fullPropValue = `var(--cd-font-${propName}-${propValue})`;
 ---
 
-<p class="paragraph" style={{ [fullPropName]: fullPropValue }}>
+<p class="cd-paragraph" style={{ [fullPropName]: fullPropValue }}>
   This text has a {propName} of <em>{propValue}</em>.
 </p>

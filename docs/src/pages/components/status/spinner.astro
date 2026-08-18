@@ -11,21 +11,21 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
   <UsageExample
     name="Basic Usage"
     description={trimTextPadding(`
-      You can create a Spinner by giving a \`div\` element the \`spinner\`
+      You can create a Spinner by giving a \`div\` element the \`cd-spinner\`
       class.
 
       All Spinners should have a role of \`status\` and include text content,
       which will be announced by screen readers when the spinner appears.
       By default, the text content is displayed underneath the spinner.
     `)}
-    code='<div class="spinner" role="status">Loading...</div>'
+    code='<div class="cd-spinner" role="status">Loading...</div>'
   />
   <UsageExample
     name="No Label"
-    description="To create a spinner with no visible label, wrap the text inside a span with the class `visually-hidden`."
+    description="To create a spinner with no visible label, wrap the text inside a span with the class `cd-visually-hidden`."
     code={`
-      <div class="spinner" role="status">
-        <span class="visually-hidden">Loading...</span>
+      <div class="cd-spinner" role="status">
+        <span class="cd-visually-hidden">Loading...</span>
       </div>
     `}
   />
@@ -33,8 +33,8 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     name="Complex Labels"
     description="If your label consists of more than one node, wrap it in a `span` or similar element to group it into a single node."
     code={`
-      <div class="spinner" role="status">
-        <span class="wrap densest">
+      <div class="cd-spinner" role="status">
+        <span class="cd-wrap cd-spacing-densest">
           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256" aria-hidden="true">
             <g fill="currentColor">
               <path d="M208 88h-56V32Z" opacity=".2"></path>
@@ -48,55 +48,55 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
   />
   <UsageExample
     name="Label Position"
-    description="You can change the position of the label by using the `label-top`, `label-right`, `label-bottom` (default), or `label-left` classes."
+    description="You can change the position of the label by using the `cd-label-top`, `cd-label-right`, `cd-label-bottom` (default), or `cd-label-left` classes."
     code={`
-      <div class="spinner label-top" role="status">
+      <div class="cd-spinner cd-label-top" role="status">
         Top
       </div>
-      <div class="spinner label-right" role="status">
+      <div class="cd-spinner cd-label-right" role="status">
         Right
       </div>
-      <div class="spinner label-bottom" role="status">
+      <div class="cd-spinner cd-label-bottom" role="status">
         Bottom (default)
       </div>
-      <div class="spinner label-left" role="status">
+      <div class="cd-spinner cd-label-left" role="status">
         Left
       </div>
     `}
-    outputWrapperClass="wrap vertical sparser"
+    outputWrapperClass="cd-wrap cd-orientation-vertical cd-spacing-sparser"
   />
   <UsageExample
-    name="Sizes"
+    name="Size"
     description={trimTextPadding(`
-      You can make a Spinner smaller by adding the \`small\` class or larger by adding the \`large\` class.
+      You can make a Spinner smaller by adding the \`cd-size-small\` class or larger by adding the \`cd-size-large\` class.
 
-      For fine-grained control over sizing, you can set the \`--spinner-scale\`
+      For fine-grained control over sizing, you can set the \`--cd-spinner-scale\`
       CSS variable on the Spinner element. The value of this variable _must_ be
       a unitless number. A value of \`1\` corresponds to the default size.
     `)}
     code={`
-      <div class="spinner small label-right" role="status">Small</div>
-      <div class="spinner label-right" role="status">Medium (default)</div>
-      <div class="spinner large label-right" role="status">Large</div>
-      <div class="spinner label-right" style="--spinner-scale: 1.25" role="status">Custom scale (1.25)</div>
+      <div class="cd-spinner cd-size-small cd-label-right" role="status">Small</div>
+      <div class="cd-spinner cd-label-right" role="status">Medium (default)</div>
+      <div class="cd-spinner cd-size-large cd-label-right" role="status">Large</div>
+      <div class="cd-spinner cd-label-right" style="--cd-spinner-scale: 1.25" role="status">Custom scale (1.25)</div>
     `}
   />
   <UsageExample
     name="Delay"
     description={trimTextPadding(`
-      You can delay the appearance of a Spinner by adding the \`delayed\` class.
+      You can delay the appearance of a Spinner by adding the \`cd-is-delayed\` class.
       
       This is useful when an operation normally completes quickly, and you only
       want to show the Spinner if it's taking longer than usual.
 
-      You can customize the delay by setting the \`--spinner-delay\` CSS
+      You can customize the delay by setting the \`--cd-spinner-delay\` CSS
       variable on the element.
     `)}
     code={`
-      <div class="spinner label-right delayed" role="status">
+      <div class="cd-spinner cd-label-right cd-is-delayed" role="status">
         I have the default delay
       </div>
-      <div class="spinner label-right delayed" role="status" style="--spinner-delay: 500ms">
+      <div class="cd-spinner cd-label-right cd-is-delayed" role="status" style="--cd-spinner-delay: 500ms">
         I have a custom 500ms delay
       </div>
     `}

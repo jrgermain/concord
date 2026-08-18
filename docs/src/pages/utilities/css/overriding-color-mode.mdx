@@ -7,41 +7,41 @@ import UsageExample from "../../../components/UsageExample.astro";
 
 # Overriding Color Mode
 
-To force an element (and its children) to display in light mode, add the class `light-mode` to the element.
+To force an element (and its children) to display in light mode, add the class `cd-light-mode` to the element.
 
 <UsageExample
   name="Example"
   code={`
-    <div class="card light-mode">
-      <h3 class="card-title">Light Mode Example</h3>
+    <div class="cd-card cd-light-mode">
+      <h3 class="cd-card-title">Light Mode Example</h3>
       <p>
         This card always appears in light mode. So do the following elements inside
         it:
       </p>
-      <div class="wrap">
-        <div class="chip blue">This Chip</div>
-        <button class="button">This Button</button>
-        <a class="link">and this Link</a>
+      <div class="cd-wrap">
+        <div class="cd-chip cd-color-blue">This Chip</div>
+        <button class="cd-button">This Button</button>
+        <a class="cd-link">and this Link</a>
       </div>
     </div>
   `}
 />
 
-To force an element (and its children) to display in dark mode, add the class `dark-mode` to the element.
+To force an element (and its children) to display in dark mode, add the class `cd-dark-mode` to the element.
 
 <UsageExample
   name="Example"
   code={`
-    <div class="card dark-mode">
-      <h3 class="card-title">Dark Mode Example</h3>
+    <div class="cd-card cd-dark-mode">
+      <h3 class="cd-card-title">Dark Mode Example</h3>
       <p>
         This card always appears in dark mode. So do the following elements inside
         it:
       </p>
-      <div class="wrap">
-        <div class="chip blue">This Chip</div>
-        <button class="button">This Button</button>
-        <a class="link">and this Link</a>
+      <div class="cd-wrap">
+        <div class="cd-chip cd-color-blue">This Chip</div>
+        <button class="cd-button">This Button</button>
+        <a class="cd-link">and this Link</a>
       </div>
     </div>
   `}
@@ -56,7 +56,7 @@ we choose to have them follow the document's color mode rather than inheriting t
 color mode of their parent element. While this is not the default behavior for CSS,
 it better aligns with how these components look and behave.
 
-To override this behavior, reapply the color mode class to the `.drawer` or `.modal`
+To override this behavior, reapply the color mode class to the `.cd-drawer` or `.cd-modal`
 element to match the desired color mode.
 
   <UsageExample
@@ -65,11 +65,11 @@ element to match the desired color mode.
     isJavaScriptRequired={true}
     code={`
       <div
-        class="stack vertical dense"
+        class="cd-stack cd-orientation-vertical cd-spacing-dense"
         x-data="{ containerColorMode: '', dialogColorMode: '', type: 'drawer' }"
       >
-        <div class="wrap">
-          <label class="field compact">
+        <div class="cd-wrap">
+          <label class="cd-field cd-is-compact">
             Container Color Mode
             <select x-model="containerColorMode">
               <option value="">Default</option>
@@ -77,7 +77,7 @@ element to match the desired color mode.
               <option value="dark">Dark</option>
             </select>
           </label>
-          <label class="field compact">
+          <label class="cd-field cd-is-compact">
             Dialog Color Mode
             <select x-model="dialogColorMode">
               <option value="">Default</option>
@@ -85,7 +85,7 @@ element to match the desired color mode.
               <option value="dark">Dark</option>
             </select>
           </label>
-          <label class="field compact">
+          <label class="cd-field cd-is-compact">
             Dialog Type
             <select x-model="type">
               <option value="drawer">Drawer</option>
@@ -93,34 +93,29 @@ element to match the desired color mode.
             </select>
           </label>
         </div>
-        <div class="card" x-bind:class="containerColorMode + '-mode'">
+        <div class="cd-card" x-bind:class="containerColorMode ? 'cd-' + containerColorMode + '-mode' : ''">
           <p>
             This card is displaying in
             <span x-text="containerColorMode ? containerColorMode + ' mode.' : 'the same color mode as the document.'"></span>
           </p>
           <button
-            class="button primary"
+            class="cd-button cd-variant-primary"
             style="text-transform: capitalize;"
             @click="$refs.dialog.showModal()"
             x-text="'Show ' + type"
           ></button>
           <dialog
             x-ref="dialog"
-            x-bind:class="
-              type +
-              ' small ' + 
-              (dialogColorMode ? dialogColorMode + '-mode ' : '') + 
-              (type === 'drawer' ? 'left' : '')
-            "
+            x-bind:class="(type === 'drawer' ? 'cd-drawer' : 'cd-modal') + ' cd-size-small' + (dialogColorMode ? ' cd-' + dialogColorMode + '-mode' : '') + (type === 'drawer' ? ' cd-side-left' : '')"
           >
-            <div x-bind:class="type + '-header'">
+            <div x-bind:class="'cd-' + type + '-header'">
               <h1 style="text-transform: capitalize;" x-text="type"></h1>
               <button
-                class="dismiss-button"
+                class="cd-dismiss-button"
                 aria-label="Close"
                 x-on:click="$refs.dialog.close()"></button>
             </div>
-            <div x-bind:class="type + '-body'">
+            <div x-bind:class="'cd-' + type + '-body'">
               <p>
                 This 
                 <span x-text="type"></span>
@@ -128,7 +123,7 @@ element to match the desired color mode.
                 <span x-text="dialogColorMode ? dialogColorMode + ' mode' : 'the same color mode as the document'"></span>
                 <span x-show="dialogColorMode">
                   because it has a color mode explicitly set
-                  (<code class="code" x-text="'.' + type + '.' + dialogColorMode + '-mode'"></code>)
+                  (<code class="cd-code" x-text="'.cd-' + type + '.cd-' + dialogColorMode + '-mode'"></code>)
                   .
                 </span>
                 <span x-show="!dialogColorMode">because it does not have a color mode explicitly set.</span>

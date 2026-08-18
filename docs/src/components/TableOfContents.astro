@@ -11,22 +11,22 @@ interface Props {
 
 const { showHeading = true, areItemsClickable = true, contents } = Astro.props;
 
-let headingClass = "heading level-2 toc-heading";
+let headingClass = "cd-heading cd-level-2 toc-heading";
 if (!showHeading) {
-  headingClass += " visually-hidden";
+  headingClass += " cd-visually-hidden";
 }
 ---
 
 <style>
   .toc-heading {
-    font-size: var(--font-size-xl);
-    margin-block-end: var(--space-xs);
+    font-size: var(--cd-font-size-xl);
+    margin-block-end: var(--cd-space-xs);
   }
 
   .toc-card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr));
-    gap: var(--space-s);
+    gap: var(--cd-space-s);
   }
 </style>
 <section>
@@ -34,8 +34,8 @@ if (!showHeading) {
   <div class="toc-card-container">
     {
       contents.map((entry) => (
-        <div class="card">
-          <div class="card-title">
+        <div class="cd-card">
+          <div class="cd-card-title">
             {areItemsClickable ? (
               <a href={`./${entry.slug}`}>{entry.title}</a>
             ) : (

@@ -10,78 +10,78 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 >
   <UsageExample
     name="Defaults"
-    description="To create a Divider, create an element with the class `divider`."
+    description="To create a Divider, create an element with the class `cd-divider`."
     code={`
       <p>Some content</p>
-      <hr class="divider"/>
+      <hr class="cd-divider"/>
       <p>More content</p>
     `}
-    outputWrapperClass="stack vertical no-gap"
+    outputWrapperClass="cd-stack cd-orientation-vertical cd-spacing-none"
   />
 
   <UsageExample
     name="Orientation"
-    description="You can change the direction of a Divider by adding the classes `horizontal` (default) or `vertical`."
+    description="You can change the direction of a Divider by adding the class `cd-orientation-vertical`. Horizontal is the default."
     code={`
       <p>Some content</p>
-      <hr class="divider vertical"/>
+      <hr class="cd-divider cd-orientation-vertical"/>
       <p>More content</p>
     `}
-    outputWrapperClass="stack horizontal no-gap"
+    outputWrapperClass="cd-stack cd-orientation-horizontal cd-spacing-none"
   />
 
   <UsageExample
     name="Thickness"
     description={trimTextPadding(`
-      To make the Divider thicker, add the class \`thick\` (to make it a little thicker) or \`thicker\` (to make it significantly thicker).
+      To make the Divider thicker, add the class \`cd-width-thick\` (to make it a little thicker) or \`cd-width-thicker\` (to make it significantly thicker).
 
-      For fine-grained control over the line thickness, you can set the \`--divider-thickness\`
+      For fine-grained control over the line thickness, you can set the \`--cd-divider-thickness\`
       CSS variable on the Divider element. The value of this variable _must_ be a valid line width
-      (e.g., \`1px\`, \`0.1rem\`, \`var(--border-m)\`).
+      (e.g., \`1px\`, \`0.1rem\`, \`var(--cd-border-m)\`).
     `)}
     code={`
       <p>Thin (default)</p>
-      <hr class="divider"/>
+      <hr class="cd-divider"/>
       <p>Thick</p>
-      <hr class="divider thick"/>
+      <hr class="cd-divider cd-width-thick"/>
       <p>Thicker</p>
-      <hr class="divider thicker"/>
+      <hr class="cd-divider cd-width-thicker"/>
       <p>Custom (0.2rem)</p>
-      <hr class="divider" style="--divider-thickness: 0.2rem;"/>
+      <hr class="cd-divider" style="--cd-divider-thickness: 0.2rem;"/>
     `}
-    outputWrapperClass="stack vertical no-gap"
+    outputWrapperClass="cd-stack cd-orientation-vertical cd-spacing-none"
   />
 
   <UsageExample
     name="Pattern"
-    description="You can change the **pattern** of a Divider by adding the classes `dashed` or `dotted`."
+    description="You can change the **pattern** of a Divider by adding the classes `cd-style-dashed` or `cd-style-dotted`."
     code={`
       <p>Some content</p>
-      <hr class="divider dashed"/>
+      <hr class="cd-divider cd-style-dashed"/>
       <p>More content</p>
-      <hr class="divider dotted"/>
+      <hr class="cd-divider cd-style-dotted"/>
       <p>Even more content</p>
     `}
-    outputWrapperClass="stack vertical no-gap"
+    outputWrapperClass="cd-stack cd-orientation-vertical cd-spacing-none"
   />
 
   <UsageExample
     name="Visibility"
-    description="To add space between elements without a visible line, create a Divider with the class `invisible`."
+    description="To add space between elements without a visible line, create a Divider with the class `cd-is-invisible`."
     code={`
       <p>Some content</p>
-      <hr class="divider invisible"/>
+      <hr class="cd-divider cd-is-invisible"/>
       <p>More content</p>
     `}
-    outputWrapperClass="stack vertical no-gap"
+    outputWrapperClass="cd-stack cd-orientation-vertical cd-spacing-none"
   />
 
   <UsageExample
     name="Removing Margin"
-    description="To remove the default margin around a Divider, add the class `no-margin`."
+    description="To remove the default margin around a Divider, add the class `cd-spacing-none`."
     code={`
       <p>Some content</p>
-      <hr class="divider no-margin"/>
+      <hr class="cd-divider cd-spacing-none"/>
       <p>More content</p>
     `}
     outputWrapperClass=""
@@ -90,11 +90,11 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
   <UsageExample
     name="Customizing Margin"
     description="For fine-grained control over the margin on either side of the Divider, you can set
-    the \`--divider-spacing\` CSS variable on the Divider element. The value of this variable _must_
-    be a valid size (e.g., \`1rem\`, \`var(--space-l)\`)."
+    the `--cd-divider-spacing` CSS variable on the Divider element. The value of this variable _must_
+    be a valid size (e.g., `1rem`, `var(--cd-space-l)`)."
     code={`
       <p>Some content</p>
-      <hr class="divider" style="--divider-spacing: 1rem;"/>
+      <hr class="cd-divider" style="--cd-divider-spacing: 1rem;"/>
       <p>More content</p>
     `}
     outputWrapperClass=""

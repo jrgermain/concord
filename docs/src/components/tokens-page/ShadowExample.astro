@@ -6,20 +6,20 @@ interface Props {
 const { size } = Astro.props;
 ---
 
-<div class="box" style={{ boxShadow: `var(--shadow-${size})` }}>
+<div class="box" style={{ boxShadow: `var(--cd-shadow-${size})` }}>
   shadow-{size}
 </div>
 <style>
   .box {
-    border: var(--border-s) solid var(--color-border);
+    border: var(--cd-border-s) solid var(--cd-color-border);
     height: 4rem;
     width: 12rem;
-    font-family: var(--font-family-mono);
-    border-radius: var(--radius-m);
+    font-family: var(--cd-font-family-mono);
+    border-radius: var(--cd-radius-m);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-surface-primary);
-    margin-bottom: var(--space-m);
+    background-color: var(--cd-color-surface-primary);
+    margin-bottom: var(--cd-space-m);
   }
 </style>

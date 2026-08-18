@@ -9,18 +9,18 @@ import UsageExample from "../../../components/UsageExample.astro";
 >
   <UsageExample
     name="Defaults"
-    description="To highlight an element, add the class `highlight`."
-    code={'<mark class="highlight">This text is highlighted.</mark>'}
+    description="To highlight an element, add the class `cd-highlight`."
+    code={'<mark class="cd-highlight">This text is highlighted.</mark>'}
     outputWrapperClass=""
   />
 
   <UsageExample
     name="Added/Removed"
-    description="To highlight text that was added to, or removed from, a document, add the classes `highlight` and either `added` or `removed`."
+    description="To highlight text that was added to, or removed from, a document, add the classes `cd-highlight` and either `cd-variant-added` or `cd-variant-removed`."
     code={`
       We finish each other's
-      <del class="highlight removed">sandwiches</del>
-      <ins class="highlight added">sentences</ins>
+      <del class="cd-highlight cd-variant-removed">sandwiches</del>
+      <ins class="cd-highlight cd-variant-added">sentences</ins>
       .
     `}
     outputWrapperClass=""
@@ -28,8 +28,8 @@ import UsageExample from "../../../components/UsageExample.astro";
 
   <UsageExample
     name="Target Text"
-    description="If the URL of the current page includes a text fragment, the target text will automatically have styling applied. To simulate this style on other text, add the classes `highlight` and `target`."
-    code={'<mark class="highlight target"> This text is styled like the target of a text fragment. </mark>'}
+    description="If the URL of the current page includes a text fragment, the target text will automatically have styling applied. To simulate this style on other text, add the classes `cd-highlight` and `cd-variant-target`."
+    code={'<mark class="cd-highlight cd-variant-target"> This text is styled like the target of a text fragment. </mark>'}
     outputWrapperClass=""
   />
 </ComponentDocumentation>

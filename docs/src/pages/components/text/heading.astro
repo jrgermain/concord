@@ -19,22 +19,22 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 
       If you don't want a page to have a Heading, use an invisible \`h1\` so
       screen reader users can still understand the page's hierarchy. To do this,
-      add the class [\`visually-hidden\`](/components/visually-hidden) to the
+      add the class [\`cd-visually-hidden\`](/utilities/css/accessibility) to the
       \`h1\`.
 
-      For all other Headings, add the classes \`heading\` and \`level-n\` (where
+      For all other Headings, add the classes \`cd-heading\` and \`cd-level-<n>\` (where
       _n_ is a number 1-6) to set the visual appearance of the Heading. These
       numbers correspond to the elements \`h1\`-\`h6\` in the HTML spec, but the
       classes and tag names don't have to align; this allows you to visually skip
       levels while still keeping the document hierarchy consistent.
     `)}
     code={`
-      <h1 class="heading level-1">Level 1</h1>
-      <h2 class="heading level-2">Level 2</h2>
-      <h3 class="heading level-3">Level 3</h3>
-      <h4 class="heading level-4">Level 4</h4>
-      <h5 class="heading level-5">Level 5</h5>
-      <h6 class="heading level-6">Level 6</h6>
+      <h1 class="cd-heading cd-level-1">Level 1</h1>
+      <h2 class="cd-heading cd-level-2">Level 2</h2>
+      <h3 class="cd-heading cd-level-3">Level 3</h3>
+      <h4 class="cd-heading cd-level-4">Level 4</h4>
+      <h5 class="cd-heading cd-level-5">Level 5</h5>
+      <h6 class="cd-heading cd-level-6">Level 6</h6>
     `}
   />
 </ComponentDocumentation>

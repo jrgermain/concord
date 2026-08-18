@@ -14,12 +14,14 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       The Wrap component is a flex container. It spaces its children a fixed
       distance from each other, wrapping them onto new lines as needed.
 
+      To create one, use the class \`cd-wrap\` on a container element.
+
       When you want elements to spread out to fill the available space and
       be centered within the container, use the Distribute component instead.
       When you don't want elements to wrap, use the Stack component instead.
     `)}
     code={`
-      <div class="example wrap" style="width: 16rem;">
+      <div class="example cd-wrap" style="width: 16rem;">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
@@ -35,60 +37,60 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       You can optionally add one of the following modifier classes to change
       the spacing between children (ordered from most compact to most spread out):
 
-      - \`no-gap\`
-      - \`densest\`
-      - \`denser\`
-      - \`dense\`
-      - \`normal\` (default)
-      - \`sparse\`
-      - \`sparser\`
-      - \`sparsest\`
+      - \`cd-spacing-none\`
+      - \`cd-spacing-densest\`
+      - \`cd-spacing-denser\`
+      - \`cd-spacing-dense\`
+      - \`cd-spacing-normal\` (default)
+      - \`cd-spacing-sparse\`
+      - \`cd-spacing-sparser\`
+      - \`cd-spacing-sparsest\`
     `)}
     code={`
-      <h3 class="h6">No Gap</h3>
-      <div class="wrap no-gap example">
+      <h3 class="h6">None</h3>
+      <div class="cd-wrap cd-spacing-none example">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
       </div>
       <h3 class="h6">Densest</h3>
-      <div class="wrap densest example">
+      <div class="cd-wrap cd-spacing-densest example">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
       </div>
       <h3 class="h6">Denser</h3>
-      <div class="wrap denser example">
+      <div class="cd-wrap cd-spacing-denser example">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
       </div>
       <h3 class="h6">Dense</h3>
-      <div class="wrap dense example">
+      <div class="cd-wrap cd-spacing-dense example">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
       </div>
       <h3 class="h6">Normal</h3>
-      <div class="wrap normal example">
+      <div class="cd-wrap example">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
       </div>
       <h3 class="h6">Sparse</h3>
-      <div class="wrap sparse example">
+      <div class="cd-wrap cd-spacing-sparse example">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
       </div>
       <h3 class="h6">Sparser</h3>
-      <div class="wrap sparser example">
+      <div class="cd-wrap cd-spacing-sparser example">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
       </div>
       <h3 class="h6">Sparsest</h3>
-      <div class="wrap sparsest example">
+      <div class="cd-wrap cd-spacing-sparsest example">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
@@ -102,18 +104,18 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       You can optionally add one of the following modifier classes to change
       the axis along which the children are laid out:
 
-      - \`horizontal\` (default): elements are laid out along the x-axis
-      - \`vertical\`: elements are laid out along the y-axis
+      - \`cd-orientation-horizontal\` (default): elements are laid out along the x-axis
+      - \`cd-orientation-vertical\`: elements are laid out along the y-axis
     `)}
     code={`
       <h3 class="h6">Horizontal</h3>
-      <div class="wrap horizontal example">
+      <div class="cd-wrap cd-orientation-horizontal example">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
       </div>
       <h3 class="h6">Vertical</h3>
-      <div class="wrap vertical example">
+      <div class="cd-wrap cd-orientation-vertical example">
         <div class="box">1</div>
         <div class="box">2</div>
         <div class="box">3</div>
@@ -124,22 +126,22 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
 <style is:global>
   .example {
     width: fit-content;
-    border: var(--border-s) solid var(--color-border);
-    border-radius: var(--radius-m);
-    padding: var(--space-3xs);
+    border: var(--cd-border-s) solid var(--cd-color-border);
+    border-radius: var(--cd-radius-m);
+    padding: var(--cd-space-3xs);
     margin-inline-end: auto;
   }
 
   .box {
-    background: var(--color-gray-9);
-    border: var(--border-s) solid var(--color-border);
-    color: var(--color-gray-1);
+    background: var(--cd-color-gray-9);
+    border: var(--cd-border-s) solid var(--cd-color-border);
+    color: var(--cd-color-gray-1);
     width: 4rem;
     height: 4rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--radius-s);
+    border-radius: var(--cd-radius-s);
     flex: none;
   }
 </style>

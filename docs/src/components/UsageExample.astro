@@ -18,7 +18,7 @@ const {
   name,
   description = "",
   code,
-  outputWrapperClass = "vertical stack",
+  outputWrapperClass = "cd-stack cd-orientation-vertical",
   outputWrapperId,
   allowShowCode = true,
   isJavaScriptRequired = false,
@@ -32,10 +32,10 @@ const codeId = `example-code-${random}`;
 const slug = slugger.slug(name);
 ---
 
-<div class="card">
-  <h2 class="card-title" id={slug}>{name}</h2>
-  <div class="stack vertical dense">
-    {description && <div class="markdown" set:html={descriptionHtml} />}
+<div class="cd-card">
+  <h2 class="cd-card-title" id={slug}>{name}</h2>
+  <div class="cd-stack cd-orientation-vertical cd-spacing-dense">
+    {description && <div class="cd-markdown" set:html={descriptionHtml} />}
     <div
       class:list={[
         "example-wrapper",
@@ -44,8 +44,8 @@ const slug = slugger.slug(name);
     >
       {
         isJavaScriptRequired && (
-          <noscript class="alert error">
-            <div class="alert-content">
+          <noscript class="cd-alert cd-status-error">
+            <div class="cd-alert-content">
               This example requires JavaScript to run. Please enable JavaScript
               in your browser to view this example.
             </div>
@@ -57,7 +57,7 @@ const slug = slugger.slug(name);
         x-data="{}"
         class:list={[
           "example-output",
-          { "if-js-enabled": isJavaScriptRequired },
+          { "cd-if-js-enabled": isJavaScriptRequired },
           outputWrapperClass,
         ]}
         set:html={formattedCode}
@@ -69,7 +69,7 @@ const slug = slugger.slug(name);
               id={codeId}
               class:list={[
                 "example-code",
-                { "if-js-enabled": isJavaScriptRequired },
+                { "cd-if-js-enabled": isJavaScriptRequired },
               ]}
             >
               <CodeBlock
@@ -81,10 +81,10 @@ const slug = slugger.slug(name);
             <div
               class:list={[
                 "example-code-toggle-toolbar",
-                { "if-js-enabled": isJavaScriptRequired },
+                { "cd-if-js-enabled": isJavaScriptRequired },
               ]}
             >
-              <label class="switch small show-example-code">
+              <label class="cd-switch cd-size-small show-example-code">
                 Show Code
                 <input type="checkbox" />
               </label>
@@ -99,13 +99,13 @@ const slug = slugger.slug(name);
   .example-wrapper {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-surface-primary);
-    border: var(--border-s) solid var(--color-border);
-    border-radius: var(--radius-s);
+    background-color: var(--cd-color-surface-primary);
+    border: var(--cd-border-s) solid var(--cd-color-border);
+    border-radius: var(--cd-radius-s);
   }
 
   .example-output {
-    padding: var(--space-s);
+    padding: var(--cd-space-s);
     max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
@@ -136,8 +136,8 @@ const slug = slugger.slug(name);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: var(--border-s) solid var(--color-border);
-    padding: var(--space-2xs);
+    border-top: var(--cd-border-s) solid var(--cd-color-border);
+    padding: var(--cd-space-2xs);
   }
 
   .show-example-code {
@@ -145,7 +145,7 @@ const slug = slugger.slug(name);
     margin-inline-start: auto;
   }
 
-  .card-title {
-    scroll-margin: var(--space-l);
+  .cd-card-title {
+    scroll-margin: var(--cd-space-l);
   }
 </style>

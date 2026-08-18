@@ -9,10 +9,10 @@ import TableOfContents from "../components/TableOfContents.astro";
   .splash-container {
     height: 22rem;
     position: relative;
-    inset-inline-end: var(--space-body-x);
-    margin-block: calc(-1 * var(--space-body-y)) var(--space-xs);
-    width: calc(100% + 2 * var(--space-body-x));
-    background-color: var(--color-contrast-background);
+    inset-inline-end: var(--cd-space-body-x);
+    margin-block: calc(-1 * var(--cd-space-body-y)) var(--cd-space-xs);
+    width: calc(100% + 2 * var(--cd-space-body-x));
+    background-color: var(--cd-color-contrast-background);
     background-image: var(--splash-bg);
     background-size: cover;
     background-position: center top;
@@ -20,43 +20,43 @@ import TableOfContents from "../components/TableOfContents.astro";
     align-items: center;
     justify-content: center;
     transition-property: margin, border-radius, box-shadow;
-    transition-duration: var(--duration-l);
-    transition-timing-function: var(--ease-out);
+    transition-duration: var(--cd-duration-l);
+    transition-timing-function: var(--cd-ease-out);
   }
 
   .splash-text {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-black);
+    font-size: var(--cd-font-size-4xl);
+    font-weight: var(--cd-font-weight-black);
     line-height: 1;
-    max-width: min(var(--app-max-content-width), 20em);
-    padding-inline: var(--space-body-x);
+    max-width: min(var(--cd-app-max-content-width), 20em);
+    padding-inline: var(--cd-space-body-x);
     text-align: center;
-    color: var(--color-contrast-text);
+    color: var(--cd-color-contrast-text);
     text-wrap: balance;
-    margin: var(--space-s);
+    margin: var(--cd-space-s);
   }
 
   @media (width >= 90rem) {
     .splash-container {
       margin: 0;
-      margin-block-end: var(--space-body-y);
+      margin-block-end: var(--cd-space-body-y);
       inset-inline-end: 0;
-      border-radius: var(--radius-l);
+      border-radius: var(--cd-radius-l);
       width: 100%;
-      box-shadow: var(--shadow-xl);
+      box-shadow: var(--cd-shadow-xl);
     }
   }
 </style>
 <Layout title="Concord">
-  <div class="splash-container light-mode">
-    <div class="heading level-1 splash-text">
+  <div class="splash-container cd-light-mode">
+    <div class="cd-heading cd-level-1 splash-text">
       A lightweight design system for beautiful websites.
     </div>
   </div>
-  <div class="alert subtle info">
-    <div class="alert-content">
+  <div class="cd-alert cd-variant-subtle cd-status-info">
+    <div class="cd-alert-content">
       New here? Check out the <a
-        class="link"
+        class="cd-link"
         href="/info/getting-started/introduction">Introduction page</a
       > for an overview.
     </div>
