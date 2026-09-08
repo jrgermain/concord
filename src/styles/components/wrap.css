@@ -4,7 +4,11 @@
  */
 
 .cd-wrap {
+  /* stylelint-disable -- "balance" is currently an experimental value. Use "wrap" as a fallback. */
   flex-wrap: wrap;
+  flex-wrap: balance;
+  /* stylelint-enable */
+
   align-items: center;
   justify-content: start;
 }
