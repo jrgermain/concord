@@ -1,10 +1,10 @@
 @keyframes cd-skeleton-pulse-light {
   from {
-    opacity: 0.14;
+    opacity: 0.12;
   }
 
   to {
-    opacity: 0.21;
+    opacity: 0.2;
   }
 }
 
