@@ -1,0 +1,130 @@
+.cd-grid {
+  --cd-grid-spacing: var(--cd-space-none);
+  --cd-grid-outer-spacing-factor: 0;
+
+  display: grid;
+  gap: var(--cd-grid-spacing);
+  padding: calc(var(--cd-grid-spacing) * var(--cd-grid-outer-spacing-factor));
+  grid-auto-flow: row dense;
+  place-items: start center;
+
+  &.cd-placement-center {
+    place-items: center;
+  }
+
+  &.cd-placement-stretched {
+    place-items: stretch;
+  }
+
+  &.cd-spacing-none {
+    --cd-grid-spacing: var(--cd-space-none);
+  }
+
+  &.cd-spacing-densest {
+    --cd-grid-spacing: var(--cd-space-3xs);
+  }
+
+  &.cd-spacing-denser {
+    --cd-grid-spacing: var(--cd-space-2xs);
+  }
+
+  &.cd-spacing-dense {
+    --cd-grid-spacing: var(--cd-space-xs);
+  }
+
+  &.cd-spacing-sparse {
+    --cd-grid-spacing: var(--cd-space-m);
+  }
+
+  &.cd-spacing-sparser {
+    --cd-grid-spacing: var(--cd-space-l);
+  }
+
+  &.cd-spacing-sparsest {
+    --cd-grid-spacing: var(--cd-space-xl);
+  }
+
+  &.cd-columns-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &.cd-columns-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &.cd-columns-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &.cd-columns-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &.cd-columns-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &.cd-columns-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  &.cd-columns-7 {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  &.cd-columns-8 {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  &.cd-columns-9 {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
+  &.cd-columns-10 {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  &.cd-columns-11 {
+    grid-template-columns: repeat(11, 1fr);
+  }
+
+  &.cd-columns-12 {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &.cd-columns-2xs {
+    grid-template-columns: repeat(auto-fit, 8rem);
+  }
+
+  &.cd-columns-xs {
+    grid-template-columns: repeat(auto-fit, 12rem);
+  }
+
+  &.cd-columns-s {
+    grid-template-columns: repeat(auto-fit, 16rem);
+  }
+
+  &.cd-columns-m {
+    grid-template-columns: repeat(auto-fit, 20rem);
+  }
+
+  &.cd-columns-l {
+    grid-template-columns: repeat(auto-fit, 24rem);
+  }
+
+  &.cd-columns-xl {
+    grid-template-columns: repeat(auto-fit, 32rem);
+  }
+
+  &.cd-columns-2xl {
+    grid-template-columns: repeat(auto-fit, 40rem);
+  }
+
+  &.cd-outer-spacing-full {
+    --cd-grid-outer-spacing-factor: 1;
+  }
+
+  &.cd-outer-spacing-half {
+    --cd-grid-outer-spacing-factor: 0.5;
+  }
+}

@@ -62,6 +62,7 @@ export const navCategories: Category[] = [
           { title: "Divider", slug: "divider" },
           { title: "Drawer", slug: "drawer" },
           { title: "Fieldset", slug: "fieldset" },
+          { title: "Grid", slug: "grid" },
           { title: "Modal", slug: "modal" },
           { title: "Stack", slug: "stack" },
           { title: "Wrap", slug: "wrap" },
