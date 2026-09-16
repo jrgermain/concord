@@ -1,11 +1,11 @@
 .cd-modal::backdrop,
 .cd-drawer::backdrop {
   --cd-dialog-backdrop-starting-opacity: 0;
-  --cd-dialog-backdrop-open-opacity: 0.75;
+  --cd-dialog-backdrop-open-opacity: 0.6;
   --cd-dialog-backdrop-ending-opacity: 0;
 
   @media (prefers-color-scheme: dark) {
-    --cd-dialog-backdrop-open-opacity: 0.85;
+    --cd-dialog-backdrop-open-opacity: 0.75;
   }
 
   background-color: light-dark(var(--cd-color-gray-2), var(--cd-color-gray-8));
@@ -16,10 +16,11 @@
   --cd-dialog-starting-opacity: 0;
   --cd-dialog-open-opacity: 1;
   --cd-dialog-ending-opacity: 0;
-  --cd-dialog-dismiss-btn-offset: 12px;
+  --cd-dialog-dismiss-btn-offset: var(--cd-space-2xs);
+  --cd-dialog-dismiss-btn-size: 1.8rem;
 
   box-shadow: var(--cd-shadow-xl);
-  border: var(--cd-border-s) solid var(--cd-color-border);
+  border: 0;
   background-color: var(--cd-color-surface-primary);
   color: var(--cd-color-text-primary);
   padding: 0;
@@ -32,15 +33,20 @@
 }
 
 .cd-modal-header,
-.cd-drawer-header {
-  --cd-dialog-dismiss-btn-size: 1.8rem;
+.cd-drawer-header,
+.cd-modal-body,
+.cd-drawer-body,
+.cd-modal-footer,
+.cd-drawer-footer {
+  padding: var(--cd-space-s);
+}
 
+.cd-modal-header,
+.cd-drawer-header {
   font-family: var(--cd-font-family-heading);
   font-size: var(--cd-font-size-l);
   font-weight: var(--cd-font-weight-bold);
   line-height: var(--cd-line-height-s);
-  padding: var(--cd-space-m);
-  padding-block-end: var(--cd-space-2xs);
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -63,7 +69,8 @@
 
   &:has(.cd-dismiss-button) {
     padding-inline-end: calc(
-      var(--cd-dialog-dismiss-btn-size) + var(--cd-space-m)
+      2 * var(--cd-dialog-dismiss-btn-offset) +
+        var(--cd-dialog-dismiss-btn-size)
     );
 
     /* When no title is present, ensure the header can fit the absolutely positioned dismiss button */
@@ -92,23 +99,44 @@
 
 .cd-modal-body,
 .cd-drawer-body {
-  padding: var(--cd-space-m);
   flex-shrink: 1;
   display: block;
   overflow: auto;
   margin: 0;
 }
 
-/* If there's a header and a body, collapse some of the spacing between them */
-.cd-modal-header + .cd-modal-body,
-.cd-drawer-header + .cd-drawer-body {
-  padding-block-start: var(--cd-space-xs);
+.cd-modal-footer,
+.cd-drawer-footer {
+  flex-shrink: 0;
+  display: flex;
+  gap: var(--cd-space-2xs);
+  justify-content: flex-start;
+  background-color: var(--cd-color-surface-secondary);
+  border-block-start: var(--cd-border-s) solid var(--cd-color-border);
+  margin: 0;
+  padding-block: var(--cd-space-xs);
+  width: 100%;
+  box-shadow: var(--cd-shadow-s) inset;
+
+  @media screen and (width < 30rem) {
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  .cd-button:not(.cd-size-small, .cd-size-medium, .cd-size-large) {
+    --cd-button-scale: 0.9;
+  }
 }
 
-/* If there's a header and a footer, but no body, increase the spacing between them */
-.cd-modal-header:has(+ .cd-modal-footer),
-.cd-drawer-header:has(+ .cd-drawer-footer) {
-  padding-block-end: var(--cd-space-m);
+/* If there's a header and a body, collapse the spacing between them */
+.cd-modal-header:has(+ .cd-modal-body),
+.cd-drawer-header:has(+ .cd-drawer-body) {
+  padding-block-end: calc(0.5 * var(--cd-space-s));
+}
+
+.cd-modal-header + .cd-modal-body,
+.cd-drawer-header + .cd-drawer-body {
+  padding-block-start: calc(0.5 * var(--cd-space-s));
 }
 
 /* Fade in/out (mixed browser support as of March 2025) */

@@ -8,9 +8,7 @@
 
   position: fixed;
   inset: 0;
-  border-radius: 0;
   margin: 0;
-  border: 0;
   overflow: auto;
 
   @media (prefers-reduced-motion: no-preference) {
@@ -19,6 +17,7 @@
 
   &.cd-side-left {
     right: auto;
+    border-right: var(--cd-border-s) solid var(--cd-color-border);
 
     @media (prefers-reduced-motion: no-preference) {
       --cd-dialog-starting-transform: translateX(-100%);
@@ -28,6 +27,7 @@
 
   &.cd-side-top {
     bottom: auto;
+    border-bottom: var(--cd-border-s) solid var(--cd-color-border);
 
     @media (prefers-reduced-motion: no-preference) {
       --cd-dialog-starting-transform: translateY(-100%);
@@ -37,6 +37,7 @@
 
   &.cd-side-right {
     left: auto;
+    border-left: var(--cd-border-s) solid var(--cd-color-border);
 
     @media (prefers-reduced-motion: no-preference) {
       --cd-dialog-starting-transform: translateX(100%);
@@ -46,6 +47,7 @@
 
   &.cd-side-bottom {
     top: auto;
+    border-top: var(--cd-border-s) solid var(--cd-color-border);
 
     @media (prefers-reduced-motion: no-preference) {
       --cd-dialog-starting-transform: translateY(100%);
@@ -119,16 +121,7 @@
   height: 100%;
 }
 
-.cd-drawer-footer {
-  padding: var(--cd-space-xs);
-  flex-shrink: 0;
-  display: flex;
-  gap: var(--cd-space-xs);
-  justify-content: flex-start;
-  margin: 0;
-  margin-block-start: auto;
-
-  > * {
-    width: 100%;
-  }
+/* Make action buttons fill entire drawer footer */
+.cd-drawer-footer > * {
+  width: 100%;
 }

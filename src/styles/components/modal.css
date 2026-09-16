@@ -15,7 +15,8 @@
   max-width: calc(100svw - 4 * var(--cd-space-body-x));
   margin: auto;
   width: var(--cd-modal-size);
-  border-radius: var(--cd-radius-l);
+  border: var(--cd-border-s) solid var(--cd-color-border);
+  border-radius: var(--cd-radius-m);
 
   &.cd-size-small {
     --cd-modal-size: 25rem;
@@ -38,26 +39,5 @@
    */
   &:not(.cd-light-mode, .cd-dark-mode) {
     color-scheme: light dark;
-  }
-}
-
-.cd-modal-footer {
-  padding: var(--cd-space-xs);
-  flex-shrink: 0;
-  display: flex;
-  gap: var(--cd-space-2xs);
-  justify-content: flex-start;
-  background-color: var(--cd-color-surface-secondary);
-  border-block-start: var(--cd-border-s) solid var(--cd-color-border);
-  margin: 0;
-
-  @media screen and (width < 30rem) {
-    flex-direction: column;
-    width: 100%;
-    justify-content: stretch;
-  }
-
-  .cd-button:not(.cd-size-small, .cd-size-medium, .cd-size-large) {
-    font-size: 0.9rem;
   }
 }
