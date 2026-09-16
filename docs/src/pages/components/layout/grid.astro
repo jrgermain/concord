@@ -15,8 +15,8 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       rows and columns. This class provides a simplified way of creating grid
       layouts. For more complex layouts, use CSS Grid directly.
 
-      To create one, use the class \`cd-grid\` on a container element, along with
-      one of the column classes documented below.
+      To create a Grid, use the class \`cd-grid\` on a container element, along
+      with one of the column classes documented below.
     `)}
     code={`
       <div class="cd-grid cd-columns-s cd-spacing-densest">
@@ -42,32 +42,32 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     code={`
       <p class="cd-heading cd-level-3">Top</p>
       <div class="cd-grid cd-placement-top cd-columns-3 cd-spacing-densest">
-        <div class="box" style="min-width: 5rem; min-height: 4rem;">1</div>
-        <div class="box" style="min-width: 4rem; min-height: 5rem;">2</div>
-        <div class="box" style="min-width: 3rem; min-height: 6rem;">3</div>
-        <div class="box" style="min-width: 5rem; min-height: 6rem;">4</div>
-        <div class="box" style="min-width: 4rem; min-height: 4rem;">5</div>
-        <div class="box" style="min-width: 5rem; min-height: 3rem;">6</div>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
       </div>
 
       <p class="cd-heading cd-level-3">Center</p>
       <div class="cd-grid cd-placement-center cd-columns-3 cd-spacing-densest">
-        <div class="box" style="min-width: 5rem; min-height: 4rem;">1</div>
-        <div class="box" style="min-width: 4rem; min-height: 5rem;">2</div>
-        <div class="box" style="min-width: 3rem; min-height: 6rem;">3</div>
-        <div class="box" style="min-width: 5rem; min-height: 6rem;">4</div>
-        <div class="box" style="min-width: 4rem; min-height: 4rem;">5</div>
-        <div class="box" style="min-width: 5rem; min-height: 3rem;">6</div>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
       </div>
 
       <p class="cd-heading cd-level-3">Stretched</p>
       <div class="cd-grid cd-placement-stretched cd-columns-3 cd-spacing-densest">
-        <div class="box" style="min-width: 5rem; min-height: 4rem;">1</div>
-        <div class="box" style="min-width: 4rem; min-height: 5rem;">2</div>
-        <div class="box" style="min-width: 3rem; min-height: 6rem;">3</div>
-        <div class="box" style="min-width: 5rem; min-height: 6rem;">4</div>
-        <div class="box" style="min-width: 4rem; min-height: 4rem;">5</div>
-        <div class="box" style="min-width: 5rem; min-height: 3rem;">6</div>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
       </div>
     `}
   />
@@ -91,20 +91,14 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
   <UsageExample
     name="Columns"
     description={trimTextPadding(`
-      To determine how many columns are in the grid, add one of the following classes:
+      To determine how many columns are in a Grid, you can use number-based or size-based column classes.
 
-      - \`cd-columns-1\`
-      - \`cd-columns-2\`
-      - \`cd-columns-3\`
-      - \`cd-columns-4\`
-      - \`cd-columns-5\`
-      - \`cd-columns-6\`
-      - \`cd-columns-7\`
-      - \`cd-columns-8\`
-      - \`cd-columns-9\`
-      - \`cd-columns-10\`
-      - \`cd-columns-11\`
-      - \`cd-columns-12\`
+      To create a fixed number of evenly sized columns, add the class \`cd-columns-<number>\` to the Grid,
+      where \`<number>\` is an integer between 1 and 12, inclusive.
+
+      To create a variable number of columns of a fixed size, add the class \`cd-columns-<size>\` to the Grid,
+      where \`<size>\` is a T-shirt size between 2xs and 2xl. Below is a complete list of size-based classes:
+
       - \`cd-columns-2xs\`
       - \`cd-columns-xs\`
       - \`cd-columns-s\`
@@ -112,9 +106,6 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       - \`cd-columns-l\`
       - \`cd-columns-xl\`
       - \`cd-columns-2xl\`
-
-      \`columns-<number>\` classes create a fixed number of columns.
-      \`columns-<size>\` classes create a dynamic number of columns of a fixed size; the total count depends on the available space.
     `)}
     code={`
       TBD
@@ -123,7 +114,9 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
   <UsageExample
     name="Outer Spacing"
     description={trimTextPadding(`
-      You can control whether the grid has outer padding in addition to the typical inner gap spacing.
+      You can control whether the grid has empty space along the outside (padding) in addition to the space
+      between items (gap).
+      
       The following classes can be used to set the outer spacing:
 
       - \`cd-outer-spacing-none\` (default): no padding
@@ -140,12 +133,15 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     background: var(--cd-color-gray-9);
     border: var(--cd-border-s) solid var(--cd-color-border);
     color: var(--cd-color-gray-1);
-    /* width: 4rem; */
-    /* height: 4rem; */
+    padding: var(--cd-space-m);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: var(--cd-radius-s);
     flex: none;
+  }
+
+  .box:nth-child(odd) {
+    padding-block: var(--cd-space-s);
   }
 </style>
