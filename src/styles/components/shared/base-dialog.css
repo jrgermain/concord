@@ -112,7 +112,7 @@
   gap: var(--cd-space-2xs);
   justify-content: flex-start;
   background-color: var(--cd-color-surface-secondary);
-  border-block-start: var(--cd-border-s) solid var(--cd-color-border);
+  border-block-start: var(--cd-internal-default-border);
   margin: 0;
   padding-block: var(--cd-space-xs);
   width: 100%;

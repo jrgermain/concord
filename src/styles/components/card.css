@@ -1,32 +1,26 @@
 .cd-card {
-  --cd-card-bg-color: var(--cd-color-surface-primary);
-  --cd-card-fg-color: var(--cd-color-text-primary);
-  --cd-card-border-color: var(--cd-color-border);
-
-  background-color: var(--cd-card-bg-color);
+  background-color: var(--cd-color-surface-primary);
+  color: var(--cd-color-text-primary);
   border-radius: var(--cd-radius-l);
-  border: var(--cd-border-s) solid var(--cd-card-border-color);
+  border: var(--cd-internal-default-border);
   box-shadow: var(--cd-shadow-m);
   padding: var(--cd-space-m);
   font-family: var(--cd-font-family-body);
   font-size: var(--cd-font-size-m);
   font-weight: var(--cd-font-weight-normal);
-  color: var(--cd-card-fg-color);
 
   &.cd-variant-secondary {
-    --cd-card-bg-color: var(--cd-color-surface-secondary);
-
+    background-color: var(--cd-color-surface-secondary);
     border-radius: var(--cd-radius-m);
     box-shadow: var(--cd-shadow-s);
     padding: var(--cd-space-s);
   }
 
   &.cd-is-transparent {
-    --cd-card-bg-color: var(--cd-glass-bg-color);
-    --cd-card-border-color: var(--cd-glass-border-color);
-    --cd-card-fg-color: var(--cd-glass-fg-color);
-
-    backdrop-filter: var(--cd-glass-filter);
+    background-color: var(--cd-internal-glass-bg);
+    color: var(--cd-internal-glass-fg);
+    border: var(--cd-internal-glass-border);
+    backdrop-filter: var(--cd-internal-glass-filter);
   }
 }
 

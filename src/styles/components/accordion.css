@@ -7,7 +7,7 @@
     padding-block: 0;
     padding-inline: var(--cd-space-xs);
     border-radius: var(--cd-radius-m);
-    border: var(--cd-border-s) solid var(--cd-color-border);
+    border: var(--cd-internal-default-border);
     box-shadow: var(--cd-shadow-s);
     font-family: var(--cd-font-family-body);
     font-size: var(--cd-font-size-m);

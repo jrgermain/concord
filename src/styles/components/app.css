@@ -130,7 +130,7 @@
 
 .cd-app-header-divider {
   border: 0;
-  border-inline-start: var(--cd-border-s) solid var(--cd-color-border);
+  border-inline-start: var(--cd-internal-default-border);
   display: inline-block;
   margin: auto var(--cd-space-xs);
   width: 0;
@@ -374,8 +374,8 @@
     left: 0;
     width: 100vw;
     opacity: 1;
-    background-color: var(--cd-glass-bg-color);
-    backdrop-filter: var(--cd-glass-filter);
+    background-color: var(--cd-internal-glass-bg);
+    backdrop-filter: var(--cd-internal-glass-filter);
     border-right: 0;
     z-index: 9;
 

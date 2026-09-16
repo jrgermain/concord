@@ -15,7 +15,7 @@
   max-width: calc(100svw - 4 * var(--cd-space-body-x));
   margin: auto;
   width: var(--cd-modal-size);
-  border: var(--cd-border-s) solid var(--cd-color-border);
+  border: var(--cd-internal-default-border);
   border-radius: var(--cd-radius-m);
 
   &.cd-size-small {

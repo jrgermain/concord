@@ -17,7 +17,7 @@
 
   &.cd-side-left {
     right: auto;
-    border-right: var(--cd-border-s) solid var(--cd-color-border);
+    border-right: var(--cd-internal-default-border);
 
     @media (prefers-reduced-motion: no-preference) {
       --cd-dialog-starting-transform: translateX(-100%);
@@ -27,7 +27,7 @@
 
   &.cd-side-top {
     bottom: auto;
-    border-bottom: var(--cd-border-s) solid var(--cd-color-border);
+    border-bottom: var(--cd-internal-default-border);
 
     @media (prefers-reduced-motion: no-preference) {
       --cd-dialog-starting-transform: translateY(-100%);
@@ -37,7 +37,7 @@
 
   &.cd-side-right {
     left: auto;
-    border-left: var(--cd-border-s) solid var(--cd-color-border);
+    border-left: var(--cd-internal-default-border);
 
     @media (prefers-reduced-motion: no-preference) {
       --cd-dialog-starting-transform: translateX(100%);
@@ -47,7 +47,7 @@
 
   &.cd-side-bottom {
     top: auto;
-    border-top: var(--cd-border-s) solid var(--cd-color-border);
+    border-top: var(--cd-internal-default-border);
 
     @media (prefers-reduced-motion: no-preference) {
       --cd-dialog-starting-transform: translateY(100%);

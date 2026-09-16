@@ -81,7 +81,7 @@ input[type="range"].cd-slider {
     border-radius: var(--cd-radius-full);
     background-color: white;
     box-shadow: var(--cd-slider-shadow-resting);
-    border: var(--cd-border-s) solid var(--cd-color-border);
+    border: var(--cd-internal-default-border);
     transition-property: border-color, box-shadow, transform;
     transition-duration: var(--cd-duration-s);
     transition-timing-function: var(--cd-ease-default);
@@ -97,7 +97,7 @@ input[type="range"].cd-slider {
     border-radius: var(--cd-radius-full);
     background-color: white;
     box-shadow: var(--cd-slider-shadow-resting);
-    border: var(--cd-border-s) solid var(--cd-color-border);
+    border: var(--cd-internal-default-border);
     transition-property: border-color, box-shadow, transform;
     transition-duration: var(--cd-duration-s);
     transition-timing-function: var(--cd-ease-default);

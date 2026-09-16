@@ -239,9 +239,11 @@
   --cd-line-height-m: 1.25;
   --cd-line-height-l: 1.6;
 
-  /* Frosted glass */
-  --cd-glass-bg-color: light-dark(#fff9, #30333799);
-  --cd-glass-fg-color: light-dark(black, white);
-  --cd-glass-border-color: light-dark(#fff8, #42454988);
-  --cd-glass-filter: blur(32px) saturate(120%);
+  /* The following are intended for internal use only */
+  --cd-internal-glass-bg: light-dark(#fff9, #30333799);
+  --cd-internal-glass-fg: light-dark(black, white);
+  --cd-internal-glass-border: var(--cd-border-s) solid
+    light-dark(#fff8, #42454988);
+  --cd-internal-glass-filter: blur(32px) saturate(120%);
+  --cd-internal-default-border: var(--cd-border-s) solid var(--cd-color-border);
 }

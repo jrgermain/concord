@@ -10,7 +10,7 @@
 
 .cd-fieldset-content {
   position: relative;
-  border: var(--cd-border-s) solid var(--cd-color-border);
+  border: var(--cd-internal-default-border);
   border-radius: var(--cd-radius-m);
   background-color: var(--cd-color-surface-secondary);
   color: var(--cd-color-text-primary);

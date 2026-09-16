@@ -9,7 +9,7 @@ table.cd-table,
   border-collapse: separate;
   border-spacing: 0;
   font-size: var(--cd-font-size-m);
-  border: var(--cd-border-s) solid var(--cd-color-border);
+  border: var(--cd-internal-default-border);
   border-radius: var(--cd-radius-s);
   color: var(--cd-color-text-primary);
   font-family: var(--cd-font-family-body);
@@ -89,7 +89,7 @@ table.cd-table,
   }
 
   tr:not(:last-of-type) td {
-    border-block-end: var(--cd-border-s) solid var(--cd-color-border);
+    border-block-end: var(--cd-internal-default-border);
   }
 
   tbody tr:nth-child(odd),

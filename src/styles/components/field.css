@@ -60,7 +60,7 @@
   textarea {
     color: var(--cd-color-text-primary);
     background-color: light-dark(white, black);
-    border: var(--cd-border-s) solid var(--cd-color-border);
+    border: var(--cd-internal-default-border);
     font-size: 1em;
     padding: var(--cd-field-padding);
     border-radius: var(--cd-field-radius);
@@ -325,7 +325,7 @@
       font-weight: var(--cd-font-weight-normal);
       color: var(--cd-color-gray-3);
       background-color: var(--cd-color-gray-9);
-      border: var(--cd-border-s) solid var(--cd-color-border);
+      border: var(--cd-internal-default-border);
       padding: var(--cd-field-padding) calc(2 * var(--cd-field-padding));
       align-items: center;
       justify-content: center;
