@@ -16,7 +16,7 @@
   --cd-dialog-starting-opacity: 0;
   --cd-dialog-open-opacity: 1;
   --cd-dialog-ending-opacity: 0;
-  --cd-dialog-dismiss-btn-offset: var(--cd-space-2xs);
+  --cd-dialog-dismiss-btn-offset: var(--cd-space-xs);
   --cd-dialog-dismiss-btn-size: 1.8rem;
 
   box-shadow: var(--cd-shadow-xl);
@@ -129,13 +129,13 @@
 }
 
 /* If there's a header and a body, collapse the spacing between them */
-.cd-modal-header:has(+ .cd-modal-body),
-.cd-drawer-header:has(+ .cd-drawer-body) {
+.cd-modal-header:has(~ .cd-modal-body),
+.cd-drawer-header:has(~ .cd-drawer-body) {
   padding-block-end: calc(0.5 * var(--cd-space-s));
 }
 
-.cd-modal-header + .cd-modal-body,
-.cd-drawer-header + .cd-drawer-body {
+.cd-modal-header ~ .cd-modal-body,
+.cd-drawer-header ~ .cd-drawer-body {
   padding-block-start: calc(0.5 * var(--cd-space-s));
 }
 

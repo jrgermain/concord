@@ -209,40 +209,47 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
           Open Drawer
         </button>
         <dialog id="playground-drawer" x-bind:class="'cd-drawer cd-side-' + side + ' cd-size-' + size" aria-labelledby="playground-drawer-title">
-          <div x-show="header" class="cd-drawer-header">
-            <h1 id="playground-drawer-title">User Settings</h1>
-            <button
-              x-show="closeButton"
-              class="cd-dismiss-button"
-              aria-label="Close"
-              command="request-close"
-              commandfor="playground-drawer"
-            ></button>
-          </div>
-          <div x-show="body" class="cd-drawer-body">
-            <p class="cd-paragraph">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis
-              ultricies lacus sed turpis tincidunt id. Rhoncus mattis rhoncus urna
-              neque viverra justo nec.
-            </p>
-            <p class="cd-paragraph">
-              Pretium nibh ipsum consequat nisl vel pretium lectus quam. Ac
-              placerat vestibulum lectus mauris ultrices. Elementum sagittis vitae
-              et leo duis ut diam. Odio facilisis mauris sit amet massa. Cras
-              semper auctor neque vitae tempus quam. Cursus metus aliquam eleifend
-              mi in. Fermentum iaculis eu non diam. Diam quam nulla porttitor
-              massa id neque aliquam
-            </p>
-          </div>
-          <div x-show="footer" class="cd-drawer-footer">
-            <button class="cd-button cd-variant-primary" command="request-close" commandfor="playground-drawer">
-              Save
-            </button>
-            <button class="cd-button" command="request-close" commandfor="playground-drawer">
-              Cancel
-            </button>
-          </div>
+          <template x-if="header">
+            <div class="cd-drawer-header">
+              <h1 id="playground-drawer-title">User Settings</h1>
+              <template x-if="closeButton">
+                <button
+                  class="cd-dismiss-button"
+                  aria-label="Close"
+                  command="request-close"
+                  commandfor="playground-drawer"
+                ></button>
+              </template>
+            </div>
+          </template>
+          <template x-if="body">
+            <div class="cd-drawer-body">
+              <p class="cd-paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis
+                ultricies lacus sed turpis tincidunt id. Rhoncus mattis rhoncus urna
+                neque viverra justo nec.
+              </p>
+              <p class="cd-paragraph">
+                Pretium nibh ipsum consequat nisl vel pretium lectus quam. Ac
+                placerat vestibulum lectus mauris ultrices. Elementum sagittis vitae
+                et leo duis ut diam. Odio facilisis mauris sit amet massa. Cras
+                semper auctor neque vitae tempus quam. Cursus metus aliquam eleifend
+                mi in. Fermentum iaculis eu non diam. Diam quam nulla porttitor
+                massa id neque aliquam
+              </p>
+            </div>
+          </template>
+          <template x-if="footer">
+            <div class="cd-drawer-footer">
+              <button class="cd-button cd-variant-primary" command="request-close" commandfor="playground-drawer">
+                Save
+              </button>
+              <button class="cd-button" command="request-close" commandfor="playground-drawer">
+                Cancel
+              </button>
+            </div>
+          </template>
         </dialog>
       </div>
     `}

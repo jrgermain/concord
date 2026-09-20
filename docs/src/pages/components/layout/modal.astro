@@ -176,70 +176,78 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
           Open Modal
         </button>
         <dialog id="modal-4" x-bind:class="'cd-modal cd-size-' + size" aria-labelledby="modal-4-title">
-          <header x-show="header" class="cd-modal-header">
-            <h1 id="modal-4-title">User Settings</h1>
-            <button
-              class="cd-dismiss-button"
-              aria-label="Close"
-              x-show="closeButton"
-              command="request-close"
-              commandfor="modal-4"></button>
-          </header>
-          <div x-show="body" class="cd-modal-body">
-            <p class="cd-paragraph" x-show="paragraphCount >= 1">
-              Qui dolore ut nihil unde. Eum sint veniam ut assumenda delectus.
-              Autem autem quas dignissimos.
-            </p>
-            <p class="cd-paragraph" x-show="paragraphCount >= 2">
-              Deleniti consequatur quas commodi ea veritatis. Sunt ut aut sunt ut
-              repellat fuga nulla. Mollitia rerum quas nobis. Rem explicabo sint
-              qui dolor et ab quibusdam cum.
-            </p>
-            <p class="cd-paragraph" x-show="paragraphCount >= 3">
-              Quia commodi dolor qui non tempora. Est temporibus dolorem similique
-              quisquam. Enim deleniti suscipit quibusdam nihil iste. Facilis qui
-              ut non.
-            </p>
-            <p class="cd-paragraph" x-show="paragraphCount >= 4">
-              Enim est asperiores facilis quia. Dignissimos repellendus est et
-              saepe aut iusto velit aut. Dignissimos cum ullam enim iste soluta
-              aliquid accusamus. Ducimus placeat perferendis qui officiis
-              praesentium. Qui aliquam laborum nam. Laborum et perspiciatis ut
-              rerum non voluptatum.
-            </p>
-            <p class="cd-paragraph" x-show="paragraphCount >= 5">
-              Ratione officia nobis aliquam saepe error est laudantium. Voluptas
-              incidunt reiciendis veniam exercitationem facere. Officiis ex sit
-              sed illo beatae veniam.
-            </p>
-            <p class="cd-paragraph" x-show="paragraphCount >= 6">
-              Consequatur eum quo ullam perspiciatis voluptatem. Non ut ad vel qui
-              vero. Numquam quisquam neque earum non maxime ea quidem ut. Nihil
-              voluptatibus quas alias est quas vel. Possimus modi sit vero nemo
-              ipsam. Excepturi nihil asperiores aut voluptatem sint adipisci
-              possimus numquam.
-            </p>
-            <p class="cd-paragraph" x-show="paragraphCount >= 7">
-              Aliquam quia ullam porro numquam similique quia. Est impedit facilis
-              magnam minima natus eos. Provident nam dolores inventore deleniti
-              eos maiores voluptas. Id similique rerum exercitationem id.
-            </p>
-            <p class="cd-paragraph" x-show="paragraphCount >= 8">
-              Autem consectetur distinctio odit dolorum veniam officia voluptas
-              ut. Sed doloribus neque et nihil optio ad vel quod. Molestiae quia
-              veniam a. Voluptate velit quisquam a enim sit. Ratione aut occaecati
-              expedita velit minima autem modi. Exercitationem suscipit aut
-              dolorum doloribus minima ut et omnis.
-            </p>
-          </div>
-          <div x-show="footer" class="cd-modal-footer">
-            <button class="cd-button cd-variant-primary" command="request-close" commandfor="modal-4">
-              Save
-            </button>
-            <button class="cd-button" command="request-close" commandfor="modal-4">
-              Cancel
-            </button>
-          </div>
+          <template x-if="header">
+            <header class="cd-modal-header">
+              <h1 id="modal-4-title">User Settings</h1>
+              <template x-if="closeButton">
+                <button
+                  class="cd-dismiss-button"
+                  aria-label="Close"
+                  command="request-close"
+                  commandfor="modal-4"
+                ></button>
+              </template>
+            </header>
+          </template>
+          <template x-if="body">
+            <div class="cd-modal-body">
+              <p class="cd-paragraph" x-show="paragraphCount >= 1">
+                Qui dolore ut nihil unde. Eum sint veniam ut assumenda delectus.
+                Autem autem quas dignissimos.
+              </p>
+              <p class="cd-paragraph" x-show="paragraphCount >= 2">
+                Deleniti consequatur quas commodi ea veritatis. Sunt ut aut sunt ut
+                repellat fuga nulla. Mollitia rerum quas nobis. Rem explicabo sint
+                qui dolor et ab quibusdam cum.
+              </p>
+              <p class="cd-paragraph" x-show="paragraphCount >= 3">
+                Quia commodi dolor qui non tempora. Est temporibus dolorem similique
+                quisquam. Enim deleniti suscipit quibusdam nihil iste. Facilis qui
+                ut non.
+              </p>
+              <p class="cd-paragraph" x-show="paragraphCount >= 4">
+                Enim est asperiores facilis quia. Dignissimos repellendus est et
+                saepe aut iusto velit aut. Dignissimos cum ullam enim iste soluta
+                aliquid accusamus. Ducimus placeat perferendis qui officiis
+                praesentium. Qui aliquam laborum nam. Laborum et perspiciatis ut
+                rerum non voluptatum.
+              </p>
+              <p class="cd-paragraph" x-show="paragraphCount >= 5">
+                Ratione officia nobis aliquam saepe error est laudantium. Voluptas
+                incidunt reiciendis veniam exercitationem facere. Officiis ex sit
+                sed illo beatae veniam.
+              </p>
+              <p class="cd-paragraph" x-show="paragraphCount >= 6">
+                Consequatur eum quo ullam perspiciatis voluptatem. Non ut ad vel qui
+                vero. Numquam quisquam neque earum non maxime ea quidem ut. Nihil
+                voluptatibus quas alias est quas vel. Possimus modi sit vero nemo
+                ipsam. Excepturi nihil asperiores aut voluptatem sint adipisci
+                possimus numquam.
+              </p>
+              <p class="cd-paragraph" x-show="paragraphCount >= 7">
+                Aliquam quia ullam porro numquam similique quia. Est impedit facilis
+                magnam minima natus eos. Provident nam dolores inventore deleniti
+                eos maiores voluptas. Id similique rerum exercitationem id.
+              </p>
+              <p class="cd-paragraph" x-show="paragraphCount >= 8">
+                Autem consectetur distinctio odit dolorum veniam officia voluptas
+                ut. Sed doloribus neque et nihil optio ad vel quod. Molestiae quia
+                veniam a. Voluptate velit quisquam a enim sit. Ratione aut occaecati
+                expedita velit minima autem modi. Exercitationem suscipit aut
+                dolorum doloribus minima ut et omnis.
+              </p>
+            </div>
+          </template>
+          <template x-if="footer">
+            <div class="cd-modal-footer">
+              <button class="cd-button cd-variant-primary" command="request-close" commandfor="modal-4">
+                Save
+              </button>
+              <button class="cd-button" command="request-close" commandfor="modal-4">
+                Cancel
+              </button>
+            </div>
+          </template>
         </dialog>
       </div>
     `}

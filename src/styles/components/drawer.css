@@ -121,6 +121,10 @@
   height: 100%;
 }
 
+.cd-drawer-footer {
+  margin-top: auto;
+}
+
 /* Make action buttons fill entire drawer footer */
 .cd-drawer-footer > * {
   width: 100%;
