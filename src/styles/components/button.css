@@ -32,6 +32,7 @@
   cursor: pointer;
   border-width: var(--cd-border-s);
   border-radius: var(--cd-radius-m);
+  corner-shape: squircle;
   min-height: 2.6em;
   min-width: 3em;
   line-height: var(--cd-line-height-s);
@@ -57,6 +58,7 @@
     transition-timing-function: var(--cd-ease-default);
     z-index: -1;
     border-radius: 2em;
+    corner-shape: squircle;
     width: 4em;
     height: 4em;
     opacity: 0;
@@ -89,6 +91,10 @@
       width: 100%;
       height: 100%;
       border-radius: 5px;
+
+      @supports (corner-shape: squircle) {
+        border-radius: 8px;
+      }
     }
 
     /* inputs don't support children, so the ::before pseudo element won't work */
@@ -428,6 +434,11 @@
       background-color: var(--cd-button-hover-bg-color);
     }
   }
+}
+
+.cd-icon-button,
+.cd-icon-button::before {
+  corner-shape: round;
 }
 
 @keyframes cd-button-loading-bg {

@@ -12,6 +12,7 @@
   position: relative;
   border: var(--cd-internal-default-border);
   border-radius: var(--cd-radius-m);
+  corner-shape: squircle;
   background-color: var(--cd-color-surface-secondary);
   color: var(--cd-color-text-primary);
   padding: var(--cd-space-xs);

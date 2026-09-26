@@ -7,6 +7,7 @@ meter.cd-meter {
 @supports selector(::-moz-meter-bar) {
   meter.cd-meter {
     border-radius: var(--cd-radius-s);
+    corner-shape: squircle;
     border: 0;
     display: block;
     inline-size: 100%;
@@ -20,6 +21,7 @@ meter.cd-meter {
 
 .cd-meter::-webkit-meter-bar {
   border-radius: var(--cd-radius-s);
+  corner-shape: squircle;
   border: 0;
   display: block;
   inline-size: 100%;
@@ -34,6 +36,7 @@ meter.cd-meter {
 .cd-meter::-webkit-meter-suboptimum-value,
 .cd-meter::-webkit-meter-even-less-good-value {
   border-radius: var(--cd-radius-s);
+  corner-shape: squircle;
   border: var(--cd-border-s) solid transparent;
   box-sizing: border-box;
   background-size: 100vw;
@@ -51,6 +54,7 @@ meter.cd-meter {
 
 .cd-meter::-moz-meter-bar {
   border-radius: var(--cd-radius-s);
+  corner-shape: squircle;
   border: var(--cd-border-s) solid transparent;
   box-sizing: border-box;
   background-size: 100vw;

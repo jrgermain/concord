@@ -64,6 +64,7 @@
     font-size: 1em;
     padding: var(--cd-field-padding);
     border-radius: var(--cd-field-radius);
+    corner-shape: squircle;
     transition-property: color, box-shadow, border-color;
     transition-duration: var(--cd-duration-m);
     transition-timing-function: var(--cd-ease-default);
@@ -137,6 +138,7 @@
       block-size: 1.25em;
       inline-size: 100%;
       border-radius: var(--cd-radius-s);
+      corner-shape: squircle;
     }
 
     &::-moz-color-swatch {
@@ -144,6 +146,7 @@
       block-size: 1.25em;
       inline-size: 100%;
       border-radius: var(--cd-radius-s);
+      corner-shape: squircle;
     }
   }
 

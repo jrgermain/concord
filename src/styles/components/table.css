@@ -11,6 +11,7 @@ table.cd-table,
   font-size: var(--cd-font-size-m);
   border: var(--cd-internal-default-border);
   border-radius: var(--cd-radius-s);
+  corner-shape: squircle;
   color: var(--cd-color-text-primary);
   font-family: var(--cd-font-family-body);
   font-weight: var(--cd-font-weight-normal);

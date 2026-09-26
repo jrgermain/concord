@@ -50,6 +50,7 @@
   background-color: var(--cd-color-gray-extra-transparent);
   color: var(--cd-color-gray-1);
   border-radius: var(--cd-radius-s);
+  corner-shape: squircle;
   display: inline;
   padding: 0.25ch 0.5ch;
   font-size: 0.9em;

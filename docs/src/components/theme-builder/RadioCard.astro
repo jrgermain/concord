@@ -15,8 +15,11 @@ const { name, value } = Astro.props;
 </label>
 
 <style>
-  .cd-radio-card {
-    --rc-border-color: light-dark(var(--cd-color-gray-8), var(--cd-color-border));
+  .radio-card {
+    --rc-border-color: light-dark(
+      var(--cd-color-gray-8),
+      var(--cd-color-border)
+    );
 
     display: flex;
     flex-direction: row;
@@ -24,6 +27,7 @@ const { name, value } = Astro.props;
     gap: var(--cd-space-2xs);
     border: var(--cd-border-s) solid var(--rc-border-color);
     border-radius: var(--cd-radius-m);
+    corner-shape: squircle;
     box-shadow: var(--cd-shadow-s);
     padding: var(--cd-space-xs);
     cursor: pointer;
@@ -35,21 +39,22 @@ const { name, value } = Astro.props;
     color: var(--cd-color-text-primary);
   }
 
-  .cd-radio-card:has(input:focus-visible) {
+  .radio-card:has(input:focus-visible) {
     box-shadow:
       var(--cd-shadow-s),
       0 0 0 0.1em var(--rc-border-color),
-      0 0 0 calc(0.2em + var(--cd-border-s)) var(--cd-color-gray-extra-transparent);
+      0 0 0 calc(0.2em + var(--cd-border-s))
+        var(--cd-color-gray-extra-transparent);
   }
 
-  .cd-radio-card:has(input:checked) {
+  .radio-card:has(input:checked) {
     border-color: var(--cd-color-brand-5);
     box-shadow:
       var(--cd-shadow-s),
       0 0 0 0.1em var(--cd-color-brand-5);
   }
 
-  .cd-radio-card:has(input:checked:focus-visible) {
+  .radio-card:has(input:checked:focus-visible) {
     box-shadow:
       var(--cd-shadow-s),
       0 0 0 0.1em var(--cd-color-brand-5),

@@ -17,6 +17,7 @@
   width: var(--cd-modal-size);
   border: var(--cd-internal-default-border);
   border-radius: var(--cd-radius-m);
+  corner-shape: squircle;
 
   &.cd-size-small {
     --cd-modal-size: 25rem;

@@ -12,6 +12,7 @@
     font-family: var(--cd-font-family-body);
     font-size: var(--cd-font-size-m);
     font-weight: var(--cd-font-weight-normal);
+    corner-shape: squircle;
 
     @media (prefers-reduced-motion: no-preference) {
       transition: padding var(--cd-duration-l) var(--cd-ease-out);

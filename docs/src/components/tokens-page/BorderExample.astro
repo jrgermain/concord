@@ -2,15 +2,22 @@
 interface Props {
   propName: "radius" | "border";
   propValue: string;
+  squircle?: boolean;
 }
 
-const { propName, propValue } = Astro.props;
+const { propName, propValue, squircle = true } = Astro.props;
 
 const fullPropName = propName === "radius" ? "border-radius" : "border-width";
 const fullPropValue = `var(--cd-${propName}-${propValue})`;
 ---
 
-<div class="box" style={{ [fullPropName]: fullPropValue }}>
+<div
+  class="box"
+  style={{
+    [fullPropName]: fullPropValue,
+    cornerShape: squircle ? undefined : "round",
+  }}
+>
   {propName}-{propValue}
 </div>
 <style>
@@ -20,6 +27,7 @@ const fullPropValue = `var(--cd-${propName}-${propValue})`;
     width: 12rem;
     font-family: var(--cd-font-family-mono);
     border-radius: var(--cd-radius-m);
+    corner-shape: squircle;
     display: flex;
     align-items: center;
     justify-content: center;

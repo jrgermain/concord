@@ -2,6 +2,7 @@
   background-color: var(--cd-color-surface-primary);
   color: var(--cd-color-text-primary);
   border-radius: var(--cd-radius-l);
+  corner-shape: squircle;
   border: var(--cd-internal-default-border);
   box-shadow: var(--cd-shadow-m);
   padding: var(--cd-space-m);

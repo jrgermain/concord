@@ -7,6 +7,7 @@
   background-color: var(--cd-color-brand-5);
   padding: var(--cd-space-xs);
   border-radius: var(--cd-radius-m);
+  corner-shape: squircle;
   border: 0.25em solid var(--cd-color-brand-4);
   color: white;
   font-weight: var(--cd-font-weight-bold);

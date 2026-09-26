@@ -93,6 +93,7 @@
   font-weight: var(--cd-font-weight-semibold);
   padding-inline: var(--cd-space-xs);
   border-radius: var(--cd-radius-m);
+  corner-shape: squircle;
 
   &:is(:hover, .cd-is-hovered) {
     background-color: var(--cd-color-brand-extra-transparent);
@@ -231,6 +232,7 @@
   padding: var(--cd-space-2xs)
     calc(var(--cd-space-body-x) - var(--cd-space-2xs));
   border-radius: var(--cd-radius-l);
+  corner-shape: squircle;
   color: var(--cd-color-text-secondary);
   text-decoration: none;
   font-weight: var(--cd-font-weight-normal);

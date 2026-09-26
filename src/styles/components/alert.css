@@ -12,6 +12,7 @@
   color: var(--cd-color-text-primary);
   padding: var(--cd-border-m);
   padding-inline-start: calc(var(--cd-border-m) + 2px);
+  corner-shape: squircle;
   border-radius: var(--cd-radius-s);
   background: linear-gradient(
     to right,
@@ -66,6 +67,7 @@
     border-radius: var(--cd-radius-m);
     padding: var(--cd-border-s);
     font-size: var(--cd-font-size-s);
+    corner-shape: squircle;
 
     &.cd-status-error {
       --cd-alert-border-start-color: var(--cd-color-red-8);
@@ -105,6 +107,7 @@
 
     .cd-alert-content {
       border-radius: calc(var(--cd-radius-m) - var(--cd-border-s));
+      corner-shape: squircle;
       padding-inline-start: 2.25em;
 
       &::before {

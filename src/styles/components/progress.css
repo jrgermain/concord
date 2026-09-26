@@ -17,6 +17,7 @@ progress.cd-progress {
 @supports selector(::-moz-progress-bar) {
   progress.cd-progress {
     border-radius: var(--cd-radius-s);
+    corner-shape: squircle;
     border: 0;
     display: block;
     inline-size: 100%;
@@ -30,6 +31,7 @@ progress.cd-progress {
 
 .cd-progress::-webkit-progress-bar {
   border-radius: var(--cd-radius-s);
+  corner-shape: squircle;
   border: 0;
   display: block;
   inline-size: 100%;
@@ -42,6 +44,7 @@ progress.cd-progress {
 
 .cd-progress::-webkit-progress-value {
   border-radius: var(--cd-radius-s);
+  corner-shape: squircle;
   border: var(--cd-border-s) solid var(--cd-color-blue-5);
   box-sizing: border-box;
   background-size: 100vw;
@@ -54,6 +57,7 @@ progress.cd-progress {
 
 .cd-progress::-moz-progress-bar {
   border-radius: var(--cd-radius-s);
+  corner-shape: squircle;
   border: var(--cd-border-s) solid var(--cd-color-blue-5);
   box-sizing: border-box;
   background-size: 100vw;

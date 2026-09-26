@@ -7,6 +7,7 @@
   border: var(--cd-border-s) solid var(--cd-color-gray-8);
   border-bottom-width: 3px;
   border-radius: var(--cd-radius-m);
+  corner-shape: squircle;
   font-weight: var(--cd-font-weight-semibold);
   font-family: var(--cd-font-family-body);
   background-color: var(--cd-color-gray-9);
