@@ -32,3 +32,8 @@
   padding: 0;
   background-color: transparent;
 }
+
+.cd-fieldset.cd-is-compact .cd-fieldset-content {
+  padding: var(--cd-space-2xs);
+  gap: var(--cd-space-2xs);
+}

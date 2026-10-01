@@ -77,12 +77,70 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
     name="Subtle"
     description="You can remove the border and background from a Fieldset by adding the class `cd-variant-subtle` to the `fieldset` element."
     code={`
-      <fieldset class="cd-fieldset cd-variant-subtle">
+      <fieldset class="cd-fieldset cd-orientation-horizontal cd-variant-subtle">
         <legend>Deposit Amount</legend>
-        <div class="cd-fieldset-content cd-orientation-horizontal">
+        <div class="cd-fieldset-content">
           <label class="cd-field">
             Amount
             <input type="number" step="0.01" />
+          </label>
+          <label class="cd-field">
+            Currency
+            <select>
+              <option>USD</option>
+              <option>EUR</option>
+              <option>CHF</option>
+            </select>
+          </label>
+        </div>
+      </fieldset>
+    `}
+    outputWrapperClass="cd-wrap"
+  />
+
+  <UsageExample
+    name="Compact"
+    description="You can make a Fieldset more compact by adding the class `cd-is-compact` to the `fieldset` element. This also affects all child Field components."
+    code={`
+      <fieldset class="cd-fieldset cd-is-compact">
+        <legend>Instant Transfer</legend>
+        <div class="cd-fieldset-content">
+          <label class="cd-field">
+            Amount
+            <div class="cd-field-input-group">
+              <span class="cd-field-prefix">$</span>
+              <input type="number" step="0.01" value="100.00" />
+              <span class="cd-field-suffix">USD</span>
+            </div>
+          </label>
+          <label class="cd-field">
+            Source Account
+            <select>
+              <option>Interest Checking</option>
+              <option>Relationship Savings</option>
+            </select>
+          </label>
+          <label class="cd-field">
+            Destination Account
+            <select>
+              <option disabled>Interest Checking</option>
+              <option>Relationship Savings</option>
+            </select>
+          </label>
+
+          </div>
+      </fieldset>
+
+      <fieldset class="cd-fieldset cd-orientation-horizontal cd-is-compact">
+        <legend>Deposit Amount</legend>
+        <div class="cd-fieldset-content">
+          <label class="cd-field">
+            Amount
+            <div class="cd-field-input-group">
+              <span class="cd-field-prefix">$</span>
+              <input type="number" step="0.01" />
+              <span class="cd-field-suffix">USD</span>
+            </div>
           </label>
           <label class="cd-field">
             Currency
