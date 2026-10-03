@@ -26,10 +26,6 @@
   padding: 0;
   flex-direction: column;
   gap: 0;
-
-  &[open] {
-    display: flex;
-  }
 }
 
 .cd-modal-header,
@@ -139,7 +135,6 @@
   padding-block-start: calc(0.5 * var(--cd-space-s));
 }
 
-/* Fade in/out (mixed browser support as of March 2025) */
 :is(.cd-modal, .cd-drawer)[open] {
   display: flex;
   transform: var(--cd-dialog-open-transform);
@@ -178,5 +173,3 @@
     opacity: var(--cd-dialog-backdrop-starting-opacity);
   }
 }
-
-/* End fade in/out styles */
