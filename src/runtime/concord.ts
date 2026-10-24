@@ -5,7 +5,6 @@
 // progressive enhancement, sites will be fully functional without it.
 //
 // This script does the following:
-// - Prevents layout shift when Modal, Drawer, and mobile Sidebar are opened
 // - Makes Sidebar fill available vertical space when Header is scrolled in/out of view
 // - Enables use of the `if-js-enabled` and `if-js-disabled` utility classes
 // --------------------------------------------------------------------------------------
@@ -40,40 +39,18 @@
   const $app = document.querySelector<HTMLElement>(".cd-app");
   const $appBody = document.querySelector<HTMLElement>(".cd-app-body");
   const $appContent = document.querySelector<HTMLElement>(".cd-app-content");
-  const $headerContent = document.querySelector<HTMLElement>(
-    ".cd-app-header-content",
-  );
   const $sidebarContent = document.querySelector<HTMLElement>(
     ".cd-app-sidebar-content",
-  );
-  const $sidebarToggle = document.querySelector<HTMLInputElement>(
-    ".cd-app-sidebar-toggle input[type='checkbox']",
   );
 
   const smallWidthMediaQuery = window.matchMedia("(width < 55rem)");
 
   const hasVerticalOverflow = () =>
-    $root != null &&
-    $appContent != null &&
-    $appContent.getBoundingClientRect().bottom > $root.clientHeight;
-
-  const isOverflowHidden = () =>
-    $app != null && window.getComputedStyle($app).overflowY === "hidden";
+    $app != null && $app.scrollHeight > $app.clientHeight;
 
   //////////////////////////////
   //   Define Enhancements    //
   //////////////////////////////
-
-  const setScrollGutter = () => {
-    const shouldReserveGutter = hasVerticalOverflow() && isOverflowHidden();
-
-    if ($headerContent) {
-      $headerContent.dataset.cdScrollGutter = String(shouldReserveGutter);
-    }
-    if ($appContent) {
-      $appContent.dataset.cdScrollGutter = String(shouldReserveGutter);
-    }
-  };
 
   const setJsEnabled = () => {
     if ($app) {
@@ -106,43 +83,15 @@
 
   // Resize listeners
   window.addEventListener("resize", setSidebarHeight);
-  window.addEventListener("resize", setScrollGutter);
 
   // Scroll listener
-  window.addEventListener("scroll", () => {
+  $app?.addEventListener("scroll", () => {
     // Only resize the sidebar if the body content overflows the page. This
     // prevents weird behavior when the browser has elastic scrolling.
     if (hasVerticalOverflow()) setSidebarHeight();
   });
 
-  // Attach sidebar toggle listener if toggle is present
-  $sidebarToggle?.addEventListener("change", setScrollGutter);
-
-  // Add Modal/Drawer toggle listener
-  document
-    .querySelectorAll<HTMLDialogElement>("dialog.cd-modal, dialog.cd-drawer")
-    .forEach((dialog) => {
-      dialog.addEventListener("toggle", setScrollGutter);
-    });
-
-  // Automatically add listeners to any new Modals/Drawers
-  const observer = new MutationObserver((mutations) => {
-    for (const mutation of mutations) {
-      for (const node of mutation.addedNodes) {
-        if (
-          node instanceof HTMLDialogElement &&
-          (node.classList.contains("cd-modal") ||
-            node.classList.contains("cd-drawer"))
-        ) {
-          node.addEventListener("toggle", setScrollGutter);
-        }
-      }
-    }
-  });
-  observer.observe(document.body, { childList: true, subtree: true });
-
   // Run all enhancements on initial load
   setSidebarHeight();
-  setScrollGutter();
   setJsEnabled();
 })().catch(console.error);

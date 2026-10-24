@@ -11,7 +11,9 @@
 
   position: relative;
   width: 100%;
-  min-height: 100svh;
+  height: 100dvh;
+  overflow: auto;
+  scrollbar-gutter: stable;
   display: flex;
   flex-direction: column;
   font-family: var(--cd-font-family-body);
@@ -404,16 +406,11 @@
     }
 
     .cd-app-header {
-      position: fixed;
       top: 0;
       z-index: 10;
       background-color: var(--cd-color-surface-primary);
       border-bottom-color: var(--cd-color-brand-transparent);
       box-shadow: var(--cd-shadow-s);
-    }
-
-    .cd-app-content {
-      top: var(--cd-app-header-height);
     }
   }
 }
@@ -430,9 +427,4 @@
   .cd-app > .cd-app-sidebar {
     opacity: 0;
   }
-}
-
-[data-cd-scroll-gutter="true"] {
-  overflow-y: hidden;
-  scrollbar-gutter: stable;
 }

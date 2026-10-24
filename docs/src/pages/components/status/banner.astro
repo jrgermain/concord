@@ -94,7 +94,9 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
           document
             .querySelector('.cd-app')
             .prepend(document.querySelector('#banner-template').content.firstElementChild.cloneNode(true));
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          document
+            .querySelector('.cd-app')
+            .scrollTo({ top: 0, behavior: 'smooth' });
         "
       >
         Add Site-wide Banner

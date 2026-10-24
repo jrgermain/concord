@@ -76,56 +76,58 @@ Your application's HTML structure should follow this template:
           content="#010203"
         />
       </head>
-      <body class="cd-app">
-        <!-- href must match '.cd-app-content' element id -->
-        <a class="cd-skip-link" href="#main-content"> Skip to Main Content </a>
-        <header class="cd-app-header">
-          <div class="cd-app-header-content">
-            <!-- Logo/home link -->
-            <div class="cd-app-header-left">
-              <a class="cd-app-header-item" href="/">
-                <img class="cd-app-icon" aria-hidden="true" src="...">
-                <span class="cd-app-title-divider"></span>
-                <span class="cd-app-title">App Name</span>
-              </a>
-            </div>
+      <body>
+        <div class="cd-app">
+          <!-- href must match '.cd-app-content' element id -->
+          <a class="cd-skip-link" href="#main-content"> Skip to Main Content </a>
+          <header class="cd-app-header">
+            <div class="cd-app-header-content">
+              <!-- Logo/home link -->
+              <div class="cd-app-header-left">
+                <a class="cd-app-header-item" href="/">
+                  <img class="cd-app-icon" aria-hidden="true" src="...">
+                  <span class="cd-app-title-divider"></span>
+                  <span class="cd-app-title">App Name</span>
+                </a>
+              </div>
 
-            <!-- Main navigation (optional) -->
-            <div class="cd-app-header-center">
-                <a class="cd-app-header-item" href="/link1" aria-current="page"> Current Link </a>
-                <a class="cd-app-header-item" href="/link2"> Other Link </a>
-                <!-- Optional: add a divider between groups of links -->
-                <hr class="cd-app-header-divider">
-                <a class="cd-app-header-item" href="/link3"> Other Link </a>
-            </div>
+              <!-- Main navigation (optional) -->
+              <div class="cd-app-header-center">
+                  <a class="cd-app-header-item" href="/link1" aria-current="page"> Current Link </a>
+                  <a class="cd-app-header-item" href="/link2"> Other Link </a>
+                  <!-- Optional: add a divider between groups of links -->
+                  <hr class="cd-app-header-divider">
+                  <a class="cd-app-header-item" href="/link3"> Other Link </a>
+              </div>
 
-            <!-- Sidebar toggle (automatically hidden if there is no sidebar) -->
-            <div class="cd-app-header-right">
-              <label class="cd-app-header-item cd-app-sidebar-toggle cd-if-app-has-sidebar">
-                <input type="checkbox" title="Toggle navigation">
-                <div></div>
-                <div></div>
-                <div></div>
-              </label>
+              <!-- Sidebar toggle (automatically hidden if there is no sidebar) -->
+              <div class="cd-app-header-right">
+                <label class="cd-app-header-item cd-app-sidebar-toggle cd-if-app-has-sidebar">
+                  <input type="checkbox" title="Toggle navigation">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </label>
+              </div>
             </div>
+          </header>
+          <div class="cd-app-body"> 
+            <!-- Optional -->
+            <aside class="cd-app-sidebar">
+              <div class="cd-app-sidebar-content">
+                <!-- 1 or more of the following: -->
+                <section class="cd-app-sidebar-section">
+                  <h1 class="cd-app-sidebar-heading"> Heading </h1>
+                  <a class="cd-app-sidebar-item" aria-current="page"> Current Page </a>
+                  <a class="cd-app-sidebar-item">Other Page</a>
+                </section>
+              </div>
+            </aside>
+
+            <main id="main-content" class="cd-app-content">
+              <!-- Your page content goes here -->
+            </main>
           </div>
-        </header>
-        <div class="cd-app-body"> 
-          <!-- Optional -->
-          <aside class="cd-app-sidebar">
-            <div class="cd-app-sidebar-content">
-              <!-- 1 or more of the following: -->
-              <section class="cd-app-sidebar-section">
-                <h1 class="cd-app-sidebar-heading"> Heading </h1>
-                <a class="cd-app-sidebar-item" aria-current="page"> Current Page </a>
-                <a class="cd-app-sidebar-item">Other Page</a>
-              </section>
-            </div>
-          </aside>
-
-          <main id="main-content" class="cd-app-content">
-            <!-- Your page content goes here -->
-          </main>
         </div>
       </body>
     </html>
