@@ -118,6 +118,7 @@ const createJsBundle = async (sourcePath, destPath) => {
     "src/runtime/concord.ts",
     path.join(tempPath, "concord.js"),
   );
+  await fs.writeFile(path.join(tempPath, "concord.d.ts"), "export {};\n");
 
   // Delete previous build
   const distPath = path.join(projectRoot, "dist");
