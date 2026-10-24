@@ -13,7 +13,7 @@ I always found the concept to be elegant, and an inherently good idea. Everyone'
 
 Therefore, I try to encourage the use of techniques that achieve this goal, both in my exmaples and in the library itself. For example:
 
-1. The `enhance` script smooths some rough edges, but nothing breaks if it doesn't load (e.g., when a user has JS disabled).
+1. The `concord.js` script smooths some rough edges, but nothing breaks if it doesn't load (e.g., when a user has JS disabled).
 2. I tried not to rely on features that aren't widely available, but made exceptions when I could use them in a way that degraded gracefully.
 
 ## Semantic HTML
