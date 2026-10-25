@@ -7,7 +7,12 @@ const { name } = Astro.props;
 ---
 
 <div class="cd-card duration-example" x-data="{ clicked: false }">
-  <p class="cd-card-title">duration-{name}</p>
+  <p class="cd-card-title title-wrapper">
+    <span>{name.toUpperCase()}</span>
+    <span class="cd-code variable-name">
+      {`--cd-duration-${name}`}
+    </span>
+  </p>
   <slot />
   <label
     class="wrapper"
@@ -19,6 +24,17 @@ const { name } = Astro.props;
 </div>
 
 <style>
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--cd-space-xs);
+  }
+
+  .variable-name {
+    position: relative;
+    font-size: 0.75em;
+  }
+
   .wrapper {
     display: flex;
     align-items: center;

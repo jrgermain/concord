@@ -18,7 +18,7 @@ const fullPropValue = `var(--cd-${propName}-${propValue})`;
     cornerShape: squircle ? undefined : "round",
   }}
 >
-  {propName}-{propValue}
+  --cd-{propName}-{propValue}
 </div>
 <style>
   .box {
@@ -26,6 +26,7 @@ const fullPropValue = `var(--cd-${propName}-${propValue})`;
     height: 10rem;
     width: 12rem;
     font-family: var(--cd-font-family-mono);
+    font-size: var(--cd-font-size-s);
     border-radius: var(--cd-radius-m);
     corner-shape: squircle;
     display: flex;

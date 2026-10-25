@@ -4,10 +4,28 @@ interface Props {
 }
 
 const { space } = Astro.props;
+
+let spaceDisplayName: string;
+switch (space) {
+  case "none":
+    spaceDisplayName = "None";
+    break;
+  case "body-x":
+    spaceDisplayName = "Body X";
+    break;
+  case "body-y":
+    spaceDisplayName = "Body Y";
+    break;
+  default:
+    spaceDisplayName = space.toUpperCase();
+}
 ---
 
 <div class="space-example-container">
-  <p class="space-name">{space}</p>
+  <div class="space-name-wrapper">
+    <span class="space-name">{spaceDisplayName}</span>
+    <span class="cd-code space-variable">--cd-space-{space}</span>
+  </div>
   <div class="space-example">
     <div class="space-example-block"></div>
     <div
@@ -23,10 +41,21 @@ const { space } = Astro.props;
     margin-block-start: var(--cd-space-m);
   }
 
+  .space-name-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--cd-space-xs);
+    margin-block-end: var(--cd-space-2xs);
+    font-size: var(--cd-font-size-l);
+  }
+
   .space-name {
     font-weight: var(--cd-font-weight-bold);
     font-family: var(--cd-font-family-heading);
-    margin-block-end: var(--cd-space-3xs);
+  }
+
+  .space-variable {
+    font-size: var(--cd-font-size-s);
   }
 
   .space-example {

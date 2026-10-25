@@ -1,4 +1,6 @@
 ---
+import { kebabCaseToTitleCase } from "../../utils/string";
+
 interface Props {
   easingFunctionName: string;
 }
@@ -7,13 +9,20 @@ const { easingFunctionName } = Astro.props;
 ---
 
 <div class="container cd-card">
-  <p class="cd-card-title">ease-{easingFunctionName}</p>
+  <p class="cd-card-title title-wrapper">
+    <span>{kebabCaseToTitleCase(easingFunctionName)}</span>
+    <span class="cd-code variable-name">
+      {`--cd-ease-${easingFunctionName}`}
+    </span>
+  </p>
   <div class="description"><slot /></div>
   <div class="track-wrapper">
     <div class="track"></div>
     <div
       class="ball"
-      style={{ animationTimingFunction: `var(--cd-ease-${easingFunctionName})` }}
+      style={{
+        animationTimingFunction: `var(--cd-ease-${easingFunctionName})`,
+      }}
     >
     </div>
   </div>
@@ -23,6 +32,17 @@ const { easingFunctionName } = Astro.props;
     width: 100%;
     position: relative;
     overflow: hidden;
+  }
+
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--cd-space-xs);
+  }
+
+  .variable-name {
+    position: relative;
+    font-size: 0.75em;
   }
 
   .description {

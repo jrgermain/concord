@@ -7,7 +7,7 @@ const { size } = Astro.props;
 ---
 
 <div class="box" style={{ boxShadow: `var(--cd-shadow-${size})` }}>
-  shadow-{size}
+  --cd-shadow-{size}
 </div>
 <style>
   .box {
@@ -15,6 +15,7 @@ const { size } = Astro.props;
     height: 4rem;
     width: 12rem;
     font-family: var(--cd-font-family-mono);
+    font-size: var(--cd-font-size-s);
     border-radius: var(--cd-radius-m);
     corner-shape: squircle;
     display: flex;

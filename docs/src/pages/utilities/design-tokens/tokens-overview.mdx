@@ -27,13 +27,13 @@ Each category is documented in the subsequent pages.
 
 All design tokens are defined as CSS Custom Properties (also known as "CSS Variables"). You should reference these properties when styling elements.
 
-The names of these properties follow the format, `--cd-<type>-<name>`, where `<type>` is the type of value (e.g., "color") and `<name>` is the name of the token (e.g., "red-1"). You can reference a token in CSS with the `var` function.
+The names of these properties follow the format, `--cd-<type>-<name>`, where `<type>` is the type of value (e.g., "color") and `<name>` is the name of the token (e.g., "red-5"). You can reference a token in CSS with the `var` function.
 
 <CodeBlock
   language="css"
   code={trimTextPadding(`
-    .cd-color-red-bg {
-      background-color: var(--cd-color-red-1);
+    .red {
+      background-color: var(--cd-color-red-5);
     }
   `)}
 />
