@@ -14,8 +14,16 @@ export type Section = {
 
 export type Page = {
   title: string;
-  slug: string;
-};
+} & (
+  | {
+      isExternal?: false;
+      slug: string;
+    }
+  | {
+      isExternal: true;
+      href: string;
+    }
+);
 
 export const navCategories: Category[] = [
   {
@@ -41,6 +49,11 @@ export const navCategories: Category[] = [
         pages: [
           { title: "Design Choices", slug: "design-choices" },
           { title: "Inspiration", slug: "inspiration" },
+          {
+            title: "Changelog",
+            isExternal: true,
+            href: "https://github.com/jrgermain/concord/releases",
+          },
         ],
       },
     ],

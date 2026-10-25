@@ -108,14 +108,25 @@ const shouldShowFooter =
                   {nav.currentCategory.sections.map((section) => (
                     <section class="cd-app-sidebar-section">
                       <h1 class="cd-app-sidebar-heading">{section.title}</h1>
-                      {section.pages.map((page) => (
-                        <NavLink
-                          class="cd-app-sidebar-item"
-                          href={`/${nav.currentCategory!.slug}/${section.slug}/${page.slug}`}
-                        >
-                          {page.title}
-                        </NavLink>
-                      ))}
+                      {section.pages.map((page) =>
+                        page.isExternal ? (
+                          <a
+                            class="cd-app-sidebar-item"
+                            href={page.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {page.title}
+                          </a>
+                        ) : (
+                          <NavLink
+                            class="cd-app-sidebar-item"
+                            href={`/${nav.currentCategory!.slug}/${section.slug}/${page.slug}`}
+                          >
+                            {page.title}
+                          </NavLink>
+                        ),
+                      )}
                     </section>
                   ))}
                 </div>
@@ -127,7 +138,7 @@ const shouldShowFooter =
           {
             shouldShowFooter && (
               <footer>
-                {nav.previousPage && (
+                {nav.previousPage && !nav.previousPage.isExternal && (
                   <a
                     class="previous-link"
                     href={`/${nav.currentCategory!.slug}/${nav.currentSection!.slug}/${nav.previousPage!.slug}`}
@@ -161,7 +172,7 @@ const shouldShowFooter =
                     <div class="link-title">{nav.previousPage!.title}</div>
                   </a>
                 )}
-                {nav.nextPage && (
+                {nav.nextPage && !nav.nextPage.isExternal && (
                   <a
                     class="next-link"
                     href={`/${nav.currentCategory!.slug}/${nav.currentSection!.slug}/${nav.nextPage!.slug}`}
