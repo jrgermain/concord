@@ -1,0 +1,20 @@
+---
+interface Props {
+  contentDescription?: string;
+}
+
+const { contentDescription = "Child Content" } = Astro.props;
+---
+
+<span class="description">{contentDescription}</span>
+
+<style>
+  .description {
+    font-size: var(--cd-font-size-s);
+    font-family: var(--cd-font-family-body);
+    color: inherit;
+    font-style: italic;
+    margin: auto;
+    text-align: center;
+  }
+</style>

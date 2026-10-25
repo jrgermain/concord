@@ -1,0 +1,99 @@
+---
+interface Props {
+  name: string;
+  selector: string;
+  level: 1 | 2 | 3;
+  width?: string;
+  height?: string;
+  margin?: string;
+  flexDirection?: "row" | "column";
+}
+
+const { name, selector, level, width, height, margin, flexDirection } =
+  Astro.props;
+---
+
+<div class={`part level-${level}`} style={{ width, height, margin }}>
+  <div class="part-label">
+    <span class="part-name">{name}</span>
+    <span class="cd-code part-selector">{selector}</span>
+  </div>
+  <div class="part-box" style={{ flexDirection }}>
+    <slot />
+  </div>
+</div>
+
+<style>
+  .part {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .part.level-1 {
+    color: var(--cd-color-green-3);
+  }
+
+  .part.level-2 {
+    color: var(--cd-color-purple-3);
+  }
+
+  .part.level-3 {
+    color: var(--cd-color-orange-3);
+  }
+
+  .part-box {
+    border: var(--cd-border-s) solid var(--cd-color-border);
+    border-radius: var(--cd-radius-m);
+    corner-shape: squircle;
+    display: flex;
+    padding: var(--cd-space-xs);
+    gap: var(--cd-space-xs);
+  }
+
+  .part.level-1 .part-box {
+    background-color: var(--cd-color-green-9);
+    border-color: var(--cd-color-green-8);
+  }
+
+  .part.level-2 .part-box {
+    background-color: var(--cd-color-purple-9);
+    border-color: var(--cd-color-purple-8);
+  }
+
+  .part.level-3 .part-box {
+    background-color: var(--cd-color-orange-9);
+    border-color: var(--cd-color-orange-8);
+  }
+
+  .part-label {
+    font-size: var(--cd-font-size-s);
+    display: flex;
+    gap: var(--cd-space-2xs);
+    justify-content: start;
+    margin-inline-end: auto;
+  }
+
+  .part-name {
+    font-weight: var(--cd-font-weight-bold);
+  }
+
+  .part-selector {
+    position: relative;
+    bottom: 2px;
+    font-size: 0.85em;
+    margin: auto;
+    color: inherit;
+  }
+
+  .part.level-1 .part-selector {
+    background-color: var(--cd-color-green-extra-transparent);
+  }
+
+  .part.level-2 .part-selector {
+    background-color: var(--cd-color-purple-extra-transparent);
+  }
+
+  .part.level-3 .part-selector {
+    background-color: var(--cd-color-orange-extra-transparent);
+  }
+</style>
