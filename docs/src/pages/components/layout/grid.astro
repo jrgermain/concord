@@ -85,7 +85,28 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       - \`cd-spacing-sparsest\`
     `)}
     code={`
-      TBD
+      <p class="cd-heading cd-level-3">None</p>
+      <div class="cd-grid cd-placement-stretched cd-columns-2 cd-spacing-none">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </div>
+
+      <hr class="cd-divider cd-orientation-horizontal cd-style-dashed"/>
+      <em style="color: var(--cd-color-text-secondary); text-align: center;">
+        Other sizes omitted for brevity
+      </em>
+      <hr class="cd-divider cd-orientation-horizontal cd-style-dashed"/>
+
+      <p class="cd-heading cd-level-3">Sparsest</p>
+      <div class="cd-grid cd-placement-stretched cd-columns-2 cd-spacing-sparsest">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </div>
+
     `}
   />
   <UsageExample
@@ -96,8 +117,21 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       To create a fixed number of evenly sized columns, add the class \`cd-columns-<number>\` to the Grid,
       where \`<number>\` is an integer between 1 and 12, inclusive.
 
+      - \`cd-columns-1\`
+      - \`cd-columns-2\`
+      - \`cd-columns-3\`
+      - \`cd-columns-4\`
+      - \`cd-columns-5\`
+      - \`cd-columns-6\`
+      - \`cd-columns-7\`
+      - \`cd-columns-8\`
+      - \`cd-columns-9\`
+      - \`cd-columns-10\`
+      - \`cd-columns-11\`
+      - \`cd-columns-12\`
+
       To create a variable number of columns of a fixed size, add the class \`cd-columns-<size>\` to the Grid,
-      where \`<size>\` is a T-shirt size between 2xs and 2xl. Below is a complete list of size-based classes:
+      where \`<size>\` is a T-shirt size between 2xs and 2xl.
 
       - \`cd-columns-2xs\`
       - \`cd-columns-xs\`
@@ -108,7 +142,29 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       - \`cd-columns-2xl\`
     `)}
     code={`
-      TBD
+      <p class="cd-heading cd-level-3">8 Columns (cd-columns-8)</p>
+      <div class="cd-grid cd-columns-8 cd-spacing-dense">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+      </div>
+
+      <p class="cd-heading cd-level-3">Medium-sized Columns (cd-columns-m)</p>
+      <div class="cd-grid cd-columns-m cd-spacing-dense">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+      </div>
     `}
   />
   <UsageExample
@@ -124,7 +180,29 @@ import { trimTextPadding } from "../../../utils/trim-text-padding";
       - \`cd-outer-spacing-half\`: spacing on the outside (padding) is half of the spacing on the inside (gap)
     `)}
     code={`
-      TBD
+      <p class="cd-heading cd-level-3">None</p>
+      <div class="cd-grid cd-columns-2 cd-spacing-dense cd-outer-spacing-none" style="outline: var(--cd-border-m) dashed var(--cd-color-brand-5); width: fit-content;">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </div>
+
+      <p class="cd-heading cd-level-3">Full</p>
+      <div class="cd-grid cd-columns-2 cd-spacing-dense cd-outer-spacing-full" style="outline: var(--cd-border-m) dashed var(--cd-color-brand-5); width: fit-content;">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </div>
+
+      <p class="cd-heading cd-level-3">Half</p>
+      <div class="cd-grid cd-columns-2 cd-spacing-dense cd-outer-spacing-half" style="outline: var(--cd-border-m) dashed var(--cd-color-brand-5); width: fit-content;">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </div>
     `}
   />
 </ComponentDocumentation>
