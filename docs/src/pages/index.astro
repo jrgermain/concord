@@ -10,7 +10,7 @@ import TableOfContents from "../components/TableOfContents.astro";
     height: 22rem;
     position: relative;
     inset-inline-end: var(--cd-space-body-x);
-    margin-block: calc(-1 * var(--cd-space-body-y)) var(--cd-space-xs);
+    margin-block: calc(-1 * var(--cd-space-body-y)) var(--cd-space-m);
     width: calc(100% + 2 * var(--cd-space-body-x));
     background-color: var(--cd-color-contrast-background);
     background-image: var(--splash-bg);
@@ -39,7 +39,7 @@ import TableOfContents from "../components/TableOfContents.astro";
   @media (width >= 90rem) {
     .splash-container {
       margin: 0;
-      margin-block-end: var(--cd-space-body-y);
+      margin-block-end: var(--cd-space-l);
       inset-inline-end: 0;
       border-radius: var(--cd-radius-l);
       corner-shape: squircle;
@@ -54,13 +54,17 @@ import TableOfContents from "../components/TableOfContents.astro";
       A lightweight design system for beautiful websites.
     </div>
   </div>
-  <div class="cd-alert cd-variant-subtle cd-status-info">
-    <div class="cd-alert-content">
-      New here? Check out the <a
-        class="cd-link"
-        href="/info/getting-started/introduction">Introduction page</a
-      > for an overview.
-    </div>
-  </div>
+  <p class="cd-paragraph">
+    <strong>
+      Concord is a flexible, open-source design system that works with any tech
+      stack.
+    </strong>
+    {" "}
+    All styling is done in pure CSS, and a tiny JavaScript file adds subtle UX enhancements.
+  </p>
+  <p class="cd-paragraph">
+    Create components using semantic elements and consistent class names, and
+    keep custom styles cohesive with the rich set of built-in design tokens.
+  </p>
   <TableOfContents contents={navCategories} />
 </Layout>
