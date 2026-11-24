@@ -12,9 +12,13 @@ interface Props {
   code: string;
   format?: boolean;
   variant?: "standalone" | "inline";
+  isCompact?: boolean;
+  hasToolbar?: boolean;
 }
 
-const { language, code, format = true, variant = "standalone" } = Astro.props;
+const { language, code, format = true, variant = "standalone", isCompact = false, hasToolbar = true } = Astro.props;
+
+const sizeVariant = isCompact ? "compact" : "";
 
 const parserForLanguage: Record<Language, BuiltInParserName | null> = {
   html: "html",
@@ -47,17 +51,18 @@ const codeId = `code-${random}`;
 const languageText = displayNameForLanguage[language];
 ---
 
-<div class:list={["container", variant]}>
-  <div class="toolbar">
-    <span class="language">{languageText}</span>
-    <span class="copy-button-container cd-if-js-enabled">
-      <span class="copied-message">Copied!</span>
-      <button
-        aria-label="Copy code to clipboard"
-        title="Copy"
-        class="cd-icon-button cd-variant-tertiary copy-button"
-        data-code-id={codeId}
-        onclick="
+<div class:list={["container", variant, sizeVariant]}>
+  {hasToolbar && (
+    <div class="toolbar">
+      <span class="language">{languageText}</span>
+      <span class="copy-button-container cd-if-js-enabled">
+        <span class="copied-message">Copied!</span>
+        <button
+          aria-label="Copy code to clipboard"
+          title="Copy"
+          class="cd-icon-button cd-variant-tertiary copy-button"
+          data-code-id={codeId}
+          onclick="
           navigator.clipboard.writeText(document.getElementById(this.dataset.codeId).textContent)
             .then(() => {
               this.parentElement.classList.add('copied');
@@ -81,6 +86,7 @@ const languageText = displayNameForLanguage[language];
       </button>
     </span>
   </div>
+  )}
   <Code
     id={codeId}
     class="rendered-code"
@@ -113,6 +119,10 @@ const languageText = displayNameForLanguage[language];
     margin-inline-start: var(--cd-space-3xs);
   }
 
+  .container.compact .language {
+    font-size: var(--cd-font-size-2xs);
+  }
+
   .copy-button-container {
     display: inline-flex;
     align-items: center;
@@ -130,6 +140,10 @@ const languageText = displayNameForLanguage[language];
     font-weight: var(--cd-font-weight-semibold);
   }
 
+  .container.compact .copied-message {
+    font-size: var(--cd-font-size-xs);
+  }
+
   .copy-button {
     margin: calc(-1 * var(--cd-space-3xs)) !important;
   }
@@ -145,6 +159,10 @@ const languageText = displayNameForLanguage[language];
     border-radius: 0;
     font-size: var(--cd-font-size-s);
     max-height: 75vh;
+  }
+
+  .container.compact .rendered-code {
+    font-size: var(--cd-font-size-xs);
   }
 
   .container.inline .toolbar {
@@ -178,7 +196,15 @@ const languageText = displayNameForLanguage[language];
     font-size: calc(var(--cd-font-size-m) * 0.9);
   }
 
+  .container.standalone.compact .language {
+    font-size: calc(var(--cd-font-size-s) * 0.9);
+  }
+
   .container.standalone .rendered-code {
     font-size: var(--cd-font-size-m);
+  }
+
+  .container.standalone.compact .rendered-code {
+    font-size: var(--cd-font-size-s);
   }
 </style>

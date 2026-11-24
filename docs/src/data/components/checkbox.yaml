@@ -1,0 +1,129 @@
+name: Checkbox
+description: A boolean control that can be checked, unchecked, or indeterminate.
+keywords: [check, checkbox, boolean, bool, toggle]
+related_components: [Switch]
+properties:
+  disabled:
+    description: Indicates whether the Checkbox is disabled.
+    type: boolean
+    default_value: false
+  state:
+    description: Choose whether the Checkbox is unchecked, checked, or indeterminate.
+    type: string
+    valid_values: [unchecked, checked, indeterminate]
+    default_value: unchecked
+anatomy:
+  - code: '<label class="cd-checkbox">'
+  - children:
+    - code: '<input type="checkbox" />'
+  - children:
+    - description: Label, typically a text node.
+  - code: '</label>'
+minimal_usage: |
+  <label class="cd-checkbox">
+    <input type="checkbox" />
+    Checkbox
+  </label>
+playground: |
+  <label class="cd-checkbox">
+    <input
+      type="checkbox"
+      x-bind:disabled="disabled"
+      x-effect="
+        if (state === 'indeterminate') {
+          $el.checked = false;
+          $el.indeterminate = true;
+        } else {
+          $el.indeterminate = false;
+          $el.checked = state === 'checked';
+        }
+      "
+    />
+    Checkbox
+  </label>
+examples:
+  - title: Indeterminate
+    description: |
+      In HTML, a Checkbox can have three states: checked, unchecked, and indeterminate.
+
+      An **indeterminate** Checkbox is neither fully checked nor fully unchecked. For
+      example, a Checkbox representing an item with child items would be indeterminate
+      if some, but not all, of the child items were checked.
+
+      HTML doesn't have a built-in way to make an indeterminate Checkbox. Instead, you
+      have to set the `indeterminate` _property_ (not attribute) of the input element
+      using JavaScript. The example below uses Alpine.js to set the indeterminate state
+      when the input is initialized.
+    code: |
+      <label class="cd-checkbox">
+        <input type="checkbox" x-init="$el.indeterminate = true" />
+        Indeterminate
+      </label>
+    requires_js: true
+  - title: Multiple Lines
+    description: Below is an example of a Checkbox whose label spans multiple lines.
+    code: |
+      <label class="cd-checkbox">
+        <input type="checkbox" />
+        <div>
+          <strong>Main Label</strong>
+          <div>Secondary label used for <br/>additional information</div>
+        </div>
+      </label>
+  - title: Checkbox Group
+    description: When placing multiple Checkboxes next to each other, you should arrange them vertically to avoid confusion. The recommended way to do this is to wrap them in a container element with the class `cd-checkbox-group`, as this also adds appropriate spacing.
+    code: |
+      <div class="cd-checkbox-group">
+        <label class="cd-checkbox">
+          <input type="checkbox" />
+          Red
+        </label>
+        <label class="cd-checkbox">
+          <input type="checkbox" />
+          Green
+        </label>
+        <label class="cd-checkbox">
+          <input type="checkbox" />
+          Blue
+        </label>
+      </div>
+  - title: Composition with Field
+    description: Below is an example of how a single Checkbox and a Checkbox Group can be placed inside a Field to allow labeling.
+    code:
+      <!-- Single Checkbox inside a Field -->
+      <div class="cd-field">
+        Terms and Conditions
+        <div class="cd-help-text">
+          Before you check out, please read our <a class="cd-link" href="#">terms and conditions</a>.
+        </div>
+        <label class="cd-checkbox">
+          <input type="checkbox" />
+          I accept the terms and conditions
+        </label>
+      </div>
+
+      <!-- Checkbox Group inside a Field -->
+      <fieldset class="cd-field">
+        <legend>Which languages do you know?</legend>
+        <div class="cd-help-text">
+          Select all that apply.
+        </div>
+        <div class="cd-checkbox-group">
+          <label class="cd-checkbox">
+            <input type="checkbox" />
+            JavaScript
+          </label>
+          <label class="cd-checkbox">
+            <input type="checkbox" />
+            TypeScript
+          </label>
+          <label class="cd-checkbox">
+            <input type="checkbox" />
+            Python
+          </label>
+          <label class="cd-checkbox">
+            <input type="checkbox" />
+            Go
+          </label>
+        </div>
+      </fieldset>

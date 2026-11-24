@@ -1,0 +1,174 @@
+---
+import ComponentDocumentation from "../layouts/ComponentDocumentation.astro";
+import AnatomyPart from "../components/anatomy/AnatomyPart.astro";
+import CodeBlock from "../components/CodeBlock.astro";
+import Figure from "../components/Figure.astro";
+import type { ComponentDefinition } from "../data/components/_schema";
+
+interface Props {
+  component: ComponentDefinition;
+}
+
+const { component } = Astro.props;
+
+const hasProperties = Object.keys(component.properties).length > 0;
+const hasExamples = Astro.slots.has("default");
+const hasPlayground = !!component.playground;
+
+const initialData: Record<string, string | boolean | number> = {};
+for (const [name, prop] of Object.entries(component.properties)) {
+  let value: string | boolean | number;
+
+  if (!prop.default_is_dynamic && prop.default_value != null) {
+    value = prop.default_value;
+  } else if (prop.type === "boolean") {
+    value = false;
+  } else if (prop.type === "number") {
+    value = 0;
+  } else if (prop.type === "string") {
+    value = "";
+  } else {
+    continue;
+  }
+
+  initialData[name] = value;
+}
+
+const snakeCaseToTitleCase = (str: string) =>
+  str
+    .split("_")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+---
+
+<ComponentDocumentation
+  name={component.name}
+  description={component.description}
+>
+  <!-- Anatomy -->
+  <div class="figures-wrapper">
+    <Figure caption="Component structure">
+      <AnatomyPart children={component.anatomy} />
+    </Figure>
+    <Figure caption="Minimal example">
+      <div class="minimal-usage-output" set:html={component.minimal_usage} />
+      <CodeBlock
+        code={component.minimal_usage}
+        language="html"
+        isCompact={true}
+        hasToolbar={false}
+      />
+    </Figure>
+  </div>
+
+  <!-- Playground -->
+  {hasPlayground && (
+    <div
+      class="cd-card cd-if-js-enabled"
+      id="playground"
+      x-data={JSON.stringify(initialData)}
+    >
+      <h2 class="cd-card-title">Playground</h2>
+      <p class="cd-paragraph">
+        Below is an instance of the {component.name} component.
+        {hasProperties &&
+          " Try adjusting its properties (which map to classes and/or attributes) using the controls below to see how they affect its appearance."}
+      </p>
+      <div class="playground-result">
+        <div id="playground-result-content" set:html={component.playground} />
+      </div>
+      <div class="playground-controls cd-stack cd-orientation-vertical">
+        {Object.entries(component.properties).map(([name, prop]) => (
+          <div class="cd-field cd-is-compact">
+            <label for={`playground-field-${name}`}>
+              {snakeCaseToTitleCase(name)}
+            </label>
+            <div class="cd-help-text">{prop.description}</div>
+            {prop.valid_values != null && (
+              <select id={`playground-field-${name}`} x-model={name}>
+                <option value="" />
+                {prop.valid_values.map((option) => (
+                  <option
+                    value={option}
+                    selected={option === prop.default_value}
+                  >
+                    {option}
+                  </option>
+                ))}
+              </select>
+            )}
+            {prop.type === "string" && prop.valid_values == null && (
+              <input
+                id={`playground-field-${name}`}
+                type="text"
+                x-model={name}
+              />
+            )}
+            {prop.type === "boolean" && (
+              <input
+                id={`playground-field-${name}`}
+                class="cd-switch cd-size-small"
+                type="checkbox"
+                x-model={name}
+              />
+            )}
+            {prop.type === "number" && (
+              <input
+                id={`playground-field-${name}`}
+                type="number"
+                x-model={name}
+              />
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- Examples -->
+  {hasExamples && (
+    <>
+      <h2 class="cd-heading cd-level-2">Examples</h2>
+      <slot />
+    </>
+  )}
+</ComponentDocumentation>
+<style>
+  .playground-result {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cd-color-surface-secondary);
+    border-radius: var(--cd-radius-s);
+    corner-shape: squircle;
+    padding: var(--cd-space-s);
+    border: var(--cd-border-s) dashed var(--cd-color-border);
+    margin-block-end: var(--cd-space-m);
+  }
+
+  @media (min-width: 55rem) {
+    .playground-controls {
+      /* display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--cd-spacing-4); */
+    }
+  }
+
+  .minimal-usage-output {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block-end: var(--cd-space-3xs);
+  }
+
+  .figures-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: start;
+    gap: var(--cd-space-m);
+  }
+</style>

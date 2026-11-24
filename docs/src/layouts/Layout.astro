@@ -39,7 +39,9 @@ const shouldShowFooter =
   </head>
   <body>
     <div class="cd-app">
-      <a class="cd-skip-link" href="#main-content">Skip to Main Content</a>
+      <a class="cd-skip-link" href="#main-content">
+        Skip to Main Content
+      </a>
       <header class="cd-app-header">
         <div class="cd-app-header-content">
           <div class="cd-app-header-left">
@@ -50,13 +52,11 @@ const shouldShowFooter =
             </a>
           </div>
           <div class="cd-app-header-center">
-            {
-              navCategories.map((category) => (
-                <NavLink href={`/${category.slug}`} class="cd-app-header-item">
-                  {category.title}
-                </NavLink>
-              ))
-            }
+            {navCategories.map((category) => (
+              <NavLink href={`/${category.slug}`} class="cd-app-header-item">
+                {category.title}
+              </NavLink>
+            ))}
             <hr class="cd-app-header-divider" />
             <a
               class="cd-app-header-item"
@@ -88,9 +88,7 @@ const shouldShowFooter =
             </a>
           </div>
           <div class="cd-app-header-right">
-            <label
-              class="cd-app-header-item cd-app-sidebar-toggle cd-if-app-has-sidebar"
-            >
+            <label class="cd-app-header-item cd-app-sidebar-toggle cd-if-app-has-sidebar">
               <input type="checkbox" title="Toggle navigation" />
               <div></div>
               <div></div>
@@ -100,115 +98,114 @@ const shouldShowFooter =
         </div>
       </header>
       <div class="cd-app-body">
-        {
-          nav.currentCategory != null &&
-            nav.currentCategory.sections.length > 0 && (
-              <nav class="cd-app-sidebar">
-                <div class="cd-app-sidebar-content">
-                  {nav.currentCategory.sections.map((section) => (
-                    <section class="cd-app-sidebar-section">
-                      <h1 class="cd-app-sidebar-heading">{section.title}</h1>
-                      {section.pages.map((page) =>
-                        page.isExternal ? (
-                          <a
-                            class="cd-app-sidebar-item"
-                            href={page.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {page.title}
-                          </a>
-                        ) : (
-                          <NavLink
-                            class="cd-app-sidebar-item"
-                            href={`/${nav.currentCategory!.slug}/${section.slug}/${page.slug}`}
-                          >
-                            {page.title}
-                          </NavLink>
-                        ),
-                      )}
-                    </section>
-                  ))}
-                </div>
-              </nav>
-            )
-        }
+        {nav.currentCategory != null &&
+          nav.currentCategory.sections.length > 0 && (
+            <nav class="cd-app-sidebar">
+              <div class="cd-app-sidebar-content">
+                {nav.currentCategory.sections.map((section) => (
+                  <section class="cd-app-sidebar-section">
+                    <h1 class="cd-app-sidebar-heading">{section.title}</h1>
+                    {section.pages.map((page) =>
+                      page.isExternal ? (
+                        <a
+                          class="cd-app-sidebar-item"
+                          href={page.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {page.title}
+                        </a>
+                      ) : (
+                        <NavLink
+                          class="cd-app-sidebar-item"
+                          href={`/${nav.currentCategory!.slug}/${section.slug}/${page.slug}`.replaceAll(
+                            "/$default",
+                            "",
+                          )}
+                        >
+                          {page.title}
+                        </NavLink>
+                      ),
+                    )}
+                  </section>
+                ))}
+              </div>
+            </nav>
+          )}
         <main id="main-content" class="cd-app-content">
           <slot />
-          {
-            shouldShowFooter && (
-              <footer>
-                {nav.previousPage && !nav.previousPage.isExternal && (
-                  <a
-                    class="previous-link"
-                    href={`/${nav.currentCategory!.slug}/${nav.currentSection!.slug}/${nav.previousPage!.slug}`}
+          {shouldShowFooter && (
+            <footer>
+              {nav.previousPage && !nav.previousPage.isExternal && (
+                <a
+                  class="previous-link"
+                  href={`/${nav.currentCategory!.slug}/${nav.currentSection!.slug}/${nav.previousPage!.slug}`}
+                >
+                  <svg
+                    class="link-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 14"
+                    aria-hidden="true"
                   >
-                    <svg
-                      class="link-icon"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 14"
-                      aria-hidden="true"
-                    >
-                      <line
-                        x1="2"
-                        y1="2"
-                        x2="12"
-                        y2="12"
-                        stroke="currentColor"
-                        stroke-width="1"
-                        stroke-linecap="round"
-                      />
-                      <line
-                        x1="12"
-                        y1="12"
-                        x2="22"
-                        y2="2"
-                        stroke="currentColor"
-                        stroke-width="1"
-                        stroke-linecap="round"
-                      />
-                    </svg>
-                    <div class="link-name">Previous</div>
-                    <div class="link-title">{nav.previousPage!.title}</div>
-                  </a>
-                )}
-                {nav.nextPage && !nav.nextPage.isExternal && (
-                  <a
-                    class="next-link"
-                    href={`/${nav.currentCategory!.slug}/${nav.currentSection!.slug}/${nav.nextPage!.slug}`}
+                    <line
+                      x1="2"
+                      y1="2"
+                      x2="12"
+                      y2="12"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                    />
+                    <line
+                      x1="12"
+                      y1="12"
+                      x2="22"
+                      y2="2"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  <div class="link-name">Previous</div>
+                  <div class="link-title">{nav.previousPage!.title}</div>
+                </a>
+              )}
+              {nav.nextPage && !nav.nextPage.isExternal && (
+                <a
+                  class="next-link"
+                  href={`/${nav.currentCategory!.slug}/${nav.currentSection!.slug}/${nav.nextPage!.slug}`}
+                >
+                  <svg
+                    class="link-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 14"
+                    aria-hidden="true"
                   >
-                    <svg
-                      class="link-icon"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 14"
-                      aria-hidden="true"
-                    >
-                      <line
-                        x1="2"
-                        y1="2"
-                        x2="12"
-                        y2="12"
-                        stroke="currentColor"
-                        stroke-width="1"
-                        stroke-linecap="round"
-                      />
-                      <line
-                        x1="12"
-                        y1="12"
-                        x2="22"
-                        y2="2"
-                        stroke="currentColor"
-                        stroke-width="1"
-                        stroke-linecap="round"
-                      />
-                    </svg>
-                    <div class="link-name">Next</div>
-                    <div class="link-title">{nav.nextPage!.title}</div>
-                  </a>
-                )}
-              </footer>
-            )
-          }
+                    <line
+                      x1="2"
+                      y1="2"
+                      x2="12"
+                      y2="12"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                    />
+                    <line
+                      x1="12"
+                      y1="12"
+                      x2="22"
+                      y2="2"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  <div class="link-name">Next</div>
+                  <div class="link-title">{nav.nextPage!.title}</div>
+                </a>
+              )}
+            </footer>
+          )}
         </main>
       </div>
     </div>

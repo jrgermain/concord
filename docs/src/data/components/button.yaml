@@ -1,0 +1,294 @@
+name: Button
+description: A clickable element that performs an action.
+keywords: [button, clickable, action]
+related_components: [Icon Button]
+properties:
+  variant:
+    description: Controls how prominent a Button is. It should reflect the Button's importance relative to neighboring Buttons (if any), or within the page (otherwise).
+    type: string
+    valid_values:
+      - primary
+      - secondary
+      - tertiary
+    default_value: secondary
+  size:
+    description: The size of the Button.
+    type: string
+    valid_values:
+      - small
+      - medium
+      - large
+    default_value: medium
+  disabled:
+    description: Indicates whether the Button is disabled.
+    type: boolean
+    default_value: false
+  loading:
+    description: Indicates whether the action triggered by the Button is in progress. Should typically be used with disabled.
+    type: boolean
+    default_value: false
+  icon_after:
+    description: The icon displayed after the Button's label. Can be an external link icon, a download icon, or neither.
+    type: string
+    valid_values:
+      - none
+      - external
+      - download
+    computed_default_value: 'if matches("[download]") then "download" else if matches("[target=_blank]") then "external" else "none"'
+  color:
+    description: The color of the Button. Use red for destructive actions. Defaults to gray for secondary Buttons and brand for the other variants.
+    type: string
+    valid_values:
+      - brand
+      - red
+      - orange
+      - yellow
+      - green
+      - teal
+      - blue
+      - purple
+      - pink
+      - gray
+      - black
+      - white
+    computed_default_value: 'if variant == "secondary" then "gray" else "brand"'
+anatomy:
+  - code: '<Element class="cd-button">'
+  - children:
+    - description: Button label, typically a text node.
+  - code: '</Element>'
+minimal_usage: '<button class="cd-button">Click Me</button>'
+playground: |
+  <button
+    x-bind:class="
+      'cd-button ' +
+      (variant ? 'cd-variant-' + variant + ' ' : '') +
+      (size ? 'cd-size-' + size + ' ' : '') +
+      (color ? 'cd-color-' + color + ' ' : '') +
+      (loading ? 'cd-is-loading ' : '') +
+      (icon_after ? 'cd-icon-after-' + icon_after + ' ' : '')
+    "
+    x-bind:disabled="disabled"
+  >
+    Click Me
+  </button>
+examples:
+  - title: Allowed Tags
+    description: "You can add the `cd-button` class to any element to style it as a Button, but you should typically only use it on a [`button`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) (most cases) or [`a`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) (if the Button's a link). Using it on a `span` or other non-interactive element is discouraged as it can introduce accessibility concerns."
+    code: |
+      <button class="cd-button">I'm a button</button>
+      <a href="#" class="cd-button"> I'm a link that looks like a button </a>
+      <span class="cd-button"> I'm a span that looks like a button </span>
+    output_wrapper_class: cd-wrap cd-orientation-horizontal cd-spacing-dense
+  - title: Variants
+    description: |
+      Buttons can have different styles, called **variants**. To set the **variant**
+      of a Button, add one of the following classes:
+
+      - `cd-variant-primary`
+      - No additional class (default)
+      - `cd-variant-tertiary`
+    code: |
+      <button class="cd-button cd-variant-primary">Primary</button>
+      <button class="cd-button">Secondary</button>
+      <button class="cd-button cd-variant-tertiary">Tertiary</button>
+    output_wrapper_class: cd-wrap cd-orientation-horizontal cd-spacing-dense
+  - title: Sizes
+    description: |
+      To adjust the **size** of a Button, add one of the following classes:
+
+      - `cd-size-small`
+      - No additional class (default)
+      - `cd-size-large`
+
+      For fine-grained control over sizing, you can set the `--cd-button-scale`
+      CSS variable on the Button element. The value of this variable _must_ be
+      a unitless number. A value of `1` corresponds to the default size.
+    code: |
+      <button class="cd-button cd-size-small">Small</button>
+      <button class="cd-button">Medium</button>
+      <button class="cd-button cd-size-large">Large</button>
+      <button class="cd-button" style="--cd-button-scale: 1.5">Custom scale (1.5)</button>
+    output_wrapper_class: cd-wrap cd-orientation-horizontal cd-spacing-dense
+  - title: Disabled
+    description: |
+      To give a Button a **disabled** style, do one of the following:
+
+      - Add the `disabled` attribute
+      - Add the `cd-is-disabled` class
+      - Set the `aria-disabled` attribute to `true`
+
+      If you use a method other than setting the `disabled` attribute, make sure
+      you are disabling the *behavior* of the Button as well. Otherwise, the Button
+      will _look_ disabled but still function normally.
+    code: |
+      <button disabled class="cd-button">Disabled attribute</button>
+      <button class="cd-button cd-is-disabled">Disabled class</button>
+      <button aria-disabled="true" class="cd-button">aria-disabled</button>
+    output_wrapper_class: cd-wrap cd-orientation-horizontal cd-spacing-dense
+  - title: Loading
+    description: |
+      To show that the action triggered by a Button is currently pending,
+      add the `cd-is-loading` class to that Button. This gives the user visual
+      feedback that the action is in progress.
+
+      Most of the time, you'll want to disable the Button while it's loading so
+      the user can't kick off additional instances of the onclick action (e.g.,
+      multiple identical API calls). In this case, also follow the instructions
+      above for disabling the Button.
+    code: |
+      <button disabled class="cd-button cd-is-loading">Disabled and loading</button>
+      <button class="cd-button cd-is-loading">Just loading</button>
+    output_wrapper_class: cd-wrap cd-orientation-horizontal cd-spacing-dense
+  - title: Link
+    description: |
+      You can add the `cd-button` class to an `a` element to create a link
+      styled as a Button.
+
+      Link Buttons that open in a new tab will have an external icon added to the end.
+      To create a Link Button that opens in a new tab but doesn't have an icon, add
+      the class `cd-icon-after-none`.
+
+      Link Buttons that download a file will have a download icon added to the end.
+      To create a Link Button that downloads a file but doesn't have an icon, add
+      the class `cd-icon-after-none`.
+    code: |
+      <a href="/" class="cd-button">Go to Homepage</a>
+      <a href="/" target="_blank" class="cd-button"> Go to Homepage </a>
+      <a href="/download.txt" download="Download.txt" class="cd-button"> Download </a>
+      <a href="/" target="_blank" class="cd-button cd-icon-after-none"> Go to Homepage (no icon) </a>
+      <a href="/download.txt" download="Download.txt" class="cd-button cd-icon-after-none"> Download (no icon) </a>
+    output_wrapper_class: cd-wrap cd-orientation-horizontal cd-spacing-dense
+  - title: Download
+    description: |
+      If your Button downloads a static file, you can use a link with the `download`
+      attribute as seen above. However, if your Button triggers a download programmatically
+      (e.g., by generating a file on the fly or calling an API to get the file), you can
+      add the `cd-icon-after-download` class to any Button to add a download icon.
+    code: '<button type="button" class="cd-button cd-icon-after-download">Download</button>'
+    output_wrapper_class: cd-wrap cd-orientation-horizontal cd-spacing-dense
+  - title: Icon Button
+    description: |
+      You can use the `cd-icon-button` class to make a Button circular and adjust the padding,
+      making it more suited to holding an icon. This class can be combined with the
+      **variant**, **size**, or other modifiers described here.
+
+      Note: Icon Buttons don't need the `cd-button` class.
+
+      Make sure to add an accessible label to your Icon Button using the `aria-label` attribute.
+    code: |
+      <button class="cd-icon-button" aria-label="Like">
+        <svg
+          aria-hidden="true"
+          width="1.5em"
+          height="1.5em"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          color="currentcolor"
+        >
+          <path
+            d="M22 8.86222C22 10.4087 21.4062 11.8941 20.3458 12.9929C17.9049 15.523 15.5374 18.1613 13.0053 20.5997C12.4249 21.1505 11.5042 21.1304 10.9488 20.5547L3.65376 12.9929C1.44875 10.7072 1.44875 7.01723 3.65376 4.73157C5.88044 2.42345 9.50794 2.42345 11.7346 4.73157L11.9998 5.00642L12.2648 4.73173C13.3324 3.6245 14.7864 3 16.3053 3C17.8242 3 19.2781 3.62444 20.3458 4.73157C21.4063 5.83045 22 7.31577 22 8.86222Z"
+            stroke="currentcolor"
+            stroke-width="1.5"
+            stroke-linejoin="round"></path>
+        </svg>
+      </button>
+      <button class="cd-color-red cd-variant-primary cd-icon-button" aria-label="Like">
+        <svg
+          aria-hidden="true"
+          width="1.5em"
+          height="1.5em"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          color="currentcolor"
+        >
+          <path
+            d="M22 8.86222C22 10.4087 21.4062 11.8941 20.3458 12.9929C17.9049 15.523 15.5374 18.1613 13.0053 20.5997C12.4249 21.1505 11.5042 21.1304 10.9488 20.5547L3.65376 12.9929C1.44875 10.7072 1.44875 7.01723 3.65376 4.73157C5.88044 2.42345 9.50794 2.42345 11.7346 4.73157L11.9998 5.00642L12.2648 4.73173C13.3324 3.6245 14.7864 3 16.3053 3C17.8242 3 19.2781 3.62444 20.3458 4.73157C21.4063 5.83045 22 7.31577 22 8.86222Z"
+            stroke="currentcolor"
+            stroke-width="1.5"
+            stroke-linejoin="round"></path>
+        </svg>
+      </button>
+      <button class="cd-variant-tertiary cd-icon-button" aria-label="Like">
+        <svg
+          aria-hidden="true"
+          width="1.5em"
+          height="1.5em"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          color="currentcolor"
+        >
+          <path
+            d="M22 8.86222C22 10.4087 21.4062 11.8941 20.3458 12.9929C17.9049 15.523 15.5374 18.1613 13.0053 20.5997C12.4249 21.1505 11.5042 21.1304 10.9488 20.5547L3.65376 12.9929C1.44875 10.7072 1.44875 7.01723 3.65376 4.73157C5.88044 2.42345 9.50794 2.42345 11.7346 4.73157L11.9998 5.00642L12.2648 4.73173C13.3324 3.6245 14.7864 3 16.3053 3C17.8242 3 19.2781 3.62444 20.3458 4.73157C21.4063 5.83045 22 7.31577 22 8.86222Z"
+            stroke="currentcolor"
+            stroke-width="1.5"
+            stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    output_wrapper_class: cd-wrap cd-orientation-horizontal cd-spacing-dense
+  - title: Colors
+    description: |
+      All Button variants support multiple color schemes.
+      To set the **color** of a Button, add one of the following classes:
+
+      - `cd-color-brand` (default for primary and tertiary Buttons)
+      - `cd-color-gray` (default for the default Button style)
+      - `cd-color-red`
+      - `cd-color-orange`
+      - `cd-color-yellow`
+      - `cd-color-green`
+      - `cd-color-teal`
+      - `cd-color-blue`
+      - `cd-color-purple`
+      - `cd-color-pink`
+      - `cd-color-black`
+      - `cd-color-white`
+
+      Be careful using black or white tertiary Buttons, since white text is
+      invisible on a white background (common in light mode), and black text is
+      invisible on a black background (common in dark mode). You can see this in
+      the example below.
+    code: |
+      <button class="cd-button cd-variant-primary cd-color-brand">Brand</button>
+      <button class="cd-button cd-variant-primary cd-color-red">Red</button>
+      <button class="cd-button cd-variant-primary cd-color-orange">Orange</button>
+      <button class="cd-button cd-variant-primary cd-color-yellow">Yellow</button>
+      <button class="cd-button cd-variant-primary cd-color-green">Green</button>
+      <button class="cd-button cd-variant-primary cd-color-teal">Teal</button>
+      <button class="cd-button cd-variant-primary cd-color-blue">Blue</button>
+      <button class="cd-button cd-variant-primary cd-color-purple">Purple</button>
+      <button class="cd-button cd-variant-primary cd-color-pink">Pink</button>
+      <button class="cd-button cd-variant-primary cd-color-gray">Gray</button>
+      <button class="cd-button cd-variant-primary cd-color-black">Black</button>
+      <button class="cd-button cd-variant-primary cd-color-white">White</button>
+      <button class="cd-button cd-color-brand">Brand</button>
+      <button class="cd-button cd-color-red">Red</button>
+      <button class="cd-button cd-color-orange">Orange</button>
+      <button class="cd-button cd-color-yellow">Yellow</button>
+      <button class="cd-button cd-color-green">Green</button>
+      <button class="cd-button cd-color-teal">Teal</button>
+      <button class="cd-button cd-color-blue">Blue</button>
+      <button class="cd-button cd-color-purple">Purple</button>
+      <button class="cd-button cd-color-pink">Pink</button>
+      <button class="cd-button cd-color-gray">Gray</button>
+      <button class="cd-button cd-color-black">Black</button>
+      <button class="cd-button cd-color-white">White</button>
+      <button class="cd-button cd-variant-tertiary cd-color-brand">Brand</button>
+      <button class="cd-button cd-variant-tertiary cd-color-red">Red</button>
+      <button class="cd-button cd-variant-tertiary cd-color-orange">Orange</button>
+      <button class="cd-button cd-variant-tertiary cd-color-yellow">Yellow</button>
+      <button class="cd-button cd-variant-tertiary cd-color-green">Green</button>
+      <button class="cd-button cd-variant-tertiary cd-color-teal">Teal</button>
+      <button class="cd-button cd-variant-tertiary cd-color-blue">Blue</button>
+      <button class="cd-button cd-variant-tertiary cd-color-purple">Purple</button>
+      <button class="cd-button cd-variant-tertiary cd-color-pink">Pink</button>
+      <button class="cd-button cd-variant-tertiary cd-color-gray">Gray</button>
+      <button class="cd-button cd-variant-tertiary cd-color-black">Black</button>
+      <button class="cd-button cd-variant-tertiary cd-color-white">White</button>
+    output_wrapper_class: cd-wrap cd-orientation-horizontal cd-spacing-dense

@@ -1,3 +1,5 @@
+import { getCollection } from "astro:content";
+
 export type Category = {
   title: string;
   description: string;
@@ -24,6 +26,9 @@ export type Page = {
       href: string;
     }
 );
+
+const components = await getCollection("components");
+console.log(components);
 
 export const navCategories: Category[] = [
   {
@@ -65,64 +70,10 @@ export const navCategories: Category[] = [
     slug: "components",
     sections: [
       {
-        title: "Layout",
-        description: "Components that organize other content on the page.",
-        slug: "layout",
-        pages: [
-          { title: "Accordion", slug: "accordion" },
-          { title: "Card", slug: "card" },
-          { title: "Distribute", slug: "distribute" },
-          { title: "Divider", slug: "divider" },
-          { title: "Drawer", slug: "drawer" },
-          { title: "Fieldset", slug: "fieldset" },
-          { title: "Grid", slug: "grid" },
-          { title: "Modal", slug: "modal" },
-          { title: "Stack", slug: "stack" },
-          { title: "Wrap", slug: "wrap" },
-        ],
-      },
-      {
-        title: "Forms & Controls",
-        description: "Components that handle user input and interaction.",
-        slug: "forms-and-controls",
-        pages: [
-          { title: "Button", slug: "button" },
-          { title: "Checkbox", slug: "checkbox" },
-          { title: "Field", slug: "field" },
-          { title: "Radio", slug: "radio" },
-          { title: "Slider", slug: "slider" },
-          { title: "Switch", slug: "switch" },
-        ],
-      },
-      {
-        title: "Status",
-        description: "Components for displaying status and progress messaging.",
-        slug: "status",
-        pages: [
-          { title: "Alert", slug: "alert" },
-          { title: "Banner", slug: "banner" },
-          { title: "Chip", slug: "chip" },
-          { title: "Meter", slug: "meter" },
-          { title: "Progress", slug: "progress" },
-          { title: "Skeleton", slug: "skeleton" },
-          { title: "Spinner", slug: "spinner" },
-        ],
-      },
-      {
-        title: "Text",
-        description: "Components for styling different types of text content.",
-        slug: "text",
-        pages: [
-          { title: "Abbreviation", slug: "abbreviation" },
-          { title: "Heading", slug: "heading" },
-          { title: "Highlight", slug: "highlight" },
-          { title: "Key", slug: "key" },
-          { title: "Link", slug: "link" },
-          { title: "List", slug: "list" },
-          { title: "Paragraph", slug: "paragraph" },
-          { title: "Quote", slug: "quote" },
-          { title: "Table", slug: "table" },
-        ],
+        title: "Components",
+        description: "",
+        slug: "$default",
+        pages: components.map((c) => ({ title: c.data.name, slug: c.id })),
       },
     ],
   },

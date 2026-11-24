@@ -8,7 +8,9 @@ interface Props {
   pathname: string;
 }
 
-const { currentCategory } = getNavigationInfo(Astro.props.pathname);
+const { currentCategory, isSingleSection } = getNavigationInfo(
+  Astro.props.pathname,
+);
 ---
 
 <Layout title={currentCategory!.title}>
@@ -17,10 +19,12 @@ const { currentCategory } = getNavigationInfo(Astro.props.pathname);
     subtitle={currentCategory!.description}
   />
   <slot name="before" />
-  <TableOfContents
-    showHeading={false}
-    areItemsClickable={false}
-    contents={currentCategory!.sections}
-  />
+  {!isSingleSection && (
+    <TableOfContents
+      showHeading={false}
+      areItemsClickable={false}
+      contents={currentCategory!.sections}
+    />
+  )}
   <slot name="after" />
 </Layout>

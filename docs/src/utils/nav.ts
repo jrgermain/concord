@@ -1,8 +1,8 @@
-import { navCategories } from "../data/nav-links";
+import { navCategories, type Page, type Section } from "../data/nav-links";
 
 export const getNavigationInfo = (pathname: string) => {
   // Parse pathname to map to nav hierarchy
-  const [categoryPathSegment, sectionPathSegment, pagePathSegment] = pathname
+  let [categoryPathSegment, sectionPathSegment, pagePathSegment] = pathname
     .split("/")
     .slice(1);
 
@@ -10,11 +10,22 @@ export const getNavigationInfo = (pathname: string) => {
   const currentCategory = navCategories.find(
     (p) => p.slug === categoryPathSegment,
   );
+
+  // If not a multi-section category, "collapse" the URL to remove the section segment
+  const isSingleSection =
+    currentCategory != null &&
+    currentCategory.sections.length === 1 &&
+    currentCategory.sections[0].slug === "$default";
+  if (isSingleSection) {
+    pagePathSegment = sectionPathSegment;
+    sectionPathSegment = "$default";
+  }
+
   const currentSection = currentCategory?.sections.find(
     (s) => s.slug === sectionPathSegment,
   );
   const currentPage = currentSection?.pages.find(
-    (l) => l.slug === pagePathSegment,
+    (l) => !l.isExternal && l.slug === pagePathSegment,
   );
   const currentPageIndex = currentPage
     ? currentSection!.pages.indexOf(currentPage)
@@ -28,5 +39,6 @@ export const getNavigationInfo = (pathname: string) => {
     currentPage,
     previousPage,
     nextPage,
+    isSingleSection,
   };
 };

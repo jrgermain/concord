@@ -1,23 +1,32 @@
 ---
 interface Props {
-  name: string;
-  selector?: string;
+  code?: string;
   description?: string;
+  children?: Props[];
 }
 
-const { name, selector, description } = Astro.props;
+const { code, description, children } = Astro.props;
 ---
 
-<div class="part">
-  <div class="part-box">
-    <div class="part-label">
-      <span class="part-name">{name}</span>
-      {selector && <span class="cd-code part-selector">{selector}</span>}
-      {description && <span class="part-description">{description}</span>}
-    </div>
-    <slot />
+{code && (
+  <div class="part-label">
+    <span class="cd-code part-example">{code}</span>
   </div>
-</div>
+)}
+{description && (
+  <div class="part-label">
+    <span class="part-description">{description}</span>
+  </div>
+)}
+{children && (
+  <div class="part">
+    <div class="part-box">
+      {children.map((child) => (
+        <Astro.self {...child} />
+      ))}
+    </div>
+  </div>
+)}
 
 <style>
   .part {
@@ -36,7 +45,7 @@ const { name, selector, description } = Astro.props;
     --text-color: var(--cd-color-blue-3);
     --code-bg-color: var(--cd-color-blue-extra-transparent);
 
-    margin-block-start: var(--cd-space-3xs);
+    margin-inline-start: var(--cd-space-s);
   }
 
   .part .part .part {
@@ -79,7 +88,7 @@ const { name, selector, description } = Astro.props;
     font-weight: var(--cd-font-weight-bold);
   }
 
-  .part-selector {
+  .part-example {
     position: relative;
     font-size: 0.85em;
     margin: auto;
